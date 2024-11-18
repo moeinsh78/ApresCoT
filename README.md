@@ -1,1 +1,1 @@
-# Apr\`esCoT
+# \keyword{Apr\`esCoT}
