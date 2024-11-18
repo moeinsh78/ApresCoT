@@ -1,1 +1,1 @@
-# \keyword{Apr\`esCoT}
+# ApresCoT
