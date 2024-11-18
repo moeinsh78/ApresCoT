@@ -1,1 +1,1 @@
-# Apr-sCoT
+# Apr\`esCoT
