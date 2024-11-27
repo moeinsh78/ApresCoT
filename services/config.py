@@ -48,27 +48,10 @@ LLM_OPTIONS = [
     for supported_llm in SupportedLLM
 ]
 
-INDEX_OPTIONS = [
-    dict(label="MS MARCO V1 Passage", value="msmarco-v1-passage-full"),
-    dict(label="Wikipedia", value="enwiki-paragraphs"),
-    dict(label="ACM Abstracts", value="cacm"),
-    dict(label="Tweets", value="tweets"),
-    dict(label="News Articles", value="news"),
-    dict(label="Legal Clauses", value="legal_clauses"),
-    dict(label="Arxiv Abstracts", value="arxiv"),
-    dict(label="Blog Posts", value="blog_posts"),
-    dict(label="COVID-19 Abstracts", value="cord19_abstract")
-]
 
-KAGE_INDEX_OPTIONS = [
+KG_OPTIONS = [
     dict(label="MetaQA Movies", value="meta-qa"),
     dict(label="UMLS Relations", value="umls"),
-]
-
-KAGE_HOP_COUNT_OPTIONS = [
-    dict(label=1, value=1),
-    dict(label=2, value=2),
-    dict(label=3, value=3),
 ]
 
 COT_COLOR_MAPPING = {

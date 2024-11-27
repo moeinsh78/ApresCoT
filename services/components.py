@@ -2,33 +2,29 @@ import dash_bootstrap_components as dbc
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objs as go
-from typing import Any, Dict, Iterable, List, Optional, Tuple
+from typing import Any, Dict, Set, List
 from collections import Counter
 from dash import dcc, html
 import dash_cytoscape as cyto
 
 from services.config import (
-    DEFAULT_BATCH_SIZE,
-    DEFAULT_MAX_COUNTERFACTUALS,
-    DEFAULT_MAX_TOKENS,
-    DEFAULT_NUM_PERMUTATIONS,
-    DEFAULT_TOP_K,
-    HIDDEN_STYLE,
     LLM_OPTIONS,
-    KAGE_HOP_COUNT_OPTIONS,
-    INDEX_OPTIONS, 
-    KAGE_INDEX_OPTIONS,
+    KG_OPTIONS,
 )
 
 
 TABLE_BORDERED = True
-TABLE_STRIPED = True
+TABLE_STRIPED = False
 TABLE_HOVER = True
 TABLE_WHITESPACE_STYLE = "pre-line"
 TABLE_SIZE = "sm"
 TABLE_BORDER_SIZE = "5px"
 TABLE_FONT_SIZE = 16
 TABLE_STYLE = { "font-size": TABLE_FONT_SIZE }
+
+GRAPH_EDGE_FONT_SIZE = "4px"
+GRAPH_NODE_FONT_SIZE = "4px"
+
 SUBGRAPH_HEIGHT = "1200px"
 SUBGRAPH_NODE_COLOR = "#D3D3D3"
 SUBGRAPH_EDGE_COLOR = "#D3D3D3"
@@ -41,23 +37,6 @@ SOURCE_NODE_COLOR = "#182E6F"
 RESPONSE_NODE_COLOR = "#8FD9FB"
 SUBGRAPH_NODE_POSITIONING = "cose"
 NO_MATCH_COLOR = "#ED2100"
-
-
-# ANSWERS_COLOR = [RESPONSE_NODE_COLOR, RESPONSE_NODE_COLOR]
-# COT_COLOR = [GREEN_COT_COLOR, GREEN_COT_COLOR, GREEN_COT_COLOR, GREEN_COT_COLOR]
-
-# ANSWERS_COLOR = [RESPONSE_NODE_COLOR, NO_MATCH_COLOR]
-# COT_COLOR = [GREEN_COT_COLOR, GREEN_COT_COLOR, GREEN_COT_COLOR, NO_MATCH_COLOR]
-
-
-
-COT_COLORS_MAPPING = [
-    {"class": "color1", "code": "#ADEBB3"},
-    {"class": "color2", "code": "#68BA7F"},
-    {"class": "color3", "code": "#9EB8A0"},
-    {"class": "color4", "code": "#66DE78"},
-    {"class": "color5", "code": "#54B84D"},
-]
 
 
 KAGE_TABLE_STYLE = {
@@ -150,31 +129,45 @@ def build_qa_info_table(instruction_msg: str, prompt: str, llm_response: str) ->
     )
 
 
-def build_llm_answers_table(answers_list: List[str]) -> dbc.Table:
+def build_llm_answers_table(node_to_answer_match: List[Dict]) -> dbc.Table:
     """
     Build a table that displays the response items that the llm has given.
     """
+    colors = []
+    for ans_info in node_to_answer_match:
+        if ans_info["Index"] == "No Match":
+            colors.append(NO_MATCH_COLOR)
+        else: 
+            colors.append(RESPONSE_NODE_COLOR)
+    
     return build_table(
         [html.Thead(html.Tr([html.Th(h) for h in ["ID", "LLM Answer Item"]]))],
         [html.Tbody([
             html.Tr([
                 html.Td(
                     f"[{i + 1}]",
-                    style={"background-color": RESPONSE_NODE_COLOR},
+                    style={"background-color": colors[i]},
                 ),
-                html.Td(desc),
+                html.Td(ans["Answer"]),
             ])
-            for i, desc in enumerate(answers_list)
+            for i, ans in enumerate(node_to_answer_match)
         ])],
         style=KAGE_TABLE_STYLE,
     )
 
 
 
-def build_llm_cot_table(cot_list: List[Dict]) -> dbc.Table:
+def build_llm_cot_table(cot_match_dicts: List[Dict]) -> dbc.Table:
     """
-    Build a table that displays the response items that the llm has given.
+    Build a table that displays the chain of thought items that the llm has given.
     """
+    colors = []
+    for cot_step_info in cot_match_dicts:
+        if cot_step_info["Most Similar Context ID"] == "No Match":
+            colors.append(NO_MATCH_COLOR)
+        else: 
+            colors.append(GREEN_COT_COLOR)
+
     return build_table(
         # , "Matched Edge Number"
         [html.Thead(html.Tr([html.Th(h) for h in ["ID", "LLM Chain of Thought Step"]]))],
@@ -182,17 +175,12 @@ def build_llm_cot_table(cot_list: List[Dict]) -> dbc.Table:
             html.Tr([
                 html.Td(
                     f"[{i + 1}]",
-                    style={"background-color": GREEN_COT_COLOR},
+                    style={"background-color": colors[i]},
                 ),
                 html.Td(cot_step_info["COT Step"]),
-                # html.Td(
-                #     "(" + str(cot_step_info["Most Similar Context ID"]) + ")",
-                #     style={"background-color": GREEN_COT_COLOR},
-                #     # style={"background-color": COT_COLORS_MAPPING[i % COT_COLORS_MAPPING.__len__()]["code"]},
-                #     # style={"background-color": if (cot_step_info["Most Similar Context ID"] == "No Match") NO_MATCH_COT_COLOR else COT_COLORS_MAPPING[i % COT_COLORS_MAPPING.__len__()]["code"]},
-                # ),
-            ])
-            for i, cot_step_info in enumerate(cot_list)
+            ], 
+            id={"type": "table-row", "id": f"{cot_step_info['Most Similar Context ID']}"},)
+            for i, cot_step_info in enumerate(cot_match_dicts)
         ])],
         style=KAGE_TABLE_STYLE,
     )
@@ -230,6 +218,7 @@ def build_qa_info_section(qa_info_table_id: str) -> html.Div:
             )
         )
     )
+
 
 def build_llm_response_section(llm_answers_table_id: str, llm_cot_table_id: str) -> html.Div:
     return html.Div(
@@ -287,8 +276,7 @@ def draw_subgraph(subgraph_elements_list: List[Dict], subgraph_figure_id: str) -
                     "selector": "node",
                     "style": {
                         'label': 'data(label)',
-                        # "background-color": SUBGRAPH_NODE_COLOR,
-                        "font-size": "4px",
+                        "font-size": GRAPH_NODE_FONT_SIZE,
                         'width': '10px', 
                         'height': '10px', 
                     }
@@ -316,7 +304,7 @@ def draw_subgraph(subgraph_elements_list: List[Dict], subgraph_figure_id: str) -
                     "style": {
                         "label": "data(weight)",
                         "line-color": SUBGRAPH_EDGE_COLOR,
-                        "font-size": "3px",
+                        "font-size": GRAPH_EDGE_FONT_SIZE,
                         "width": 1.5
                     }
                 }, 
@@ -328,41 +316,24 @@ def draw_subgraph(subgraph_elements_list: List[Dict], subgraph_figure_id: str) -
                     }
                 }, 
                 {
-                    'selector': ".color1",
+                    'selector': ".cot-edge",
                     'style': {
                         "line-color": LIGHT_GREEN_COT_COLOR,
                     }
                 },
-                {
-                    'selector': ".color2",
-                    'style': {
-                        "line-color": LIGHT_GREEN_COT_COLOR,
-                    }
-                },
-                {
-                    'selector': ".color3",
-                    'style': {
-                        "line-color": LIGHT_GREEN_COT_COLOR,
-                    }
-                },
-                {
-                    'selector': ".color4",
-                    'style': {
-                        "line-color": LIGHT_GREEN_COT_COLOR,
-                    }
-                },
-                {
-                    'selector': ".color5",
-                    'style': {
-                        "line-color": LIGHT_GREEN_COT_COLOR,
-                    }
-                },
+                # {
+                #     "selector": "edge.cy-hovered-edge", 
+                #     "style": {
+                #         "line-color": "red", 
+                #         "width": 4
+                #     }
+                # }
             ]
         ),
         ], 
         style={
             "border": "2px solid black",
-            "width": "95%",
+            "width": "90%",
         }
     )
 
@@ -410,8 +381,7 @@ def build_kage_welcome_alert() -> dbc.Alert:
 def build_kage_form_section(
     question_input_id: str, hop_select_id: str, llm_select_id: str, kg_select_id: str,
     generate_btn_id: str, llms: List[Dict[str, str]] = LLM_OPTIONS,
-    hop_count_options: List[Dict[int, int]] = KAGE_HOP_COUNT_OPTIONS,
-    knowledge_graphs: List[Dict[str, str]] = KAGE_INDEX_OPTIONS,
+    knowledge_graphs: List[Dict[str, str]] = KG_OPTIONS,
 ) -> html.Div:
     """
     Build the form section of the page, containing welcome alert / use case buttons
@@ -434,22 +404,11 @@ def build_kage_form_section(
                         ),
                     ],
                     sm=6,
+                    style={"padding": 10}
                 ),
-                # dbc.Col(
-                #     [
-                #         dbc.Label("Search Depth"),
-                #         dbc.Select(
-                #             id=hop_select_id,
-                #             options=hop_count_options,
-                #             value=hop_count_options[0]["value"],
-                #             disabled=False
-                #         )
-                #     ],
-                #     sm=2,
-                # ),
                 dbc.Col(
                     [
-                        dbc.Label("QA System"),
+                        dbc.Label("LLM"),
                         dbc.Select(
                             id=llm_select_id,
                             options=llms,
@@ -458,6 +417,7 @@ def build_kage_form_section(
                         )
                     ],
                     sm=3,
+                    style={"padding": 10}
                 ),
                 dbc.Col(
                     [
@@ -470,6 +430,7 @@ def build_kage_form_section(
                         )
                     ],
                     sm=3,
+                    style={"padding": 10}
                 )]
             ),
             dbc.Col(

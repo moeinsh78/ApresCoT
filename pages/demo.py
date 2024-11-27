@@ -12,13 +12,7 @@ from services.components import (
 from services.config import APP_NAME, LLM_NAMES, SYSTEM_NAMES
 
 from rage.qa import (
-    perform_umls_qa, 
-    perform_movies_qa, 
-    get_used_sentences_ids, 
-    build_cyto_subgraph_elements_list, 
-    retrieve_subgraph,
-    perform_vanilla_qa,
-    remove_element
+    perform_qa
 )
 
 dash.register_page(__name__, title=APP_NAME)
@@ -46,6 +40,33 @@ layout = build_kage_page_layout(
     LLM_COT_TABLE_CONTAINER_ID, GENERATE_BUTTON_ID, RESULT_SECTION_ID
 )
 
+# @callback(
+#     Output(SUBGRAPH_FIGURE_ID, "stylesheet"),
+#     Input({"type": "table-row", "id": dash.ALL}, "n_clicks"),
+#     State(SUBGRAPH_FIGURE_ID, "stylesheet"),
+# )
+# def highlight_edge(n_clicks, current_stylesheet):
+#     if not any(n_clicks):
+#         return current_stylesheet
+
+#     ctx = dash.callback_context
+#     if ctx.triggered:
+#         triggered_id = ctx.triggered[0]["prop_id"].split(".")[0]
+#         triggered_edge_id = f"edge{eval(triggered_id)['id']}"
+#         print("Triggered Edge ID:", triggered_edge_id)
+#         new_stylesheet = current_stylesheet\
+#             + [
+#                 {"selector": f"edge[id = '{triggered_edge_id}']", "style": {"classes": "cy-hovered-edge"}}
+#             ]
+
+#         print("New Stylesheet after click:")
+#         for style in new_stylesheet:
+#             print(style)
+
+#         return new_stylesheet
+
+
+#     return current_stylesheet
 
 
 @callback(
@@ -56,14 +77,10 @@ layout = build_kage_page_layout(
     Output(LLM_COT_TABLE_CONTAINER_ID, "children"),
     Input(GENERATE_BUTTON_ID, 'n_clicks'),    
     State(QUESTION_INPUT_ID, "value"),
-    # State(HOP_SELECT_ID, "value"),
     State(LLM_SELECT_ID, "value"),
     State(KG_SELECT_ID, "value"),
 )
-def on_generate(
-    gen_btn_n_clicks: int, question: str, # hops_count: int, 
-    supported_qa_model: str, kg_name: str, 
-):
+def on_generate(gen_btn_n_clicks: int, question: str, supported_qa_model: str, kg_name: str):
     input_is_invalid = (
         question is None
         or kg_name is None
@@ -82,68 +99,86 @@ def on_generate(
         print("REQUESTED LLM:", llm)
         print("REQUESTED system:", system)
         
-        if system == "vanilla-gpt-3.5" or system == "vanilla-gpt-4o-mini":
-            seed_nodes, edge_dict_list, edge_description_list = retrieve_subgraph(question, dataset = "MOVIES", depth = hops_count)
-            instruction_msg, prompt, llm_response, cot_response_list, final_answer_list = \
-                perform_vanilla_qa(llm, question)
-        
-            matched_cot_list, context_to_cot_match = get_used_sentences_ids(edge_description_list, cot_response_list)
-            subgraph_elements_list = []
+        rag_enabled = not (system == "vanilla-gpt-3.5" or system == "vanilla-gpt-4o-mini")
 
-            subgraph_elements_list = build_cyto_subgraph_elements_list(seed_nodes, edge_dict_list, context_to_cot_match, final_answer_list)
+        instruction_msg, prompt, llm_response, subgraph_elements_list, subgraph_edge_desc_list, node_to_answer_match, subgraph_elements_list, cot_match_dicts = \
+            perform_qa(llm, kg_name, question, rag_enabled)
+                
+        doc_section = build_edge_description_table(subgraph_edge_desc_list)
+        subgraph_section = draw_subgraph(subgraph_elements_list, SUBGRAPH_FIGURE_ID)
+        
+        QA_section = build_qa_info_table(instruction_msg, prompt, llm_response)
+        llm_answers_section = build_llm_answers_table(node_to_answer_match)
+        llm_cot_section = build_llm_cot_table(cot_match_dicts)
+
+        # if system == "vanilla-gpt-3.5" or system == "vanilla-gpt-4o-mini":
+        #     seed_nodes, edge_dict_list, edge_description_list = retrieve_subgraph(question, dataset = "MOVIES", depth = hops_count)
+        #     instruction_msg, prompt, llm_response, cot_response_list, final_answer_list = \
+        #         perform_vanilla_qa(llm, question)
+        
+        #     matched_cot_list, context_to_cot_match = get_used_sentences_ids(edge_description_list, cot_response_list)
+        #     subgraph_elements_list = []
+
+        #     subgraph_elements_list = build_cyto_subgraph_elements_list(seed_nodes, edge_dict_list, context_to_cot_match, final_answer_list)
             
-            # subgraph_elements_list = build_cyto_subgraph_elements_list(edge_dict_list, [], response_list)
+        #     # subgraph_elements_list = build_cyto_subgraph_elements_list(edge_dict_list, [], response_list)
 
-            doc_section = build_edge_description_table(edge_description_list)
-            subgraph_section = draw_subgraph(subgraph_elements_list, SUBGRAPH_FIGURE_ID)
+        #     doc_section = build_edge_description_table(edge_description_list)
+        #     subgraph_section = draw_subgraph(subgraph_elements_list, SUBGRAPH_FIGURE_ID)
         
-            QA_section = build_qa_info_table(instruction_msg, prompt, llm_response)
-            llm_answers_section = build_llm_answers_table(final_answer_list)
-            llm_cot_section = build_llm_cot_table(matched_cot_list)
+        #     QA_section = build_qa_info_table(instruction_msg, prompt, llm_response)
+        #     llm_answers_section = build_llm_answers_table(final_answer_list)
+        #     llm_cot_section = build_llm_cot_table(matched_cot_list)
 
 
-        elif system == "kg-gpt-3.5":
-            seed_nodes, edge_dict_list, edge_description_list = retrieve_subgraph(question, dataset = "MOVIES", depth = hops_count)
-            instruction_msg, prompt, llm_response, cot_response_list, final_answer_list = \
-                perform_movies_qa(llm, question, edge_dict_list)
+        # elif system == "kg-gpt-3.5":
+        #     seed_nodes, edge_dict_list, edge_description_list = retrieve_subgraph(question, dataset = "MOVIES", depth = hops_count)
+        #     instruction_msg, prompt, llm_response, cot_response_list, final_answer_list = \
+        #         perform_movies_qa(llm, question, edge_dict_list)
 
             
-            # Matcher Module
-            # edge_description_list = remove_element(edge_description_list, "1990")
-            matched_cot_list, context_to_cot_match = get_used_sentences_ids(edge_description_list, cot_response_list)
-            subgraph_elements_list = []
+        #     # Matcher Module
+        #     # edge_description_list = remove_element(edge_description_list, "1990")
+        #     matched_cot_list, context_to_cot_match = get_used_sentences_ids(edge_description_list, cot_response_list)
+        #     subgraph_elements_list = []
 
-            subgraph_elements_list = build_cyto_subgraph_elements_list(seed_nodes, edge_dict_list, context_to_cot_match, final_answer_list)
+        #     subgraph_elements_list = build_cyto_subgraph_elements_list(seed_nodes, edge_dict_list, context_to_cot_match, final_answer_list)
             
-            # subgraph_elements_list = build_cyto_subgraph_elements_list(edge_dict_list, [], response_list)
+        #     # subgraph_elements_list = build_cyto_subgraph_elements_list(edge_dict_list, [], response_list)
 
-            doc_section = build_edge_description_table(edge_description_list)
-            subgraph_section = draw_subgraph(subgraph_elements_list, SUBGRAPH_FIGURE_ID)
+        #     doc_section = build_edge_description_table(edge_description_list)
+        #     subgraph_section = draw_subgraph(subgraph_elements_list, SUBGRAPH_FIGURE_ID)
         
-            QA_section = build_qa_info_table(instruction_msg, prompt, llm_response)
-            llm_answers_section = build_llm_answers_table(final_answer_list)
-            llm_cot_section = build_llm_cot_table(matched_cot_list)
+        #     QA_section = build_qa_info_table(instruction_msg, prompt, llm_response)
+        #     llm_answers_section = build_llm_answers_table(final_answer_list)
+        #     llm_cot_section = build_llm_cot_table(matched_cot_list)
 
-        elif kg_name == "umls":
-            # edge_dict_list, entities_set, edge_description_list, instruction_msg, prompt, llm_response, cot_response_list, llm_asnwers, response_list = \
-            perform_umls_qa(llm, question, depth = int(hops_count))
+        #     print("Subgraph Elements:")
+        #     for element in subgraph_elements_list:
+        #         print(element)
+        #     print("Context to COT Match:\n", context_to_cot_match)
+        #     print("Matched COT List:\n", matched_cot_list)
 
-            # # used_entities_id = get_used_entities_ids(entities_set, response_list)
-            # used_sentences_id = get_used_sentences_ids(edge_description_list, cot_response_list)
-            # subgraph_elements_list = []
+        # elif kg_name == "umls":
+        #     # edge_dict_list, entities_set, edge_description_list, instruction_msg, prompt, llm_response, cot_response_list, llm_asnwers, response_list = \
+        #     perform_umls_qa(llm, question, depth = int(hops_count))
 
-            # if cot:
-            #     subgraph_elements_list = build_cyto_subgraph_elements_list(edge_dict_list, used_sentences_id, response_list)
-            # else:
-            #     subgraph_elements_list = build_cyto_subgraph_elements_list(edge_dict_list, [], response_list)
+        #     # # used_entities_id = get_used_entities_ids(entities_set, response_list)
+        #     # used_sentences_id = get_used_sentences_ids(edge_description_list, cot_response_list)
+        #     # subgraph_elements_list = []
 
-            # doc_section = build_edge_description_table(edge_description_list)
-            # subgraph_section = draw_subgraph(subgraph_elements_list, SUBGRAPH_FIGURE_ID)
+        #     # if cot:
+        #     #     subgraph_elements_list = build_cyto_subgraph_elements_list(edge_dict_list, used_sentences_id, response_list)
+        #     # else:
+        #     #     subgraph_elements_list = build_cyto_subgraph_elements_list(edge_dict_list, [], response_list)
+
+        #     # doc_section = build_edge_description_table(edge_description_list)
+        #     # subgraph_section = draw_subgraph(subgraph_elements_list, SUBGRAPH_FIGURE_ID)
         
-            # QA_section = build_qa_info_table(instruction_msg, prompt, llm_response)
-            # llm_response_section = build_llm_response_table(response_list)
+        #     # QA_section = build_qa_info_table(instruction_msg, prompt, llm_response)
+        #     # llm_response_section = build_llm_response_table(response_list)
 
-        else:
-            print("Invalid KG name")
+        # else:
+        #     print("Invalid KG name")
 
     return doc_section, subgraph_section, QA_section, llm_answers_section, llm_cot_section
