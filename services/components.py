@@ -2,7 +2,7 @@ import dash_bootstrap_components as dbc
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objs as go
-from typing import Any, Dict, Set, List
+from typing import Optional, Any, Dict, List
 from collections import Counter
 from dash import dcc, html
 import dash_cytoscape as cyto
@@ -20,7 +20,7 @@ TABLE_WHITESPACE_STYLE = "pre-line"
 TABLE_SIZE = "sm"
 TABLE_BORDER_SIZE = "5px"
 TABLE_FONT_SIZE = 16
-TABLE_STYLE = { "font-size": TABLE_FONT_SIZE }
+# TABLE_STYLE = { "font-size": TABLE_FONT_SIZE }
 
 GRAPH_EDGE_FONT_SIZE = "4px"
 GRAPH_NODE_FONT_SIZE = "4px"
@@ -39,7 +39,7 @@ SUBGRAPH_NODE_POSITIONING = "cose"
 NO_MATCH_COLOR = "#ED2100"
 
 
-KAGE_TABLE_STYLE = {
+TABLE_STYLE = {
     "font-size": TABLE_FONT_SIZE, 
     "border": TABLE_BORDER_SIZE,
     "whiteSpace": TABLE_WHITESPACE_STYLE
@@ -100,7 +100,7 @@ def build_edge_description_table(edge_descriptions: List[str]) -> dbc.Table:
             ])
             for i, desc in enumerate(edge_descriptions)
         ])],
-        style=KAGE_TABLE_STYLE,
+        style=TABLE_STYLE,
     )
 
 
@@ -125,7 +125,7 @@ def build_qa_info_table(instruction_msg: str, prompt: str, llm_response: str) ->
                 html.Td(llm_response),
             ])
         ])],
-        style=KAGE_TABLE_STYLE,
+        style=TABLE_STYLE,
     )
 
 
@@ -152,7 +152,7 @@ def build_llm_answers_table(node_to_answer_match: List[Dict]) -> dbc.Table:
             ])
             for i, ans in enumerate(node_to_answer_match)
         ])],
-        style=KAGE_TABLE_STYLE,
+        style=TABLE_STYLE,
     )
 
 
@@ -162,7 +162,11 @@ def build_llm_cot_table(cot_match_dicts: List[Dict]) -> dbc.Table:
     Build a table that displays the chain of thought items that the llm has given.
     """
     colors = []
+    index = 0
     for cot_step_info in cot_match_dicts:
+        index += 1
+
+        print("Index:", index, cot_step_info)
         if cot_step_info["Most Similar Context ID"] == "No Match":
             colors.append(NO_MATCH_COLOR)
         else: 
@@ -182,7 +186,7 @@ def build_llm_cot_table(cot_match_dicts: List[Dict]) -> dbc.Table:
             id={"type": "table-row", "id": f"{cot_step_info['Most Similar Context ID']}"},)
             for i, cot_step_info in enumerate(cot_match_dicts)
         ])],
-        style=KAGE_TABLE_STYLE,
+        style=TABLE_STYLE,
     )
 
 
@@ -211,7 +215,7 @@ def build_qa_info_section(qa_info_table_id: str) -> html.Div:
         dbc.Row(
             dbc.Col(
                 [
-                    html.H5("KAGE QA Information Table"),
+                    html.H5("QA Information Table"),
                     html.Div(id=qa_info_table_id)
                 ],
                 xs=12
@@ -338,9 +342,48 @@ def draw_subgraph(subgraph_elements_list: List[Dict], subgraph_figure_id: str) -
     )
 
 
-def build_kage_welcome_alert() -> dbc.Alert:
+def build_demo_welcome_alert() -> dbc.Alert:
     """
-    Build a "Welcome" alert welcoming users to the KAGE page.
+    Build a "Welcome" alert welcoming users to the AprèsCoT's demo page.
+    """
+    return dbc.Alert(
+        [
+            html.H4("Welcome to AprèsCoT!"),
+            html.Hr(),
+            html.P(
+                (
+                    "On this page, you may explore the functionalities of AprèsCoT. "
+                    "You may choose GPT-4o or ChatGPT 3.5 as your desired Large Language Model to answer "
+                    "you question. Currently, the only knowledge graph to be used as the underlying data "
+                    "structure for the QA task is MetaQA's movies knowledge graph. You may type in a " 
+                    "question in the \"Question\" field with proper formatting and click the "
+                    "\"Generate\" button, and the chatbot will be prompted with proper information "
+                    "and your question. The responses and utilized prompts will be shown in "
+                    "their corresponding tables. Below, you may find and use some sample questions "
+                    "with proper formatting to which the LLM can respond: \n\n"
+                    "In which movies have Gary Oldman and Tom Hardy both starred? --> Required Search Depth = 1 \n"
+                    "What were the release years of the films starred by Jean Rochefort?"
+                    " --> Required Search Depth = 2 \n"
+                    "Who acted in the films written by Peter Yeldham? --> Required Search Depth = 2 \n"
+                    "Who starred in The Dark Knight Rises? --> Required Search Depth = 1 \n"
+                    "What genres are the films starred by Luke Kirby? --> Required Search Depth = 2 \n"
+                    "What types are the films starred by actors in The Exploding Girl? --> Required Search Depth = 3 \n"
+                    "When did the movies whose directors also directed Down Terrace release? --> Required Search Depth = 3 \n"
+                    "What genres are the films starred by Alessandro Nivola? --> Required Search Depth = 2 \n"
+                    "Which actors starred movies for the director of Muppets from Space? --> Required Search Depth = 3 \n"
+                ),
+                className="mb-0",
+            ),
+        ],
+        color="success",
+        style={"whiteSpace": "pre-line"},
+        dismissable=True
+    )
+
+
+def build_examples_welcome_alert() -> dbc.Alert:
+    """
+    Build a "Welcome" alert welcoming users to the AprèsCoT's examples page.
     """
     return dbc.Alert(
         [
@@ -378,10 +421,16 @@ def build_kage_welcome_alert() -> dbc.Alert:
 
 
 
-def build_kage_form_section(
+def build_form_section(
     question_input_id: str, hop_select_id: str, llm_select_id: str, kg_select_id: str,
-    generate_btn_id: str, llms: List[Dict[str, str]] = LLM_OPTIONS,
+    generate_btn_id: str, is_demo_mode: bool = False, 
+    llms: List[Dict[str, str]] = LLM_OPTIONS,
     knowledge_graphs: List[Dict[str, str]] = KG_OPTIONS,
+
+    use_case_1_btn_id: Optional[str] = None,
+    use_case_2_btn_id: Optional[str] = None,
+    use_case_3_btn_id: Optional[str] = None
+
 ) -> html.Div:
     """
     Build the form section of the page, containing welcome alert / use case buttons
@@ -400,7 +449,7 @@ def build_kage_form_section(
                             type="text",
                             placeholder="Enter your question",
                             maxlength=100,
-                            disabled=False
+                            disabled=is_demo_mode
                         ),
                     ],
                     sm=6,
@@ -413,7 +462,7 @@ def build_kage_form_section(
                             id=llm_select_id,
                             options=llms,
                             value=llms[0]["value"],
-                            disabled=False
+                            disabled=is_demo_mode
                         )
                     ],
                     sm=3,
@@ -426,7 +475,7 @@ def build_kage_form_section(
                             id=kg_select_id,
                             options=knowledge_graphs,
                             value=knowledge_graphs[0]["value"],
-                            disabled=False
+                            disabled=is_demo_mode
                         )
                     ],
                     sm=3,
@@ -448,29 +497,65 @@ def build_kage_form_section(
         style={"padding": 24, "background-color": "whitesmoke"},
     )))
     
-
-    return html.Div(dbc.Stack(
+    
+    if is_demo_mode:
+        return html.Div(dbc.Stack(
             [
-                build_kage_welcome_alert(),
+                build_examples_welcome_alert(),
+                html.Div([
+                    dbc.Button(
+                        "Use Case 1: Consistent Answers and CoT",
+                        id=use_case_1_btn_id,
+                        outline=True, color="primary", className="me-1"
+                    ),
+                    dbc.Button(
+                        "Use Case 2: Inconsistent Answers and CoT",
+                        id=use_case_2_btn_id,
+                        outline=True, color="primary", className="me-1"
+                    ),
+                    dbc.Button(
+                        "Use Case 3: Inconsistent KG (Data Quality Issue)",
+                        id=use_case_3_btn_id,
+                        outline=True, color="primary", className="me-1"
+                    )
+                ]),
+                combined_form
+            ],
+            gap=2,
+        ))
+    else:
+        return html.Div(dbc.Stack(
+            [
+                build_demo_welcome_alert(),
                 combined_form
             ],
             gap=2,
         ))
 
 
-
-
-def build_kage_page_layout(
+def build_page_layout(
     question_input_id: str, hop_select_id: str, llm_select_id: str, 
     kg_select_id: str, description_table_id: str, subgraph_container_id: str, 
     qa_info_table_container_id: str, llm_answers_table_container_id: str, 
     llm_cot_table_container_id: str, generate_btn_id: str, results_id: str,
+    llms: List[Dict[str, str]] = LLM_OPTIONS,
+    kgs: List[Dict[str, str]] = KG_OPTIONS,
+
+    use_case_1_btn_id: Optional[str] = None,
+    use_case_2_btn_id: Optional[str] = None,
+    use_case_3_btn_id: Optional[str] = None
 ):
     """
     Build a basic page layout with a form and edge descriptions table.
     """
-    form_section = build_kage_form_section(
-        question_input_id, hop_select_id, llm_select_id, kg_select_id, generate_btn_id
+    is_demo_mode = use_case_1_btn_id is not None
+
+
+    form_section = build_form_section(
+        question_input_id, hop_select_id, llm_select_id, 
+        kg_select_id, generate_btn_id, is_demo_mode, 
+        llms, kgs,
+        use_case_1_btn_id, use_case_2_btn_id, use_case_3_btn_id
     )
 
     edge_desc_section = build_edge_description_section(description_table_id)

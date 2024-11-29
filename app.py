@@ -32,7 +32,6 @@ navbar = dbc.NavbarSimple(
     [
         dbc.NavItem(dbc.NavLink("Full Demo", href="demo")),
         dbc.NavItem(dbc.NavLink("Toy Examples", href="examples")),
-        # dbc.NavItem(dbc.NavLink("Knowledge Graph", href="kage")),
     ],
     brand=APP_NAME,
     brand_href="rage",

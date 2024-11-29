@@ -2,7 +2,7 @@ import dash
 from typing import List, Optional
 from dash import Input, Output, State, callback, ctx
 from services.components import (
-    build_kage_page_layout,
+    build_page_layout,
     build_edge_description_table, 
     build_qa_info_table, 
     build_llm_answers_table,
@@ -19,21 +19,21 @@ dash.register_page(__name__, title=APP_NAME)
 
 
 
-QUESTION_INPUT_ID = "KAGE_PAGE_QUESTION_INPUT_ID"
-HOP_SELECT_ID = "KAGE_PAGE_HOP_SELECT_ID"
-LLM_SELECT_ID = "KAGE_PAGE_LLM_SELECT_ID"
-KG_SELECT_ID = "KAGE_PAGE_KG_SELECT_ID"
-GENERATE_BUTTON_ID = "KAGE_PAGE_GENERATE_BUTTON_ID"
-DESCRIPTION_TABLE_CONTAINER_ID = "KAGE_PAGE_DESCRIPTION_TABLE_CONTAINER_ID"
-SUBGRAPH_CONTAINER_ID = "KAGE_PAGE_SUBGRAPH_CONTAINER_ID"
-SUBGRAPH_FIGURE_ID = "KAGE_PAGE_SUBGRAPH_FIGURE_ID"
-QA_INFO_TABLE_CONTAINER_ID = "KAGE_PAGE_INFO_TABLE_CONTAINER_ID"
-LLM_ANSWERS_TABLE_CONTAINER_ID = "KAGE_PAGE_LLM_ANSWERS_TABLE_CONTAINER_ID"
-LLM_COT_TABLE_CONTAINER_ID = "KAGE_PAGE_LLM_COT_TABLE_CONTAINER_ID"
-RESULT_SECTION_ID = "KAGE_RESULT_SECTION_ID"
+HOP_SELECT_ID = "DEMO_PAGE_HOP_SELECT_ID"
+QUESTION_INPUT_ID = "DEMO_PAGE_QUESTION_INPUT_ID"
+LLM_SELECT_ID = "DEMO_PAGE_LLM_SELECT_ID"
+KG_SELECT_ID = "DEMO_PAGE_KG_SELECT_ID"
+GENERATE_BUTTON_ID = "DEMO_PAGE_GENERATE_BUTTON_ID"
+DESCRIPTION_TABLE_CONTAINER_ID = "DEMO_PAGE_DESCRIPTION_TABLE_CONTAINER_ID"
+SUBGRAPH_CONTAINER_ID = "DEMO_PAGE_SUBGRAPH_CONTAINER_ID"
+SUBGRAPH_FIGURE_ID = "DEMO_PAGE_SUBGRAPH_FIGURE_ID"
+QA_INFO_TABLE_CONTAINER_ID = "DEMO_PAGE_INFO_TABLE_CONTAINER_ID"
+LLM_ANSWERS_TABLE_CONTAINER_ID = "DEMO_PAGE_LLM_ANSWERS_TABLE_CONTAINER_ID"
+LLM_COT_TABLE_CONTAINER_ID = "DEMO_PAGE_LLM_COT_TABLE_CONTAINER_ID"
+RESULT_SECTION_ID = "DEMO_RESULT_SECTION_ID"
 
 
-layout = build_kage_page_layout(
+layout = build_page_layout(
     QUESTION_INPUT_ID, HOP_SELECT_ID, LLM_SELECT_ID, KG_SELECT_ID,
     DESCRIPTION_TABLE_CONTAINER_ID, SUBGRAPH_CONTAINER_ID,
     QA_INFO_TABLE_CONTAINER_ID, LLM_ANSWERS_TABLE_CONTAINER_ID, 
@@ -101,9 +101,16 @@ def on_generate(gen_btn_n_clicks: int, question: str, supported_qa_model: str, k
         
         rag_enabled = not (system == "vanilla-gpt-3.5" or system == "vanilla-gpt-4o-mini")
 
-        instruction_msg, prompt, llm_response, subgraph_elements_list, subgraph_edge_desc_list, node_to_answer_match, subgraph_elements_list, cot_match_dicts = \
+        instruction_msg, prompt, llm_response, subgraph_edge_desc_list, node_to_answer_match, cot_match_dicts, subgraph_elements_list = \
             perform_qa(llm, kg_name, question, rag_enabled)
-                
+        
+
+        print("Node to Answer Match:\n", node_to_answer_match)
+
+        print("CoT to Edge Match:\n", cot_match_dicts)
+
+        print("Subgraph Elements:\n", subgraph_edge_desc_list)
+        
         doc_section = build_edge_description_table(subgraph_edge_desc_list)
         subgraph_section = draw_subgraph(subgraph_elements_list, SUBGRAPH_FIGURE_ID)
         
