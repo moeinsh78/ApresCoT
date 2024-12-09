@@ -8,6 +8,7 @@ from dash import dcc, html
 import dash_cytoscape as cyto
 
 from services.config import (
+    HIDDEN_STYLE, 
     LLM_OPTIONS,
     KG_OPTIONS,
 )
@@ -25,7 +26,7 @@ TABLE_FONT_SIZE = 16
 GRAPH_EDGE_FONT_SIZE = "4px"
 GRAPH_NODE_FONT_SIZE = "4px"
 
-SUBGRAPH_HEIGHT = "1200px"
+SUBGRAPH_HEIGHT = "650px"
 SUBGRAPH_NODE_COLOR = "#D3D3D3"
 SUBGRAPH_EDGE_COLOR = "#D3D3D3"
 GREEN_COT_COLOR = "#ADEBB3"
@@ -36,7 +37,7 @@ LIGHT_BLUE_COT_COLOR = "#54B84D"
 SOURCE_NODE_COLOR = "#182E6F"
 RESPONSE_NODE_COLOR = "#8FD9FB"
 SUBGRAPH_NODE_POSITIONING = "cose"
-NO_MATCH_COLOR = "#ED2100"
+NO_MATCH_COLOR = "#FFFFFF"
 
 
 TABLE_STYLE = {
@@ -145,7 +146,7 @@ def build_llm_answers_table(node_to_answer_match: List[Dict]) -> dbc.Table:
         [html.Tbody([
             html.Tr([
                 html.Td(
-                    f"[{i + 1}]",
+                    f"[A{i + 1}]",
                     style={"background-color": colors[i]},
                 ),
                 html.Td(ans["Answer"]),
@@ -162,11 +163,11 @@ def build_llm_cot_table(cot_match_dicts: List[Dict]) -> dbc.Table:
     Build a table that displays the chain of thought items that the llm has given.
     """
     colors = []
-    index = 0
+    # index = 0
     for cot_step_info in cot_match_dicts:
-        index += 1
+        # index += 1
 
-        print("Index:", index, cot_step_info)
+        # print("Index:", index, cot_step_info)
         if cot_step_info["Most Similar Context ID"] == "No Match":
             colors.append(NO_MATCH_COLOR)
         else: 
@@ -178,12 +179,11 @@ def build_llm_cot_table(cot_match_dicts: List[Dict]) -> dbc.Table:
         [html.Tbody([
             html.Tr([
                 html.Td(
-                    f"[{i + 1}]",
+                    f"[S{i + 1}]",
                     style={"background-color": colors[i]},
                 ),
                 html.Td(cot_step_info["COT Step"]),
-            ], 
-            id={"type": "table-row", "id": f"{cot_step_info['Most Similar Context ID']}"},)
+            ])
             for i, cot_step_info in enumerate(cot_match_dicts)
         ])],
         style=TABLE_STYLE,
@@ -510,14 +510,14 @@ def build_form_section(
                     ),
                     dbc.Button(
                         "Use Case 2: Inconsistent Answers and CoT",
-                        id=use_case_2_btn_id,
+                        id=use_case_3_btn_id,
                         outline=True, color="primary", className="me-1"
                     ),
                     dbc.Button(
                         "Use Case 3: Inconsistent KG (Data Quality Issue)",
-                        id=use_case_3_btn_id,
+                        id=use_case_2_btn_id,
                         outline=True, color="primary", className="me-1"
-                    )
+                    ),
                 ]),
                 combined_form
             ],
@@ -558,29 +558,40 @@ def build_page_layout(
         use_case_1_btn_id, use_case_2_btn_id, use_case_3_btn_id
     )
 
-    edge_desc_section = build_edge_description_section(description_table_id)
+    # edge_desc_section = build_edge_description_section(description_table_id)
     subgraph_section = build_subgraph_section(subgraph_container_id)
-    qa_info_section = build_qa_info_section(qa_info_table_container_id)
+    # qa_info_section = build_qa_info_section(qa_info_table_container_id)
     llm_response_section = build_llm_response_section(llm_answers_table_container_id, llm_cot_table_container_id)
 
 
     return dbc.Stack(
         [
-            html.Div(
+            html.Div([
                 form_section,
-            ),
+            ]),
             html.Div(
-                llm_response_section
-            ),
-            html.Div(
-                subgraph_section
-            ),
-            html.Div(
-                edge_desc_section
-            ),
-            html.Div(
-                qa_info_section
-            ),
+                dbc.Stack(
+                    [llm_response_section, subgraph_section],
+                    gap=5
+                ),
+                id=results_id,
+                style=HIDDEN_STYLE
+            )
+            # html.Div(
+            #     form_section,
+            # ),
+            # html.Div(
+            #     llm_response_section
+            # ),
+            # html.Div(
+            #     subgraph_section
+            # ),
+            # html.Div(
+            #     edge_desc_section
+            # ),
+            # html.Div(
+            #     qa_info_section
+            # ),
         ],
         gap=5,
         style={"padding": 20}

@@ -17,6 +17,27 @@ app = Dash(
     pages_folder="pages"
 )
 
+app.index_string = '''
+<!DOCTYPE html>
+<html>
+    <head>
+        {%metas%}
+        <title>{%title%}</title>
+        {%favicon%}
+        {%css%}
+        <link rel="icon" href="assets/apricot.png" type="image/png">
+    </head>
+    <body>
+        {%app_entry%}
+        <footer>
+            {%config%}
+            {%scripts%}
+            {%renderer%}
+        </footer>
+    </body>
+</html>
+'''
+
 
 @server.before_request
 def index_redirect():
@@ -25,7 +46,7 @@ def index_redirect():
     """
     if request.method == 'GET':
         if request.path == app.config['url_base_pathname']:
-            return redirect(f"{app.config['url_base_pathname']}demo")
+            return redirect(f"{app.config['url_base_pathname']}examples")
 
 
 navbar = dbc.NavbarSimple(

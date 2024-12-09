@@ -6,15 +6,12 @@ from services.examplesAssets import (
 from typing import Optional
 from dash import Input, Output, State, callback, ctx
 from services.components import (
-    # EMPTY_PIE_GRAPH_FIG, 
     build_page_layout,
     build_edge_description_table,
     build_llm_answers_table,
     build_llm_cot_table,
     draw_subgraph
 )
-
-
 
 
 from services.config import (
@@ -137,16 +134,20 @@ def on_click_use_case_button(
         use_case_num = 3
 
     question, llm, kg = get_toy_form_for_use_case(use_case_num)
+    print("Question:", question)
+    print("LLM:", llm)
+    print("KG:", kg)
     return question, llm, kg, use_case_num == 1, use_case_num == 2, use_case_num == 3
 
 
 
 @callback(
-    Output(DESCRIPTION_TABLE_CONTAINER_ID, "children"),
+    # Output(DESCRIPTION_TABLE_CONTAINER_ID, "children"),
     Output(SUBGRAPH_CONTAINER_ID, "children"),
-    Output(QA_INFO_TABLE_CONTAINER_ID, "children"),
+    # Output(QA_INFO_TABLE_CONTAINER_ID, "children"),
     Output(LLM_ANSWERS_TABLE_CONTAINER_ID, "children"),
     Output(LLM_COT_TABLE_CONTAINER_ID, "children"),
+    Output(RESULT_SECTION_ID, "style"),
     Input(GENERATE_BUTTON_ID, "n_clicks"),
     State(USE_CASE_1_BUTTON_ID, "active"),
     State(USE_CASE_2_BUTTON_ID, "active"),
@@ -159,6 +160,7 @@ def on_generate(
 
     doc_section, subgraph_section = None, None
     QA_section, llm_answers_section, llm_cot_section = None, None, None
+    results_style = HIDDEN_STYLE
 
     if not input_is_invalid:
         # Set current use case number
@@ -169,14 +171,17 @@ def on_generate(
             use_case_num = 3
 
         desired_use_case_outputs = OUTPUT_LISTS[use_case_num-1]
-        doc_section = build_edge_description_table(desired_use_case_outputs["EDGE_DESCS"])
+        # doc_section = build_edge_description_table(desired_use_case_outputs["EDGE_DESCS"])
         subgraph_section = draw_subgraph(desired_use_case_outputs["GRAPH_ELEMENTS"], SUBGRAPH_FIGURE_ID)
             
-        QA_section = None
+        # QA_section = None
         llm_answers_section = build_llm_answers_table(desired_use_case_outputs["ANSWERS"])
         llm_cot_section = build_llm_cot_table(desired_use_case_outputs["COT_STEPS"])
+        
+        results_style = VISIBLE_STYLE
 
-    return doc_section, subgraph_section, QA_section, llm_answers_section, llm_cot_section
+    return subgraph_section, llm_answers_section, llm_cot_section, results_style
+    # return doc_section, subgraph_section, QA_section, llm_answers_section, llm_cot_section
 
 
 
