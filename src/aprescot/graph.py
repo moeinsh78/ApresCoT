@@ -4,7 +4,6 @@ import pandas as pd
 import numpy as np
 import requests
 from queue import PriorityQueue
-import copy
 
 from sklearn.metrics.pairwise import cosine_similarity
 from sentence_transformers import SentenceTransformer

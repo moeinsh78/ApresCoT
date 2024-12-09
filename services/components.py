@@ -325,13 +325,6 @@ def draw_subgraph(subgraph_elements_list: List[Dict], subgraph_figure_id: str) -
                         "line-color": LIGHT_GREEN_COT_COLOR,
                     }
                 },
-                # {
-                #     "selector": "edge.cy-hovered-edge", 
-                #     "style": {
-                #         "line-color": "red", 
-                #         "width": 4
-                #     }
-                # }
             ]
         ),
         ], 
@@ -348,7 +341,7 @@ def build_demo_welcome_alert() -> dbc.Alert:
     """
     return dbc.Alert(
         [
-            html.H4("Welcome to AprèsCoT!"),
+            html.H4("Welcome to the AprèsCoT's demo page!"),
             html.Hr(),
             html.P(
                 (
@@ -391,25 +384,13 @@ def build_examples_welcome_alert() -> dbc.Alert:
             html.Hr(),
             html.P(
                 (
-                    "On this page, you may explore the functionalities of AprèsCoT. "
-                    "You may choose GPT-4o or ChatGPT 3.5 as your desired Large Language Model to answer "
-                    "you question. Currently, the only knowledge graph to be used as the underlying data "
-                    "structure for the QA task is MetaQA's movies knowledge graph. You may type in a " 
-                    "question in the \"Question\" field with proper formatting and click the "
-                    "\"Generate\" button, and the chatbot will be prompted with proper information "
-                    "and your question. The responses and utilized prompts will be shown in "
-                    "their corresponding tables. Below, you may find and use some sample questions "
-                    "with proper formatting to which the LLM can respond: \n\n"
-                    "In which movies have Gary Oldman and Tom Hardy both starred? --> Required Search Depth = 1 \n"
-                    "What were the release years of the films starred by Jean Rochefort?"
-                    " --> Required Search Depth = 2 \n"
-                    "Who acted in the films written by Peter Yeldham? --> Required Search Depth = 2 \n"
-                    "Who starred in The Dark Knight Rises? --> Required Search Depth = 1 \n"
-                    "What genres are the films starred by Luke Kirby? --> Required Search Depth = 2 \n"
-                    "What types are the films starred by actors in The Exploding Girl? --> Required Search Depth = 3 \n"
-                    "When did the movies whose directors also directed Down Terrace release? --> Required Search Depth = 3 \n"
-                    "What genres are the films starred by Alessandro Nivola? --> Required Search Depth = 2 \n"
-                    "Which actors starred movies for the director of Muppets from Space? --> Required Search Depth = 3 \n"
+                    "In this page, you may explore the use cases described in the paper, "
+                    "and interact with sample explanations. To generate these explanations, "
+                    "select one of the use case buttons below, and then click "
+                    "\"Generate\". You may also interact with the subgraph by dragging and "
+                    "repositioning nodes and edges to view the knowledge graph labels and connections. "
+                    "When you are ready, we invite you to proceed to the full demo by "
+                    "selecting the \"Full Demo\" button in the navigation bar. Thanks!"
                 ),
                 className="mb-0",
             ),
@@ -509,13 +490,13 @@ def build_form_section(
                         outline=True, color="primary", className="me-1"
                     ),
                     dbc.Button(
-                        "Use Case 2: Inconsistent Answers and CoT",
-                        id=use_case_3_btn_id,
+                        "Use Case 2: Inconsistent KG (Data Quality Issue)",
+                        id=use_case_2_btn_id,
                         outline=True, color="primary", className="me-1"
                     ),
                     dbc.Button(
-                        "Use Case 3: Inconsistent KG (Data Quality Issue)",
-                        id=use_case_2_btn_id,
+                        "Use Case 3: Inconsistent Answers and CoT",
+                        id=use_case_3_btn_id,
                         outline=True, color="primary", className="me-1"
                     ),
                 ]),

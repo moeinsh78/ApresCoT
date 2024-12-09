@@ -1,5 +1,4 @@
 from typing import List, Dict, Sequence
-from rage.retriever import Source
 from src.aprescot.subKGRet import retrieve_subgraph, retrieve_uc2_subgraph
 from src.aprescot.prompting import create_prompt
 from src.aprescot.matching import match_edges, match_nodes

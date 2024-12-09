@@ -17,26 +17,26 @@ app = Dash(
     pages_folder="pages"
 )
 
-app.index_string = '''
-<!DOCTYPE html>
-<html>
-    <head>
-        {%metas%}
-        <title>{%title%}</title>
-        {%favicon%}
-        {%css%}
-        <link rel="icon" href="assets/apricot.png" type="image/png">
-    </head>
-    <body>
-        {%app_entry%}
-        <footer>
-            {%config%}
-            {%scripts%}
-            {%renderer%}
-        </footer>
-    </body>
-</html>
-'''
+# app.index_string = '''
+# <!DOCTYPE html>
+# <html>
+#     <head>
+#         {%metas%}
+#         <title>{%title%}</title>
+#         {%favicon%}
+#         {%css%}
+#         <link rel="icon" href="assets/favicon.png" type="image/png">
+#     </head>
+#     <body>
+#         {%app_entry%}
+#         <footer>
+#             {%config%}
+#             {%scripts%}
+#             {%renderer%}
+#         </footer>
+#     </body>
+# </html>
+# '''
 
 
 @server.before_request

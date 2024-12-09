@@ -3,7 +3,7 @@ from services.examplesAssets import (
     get_toy_form_for_use_case,
     OUTPUT_LISTS
 )
-
+from time import sleep
 from typing import Optional
 from dash import Input, Output, State, callback, ctx
 from services.components import (
@@ -107,6 +107,7 @@ def on_generate(
     results_style = HIDDEN_STYLE
 
     if not input_is_invalid:
+        sleep(1.5)
         # Set current use case number
         use_case_num = 1
         if uc2_active:

@@ -1,7 +1,6 @@
 import dash
 from typing import List, Optional
 from dash import Input, Output, State, callback, ctx
-from time import sleep
 from services.components import (
     build_page_layout,
     build_edge_description_table, 
@@ -221,33 +220,3 @@ def on_generate(gen_btn_n_clicks: int, question: str, supported_qa_model: str, k
 #         results_style = VISIBLE_STYLE
 
 #     return subgraph_section, llm_answers_section, llm_cot_section, results_style
-
-
-
-# @callback(
-#     Output(SUBGRAPH_FIGURE_ID, "stylesheet"),
-#     Input({"type": "table-row", "id": dash.ALL}, "n_clicks"),
-#     State(SUBGRAPH_FIGURE_ID, "stylesheet"),
-# )
-# def highlight_edge(n_clicks, current_stylesheet):
-#     if not any(n_clicks):
-#         return current_stylesheet
-
-#     ctx = dash.callback_context
-#     if ctx.triggered:
-#         triggered_id = ctx.triggered[0]["prop_id"].split(".")[0]
-#         triggered_edge_id = f"edge{eval(triggered_id)['id']}"
-#         print("Triggered Edge ID:", triggered_edge_id)
-#         new_stylesheet = current_stylesheet\
-#             + [
-#                 {"selector": f"edge[id = '{triggered_edge_id}']", "style": {"classes": "cy-hovered-edge"}}
-#             ]
-
-#         print("New Stylesheet after click:")
-#         for style in new_stylesheet:
-#             print(style)
-
-#         return new_stylesheet
-
-
-#     return current_stylesheet
