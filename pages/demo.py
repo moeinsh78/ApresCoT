@@ -18,13 +18,7 @@ from services.config import (
     HIDDEN_STYLE,
 )
 
-from rage.qa import (
-    perform_qa
-)
-
-from services.examplesAssets import (
-    OUTPUT_LISTS
-)
+from src.aprescot.qa import perform_qa
 
 dash.register_page(__name__, title=APP_NAME)
 
@@ -51,36 +45,6 @@ layout = build_page_layout(
     LLM_COT_TABLE_CONTAINER_ID, GENERATE_BUTTON_ID, RESULT_SECTION_ID
 )
 
-
-
-
-# @callback(
-#     Output(SUBGRAPH_FIGURE_ID, "stylesheet"),
-#     Input({"type": "table-row", "id": dash.ALL}, "n_clicks"),
-#     State(SUBGRAPH_FIGURE_ID, "stylesheet"),
-# )
-# def highlight_edge(n_clicks, current_stylesheet):
-#     if not any(n_clicks):
-#         return current_stylesheet
-
-#     ctx = dash.callback_context
-#     if ctx.triggered:
-#         triggered_id = ctx.triggered[0]["prop_id"].split(".")[0]
-#         triggered_edge_id = f"edge{eval(triggered_id)['id']}"
-#         print("Triggered Edge ID:", triggered_edge_id)
-#         new_stylesheet = current_stylesheet\
-#             + [
-#                 {"selector": f"edge[id = '{triggered_edge_id}']", "style": {"classes": "cy-hovered-edge"}}
-#             ]
-
-#         print("New Stylesheet after click:")
-#         for style in new_stylesheet:
-#             print(style)
-
-#         return new_stylesheet
-
-
-#     return current_stylesheet
 
 
 @callback(
@@ -259,3 +223,31 @@ def on_generate(gen_btn_n_clicks: int, question: str, supported_qa_model: str, k
 #     return subgraph_section, llm_answers_section, llm_cot_section, results_style
 
 
+
+# @callback(
+#     Output(SUBGRAPH_FIGURE_ID, "stylesheet"),
+#     Input({"type": "table-row", "id": dash.ALL}, "n_clicks"),
+#     State(SUBGRAPH_FIGURE_ID, "stylesheet"),
+# )
+# def highlight_edge(n_clicks, current_stylesheet):
+#     if not any(n_clicks):
+#         return current_stylesheet
+
+#     ctx = dash.callback_context
+#     if ctx.triggered:
+#         triggered_id = ctx.triggered[0]["prop_id"].split(".")[0]
+#         triggered_edge_id = f"edge{eval(triggered_id)['id']}"
+#         print("Triggered Edge ID:", triggered_edge_id)
+#         new_stylesheet = current_stylesheet\
+#             + [
+#                 {"selector": f"edge[id = '{triggered_edge_id}']", "style": {"classes": "cy-hovered-edge"}}
+#             ]
+
+#         print("New Stylesheet after click:")
+#         for style in new_stylesheet:
+#             print(style)
+
+#         return new_stylesheet
+
+
+#     return current_stylesheet
