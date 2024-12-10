@@ -1,4 +1,4 @@
-from typing import Tuple
+from typing import Tuple, Dict, List
 import networkx as nx
 import pandas as pd
 import numpy as np
@@ -146,7 +146,7 @@ class MetaQAKnowledgeGraph:
             
             curr_depth += 1
             
-        return edge_dict_list, nodes
+        return edge_dict_list
     
     
     
@@ -165,10 +165,10 @@ class MetaQAKnowledgeGraph:
     
         edge_dict_list = []
         for entity in seed_entities:
-            edges, nodes_set = self.get_bfs_subgraph(graph, entity, depth, expand_ending_nodes = False)
+            edges = self.get_bfs_subgraph(graph, entity, depth, expand_ending_nodes = False)
             edge_dict_list.extend(edges)
     
-        return edge_dict_list, nodes_set
+        return edge_dict_list, self.get_nodes_set(edge_dict_list)
     
 
 
@@ -179,8 +179,6 @@ class MetaQAKnowledgeGraph:
             edge_desc_list.append(edge_dict["description"])
 
         return edge_desc_list
-
-
 
 
 
@@ -253,16 +251,17 @@ class MetaQAKnowledgeGraph:
                     #     break
 
         
-        # print_pool(path_pool)
         print("Final Edge List:\n")
         for edge in edge_list:
             print(edge)
-        return edge_list, self.get_nodes_set(edge_list)
+        return edge_list
 
 
-    def get_nodes_set(self, edge_list):
+    def get_nodes_set(self, edge_dict_list: List[Dict]):
         nodes_set = set()
-        for edge in edge_list:
+        for edge in edge_dict_list:
+            print(edge)
+            print("-")
             nodes_set.add(edge["from"])
             nodes_set.add(edge["to"])
         
@@ -273,15 +272,10 @@ class MetaQAKnowledgeGraph:
         graph = self.build_knowledge_graph(edge_list_file = self.kg_directory)
         similarity_model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
-        edge_dict_list, nodes_set = self.get_similarity_based_subgraph(graph, similarity_model, question, seed_entities, depth, 
+        edge_dict_list = self.get_similarity_based_subgraph(graph, similarity_model, question, seed_entities, depth, 
                                                             not_to_expand_relation_labels = ["release_year", "in_language", "has_tags", "has_genre", "has_imdb_rating", "has_imdb_votes"])
         
-        # for entity in seed_entities:
-        #     edges, nodes_set = self.get_bfs_subgraph(graph, entity, depth, expand_ending_nodes = True)
-        #     edge_dict_list.extend(edges)
-
-    
-        return edge_dict_list, nodes_set
+        return edge_dict_list, self.get_nodes_set(edge_dict_list)
     
 
 

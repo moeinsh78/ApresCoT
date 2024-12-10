@@ -345,25 +345,15 @@ def build_demo_welcome_alert() -> dbc.Alert:
             html.Hr(),
             html.P(
                 (
-                    "On this page, you may explore the functionalities of AprèsCoT. "
-                    "You may choose GPT-4o or ChatGPT 3.5 as your desired Large Language Model to answer "
-                    "you question. Currently, the only knowledge graph to be used as the underlying data "
-                    "structure for the QA task is MetaQA's movies knowledge graph. You may type in a " 
-                    "question in the \"Question\" field with proper formatting and click the "
-                    "\"Generate\" button, and the chatbot will be prompted with proper information "
-                    "and your question. The responses and utilized prompts will be shown in "
-                    "their corresponding tables. Below, you may find and use some sample questions "
-                    "with proper formatting to which the LLM can respond: \n\n"
-                    "In which movies have Gary Oldman and Tom Hardy both starred? --> Required Search Depth = 1 \n"
-                    "What were the release years of the films starred by Jean Rochefort?"
-                    " --> Required Search Depth = 2 \n"
-                    "Who acted in the films written by Peter Yeldham? --> Required Search Depth = 2 \n"
-                    "Who starred in The Dark Knight Rises? --> Required Search Depth = 1 \n"
-                    "What genres are the films starred by Luke Kirby? --> Required Search Depth = 2 \n"
-                    "What types are the films starred by actors in The Exploding Girl? --> Required Search Depth = 3 \n"
-                    "When did the movies whose directors also directed Down Terrace release? --> Required Search Depth = 3 \n"
-                    "What genres are the films starred by Alessandro Nivola? --> Required Search Depth = 2 \n"
-                    "Which actors starred movies for the director of Muppets from Space? --> Required Search Depth = 3 \n"
+                    "On this page, you may interact with AprèsCoT. "
+                    "You may enter a question, choose a Large Language Model to answer your question, "
+                    "and pick a knowledge graph (KG) to ground the LLM's response. Upon clicking \"Generate\", "
+                    "the selected LLM will be prompted to answer your question, and the response and " 
+                    "reasoning steps will be mapped onto the chosen knowledge graph. "
+                    "\n\nBelow, you may find and use some sample questions with their corresponding KG to get started: \n"
+                    "What other movies have the same actor with the movie Inception? --> KG: MetaQA Movies \n"
+                    "What were the release years of the films starred by Jean Rochefort? --> KG: MetaQA Movies \n"
+                    "What types of animals are affected by dysfunctions caused by Fungus? --> KG: UMLS Relations \n"
                 ),
                 className="mb-0",
             ),

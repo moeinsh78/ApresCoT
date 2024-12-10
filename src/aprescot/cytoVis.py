@@ -17,8 +17,8 @@ def build_cyto_subgraph_elements_list(seed_nodes, nodes_set, edge_dict_list, edg
 
     for i, edge_dict in enumerate(edge_dict_list):
         if (i + 1) in edge_to_cot_match:
-            graph_elements.append({"data": {"source": edge_dict["from"], "target": edge_dict["to"], "weight": f"[S{edge_to_cot_match[i + 1]}] " + edge_dict["label"], "id": f"edge{i + 1}"}, "classes": "curved cot-edge"})
+            graph_elements.append({"data": {"source": edge_dict["from"], "target": edge_dict["to"], "weight": f"[S{edge_to_cot_match[i + 1]}] " + edge_dict["label"]}, "classes": "curved cot-edge"})
         else:
-            graph_elements.append({"data": {"source": edge_dict["from"], "target": edge_dict["to"], "weight": edge_dict["label"], "id": f"edge{i + 1}"}, "classes": "curved"})
+            graph_elements.append({"data": {"source": edge_dict["from"], "target": edge_dict["to"], "weight": edge_dict["label"]}, "classes": "curved"})
 
     return graph_elements

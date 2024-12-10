@@ -6,15 +6,15 @@ from typing import List, Dict
 
 USE_CASE_1_QUERY = "What were the release years of the films starred by Jean Rochefort?"
 USE_CASE_1_LLM = "ChatGPT 3.5 + KG RAG"
-USE_CASE_1_KG = "MetaQA Movies"
+USE_CASE_1_KG = "meta-qa"
 
-USE_CASE_2_QUERY = "What types of animals are affected by dysfunctions caused by Fungus?"
-USE_CASE_2_LLM = "ChatGPT 3.5 + KG RAG"
-USE_CASE_2_KG = "UMLS Relations"
+USE_CASE_2_QUERY = "What were the release years of the films starred by Jean Rochefort?"
+USE_CASE_2_LLM = "GPT-4o Mini"
+USE_CASE_2_KG = "meta-qa"
 
-USE_CASE_3_QUERY = "What were the release years of the films starred by Jean Rochefort?"
-USE_CASE_3_LLM = "GPT-4o Mini"
-USE_CASE_3_KG = "MetaQA Movies"
+USE_CASE_3_QUERY = "What types of animals are affected by dysfunctions caused by Fungus?"
+USE_CASE_3_LLM = "ChatGPT 3.5 + KG RAG"
+USE_CASE_3_KG = "umls"
 
 TOY_QUERIES = [USE_CASE_1_QUERY, USE_CASE_2_QUERY, USE_CASE_3_QUERY]
 TOY_LLMS = [USE_CASE_1_LLM, USE_CASE_2_LLM, USE_CASE_3_LLM]
@@ -487,29 +487,17 @@ USE_CASE_3_OUTPUTS = {
     "GRAPH_ELEMENTS": USE_CASE_3_GRAPH_ELEMENTS
 }
 
-USE_CASE_3_ALTER_OUTPUTS = {
-    "COT_STEPS": USE_CASE_3_ALTER_COT_STEPS, 
-    "ANSWERS": USE_CASE_3_ALTER_ANSWERS, 
-    "EDGE_DESCS": USE_CASE_3_ALTER_EDGE_DESCS, 
-    "GRAPH_ELEMENTS": USE_CASE_3_ALTER_GRAPH_ELEMENTS
-}
+# USE_CASE_3_ALTER_OUTPUTS = {
+#     "COT_STEPS": USE_CASE_3_ALTER_COT_STEPS, 
+#     "ANSWERS": USE_CASE_3_ALTER_ANSWERS, 
+#     "EDGE_DESCS": USE_CASE_3_ALTER_EDGE_DESCS, 
+#     "GRAPH_ELEMENTS": USE_CASE_3_ALTER_GRAPH_ELEMENTS
+# }
 
-OUTPUT_LISTS = [USE_CASE_1_OUTPUTS, USE_CASE_2_OUTPUTS, USE_CASE_3_OUTPUTS, USE_CASE_3_ALTER_OUTPUTS]
+OUTPUT_LISTS = [USE_CASE_1_OUTPUTS, USE_CASE_2_OUTPUTS, USE_CASE_3_OUTPUTS]
 
 
 
 
 def get_toy_form_for_use_case(use_case_num: int):
     return TOY_QUERIES[use_case_num-1], TOY_LLMS[use_case_num-1], TOY_KGS[use_case_num-1]
-
-
-# def get_toy_insights_for_use_case(use_case_num: int):
-#     desired_use_case_outputs = OUTPUT_LISTS[use_case_num-1]
-#     doc_section = build_edge_description_table(desired_use_case_outputs["EDGE_DESCS"])
-#     subgraph_section = draw_subgraph(desired_use_case_outputs["GRAPH_ELEMENTS"], SUBGRAPH_FIGURE_ID)
-        
-#     QA_section = None
-#     llm_answers_section = build_llm_answers_table(desired_use_case_outputs["ANSWERS"])
-#     llm_cot_section = build_llm_cot_table(desired_use_case_outputs["COT_STEPS"])
-
-#     return doc_section, subgraph_section, QA_section, llm_answers_section, llm_cot_section 
