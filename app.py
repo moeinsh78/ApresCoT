@@ -68,4 +68,4 @@ app.layout = html.Div(
 )
 
 if __name__ == "__main__":
-    app.run_server(host="0.0.0.0", debug=True, use_reloader=False)
+    app.run_server(host="0.0.0.0", debug=False, use_reloader=False)
