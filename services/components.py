@@ -480,7 +480,7 @@ def build_form_section(
                         outline=True, color="primary", className="me-1"
                     ),
                     dbc.Button(
-                        "Use Case 2: Inconsistent KG (Data Quality Issue)",
+                        "Use Case 2: Knowledge Graph Data Quality",
                         id=use_case_2_btn_id,
                         outline=True, color="primary", className="me-1"
                     ),
