@@ -95,17 +95,15 @@ Failure to do so could result in incorrect information being provided to users, 
 
 UMLS_SEED_ENTITY_INSTRUCTION = \
 """
-You are interacting with a knowledge graph that contains definitions and relational information of medical terminologies. 
-A question will be asked about medical concepts, and to provide a precise and relevant answer to this question, you are expected to:
+You are interacting with a knowledge graph that contains definitions and relational information of medical terminologies.
+A question will be asked about medical concepts, and you are expected to:
 
-1. Understand the Question Thoroughly: Analyze the question deeply to identify which specific medical terminologies and their interrelations, as extracted from the knowledge graph, are crucial for formulating an accurate response.
+1. Extract Seed Entities: Based on the question, identify the seed entities that the search need to be started from them. There might be multiple seed entities.
+2. Format the Output : Return in a structured JSON format with the key as "seed entities". For example:
 
-2. Extract Key Terminologies: Return at most 4 relevant medical terminologies based on their significance to the question.
+{"seed entities": ["Term1", "Term2", ...]}
 
-3. Format the Output : Return in a structured JSON format with the key as "medical terminologies". For example:
-
-{"medical terminologies": ["term1", "term2", ...]}
-
+Please provide terms with title-case capitalization.
 Do not answer the question. Just extract the key terminologies in the question. Failure to do so could result in incorrect information being provided to users, which could lead to a loss of trust in our service.
 """
 
@@ -125,7 +123,7 @@ Do not answer the question. Just extract the seed entities in the question. Fail
 
 
 
-MOVIES_SEED_ENTITY_PROMPT = \
+SEED_ENTITY_PROMPT = \
 """# Question:
 {}
 
@@ -133,13 +131,13 @@ In a JSON format, please provide a list of seed entities that are crucial to sta
 """
 
 
-UMLS_SEED_ENTITY_PROMPT = \
-"""# Question:
-{}
+# SEED_ENTITY_PROMPT = \
+# """# Question:
+# {}
 
-In a JSON format, please provide the most relevant medical terminologies that are crucial for formulating an accurate response to the question. 
-Please avoid including extra terminologies, and just consider the question.
-"""
+# In a JSON format, please provide the most relevant medical terminologies that are crucial for formulating an accurate response to the question. 
+# Please avoid including extra terminologies, and just consider the question.
+# """
 
 
 SEED_ENTITY_INSTRUCTIONS = {
@@ -147,13 +145,7 @@ SEED_ENTITY_INSTRUCTIONS = {
     "meta-qa": MOVIES_SEED_ENTITY_INSTRUCTION
 }
 
-SEED_ENTITY_PROMPTS = {
-    "umls": UMLS_SEED_ENTITY_PROMPT,
-    "meta-qa": MOVIES_SEED_ENTITY_PROMPT
-}
-
-
-SEED_ENTITY_JSON_KEYS = {
-    "umls": "medical terminologies",
-    "meta-qa": "seed entities"
-}
+# SEED_ENTITY_PROMPTS = {
+#     "umls": UMLS_SEED_ENTITY_PROMPT,
+#     "meta-qa": MOVIES_SEED_ENTITY_PROMPT
+# }

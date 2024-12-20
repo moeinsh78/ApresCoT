@@ -3,8 +3,8 @@ from langchain_openai import ChatOpenAI
 from src.aprescot.graph import UMLSKnowledgeGraph, MetaQAKnowledgeGraph
 from src.aprescot.prompting import (
     SEED_ENTITY_INSTRUCTIONS, 
-    SEED_ENTITY_PROMPTS, 
-    SEED_ENTITY_JSON_KEYS
+    SEED_ENTITY_PROMPT, 
+    # SEED_ENTITY_JSON_KEYS
 )
 
 
@@ -13,13 +13,13 @@ def get_seed_entities(question: str, kg: str):
     
     messages = [
         ("system", SEED_ENTITY_INSTRUCTIONS[kg]),
-        ("user", SEED_ENTITY_PROMPTS[kg].format(question)),
+        ("user", SEED_ENTITY_PROMPT.format(question)),
     ]
     
     response = seed_entities_llm.invoke(messages)
     response_json = json.loads(response.content)
 
-    return response_json[SEED_ENTITY_JSON_KEYS[kg]]
+    return response_json["seed entities"]
 
 
 def retrieve_uc2_subgraph(question: str, kg: str):
@@ -83,27 +83,14 @@ def retrieve_subgraph(question: str, kg: str, depth: int):
 
     if kg == "umls":
         umls_qa = UMLSKnowledgeGraph()
-        # seed_entities = get_seed_entities(question, kg)
-        # print("UMLS Seed Entities:", seed_entities)
+        seed_nodes = get_seed_entities(question, kg)
+        print("Seed Nodes: ", seed_nodes)
 
-        # for entity in seed_entities:
-        #     entity_cui = umls_qa.search_cui(entity)[0][0]
-        #     relations = umls_qa.get_relations(entity_cui)
+        # edge_dict_list, nodes_set = umls_qa.extract_surrounding_subgraph(seed_nodes, depth)
+        edge_dict_list, nodes_set = umls_qa.extract_relevant_subgraph(seed_nodes, question, depth)
+        edge_descriptions = umls_qa.extract_subgraph_edge_descriptions(edge_dict_list)
 
-        #     rels = []
-        #     responses = []        
-
-        #     if relations is not None:
-        #         for rel in relations:
-        #             related_from_id_name = rel.get("relatedFromIdName")
-        #             additional_relation_label = rel.get("additionalRelationLabel").replace("_", " ")
-        #             related_id_name = rel.get("relatedIdName")
-        #             rels.append((related_from_id_name, additional_relation_label, related_id_name))
-        #             responses.append(rel)
-
-        #     for rel, resp in zip(rels, responses):
-        #         print(rel)
-        pass
+        return seed_nodes, nodes_set, edge_dict_list, edge_descriptions
 
     else:
         print("Invalid Knowledge Graph:", kg)

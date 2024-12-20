@@ -27,10 +27,10 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
     # Subgraph Retrieval
     # seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list = retrieve_subgraph(question, kg, depth = 2)
     seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list = None, None, None, None
-    if kg == "umls":
-        seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list = retrieve_uc2_subgraph(question, "umls")
-    else:
-        seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list = retrieve_subgraph(question, kg, depth = 2)
+    # if kg == "umls":
+    #     seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list = retrieve_uc2_subgraph(question, "umls")
+    # else:
+    seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list = retrieve_subgraph(question, kg, depth = 2)
 
     # LLM QA Process
     instruction_msg, prompt = create_prompt(question, kg, rag, llm, subgraph_edge_desc_list)
