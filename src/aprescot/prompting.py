@@ -167,7 +167,7 @@ WIKIDATA_SEED_ENTITY_INSTRUCTION = \
 You are interacting with the WikiData general-purpose knowledge graph. 
 A question will be asked about any subject, and you are expected to:
 
-1. Extract Seed Entities: Based on the question, identify the key concepts, which can be the seed entities for the graph search. There might be multiple seed entities.
+1. Extract Seed Entities: Based on the question, identify the key concepts that can be the seed entities for the knowledge graph search. Avoid general terms and look for informative entities since the knowledge graph is general and already contains lots of information. There might be multiple seed entities.
 2. Format the Output : Return in a structured JSON format with the key as "seed entities". For example:
 
 {"seed entities": ["Actor1", "Actor2", ...]}

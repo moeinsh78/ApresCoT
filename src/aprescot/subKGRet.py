@@ -74,7 +74,10 @@ def retrieve_subgraph(question: str, kg: str, depth: int):
         wikidata_qa = WikiDataKnowledgeGraph()
         seed_entities_txt = get_seed_entities(question, kg)
         wikidata_seed_nodes = wikidata_qa.find_wikidata_entities(seed_entities_txt)
-        return wikidata_seed_nodes, None, None, None
+        q_ids = [node[0] for node in wikidata_seed_nodes]
+        wikidata_qa.extract_relevant_subgraph(q_ids)
+
+        return q_ids, None, None, None
 
     if kg == "meta-qa":
         movies_qa = MetaQAKnowledgeGraph()

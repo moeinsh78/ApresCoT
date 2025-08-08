@@ -10,7 +10,261 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sentence_transformers import SentenceTransformer
 
 
+import time
+import requests
+
+WDQS = "https://query.wikidata.org/sparql"
+HEADERS = {
+    "Accept": "application/sparql-results+json",
+    "User-Agent": "ApresCoT-Subgraph/1.0 (mailto:you@example.com)"
+}
+
+
+BALANCED = {
+    "P31","P279","P361","P527","P921",
+    "P131","P17","P495","P276",
+    "P170","P57","P58","P86","P50","P161","P1029",
+    "P136","P2283",
+    "P571","P577",
+    "P463","P102","P108","P39","P106",
+    "P530","P1376","P155","P156","P641"
+}
+
+
 class WikiDataKnowledgeGraph:
+    def run_sparql(self, query, retry=3, backoff=0.4):
+        last_err = None
+        for i in range(retry):
+            try:
+                r = requests.get(WDQS, params={"query": query}, headers=HEADERS, timeout=60)
+                if r.status_code == 200:
+                    return r.json()["results"]["bindings"]
+                last_err = RuntimeError(f"HTTP {r.status_code}: {r.text[:200]}")
+            except Exception as e:
+                last_err = e
+            time.sleep(backoff * (i + 1))
+        raise last_err
+
+    def _qid(self, uri: str) -> str:
+        return uri.rsplit("/", 1)[-1]
+
+    def _pid(self, uri: str) -> str:
+        return uri.rsplit("/", 1)[-1]
+
+    def one_hop(self, seed_q, limit=200, p_whitelist=None):
+        # Outgoing: seed wdt:P ?o (entity)
+        q_out = f"""
+        SELECT ?p ?o WHERE {{
+        VALUES ?seed {{ wd:{seed_q} }}
+        ?seed ?p ?o .
+        FILTER(STRSTARTS(STR(?p), STR(wdt:)))
+        FILTER(STRSTARTS(STR(?o), STR(wd:)))
+        }} LIMIT {limit*2}
+        """
+        # Incoming: ?s wdt:P seed (entity)
+        q_in = f"""
+        SELECT ?s ?p WHERE {{
+        VALUES ?seed {{ wd:{seed_q} }}
+        ?s ?p ?seed .
+        FILTER(STRSTARTS(STR(?p), STR(wdt:)))
+        FILTER(STRSTARTS(STR(?s), STR(wd:)))
+        }} LIMIT {limit*2}
+        """
+
+        out = self.run_sparql(q_out)
+        inn = self.run_sparql(q_in)
+
+        out_edges, in_edges = [], []
+        for b in out:
+            p = self._pid(b["p"]["value"])
+            o = self._qid(b["o"]["value"])
+            if (p_whitelist is None) or (p in p_whitelist):
+                out_edges.append((seed_q, p, o))
+                if len(out_edges) >= limit: break
+
+        for b in inn:
+            s = self._qid(b["s"]["value"])
+            p = self._pid(b["p"]["value"])
+            if (p_whitelist is None) or (p in p_whitelist):
+                in_edges.append((s, p, seed_q))
+                if len(in_edges) >= limit: break
+
+        return out_edges, in_edges
+
+    def two_hop(self, seed_q, per_path_limit=400, p_whitelist=None):
+        # Outgoing→Outgoing: seed -p1-> m -p2-> x
+        q_oo = f"""
+        SELECT ?p1 ?m ?p2 ?x WHERE {{
+        VALUES ?seed {{ wd:{seed_q} }}
+        ?seed ?p1 ?m .
+        ?m ?p2 ?x .
+        FILTER(STRSTARTS(STR(?p1), STR(wdt:)))
+        FILTER(STRSTARTS(STR(?p2), STR(wdt:)))
+        FILTER(STRSTARTS(STR(?m), STR(wd:)))
+        FILTER(STRSTARTS(STR(?x), STR(wd:)))
+        }} LIMIT {per_path_limit*2}
+        """
+        # Incoming→Incoming: s -p1-> seed ; y -p2-> s
+        q_ii = f"""
+        SELECT ?y ?p2 ?s ?p1 WHERE {{
+        VALUES ?seed {{ wd:{seed_q} }}
+        ?s ?p1 ?seed .
+        ?y ?p2 ?s .
+        FILTER(STRSTARTS(STR(?p1), STR(wdt:)))
+        FILTER(STRSTARTS(STR(?p2), STR(wdt:)))
+        FILTER(STRSTARTS(STR(?s), STR(wd:)))
+        FILTER(STRSTARTS(STR(?y), STR(wd:)))
+        }} LIMIT {per_path_limit*2}
+        """
+        # Outgoing→Incoming: seed -p1-> m ; y -p2-> m
+        q_oi = f"""
+        SELECT ?p1 ?m ?y ?p2 WHERE {{
+        VALUES ?seed {{ wd:{seed_q} }}
+        ?seed ?p1 ?m .
+        ?y ?p2 ?m .
+        FILTER(STRSTARTS(STR(?p1), STR(wdt:)))
+        FILTER(STRSTARTS(STR(?p2), STR(wdt:)))
+        FILTER(STRSTARTS(STR(?m), STR(wd:)))
+        FILTER(STRSTARTS(STR(?y), STR(wd:)))
+        }} LIMIT {per_path_limit*2}
+        """
+        # Incoming→Outgoing: s -p1-> seed ; s -p2-> x
+        q_io = f"""
+        SELECT ?s ?p1 ?p2 ?x WHERE {{
+        VALUES ?seed {{ wd:{seed_q} }}
+        ?s ?p1 ?seed .
+        ?s ?p2 ?x .
+        FILTER(STRSTARTS(STR(?p1), STR(wdt:)))
+        FILTER(STRSTARTS(STR(?p2), STR(wdt:)))
+        FILTER(STRSTARTS(STR(?s), STR(wd:)))
+        FILTER(STRSTARTS(STR(?x), STR(wd:)))
+        }} LIMIT {per_path_limit*2}
+        """
+
+        results = {
+            "oo": self.run_sparql(q_oo),
+            "ii": self.run_sparql(q_ii),
+            "oi": self.run_sparql(q_oi),
+            "io": self.run_sparql(q_io),
+        }
+
+        edges = []
+        def keep_p(p): return (p_whitelist is None) or (p in p_whitelist)
+
+        for b in results["oo"]:
+            p1 = self._pid(b["p1"]["value"]); m = self._qid(b["m"]["value"])
+            p2 = self._pid(b["p2"]["value"]); x = self._qid(b["x"]["value"])
+            if keep_p(p1) and keep_p(p2):
+                edges.append((seed_q, p1, m))
+                edges.append((m, p2, x))
+        for b in results["ii"]:
+            y = self._qid(b["y"]["value"]); p2 = self._pid(b["p2"]["value"])
+            s = self._qid(b["s"]["value"]); p1 = self._pid(b["p1"]["value"])
+            if keep_p(p1) and keep_p(p2):
+                edges.append((s, p1, seed_q))
+                edges.append((y, p2, s))
+        for b in results["oi"]:
+            p1 = self._pid(b["p1"]["value"]); m = self._qid(b["m"]["value"])
+            y  = self._qid(b["y"]["value"]);  p2 = self._pid(b["p2"]["value"])
+            if keep_p(p1) and keep_p(p2):
+                edges.append((seed_q, p1, m))
+                edges.append((y, p2, m))
+        for b in results["io"]:
+            s = self._qid(b["s"]["value"]); p1 = self._pid(b["p1"]["value"])
+            p2 = self._pid(b["p2"]["value"]); x = self._qid(b["x"]["value"])
+            if keep_p(p1) and keep_p(p2):
+                edges.append((s, p1, seed_q))
+                edges.append((s, p2, x))
+
+        # Dedup
+        edges = list(dict.fromkeys(edges))
+        return edges
+
+    def fetch_labels(self, qids, pids, lang="en"):
+        labels = {}
+        qids = list(set(qids))
+        pids = list(set(pids))
+
+        # Entity labels
+        for i in range(0, len(qids), 200):
+            vals = " ".join(f"wd:{q}" for q in qids[i:i+200])
+            q = f"""
+            SELECT ?e ?eLabel WHERE {{
+            VALUES ?e {{ {vals} }}
+            SERVICE wikibase:label {{ bd:serviceParam wikibase:language "{lang}". }}
+            }}
+            """
+            for b in self.run_sparql(q):
+                labels[self._qid(b["e"]["value"])] = b.get("eLabel", {}).get("value", "")
+
+        # Property labels
+        for i in range(0, len(pids), 200):
+            vals = " ".join(f"wd:{p}" for p in pids[i:i+200])
+            q = f"""
+            SELECT ?p ?pLabel WHERE {{
+            VALUES ?p {{ {vals} }}
+            SERVICE wikibase:label {{ bd:serviceParam wikibase:language "{lang}". }}
+            }}
+            """
+            for b in self.run_sparql(q):
+                labels[self._pid(b["p"]["value"])] = b.get("pLabel", {}).get("value", "")
+            
+        return labels
+
+    def extract_subgraph_two_hops(
+        self,
+        seed_qids,
+        one_hop_limit=200,
+        two_hop_limit=400,
+        p_whitelist=None,
+        label_lang="en",
+        total_edge_cap=8000
+    ):
+        nodes = set(seed_qids)
+        edges = []
+
+        # 1-hop (both directions)
+        for q in seed_qids:
+            out_e, in_e = self.one_hop(q, limit=one_hop_limit, p_whitelist=p_whitelist)
+            edges.extend(out_e); edges.extend(in_e)
+            for s,p,o in out_e: nodes.update([s,o])
+            for s,p,o in in_e:  nodes.update([s,o])
+
+            if len(edges) >= total_edge_cap: break
+
+        # 2-hop (four patterns) rooted at each seed
+        if len(edges) < total_edge_cap:
+            for q in seed_qids:
+                e2 = self.two_hop(q, per_path_limit=two_hop_limit, p_whitelist=p_whitelist)
+                edges.extend(e2)
+                for s,p,o in e2: nodes.update([s,o])
+                if len(edges) >= total_edge_cap: break
+
+        # Dedup & trim
+        edges = list(dict.fromkeys(edges))[:total_edge_cap]
+
+        # Gather labels
+        qids = {n for n in nodes if n.startswith("Q")}
+        pids = {p for _,p,_ in edges}
+        labels = self.fetch_labels(list(qids), list(pids), lang=label_lang)
+
+        edges = [(s, labels.get(p, p), o) for (s, p, o) in edges]
+
+        return {
+            "nodes": list(nodes),
+            "edges": edges,          # (subjectQ, predicateP, objectQ)
+            "labels": labels,        # Q/P -> label
+            "meta": {
+                "seeds": seed_qids,
+                "one_hop_limit": one_hop_limit,
+                "two_hop_limit": two_hop_limit,
+                "total_edge_cap": total_edge_cap,
+                "predicate_whitelist": sorted(list(p_whitelist)) if p_whitelist else None
+            }
+        }
+
+
+
     def search_wikidata_entity(self, query, language="en"):
         url = "https://www.wikidata.org/w/api.php"
         params = {
@@ -37,6 +291,25 @@ class WikiDataKnowledgeGraph:
                 print(f"Entity '{entity}' not found in Wikidata.")
 
         return entities_ids
+    
+    def extract_relevant_subgraph(self, seed_qids: List[str]) -> Tuple[List[str], Dict[str, str], List[Dict[str, str]], List[str]]:
+        # Optional: keep it general or pass a domain-specific prop whitelist
+        p_whitelist = BALANCED
+        sg = self.extract_subgraph_two_hops(
+            seed_qids,
+            one_hop_limit=80,
+            two_hop_limit=150,
+            p_whitelist=p_whitelist,
+            total_edge_cap=2000
+        )
+        print(f"Nodes: {len(sg['nodes'])}, Edges: {len(sg['edges'])}")
+        L = sg["labels"]
+        edges_labeled = [
+            (L.get(s, s), L.get(p, p), L.get(o, o))
+            for (s, p, o) in sg["edges"]
+        ]
+        for s, p, o in edges_labeled[:200]:
+            print(f"({s}) -[{p}]-> ({o})")
 
 
 class UMLSKnowledgeGraph:
