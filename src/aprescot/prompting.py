@@ -18,14 +18,52 @@ Think step by step, and write down all of the sentences that you used in your th
 """.format(edge_description_str, question)
     return prompt
 
+def build_regular_rag_qa_prompt(edge_descriptions: List[str], question: str):
+    question = re.sub(r'[\[\]]', '\"', question)
+    edge_description_str = ""
+    for i, desc in enumerate(edge_descriptions):
+        edge_description_str += (desc + "\n")
+
+    prompt = """# CONTEXT:
+{}
+
+# QUERY:
+{}
+
+Please provide your answer to this question based on the provided context, and explain your reasoning step by step by pointing out the information you used.
+""".format(edge_description_str, question)
+    return prompt
 
 
-def create_prompt(question: str, kg_name: str, rag: bool, llm: str, edge_descriptions: List[str]):
+
+def create_prompt(question: str, kg_name: str, rag: bool, llm: str, edge_descriptions: List[str], new_reasoning: bool = True):
+    if new_reasoning:
+        if rag:
+            return MOVIES_REGULAR_REASONING_INSTRUCTION, build_regular_rag_qa_prompt(edge_descriptions, question) 
+        else:
+            return MOVIES_REGULAR_REASONING_INSTRUCTION, f"# QUERY:\n{question}\n\nPlease provide your answer to this question and explain your reasoning step by step.\n"
     if rag:
         return KG_RAG_COT_INSTRUCTION, build_rag_qa_prompt(edge_descriptions, question)
     else:
-        return VANILLA_COT_INSTRUCTION, f"# QUERY:\n{question}\n\nLet's think step by step. Please provide any fact and sentence in your chain of thought separately. \n"
+        return VANILLA_COT_INSTRUCTION, f"# QUERY:\n{question}\n\nLet's think step by step. Please provide your reasoning steps and answers clearly. \n"
 
+
+MOVIES_REGULAR_REASONING_INSTRUCTION = \
+"""You are a QA assistant skilled in answering questions about movies.
+In each input, you might be provided with some external information (CONTEXT) including some SENTENCES, and a user query (QUESTION) about movies.
+You may not need all of the context information to answer the query. Just look for the information that helps you find the answer to the QUESTION and connect them together if needed.
+The input will be shaped as:
+
+# CONTEXT: (optional)
+A list of SENTENCES (optional)
+
+# QUERY:
+QUESTION
+
+Answer the QUESTION using the SENTENCES in the CONTEXT if any, or use your own information and reasoning to answer the question.
+
+Please identify your thought process and final answers in a clear way. 
+"""
 
 
 
@@ -123,6 +161,22 @@ Do not answer the question. Just extract the seed entities in the question. Fail
 
 
 
+
+WIKIDATA_SEED_ENTITY_INSTRUCTION = \
+"""
+You are interacting with the WikiData general-purpose knowledge graph. 
+A question will be asked about any subject, and you are expected to:
+
+1. Extract Seed Entities: Based on the question, identify the key concepts, which can be the seed entities for the graph search. There might be multiple seed entities.
+2. Format the Output : Return in a structured JSON format with the key as "seed entities". For example:
+
+{"seed entities": ["Actor1", "Actor2", ...]}
+
+Do not answer the question. Just extract the seed entities in the question. Failure to do so could result in incorrect information being provided to users, which could lead to a loss of trust in our service.
+"""
+
+
+
 SEED_ENTITY_PROMPT = \
 """# Question:
 {}
@@ -141,6 +195,7 @@ In a JSON format, please provide a list of seed entities that are crucial to sta
 
 
 SEED_ENTITY_INSTRUCTIONS = {
+    "wikidata": WIKIDATA_SEED_ENTITY_INSTRUCTION,
     "umls": UMLS_SEED_ENTITY_INSTRUCTION,
     "meta-qa": MOVIES_SEED_ENTITY_INSTRUCTION
 }

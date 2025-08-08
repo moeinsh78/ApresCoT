@@ -1,6 +1,6 @@
 import json
 from langchain_openai import ChatOpenAI
-from src.aprescot.graph import UMLSKnowledgeGraph, MetaQAKnowledgeGraph
+from src.aprescot.graph import UMLSKnowledgeGraph, MetaQAKnowledgeGraph, WikiDataKnowledgeGraph
 from src.aprescot.prompting import (
     SEED_ENTITY_INSTRUCTIONS, 
     SEED_ENTITY_PROMPT, 
@@ -70,6 +70,12 @@ def retrieve_uc2_subgraph(question: str, kg: str):
 
 
 def retrieve_subgraph(question: str, kg: str, depth: int):
+    if kg == "wikidata":
+        wikidata_qa = WikiDataKnowledgeGraph()
+        seed_entities_txt = get_seed_entities(question, kg)
+        wikidata_seed_nodes = wikidata_qa.find_wikidata_entities(seed_entities_txt)
+        return wikidata_seed_nodes, None, None, None
+
     if kg == "meta-qa":
         movies_qa = MetaQAKnowledgeGraph()
         seed_nodes = get_seed_entities(question, kg)

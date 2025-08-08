@@ -106,17 +106,15 @@ def build_edge_description_table(edge_descriptions: List[str]) -> dbc.Table:
 
 
 
-def build_qa_info_table(instruction_msg: str, prompt: str, llm_response: str) -> dbc.Table:
+def build_qa_info_table(prompt: str, llm_response: str, llm_final_answers: List[str], llm_cot: List[str]) -> dbc.Table:
     """
     Build a table that displays the llm's prompting details.
     """
+    parsed_llm_response = "Steps:\n" + "\n".join(llm_cot) + "\n\nAnswers:\n" + "\n".join(llm_final_answers)
+
     return build_table(
         [],
         [html.Tbody([
-            html.Tr([
-                html.Td("LLM Instruction Message"),
-                html.Td(instruction_msg),
-            ]),
             html.Tr([
                 html.Td("LLM Prompt"),
                 html.Td(prompt),
@@ -124,7 +122,11 @@ def build_qa_info_table(instruction_msg: str, prompt: str, llm_response: str) ->
             html.Tr([
                 html.Td("LLM Response"),
                 html.Td(llm_response),
-            ])
+            ]), 
+            html.Tr([
+                html.Td("LLM Parsed Response"),
+                html.Td(parsed_llm_response),
+            ]),
         ])],
         style=TABLE_STYLE,
     )
@@ -529,9 +531,8 @@ def build_page_layout(
         use_case_1_btn_id, use_case_2_btn_id, use_case_3_btn_id
     )
 
-    # edge_desc_section = build_edge_description_section(description_table_id)
+    qa_info_section = build_qa_info_section(qa_info_table_container_id)
     subgraph_section = build_subgraph_section(subgraph_container_id)
-    # qa_info_section = build_qa_info_section(qa_info_table_container_id)
     llm_response_section = build_llm_response_section(llm_answers_table_container_id, llm_cot_table_container_id)
 
 
@@ -542,7 +543,7 @@ def build_page_layout(
             ]),
             html.Div(
                 dbc.Stack(
-                    [llm_response_section, subgraph_section],
+                    [llm_response_section, subgraph_section, qa_info_section],
                     gap=5
                 ),
                 id=results_id,

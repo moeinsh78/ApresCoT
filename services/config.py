@@ -17,29 +17,31 @@ DEFAULT_TOP_K = 4
 
 
 class SupportedLLM(Enum):
-    CHATGPT_35_KGRAG = "ChatGPT 3.5 + KG RAG"
-    CHATGPT_4o_MINI_KGRAG = "GPT-4o Mini + KG RAG"
-    CHATGPT_35 = "ChatGPT 3.5"
-    CHATGPT_4o_MINI = "GPT-4o Mini"
+    GPT_35_KGRAG = "GPT-3.5 + KG RAG"
+    GPT_4O_MINI_KGRAG = "GPT-4o mini + KG RAG"
+    O3_MINI_KGRAG = "o3-mini + KG RAG"
+    GPT_35 = "GPT-3.5"
+    GPT_4O_MINI = "GPT-4o mini"
+    O3_MINI = "o3-mini"
 
-
-LLMS: Dict[str, LLM] = {
-    SupportedLLM.CHATGPT_35.value: ChatGPTLLM()
-}
 
 LLM_NAMES: Dict[str, str] = {
-    SupportedLLM.CHATGPT_35_KGRAG.value: "gpt-3.5-turbo",
-    SupportedLLM.CHATGPT_4o_MINI_KGRAG.value: "gpt-4o-mini",
-    SupportedLLM.CHATGPT_35.value: "gpt-3.5-turbo",
-    SupportedLLM.CHATGPT_4o_MINI.value: "gpt-4o-mini"
+    SupportedLLM.GPT_35_KGRAG.value: "gpt-3.5-turbo",
+    SupportedLLM.GPT_4O_MINI_KGRAG.value: "gpt-4o-mini",
+    SupportedLLM.O3_MINI_KGRAG.value: "o3-mini",
+    SupportedLLM.GPT_35.value: "gpt-3.5-turbo",
+    SupportedLLM.GPT_4O_MINI.value: "gpt-4o-mini",
+    SupportedLLM.O3_MINI.value: "o3-mini"
 }
 
 
 SYSTEM_NAMES: Dict[str, str] = {
-    SupportedLLM.CHATGPT_35_KGRAG.value: "kg-gpt-3.5",
-    SupportedLLM.CHATGPT_4o_MINI_KGRAG.value: "kg-gpt-4o-mini",
-    SupportedLLM.CHATGPT_35.value: "vanilla-gpt-3.5",
-    SupportedLLM.CHATGPT_4o_MINI.value: "vanilla-gpt-4o-mini"
+    SupportedLLM.GPT_35_KGRAG.value: "kg-gpt-3.5",
+    SupportedLLM.GPT_4O_MINI_KGRAG.value: "kg-gpt-4o-mini",
+    SupportedLLM.O3_MINI_KGRAG.value: "kg-o3-mini",
+    SupportedLLM.GPT_35.value: "vanilla-gpt-3.5",
+    SupportedLLM.GPT_4O_MINI.value: "vanilla-gpt-4o-mini",
+    SupportedLLM.O3_MINI.value: "vanilla-o3-mini"
 }
 
 
@@ -50,6 +52,7 @@ LLM_OPTIONS = [
 
 
 KG_OPTIONS = [
+    dict(label="WikiData", value="wikidata"),
     dict(label="MetaQA Movies", value="meta-qa"),
     dict(label="UMLS Relations", value="umls"),
 ]

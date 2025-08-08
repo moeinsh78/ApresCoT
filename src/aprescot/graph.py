@@ -1,3 +1,4 @@
+import json
 from typing import Tuple, Dict, List
 import networkx as nx
 import pandas as pd
@@ -7,6 +8,35 @@ from queue import PriorityQueue
 
 from sklearn.metrics.pairwise import cosine_similarity
 from sentence_transformers import SentenceTransformer
+
+
+class WikiDataKnowledgeGraph:
+    def search_wikidata_entity(self, query, language="en"):
+        url = "https://www.wikidata.org/w/api.php"
+        params = {
+            "action": "wbsearchentities",
+            "format": "json",
+            "language": language,
+            "search": query
+        }
+        r = requests.get(url, params=params)
+        results = r.json().get("search", [])
+
+        if results:
+            return results[0]["id"], results[0]["label"], results[0].get("description", "")
+
+        return None
+
+    def find_wikidata_entities(self, named_entities: List[str]) -> List[str]:
+        entities_ids = []
+        for entity in named_entities:
+            entity_id = self.search_wikidata_entity(entity)
+            if entity_id:
+                entities_ids.append(entity_id)
+            else:
+                print(f"Entity '{entity}' not found in Wikidata.")
+
+        return entities_ids
 
 
 class UMLSKnowledgeGraph:
@@ -234,7 +264,7 @@ class MetaQAKnowledgeGraph:
     
     
     def get_bfs_subgraph(self, graph: nx.MultiGraph, source_node: str, depth: int, expand_ending_nodes: bool = False) -> list[dict]:
-        print("Search begins starting from Node: ", source_node)
+        print("Search begins from Node: ", source_node)
         ending_node_relations = ["release_year", "in_language", "has_tags", "has_genre", "has_imdb_rating", "has_imdb_votes"]
         edge_dict_list = []
         to_be_expanded = [source_node]
@@ -382,8 +412,8 @@ class MetaQAKnowledgeGraph:
     def get_nodes_set(self, edge_dict_list: List[Dict]):
         nodes_set = set()
         for edge in edge_dict_list:
-            print(edge)
-            print("-")
+            # print(edge)
+            # print("-")
             nodes_set.add(edge["from"])
             nodes_set.add(edge["to"])
         

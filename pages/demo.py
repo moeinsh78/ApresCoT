@@ -49,7 +49,7 @@ layout = build_page_layout(
 @callback(
     # Output(DESCRIPTION_TABLE_CONTAINER_ID, "children"),
     Output(SUBGRAPH_CONTAINER_ID, "children"),
-    # Output(QA_INFO_TABLE_CONTAINER_ID, "children"),
+    Output(QA_INFO_TABLE_CONTAINER_ID, "children"),
     Output(LLM_ANSWERS_TABLE_CONTAINER_ID, "children"),
     Output(LLM_COT_TABLE_CONTAINER_ID, "children"),
     Output(RESULT_SECTION_ID, "style"),
@@ -76,34 +76,37 @@ def on_generate(gen_btn_n_clicks: int, question: str, supported_qa_model: str, k
         llm = LLM_NAMES[supported_qa_model]
         print("REQUESTED LLM:", llm)
         print("REQUESTED system:", system)
+        print("REQUESTED KG:", kg_name)
         
-        rag_enabled = not (system == "vanilla-gpt-3.5" or system == "vanilla-gpt-4o-mini")
+        # rag is enabled for all except vanilla models
+        rag_enabled = not (system.startswith("vanilla"))
+        
 
-        instruction_msg, prompt, llm_response, subgraph_edge_desc_list, node_to_answer_match, cot_match_dicts, subgraph_elements_list = \
+        instruction_msg, prompt, llm_response, subgraph_edge_desc_list, node_to_answer_match, cot_match_dicts, subgraph_elements_list, llm_final_answers, llm_cot = \
             perform_qa(llm, kg_name, question, rag_enabled)
         
 
-        print("Node to Answer Match:\n", node_to_answer_match)
+        # print("Node to Answer Match:\n", node_to_answer_match)
 
-        print("CoT to Edge Match:\n", cot_match_dicts)
-        print("Subgraph Edge Description List:\n")
-        for edge_desc in subgraph_edge_desc_list:
-            print(edge_desc)
+        # print("CoT to Edge Match:\n", cot_match_dicts)
+        # print("Subgraph Edge Description List:\n")
+        # for edge_desc in subgraph_edge_desc_list:
+        #     print(edge_desc)
 
-        print("Subgraph Elements:\n")
-        for element in subgraph_elements_list:
-            print(element)
+        # print("Subgraph Elements:\n")
+        # for element in subgraph_elements_list:
+        #     print(element)
         
         # doc_section = build_edge_description_table(subgraph_edge_desc_list)
         subgraph_section = draw_subgraph(subgraph_elements_list, SUBGRAPH_FIGURE_ID)
         
-        # QA_section = build_qa_info_table(instruction_msg, prompt, llm_response)
+        QA_section = build_qa_info_table(prompt, llm_response, llm_final_answers, llm_cot)
         llm_answers_section = build_llm_answers_table(node_to_answer_match)
         llm_cot_section = build_llm_cot_table(cot_match_dicts)
 
         results_style = VISIBLE_STYLE
 
-    return subgraph_section, llm_answers_section, llm_cot_section, results_style
+    return subgraph_section, QA_section, llm_answers_section, llm_cot_section, results_style
 
 
 
