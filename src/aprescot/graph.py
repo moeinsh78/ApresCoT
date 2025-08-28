@@ -19,6 +19,40 @@ HEADERS = {
     "User-Agent": "ApresCoT-Subgraph/1.0 (mailto:you@example.com)"
 }
 
+FILM_MINIMAL = {"P31","P279","P57","P58","P161","P162","P344","P1040","P86","P272","P750","P136","P921","P364","P495","P915","P840","P361","P527","P179"}
+
+
+TENNIS_WHITELIST = {
+    # Core typing
+    "P31",   # instance of
+    "P279",  # subclass of
+
+    # Sports-specific
+    "P641",  # sport
+    "P1344", # participant in
+    "P1346", # winner
+    "P2522", # victory
+    "P1340", # points/score in ranking systems
+    "P1350", # number of matches played
+    "P1351", # number of wins
+    "P1352", # ranking
+    "P1353", # wins at a specific tournament
+
+    # Awards & achievements
+    "P166",  # award received
+
+    # Personal data / career context
+    "P27",   # country of citizenship
+    "P19",   # place of birth
+    "P106",  # occupation
+    "P54",   # member of sports team
+    "P569",  # date of birth
+    "P570",  # date of death
+}
+
+
+MINIMAL_COUNTRIES = {"P17","P47","P31","P279","P361","P527","P921","P131","P17","P495"}
+
 
 BALANCED = {
     "P31","P279","P361","P527","P921",
@@ -294,11 +328,11 @@ class WikiDataKnowledgeGraph:
     
     def extract_relevant_subgraph(self, seed_qids: List[str]) -> Tuple[List[str], Dict[str, str], List[Dict[str, str]], List[str]]:
         # Optional: keep it general or pass a domain-specific prop whitelist
-        p_whitelist = BALANCED
+        p_whitelist = FILM_MINIMAL
         sg = self.extract_subgraph_two_hops(
             seed_qids,
             one_hop_limit=80,
-            two_hop_limit=150,
+            two_hop_limit=500,
             p_whitelist=p_whitelist,
             total_edge_cap=2000
         )
@@ -308,8 +342,28 @@ class WikiDataKnowledgeGraph:
             (L.get(s, s), L.get(p, p), L.get(o, o))
             for (s, p, o) in sg["edges"]
         ]
+
+        nodes_labeled = [
+            (L.get(n, n), n)[0] for n in sg["nodes"]
+        ]
+        nodes_set= set(nodes_labeled)
+
+        edge_dict_list = [
+            {
+                "from": s,
+                "to": o,
+                "label": p,
+                "description": f"{s} {p} {o}"
+            }
+            for (s, p, o) in edges_labeled
+        ]
+        
+        edge_descriptions = [edge_dict["description"] for edge_dict in edge_dict_list]
+
         for s, p, o in edges_labeled[:200]:
             print(f"({s}) -[{p}]-> ({o})")
+
+        return nodes_set, edge_dict_list, edge_descriptions
 
 
 class UMLSKnowledgeGraph:

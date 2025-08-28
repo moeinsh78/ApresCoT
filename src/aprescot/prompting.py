@@ -38,6 +38,8 @@ Please provide your answer to this question based on the provided context, and e
 
 def create_prompt(question: str, kg_name: str, rag: bool, llm: str, edge_descriptions: List[str], new_reasoning: bool = True):
     if new_reasoning:
+        if kg_name == "wikidata":
+            return WIKIDATA_REASONING_INSTRUCTION, f"# QUERY:\n{question}\n\nPlease provide your answer to this question and explain your reasoning step by step.\n"
         if rag:
             return MOVIES_REGULAR_REASONING_INSTRUCTION, build_regular_rag_qa_prompt(edge_descriptions, question) 
         else:
@@ -46,6 +48,20 @@ def create_prompt(question: str, kg_name: str, rag: bool, llm: str, edge_descrip
         return KG_RAG_COT_INSTRUCTION, build_rag_qa_prompt(edge_descriptions, question)
     else:
         return VANILLA_COT_INSTRUCTION, f"# QUERY:\n{question}\n\nLet's think step by step. Please provide your reasoning steps and answers clearly. \n"
+
+
+WIKIDATA_REASONING_INSTRUCTION = \
+"""You are a QA assistant skilled in answering questions about everything. In each input, you will be asked to answer a user query (QUESTION).
+You will be asked to justify your answer thoroughly by providing your reasoning.
+The input will be shaped as:
+
+# QUERY:
+QUESTION
+
+Use your own information and reasoning to answer the question.
+Please identify your thought process and final answers in a clear way. 
+"""
+
 
 
 MOVIES_REGULAR_REASONING_INSTRUCTION = \

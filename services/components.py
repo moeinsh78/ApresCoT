@@ -162,7 +162,7 @@ def build_llm_answers_table(node_to_answer_match: List[Dict]) -> dbc.Table:
 
 def build_llm_cot_table(cot_match_dicts: List[Dict]) -> dbc.Table:
     """
-    Build a table that displays the chain of thought items that the llm has given.
+    Build a table that displays the pieces of information in the reasoning text generate by the LLM.
     """
     colors = []
     # index = 0
@@ -177,7 +177,7 @@ def build_llm_cot_table(cot_match_dicts: List[Dict]) -> dbc.Table:
 
     return build_table(
         # , "Matched Edge Number"
-        [html.Thead(html.Tr([html.Th(h) for h in ["ID", "LLM Chain of Thought Step"]]))],
+        [html.Thead(html.Tr([html.Th(h) for h in ["ID", "LLM Reasoning Step"]]))],
         [html.Tbody([
             html.Tr([
                 html.Td(
@@ -239,7 +239,7 @@ def build_llm_response_section(llm_answers_table_id: str, llm_cot_table_id: str)
             ), 
             dbc.Col(
                 [
-                    html.H5("LLM Chain of Thought"),
+                    html.H5("LLM Reasoning Steps"),
                     html.Div(id=llm_cot_table_id)
                 ],
                 xs=12,

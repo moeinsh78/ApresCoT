@@ -28,7 +28,7 @@ def match_edges(edge_descriptions: List[str], llm_cot: List[str]):
     matched_cot_list = []
     context_to_cot_match = {}
     for i, cot_step in enumerate(llm_cot):
-        print("Chain of Thought Step: ", cot_step)
+        print("Reasoning step: ", cot_step)
         cot_step_embedding = get_sentence_encodings([cot_step])
         most_similar_context_sentence_id = get_most_similar_context_sentence_id(cot_step_embedding, encoded_edge_descriptions)
         
