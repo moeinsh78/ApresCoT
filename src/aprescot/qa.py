@@ -64,23 +64,39 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
     instruction_msg, prompt = None, None
     llm_response, llm_final_answers, llm_cot = None, [], []
 
-    seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list = retrieve_subgraph(question, kg, depth = 2)
-
-    if kg == "wikidata":
-        print("Seed Nodes:", seed_nodes)
+    seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list = retrieve_subgraph(question, kg, depth=2, use_srtk=True)
 
     instruction_msg, prompt = create_prompt(question, kg, rag, llm, subgraph_edge_desc_list, new_reasoning)
     llm_response, llm_final_answers, llm_cot = ask_llm(llm, instruction_msg, prompt, new_reasoning)
+
     if new_reasoning:
         llm_final_answers, llm_cot = parse_llm_response(llm_response, question)
-
 
     # Matcher
     node_to_answer_match, node_to_answer_id = match_nodes(nodes_set, llm_final_answers)
     matched_cot_list, edge_to_cot_match = match_edges(subgraph_edge_desc_list, llm_cot)
 
+    print("Done matching and subgraph")
+    print("Seed Nodes:", seed_nodes)
+    print("Nodes:", nodes_set)
+    print("Edges:")
+    for edge in edge_dict_list:
+        print(edge)
+    
+    print("Edge to CoT Match:")
+    for match in edge_to_cot_match.items():
+        print(match)
+
+    print("Node to Answer ID Match:")
+    for match in node_to_answer_id.items():
+        print(match)
+
     # Visualizations
     subgraph_elements_list = build_cyto_subgraph_elements_list(seed_nodes, nodes_set, edge_dict_list, edge_to_cot_match, node_to_answer_id)
+
+    print("Subgraph Elements List:")
+    for element in subgraph_elements_list:
+        print(element)
 
     return instruction_msg, prompt, llm_response, subgraph_edge_desc_list, node_to_answer_match, matched_cot_list, subgraph_elements_list, llm_final_answers, llm_cot
 
