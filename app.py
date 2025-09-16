@@ -14,7 +14,7 @@ app = Dash(
     external_stylesheets=[dbc.themes.ZEPHYR, dbc.icons.BOOTSTRAP],
     use_pages=True,
     url_base_pathname="/aprescot/",
-    pages_folder="pages"
+    pages_folder="pages",
 )
 
 app._favicon = ("favicon.png")
@@ -70,4 +70,4 @@ app.layout = html.Div(
 )
 
 if __name__ == "__main__":
-    app.run_server(host="0.0.0.0", debug=True, use_reloader=False)
+    app.run_server(host="0.0.0.0", debug=True, use_reloader=False, port=3030)
