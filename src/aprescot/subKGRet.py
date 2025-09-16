@@ -41,7 +41,7 @@ def load_subgraph_cache(kg: str, question: str, depth: int, params: Dict[str, An
         doc = json.load(f)
 
     seed_nodes = doc["seed_nodes"]
-    nodes_set = set(doc["nodes_list"])      # rehydrate
+    nodes_set = set(doc["nodes_list"])
     edge_dict_list = doc["edge_dict_list"]
     edge_desc_list = doc["edge_descriptions"]
 
@@ -53,14 +53,15 @@ def save_subgraph_cache(kg: str, question: str, depth: int, params: Dict[str, An
     key = _cache_key(kg, question, depth, params)
     path = _cache_path(key)
     doc = {
+        "params": params,
         "ts": time.time(),
         "seed_nodes": seed_nodes,
-        "nodes_list": sorted(nodes_set),     # store as list
+        "nodes_list": sorted(nodes_set),
         "edge_dict_list": edge_dict_list,
         "edge_descriptions": edge_desc_list,
     }
     with open(path, "w", encoding="utf-8") as f:
-        json.dump(doc, f, ensure_ascii=False)
+        json.dump(doc, f, ensure_ascii=False, indent=2)
 
 def get_seed_entities(question: str, kg: str):
     seed_entities_llm = ChatOpenAI(model="gpt-4o-mini", temperature=0, model_kwargs={"response_format": {"type": "json_object"} })
@@ -77,22 +78,32 @@ def get_seed_entities(question: str, kg: str):
 
 def retrieve_subgraph(question: str, kg: str, depth: int, use_srtk: bool):
     if use_srtk and kg == "wikidata":
+        beam_size = 30
+        per_pred_cap = 32
+        total_cap_per_node = 256
+        max_nodes = 350
+        scorer_model = "drt/srtk-scorer"
+        compare_to_hypothetical_answer = False
         retriever_params = {
             "use_srtk": True,
             "max_hops": depth,
-            "beam_size": 80,
-            "per_pred_cap": 32,
-            "total_cap_per_node": 256,
-            "max_nodes": 350,
-            "scorer_model": "drt/srtk-scorer",
+            "beam_size": beam_size,
+            "per_pred_cap": per_pred_cap,
+            "total_cap_per_node": total_cap_per_node,
+            "max_nodes": max_nodes,
+            "scorer_model": scorer_model,
+            "hypothetical_answer": compare_to_hypothetical_answer,
         }
         seed_labels, nodes_set, edge_dict_list, edge_descriptions = None, None, None, None
         cached = load_subgraph_cache(kg, question, depth, params=retriever_params)
         if cached:
             seed_labels, nodes_set, edge_dict_list, edge_descriptions = cached
         else:
-            wikidata_qa = WikiDataKnowledgeGraph()
+            wikidata_qa = WikiDataKnowledgeGraph(scorer_model=scorer_model)
             seed_entities_txt = get_seed_entities(question, kg)
+            # seed_entities_txt = ["Jean Rochefort"]
+            # seed_entities_txt = ["President of the United States", "Q362 — World War II"]
+
             print("Seed Entities:", seed_entities_txt)
             wikidata_seed_nodes = wikidata_qa.find_wikidata_entities(seed_entities_txt)
             print("Seed QIDs:", wikidata_seed_nodes)
@@ -102,10 +113,11 @@ def retrieve_subgraph(question: str, kg: str, depth: int, use_srtk: bool):
                 question,
                 q_ids,
                 max_hops=depth,         # try 3 for tougher queries (slower)
-                beam_size=80,       # more edges per hop = higher recall
-                per_pred_cap=32,    # cap fanout per (s,p)
-                total_cap_per_node=256,
-                max_nodes=350,
+                beam_size=beam_size,       # more edges per hop = higher recall
+                per_pred_cap=per_pred_cap,    # cap fanout per (s,p)
+                total_cap_per_node=total_cap_per_node,
+                max_nodes=max_nodes,
+                compare_to_hypothetical_answer=compare_to_hypothetical_answer,
                 add_labels=True,
             )
 
@@ -118,7 +130,6 @@ def retrieve_subgraph(question: str, kg: str, depth: int, use_srtk: bool):
                                 seed_nodes=seed_labels, nodes_set=nodes_set,
                                 edge_dict_list=edge_dict_list, edge_desc_list=edge_descriptions)
 
-        
         return seed_labels, nodes_set, edge_dict_list, edge_descriptions
         
     elif kg == "wikidata" and not use_srtk:
@@ -205,4 +216,3 @@ def retrieve_uc2_subgraph(question: str, kg: str):
     edge_descriptions = [edge_dict["description"] for edge_dict in edge_dict_list]
 
     return seed_nodes, nodes_set, edge_dict_list, edge_descriptions
-

@@ -1,0 +1,407 @@
+{
+  "params": {
+    "use_srtk": true,
+    "max_hops": 2,
+    "beam_size": 30,
+    "per_pred_cap": 32,
+    "total_cap_per_node": 256,
+    "max_nodes": 350,
+    "scorer_model": "drt/srtk-scorer",
+    "hypothetical_answer": false
+  },
+  "ts": 1758035176.360662,
+  "seed_nodes": [
+    "Germany",
+    "Czech Republic"
+  ],
+  "nodes_list": [
+    "Austria",
+    "Belgium",
+    "Brazil",
+    "Bulgaria",
+    "Canada",
+    "Czech Republic",
+    "Denmark",
+    "France",
+    "Germany",
+    "Hungary",
+    "Israel",
+    "Italy",
+    "Kingdom of the Netherlands",
+    "Liechtenstein",
+    "Lithuania",
+    "Luxembourg",
+    "Mexico",
+    "Nazi Germany",
+    "Netherlands",
+    "North Macedonia",
+    "Poland",
+    "Russia",
+    "Slovakia",
+    "Slovenia",
+    "Turkey",
+    "Ukraine",
+    "Uruguay"
+  ],
+  "edge_dict_list": [
+    {
+      "from": "Germany",
+      "to": "Czech Republic",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Czech Republic"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Germany",
+      "label": "shares border with",
+      "description": "Czech Republic - shares border with - Germany"
+    },
+    {
+      "from": "Slovakia",
+      "to": "Czech Republic",
+      "label": "shares border with",
+      "description": "Slovakia - shares border with - Czech Republic"
+    },
+    {
+      "from": "Austria",
+      "to": "Czech Republic",
+      "label": "shares border with",
+      "description": "Austria - shares border with - Czech Republic"
+    },
+    {
+      "from": "Poland",
+      "to": "Czech Republic",
+      "label": "shares border with",
+      "description": "Poland - shares border with - Czech Republic"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Slovakia",
+      "label": "shares border with",
+      "description": "Czech Republic - shares border with - Slovakia"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Poland",
+      "label": "shares border with",
+      "description": "Czech Republic - shares border with - Poland"
+    },
+    {
+      "from": "Mexico",
+      "to": "Czech Republic",
+      "label": "diplomatic relation",
+      "description": "Mexico - diplomatic relation - Czech Republic"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Austria",
+      "label": "shares border with",
+      "description": "Czech Republic - shares border with - Austria"
+    },
+    {
+      "from": "North Macedonia",
+      "to": "Czech Republic",
+      "label": "diplomatic relation",
+      "description": "North Macedonia - diplomatic relation - Czech Republic"
+    },
+    {
+      "from": "Turkey",
+      "to": "Czech Republic",
+      "label": "diplomatic relation",
+      "description": "Turkey - diplomatic relation - Czech Republic"
+    },
+    {
+      "from": "Germany",
+      "to": "Czech Republic",
+      "label": "diplomatic relation",
+      "description": "Germany - diplomatic relation - Czech Republic"
+    },
+    {
+      "from": "Israel",
+      "to": "Czech Republic",
+      "label": "diplomatic relation",
+      "description": "Israel - diplomatic relation - Czech Republic"
+    },
+    {
+      "from": "Belgium",
+      "to": "Germany",
+      "label": "shares border with",
+      "description": "Belgium - shares border with - Germany"
+    },
+    {
+      "from": "Germany",
+      "to": "Poland",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Poland"
+    },
+    {
+      "from": "Germany",
+      "to": "Netherlands",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Netherlands"
+    },
+    {
+      "from": "Italy",
+      "to": "Czech Republic",
+      "label": "diplomatic relation",
+      "description": "Italy - diplomatic relation - Czech Republic"
+    },
+    {
+      "from": "Brazil",
+      "to": "Czech Republic",
+      "label": "diplomatic relation",
+      "description": "Brazil - diplomatic relation - Czech Republic"
+    },
+    {
+      "from": "Hungary",
+      "to": "Czech Republic",
+      "label": "diplomatic relation",
+      "description": "Hungary - diplomatic relation - Czech Republic"
+    },
+    {
+      "from": "Germany",
+      "to": "Belgium",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Belgium"
+    },
+    {
+      "from": "Austria",
+      "to": "Czech Republic",
+      "label": "diplomatic relation",
+      "description": "Austria - diplomatic relation - Czech Republic"
+    },
+    {
+      "from": "Uruguay",
+      "to": "Czech Republic",
+      "label": "diplomatic relation",
+      "description": "Uruguay - diplomatic relation - Czech Republic"
+    },
+    {
+      "from": "Canada",
+      "to": "Czech Republic",
+      "label": "diplomatic relation",
+      "description": "Canada - diplomatic relation - Czech Republic"
+    },
+    {
+      "from": "Netherlands",
+      "to": "Germany",
+      "label": "shares border with",
+      "description": "Netherlands - shares border with - Germany"
+    },
+    {
+      "from": "Bulgaria",
+      "to": "Czech Republic",
+      "label": "diplomatic relation",
+      "description": "Bulgaria - diplomatic relation - Czech Republic"
+    },
+    {
+      "from": "Liechtenstein",
+      "to": "Czech Republic",
+      "label": "diplomatic relation",
+      "description": "Liechtenstein - diplomatic relation - Czech Republic"
+    },
+    {
+      "from": "Slovakia",
+      "to": "Czech Republic",
+      "label": "diplomatic relation",
+      "description": "Slovakia - diplomatic relation - Czech Republic"
+    },
+    {
+      "from": "Denmark",
+      "to": "Czech Republic",
+      "label": "diplomatic relation",
+      "description": "Denmark - diplomatic relation - Czech Republic"
+    },
+    {
+      "from": "Belgium",
+      "to": "Kingdom of the Netherlands",
+      "label": "shares border with",
+      "description": "Belgium - shares border with - Kingdom of the Netherlands"
+    },
+    {
+      "from": "Slovakia",
+      "to": "Poland",
+      "label": "shares border with",
+      "description": "Slovakia - shares border with - Poland"
+    },
+    {
+      "from": "Slovakia",
+      "to": "Hungary",
+      "label": "shares border with",
+      "description": "Slovakia - shares border with - Hungary"
+    },
+    {
+      "from": "Belgium",
+      "to": "Netherlands",
+      "label": "shares border with",
+      "description": "Belgium - shares border with - Netherlands"
+    },
+    {
+      "from": "Austria",
+      "to": "Slovakia",
+      "label": "shares border with",
+      "description": "Austria - shares border with - Slovakia"
+    },
+    {
+      "from": "Lithuania",
+      "to": "Poland",
+      "label": "shares border with",
+      "description": "Lithuania - shares border with - Poland"
+    },
+    {
+      "from": "Slovakia",
+      "to": "Ukraine",
+      "label": "shares border with",
+      "description": "Slovakia - shares border with - Ukraine"
+    },
+    {
+      "from": "Slovakia",
+      "to": "Austria",
+      "label": "shares border with",
+      "description": "Slovakia - shares border with - Austria"
+    },
+    {
+      "from": "Belgium",
+      "to": "Luxembourg",
+      "label": "shares border with",
+      "description": "Belgium - shares border with - Luxembourg"
+    },
+    {
+      "from": "Poland",
+      "to": "Slovakia",
+      "label": "shares border with",
+      "description": "Poland - shares border with - Slovakia"
+    },
+    {
+      "from": "Netherlands",
+      "to": "Belgium",
+      "label": "shares border with",
+      "description": "Netherlands - shares border with - Belgium"
+    },
+    {
+      "from": "Russia",
+      "to": "Poland",
+      "label": "shares border with",
+      "description": "Russia - shares border with - Poland"
+    },
+    {
+      "from": "Hungary",
+      "to": "Slovakia",
+      "label": "shares border with",
+      "description": "Hungary - shares border with - Slovakia"
+    },
+    {
+      "from": "Turkey",
+      "to": "Slovakia",
+      "label": "diplomatic relation",
+      "description": "Turkey - diplomatic relation - Slovakia"
+    },
+    {
+      "from": "Nazi Germany",
+      "to": "Belgium",
+      "label": "shares border with",
+      "description": "Nazi Germany - shares border with - Belgium"
+    },
+    {
+      "from": "Austria",
+      "to": "Italy",
+      "label": "shares border with",
+      "description": "Austria - shares border with - Italy"
+    },
+    {
+      "from": "Germany",
+      "to": "Slovakia",
+      "label": "diplomatic relation",
+      "description": "Germany - diplomatic relation - Slovakia"
+    },
+    {
+      "from": "Italy",
+      "to": "Slovakia",
+      "label": "diplomatic relation",
+      "description": "Italy - diplomatic relation - Slovakia"
+    },
+    {
+      "from": "Ukraine",
+      "to": "Slovakia",
+      "label": "diplomatic relation",
+      "description": "Ukraine - diplomatic relation - Slovakia"
+    },
+    {
+      "from": "Ukraine",
+      "to": "Slovakia",
+      "label": "shares border with",
+      "description": "Ukraine - shares border with - Slovakia"
+    },
+    {
+      "from": "France",
+      "to": "Belgium",
+      "label": "shares border with",
+      "description": "France - shares border with - Belgium"
+    },
+    {
+      "from": "Austria",
+      "to": "Slovakia",
+      "label": "diplomatic relation",
+      "description": "Austria - diplomatic relation - Slovakia"
+    },
+    {
+      "from": "Slovenia",
+      "to": "Austria",
+      "label": "shares border with",
+      "description": "Slovenia - shares border with - Austria"
+    }
+  ],
+  "edge_descriptions": [
+    "Germany - shares border with - Czech Republic",
+    "Czech Republic - shares border with - Germany",
+    "Slovakia - shares border with - Czech Republic",
+    "Austria - shares border with - Czech Republic",
+    "Poland - shares border with - Czech Republic",
+    "Czech Republic - shares border with - Slovakia",
+    "Czech Republic - shares border with - Poland",
+    "Mexico - diplomatic relation - Czech Republic",
+    "Czech Republic - shares border with - Austria",
+    "North Macedonia - diplomatic relation - Czech Republic",
+    "Turkey - diplomatic relation - Czech Republic",
+    "Germany - diplomatic relation - Czech Republic",
+    "Israel - diplomatic relation - Czech Republic",
+    "Belgium - shares border with - Germany",
+    "Germany - shares border with - Poland",
+    "Germany - shares border with - Netherlands",
+    "Italy - diplomatic relation - Czech Republic",
+    "Brazil - diplomatic relation - Czech Republic",
+    "Hungary - diplomatic relation - Czech Republic",
+    "Germany - shares border with - Belgium",
+    "Austria - diplomatic relation - Czech Republic",
+    "Uruguay - diplomatic relation - Czech Republic",
+    "Canada - diplomatic relation - Czech Republic",
+    "Netherlands - shares border with - Germany",
+    "Bulgaria - diplomatic relation - Czech Republic",
+    "Liechtenstein - diplomatic relation - Czech Republic",
+    "Slovakia - diplomatic relation - Czech Republic",
+    "Denmark - diplomatic relation - Czech Republic",
+    "Belgium - shares border with - Kingdom of the Netherlands",
+    "Slovakia - shares border with - Poland",
+    "Slovakia - shares border with - Hungary",
+    "Belgium - shares border with - Netherlands",
+    "Austria - shares border with - Slovakia",
+    "Lithuania - shares border with - Poland",
+    "Slovakia - shares border with - Ukraine",
+    "Slovakia - shares border with - Austria",
+    "Belgium - shares border with - Luxembourg",
+    "Poland - shares border with - Slovakia",
+    "Netherlands - shares border with - Belgium",
+    "Russia - shares border with - Poland",
+    "Hungary - shares border with - Slovakia",
+    "Turkey - diplomatic relation - Slovakia",
+    "Nazi Germany - shares border with - Belgium",
+    "Austria - shares border with - Italy",
+    "Germany - diplomatic relation - Slovakia",
+    "Italy - diplomatic relation - Slovakia",
+    "Ukraine - diplomatic relation - Slovakia",
+    "Ukraine - shares border with - Slovakia",
+    "France - shares border with - Belgium",
+    "Austria - diplomatic relation - Slovakia",
+    "Slovenia - shares border with - Austria"
+  ]
+}

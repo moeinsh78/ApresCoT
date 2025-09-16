@@ -7,7 +7,8 @@ import pandas as pd
 import numpy as np
 
 
-ACCEPTABLE_SIMILARITY_TRESHOLD = 0.7
+SIMILARITY_THRESHOLD = 0.7
+TRIPLES_MATCHING_SIMILARITY_THRESHOLD = 0.85
 
 def match_nodes(nodes_set: Set[str], llm_final_answers: List[str]):
     answer_match_status = []
@@ -22,7 +23,11 @@ def match_nodes(nodes_set: Set[str], llm_final_answers: List[str]):
     return answer_match_status, node_to_answer_id
 
 
-def match_edges(edge_descriptions: List[str], llm_cot: List[str]):
+def match_edges(edge_descriptions: List[str], llm_cot: List[str], cot_in_triples: bool):
+    threshold = SIMILARITY_THRESHOLD
+    if cot_in_triples:
+        threshold = TRIPLES_MATCHING_SIMILARITY_THRESHOLD
+
     encoded_edge_descriptions = get_sentence_encodings(edge_descriptions)
     
     matched_cot_list = []
@@ -30,7 +35,7 @@ def match_edges(edge_descriptions: List[str], llm_cot: List[str]):
     for i, cot_step in enumerate(llm_cot):
         print("Reasoning step: ", cot_step)
         cot_step_embedding = get_sentence_encodings([cot_step])
-        most_similar_context_sentence_id = get_most_similar_context_sentence_id(cot_step_embedding, encoded_edge_descriptions)
+        most_similar_context_sentence_id = get_most_similar_context_sentence_id(cot_step_embedding, encoded_edge_descriptions, threshold)
         
         print("Most Similar Sentence ID:", most_similar_context_sentence_id)
         if most_similar_context_sentence_id != -1:
@@ -57,17 +62,17 @@ def get_sentence_encodings(sentence_list):
 
 
 
-def get_most_similar_context_sentence_id(cot_step_embedding, context_embeddings):
+def get_most_similar_context_sentence_id(cot_step_embedding, context_embeddings, threshold):
     """
     Get most similar context sentence ID for a given CoT step embedding by 
     calculating cosine similarity between CoT step and context sentences
     """
     similarity_scores = cosine_similarity(context_embeddings, cot_step_embedding).flatten()
 
-    print("Similarity Scores:\n", similarity_scores)
+    # print("Similarity Scores:\n", similarity_scores)
 
     most_similar_context_sentence_id = np.argmax(similarity_scores) + 1
-    if (similarity_scores[most_similar_context_sentence_id - 1] < ACCEPTABLE_SIMILARITY_TRESHOLD):
+    if (similarity_scores[most_similar_context_sentence_id - 1] < threshold):
         return -1
 
     return most_similar_context_sentence_id

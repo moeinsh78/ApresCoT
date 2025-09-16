@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 import requests
 from queue import PriorityQueue
+from openai import OpenAI
 import shlex
 import subprocess
 
@@ -422,11 +423,12 @@ class WikiDataKnowledgeGraph:
         question: str,
         seed_qids: List[str],
         *,
-        max_hops: int = 2,
+        max_hops,
         beam_size: int = 12,
         per_pred_cap: int = 32,
         total_cap_per_node: int = 256,
         max_nodes: int = 2000,
+        compare_to_hypothetical_answer: bool = True,
         add_labels: bool = True,
     ):
         """
@@ -438,7 +440,12 @@ class WikiDataKnowledgeGraph:
             "labels": { "Q..": "Label", "P..": "prop label", ... }
           }
         """
-        q_vec = self._encode_text(question)
+        if compare_to_hypothetical_answer:
+            hypothetical_answer = generate_hypothetical_answer(question)
+            print("Hypothetical Answer:", hypothetical_answer)
+            q_vec = self._encode_text(hypothetical_answer)
+        else:
+            q_vec = self._encode_text(question)
 
         # subgraph state
         triples: List[Dict[str, str]] = []
@@ -969,3 +976,22 @@ def _cosine_sim(a: torch.Tensor, b: torch.Tensor) -> float:
 def _label_cache(kind: str, pid_or_qid: str) -> str:
     # placeholder for lru cache signature
     return ""
+
+
+
+
+def generate_hypothetical_answer(question: str, model_name="gpt-4o-mini", temperature=0.7, max_tokens=512, n=1) -> str:
+    client = OpenAI()
+    result = client.chat.completions.create(
+        messages=[{"role":"user", "content": HYPOTHETICAL_ANSWER_PROMPT.format(question)}],
+        model=model_name,
+        max_completion_tokens=max_tokens,
+        temperature=temperature,
+        n=n,
+    )
+    return result.choices[0].message.content
+
+
+HYPOTHETICAL_ANSWER_PROMPT = """Please write a passage to answer the question.
+Question: {}
+Passage:"""
