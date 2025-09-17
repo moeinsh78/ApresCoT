@@ -100,7 +100,8 @@ def retrieve_subgraph(question: str, kg: str, depth: int, use_srtk: bool):
             seed_labels, nodes_set, edge_dict_list, edge_descriptions = cached
         else:
             wikidata_qa = WikiDataKnowledgeGraph(scorer_model=scorer_model)
-            seed_entities_txt = get_seed_entities(question, kg)
+            # seed_entities_txt = get_seed_entities(question, kg)
+            seed_entities_txt = ["Germany"]
             # seed_entities_txt = ["Jean Rochefort"]
             # seed_entities_txt = ["President of the United States", "Q362 — World War II"]
 

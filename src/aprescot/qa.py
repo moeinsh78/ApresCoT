@@ -6,6 +6,7 @@ from src.aprescot.parsing import parse_llm_response, concat_triple
 from langchain_openai import ChatOpenAI
 from openai import OpenAI
 import json
+import time
 
 
 def ask_llm(llm: str, instruction_msg: str, prompt: str, new_reasoning: bool = True):
@@ -42,7 +43,11 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
     instruction_msg, prompt = None, None
     llm_response, llm_final_answers, llm_cot = None, [], []
 
+    start = time.perf_counter()
+
     seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list = retrieve_subgraph(question, kg, depth=2, use_srtk=True)
+
+    end = time.perf_counter()
 
     instruction_msg, prompt = create_prompt(question, kg, rag, llm, subgraph_edge_desc_list, new_reasoning)
     llm_response, llm_final_answers, llm_cot = ask_llm(llm, instruction_msg, prompt, new_reasoning)
@@ -78,5 +83,13 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
     print("Subgraph Elements List:")
     for element in subgraph_elements_list:
         print(element)
+
+    elapsed = end - start
+
+    minutes = int(elapsed // 60)
+    seconds = elapsed % 60
+
+    print(f"Subgraph Retrieval Execution Time: {minutes} min {seconds:.2f} sec")
+
 
     return instruction_msg, prompt, llm_response, subgraph_edge_desc_list, node_to_answer_match, matched_cot_list, subgraph_elements_list, llm_final_answers, llm_cot

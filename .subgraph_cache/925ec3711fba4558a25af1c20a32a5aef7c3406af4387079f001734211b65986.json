@@ -1,1 +1,1264 @@
-{"ts": 1757356219.320012, "seed_nodes": ["Jean Rochefort", "film"], "nodes_list": ["100 words of century", "1895 in film", "1899 in film", "1904 in film", "1908 in film", "1909 in film", "1910 in film", "1915 in film", "1918 in film", "1919 in film", "1920 in film", "1923 in film", "1924 in film", "1925 in film", "1926 in film", "1930 in film", "1930-04-29T00:00:00Z", "1933 in film", "1934 in film", "1941 in film", "1942 in film", "1943 in film", "1945 in film", "1946 in film", "1949 in film", "1950 in film", "1951 in film", "1954 in film", "1955 in film", "1965 in film", "1967 in film", "1971 in film", "1975 in film", "1976 in film", "1982 in film", "1985 in film", "1986 in film", "1989 in film", "1993 in film", "2008 in film", "2011 in film", "2013 in film", "AFI's 10 Top 10", "Akiva Goldsman", "Amblin Entertainment", "American International Pictures", "Armenfilm", "Bad Hat Harry Productions", "Biograph Company", "Buster Keaton filmography", "Castle Rock Entertainment", "Category:Films by city of location", "Cinema Service", "Cines", "Columbia Pictures", "Donnie Yen filmography", "Dovzhenko Film Studios", "Edison Studios", "Film", "FilmDistrict", "Imagine Entertainment", "Jean Rochefort", "Jean Rochefort filmography", "Kartuli Pilmi", "Kris Aquino", "Langmuir–Blodgett film", "Lenfilm", "Lionsgate", "Lucasfilm", "Mary Pickford filmography", "Miramax", "Monster High", "Mosfilm", "Movie", "National Film Development Corporation of India", "New Line Cinema", "Nimbus Film", "P. Ramlee filmography", "Paramount Pictures", "Porky Pig filmography", "Spyglass Media Group", "Summit Entertainment", "The Catcher in the Rye", "Toshiba", "Touchstone Pictures", "United Artists", "Universal Pictures", "Village Roadshow Pictures", "Walt Disney Pictures", "Warner Bros.", "Woody Woodpecker filmography", "Zentropa", "easter egg", "filbma", "film", "film frame", "film series", "filmmat", "list of American films of 1900", "list of Asterix films", "list of British films of 2012", "list of Daffy Duck cartoons", "list of Disney theatrical animated features", "list of French films of 2009", "list of French submissions for the Academy Award for Best Foreign Language Film", "list of Iron Man's armors in films", "list of Italian submissions for the Academy Award for Best Foreign Language Film", "list of James Bond films", "list of Japanese films of 2012", "list of Japanese submissions for the Academy Award for Best Foreign Language Film", "list of Jordanian films", "list of Rurouni Kenshin episodes", "list of Russian submissions for the Academy Award for Best Foreign Language Film", "list of South Korean films of 1949", "list of South Korean films of 2009", "list of South Korean historical drama films", "list of Tamil films of 1989", "list of Tamil films of 2012", "list of banned films", "list of films about the Romanian Revolution of 1989", "list of films based on Dark Horse Comics properties", "list of films based on French-language comics", "list of films shot in Harlem", "list of films: numbers", "list of highest-grossing films", "lists of French films", "movie", "movies", "movies-3513", "reel", "sinema"], "edge_dict_list": [{"from": "list of films shot in Harlem", "to": "film", "label": "is a list of", "description": "list of films shot in Harlem - is a list of - film"}, {"from": "film", "to": "film", "label": "Lex ID", "description": "film - Lex ID - film"}, {"from": "Spyglass Media Group", "to": "film", "label": "product or material produced", "description": "Spyglass Media Group - product or material produced - film"}, {"from": "Lucasfilm", "to": "film", "label": "product or material produced", "description": "Lucasfilm - product or material produced - film"}, {"from": "Village Roadshow Pictures", "to": "film", "label": "product or material produced", "description": "Village Roadshow Pictures - product or material produced - film"}, {"from": "list of Disney theatrical animated features", "to": "film", "label": "is a list of", "description": "list of Disney theatrical animated features - is a list of - film"}, {"from": "Paramount Pictures", "to": "film", "label": "product or material produced", "description": "Paramount Pictures - product or material produced - film"}, {"from": "Dovzhenko Film Studios", "to": "film", "label": "product or material produced", "description": "Dovzhenko Film Studios - product or material produced - film"}, {"from": "Biograph Company", "to": "film", "label": "product or material produced", "description": "Biograph Company - product or material produced - film"}, {"from": "Toshiba", "to": "film", "label": "product or material produced", "description": "Toshiba - product or material produced - film"}, {"from": "1950 in film", "to": "film", "label": "is a list of", "description": "1950 in film - is a list of - film"}, {"from": "Bad Hat Harry Productions", "to": "film", "label": "product or material produced", "description": "Bad Hat Harry Productions - product or material produced - film"}, {"from": "list of James Bond films", "to": "film", "label": "is a list of", "description": "list of James Bond films - is a list of - film"}, {"from": "Armenfilm", "to": "film", "label": "product or material produced", "description": "Armenfilm - product or material produced - film"}, {"from": "1951 in film", "to": "film", "label": "is a list of", "description": "1951 in film - is a list of - film"}, {"from": "Touchstone Pictures", "to": "film", "label": "product or material produced", "description": "Touchstone Pictures - product or material produced - film"}, {"from": "Zentropa", "to": "film", "label": "product or material produced", "description": "Zentropa - product or material produced - film"}, {"from": "Cinema Service", "to": "film", "label": "product or material produced", "description": "Cinema Service - product or material produced - film"}, {"from": "Edison Studios", "to": "film", "label": "product or material produced", "description": "Edison Studios - product or material produced - film"}, {"from": "list of Daffy Duck cartoons", "to": "film", "label": "is a list of", "description": "list of Daffy Duck cartoons - is a list of - film"}, {"from": "list of highest-grossing films", "to": "film", "label": "is a list of", "description": "list of highest-grossing films - is a list of - film"}, {"from": "Jean Rochefort", "to": "1930-04-29T00:00:00Z", "label": "date of birth", "description": "Jean Rochefort - date of birth - 1930-04-29T00:00:00Z"}, {"from": "Lenfilm", "to": "film", "label": "product or material produced", "description": "Lenfilm - product or material produced - film"}, {"from": "1946 in film", "to": "film", "label": "is a list of", "description": "1946 in film - is a list of - film"}, {"from": "Summit Entertainment", "to": "film", "label": "product or material produced", "description": "Summit Entertainment - product or material produced - film"}, {"from": "Mosfilm", "to": "film", "label": "product or material produced", "description": "Mosfilm - product or material produced - film"}, {"from": "film", "to": "film", "label": "Lille norske leksikon ID", "description": "film - Lille norske leksikon ID - film"}, {"from": "film", "to": "movies", "label": "Mississippi Encyclopedia ID", "description": "film - Mississippi Encyclopedia ID - movies"}, {"from": "New Line Cinema", "to": "film", "label": "product or material produced", "description": "New Line Cinema - product or material produced - film"}, {"from": "1942 in film", "to": "film", "label": "is a list of", "description": "1942 in film - is a list of - film"}, {"from": "Amblin Entertainment", "to": "film", "label": "product or material produced", "description": "Amblin Entertainment - product or material produced - film"}, {"from": "list of films based on Dark Horse Comics properties", "to": "film", "label": "is a list of", "description": "list of films based on Dark Horse Comics properties - is a list of - film"}, {"from": "1989 in film", "to": "film", "label": "is a list of", "description": "1989 in film - is a list of - film"}, {"from": "National Film Development Corporation of India", "to": "film", "label": "product or material produced", "description": "National Film Development Corporation of India - product or material produced - film"}, {"from": "American International Pictures", "to": "film", "label": "product or material produced", "description": "American International Pictures - product or material produced - film"}, {"from": "Castle Rock Entertainment", "to": "film", "label": "product or material produced", "description": "Castle Rock Entertainment - product or material produced - film"}, {"from": "1943 in film", "to": "film", "label": "is a list of", "description": "1943 in film - is a list of - film"}, {"from": "1941 in film", "to": "film", "label": "is a list of", "description": "1941 in film - is a list of - film"}, {"from": "1967 in film", "to": "film", "label": "is a list of", "description": "1967 in film - is a list of - film"}, {"from": "Columbia Pictures", "to": "film", "label": "product or material produced", "description": "Columbia Pictures - product or material produced - film"}, {"from": "film", "to": "sinema", "label": "TUBITAK Sosyal Bilimler Ansiklopedisi ID", "description": "film - TUBITAK Sosyal Bilimler Ansiklopedisi ID - sinema"}, {"from": "list of Rurouni Kenshin episodes", "to": "film", "label": "is a list of", "description": "list of Rurouni Kenshin episodes - is a list of - film"}, {"from": "Lionsgate", "to": "film", "label": "product or material produced", "description": "Lionsgate - product or material produced - film"}, {"from": "film", "to": "filbma", "label": "Ávvir topic ID", "description": "film - Ávvir topic ID - filbma"}, {"from": "1986 in film", "to": "film", "label": "is a list of", "description": "1986 in film - is a list of - film"}, {"from": "list of South Korean films of 1949", "to": "film", "label": "is a list of", "description": "list of South Korean films of 1949 - is a list of - film"}, {"from": "1982 in film", "to": "film", "label": "is a list of", "description": "1982 in film - is a list of - film"}, {"from": "1955 in film", "to": "film", "label": "is a list of", "description": "1955 in film - is a list of - film"}, {"from": "1965 in film", "to": "film", "label": "is a list of", "description": "1965 in film - is a list of - film"}, {"from": "Langmuir–Blodgett film", "to": "film", "label": "is a list of", "description": "Langmuir–Blodgett film - is a list of - film"}, {"from": "list of Asterix films", "to": "film", "label": "is a list of", "description": "list of Asterix films - is a list of - film"}, {"from": "Nimbus Film", "to": "film", "label": "product or material produced", "description": "Nimbus Film - product or material produced - film"}, {"from": "1933 in film", "to": "film", "label": "is a list of", "description": "1933 in film - is a list of - film"}, {"from": "1949 in film", "to": "film", "label": "is a list of", "description": "1949 in film - is a list of - film"}, {"from": "1993 in film", "to": "film", "label": "is a list of", "description": "1993 in film - is a list of - film"}, {"from": "list of films based on French-language comics", "to": "film", "label": "is a list of", "description": "list of films based on French-language comics - is a list of - film"}, {"from": "list of films about the Romanian Revolution of 1989", "to": "film", "label": "is a list of", "description": "list of films about the Romanian Revolution of 1989 - is a list of - film"}, {"from": "1971 in film", "to": "film", "label": "is a list of", "description": "1971 in film - is a list of - film"}, {"from": "Miramax", "to": "film", "label": "product or material produced", "description": "Miramax - product or material produced - film"}, {"from": "Kartuli Pilmi", "to": "film", "label": "product or material produced", "description": "Kartuli Pilmi - product or material produced - film"}, {"from": "Porky Pig filmography", "to": "film", "label": "is a list of", "description": "Porky Pig filmography - is a list of - film"}, {"from": "1975 in film", "to": "film", "label": "is a list of", "description": "1975 in film - is a list of - film"}, {"from": "1954 in film", "to": "film", "label": "is a list of", "description": "1954 in film - is a list of - film"}, {"from": "Kris Aquino", "to": "film", "label": "product or material produced", "description": "Kris Aquino - product or material produced - film"}, {"from": "Cines", "to": "film", "label": "product or material produced", "description": "Cines - product or material produced - film"}, {"from": "Universal Pictures", "to": "film", "label": "product or material produced", "description": "Universal Pictures - product or material produced - film"}, {"from": "United Artists", "to": "film", "label": "product or material produced", "description": "United Artists - product or material produced - film"}, {"from": "Warner Bros.", "to": "film", "label": "product or material produced", "description": "Warner Bros. - product or material produced - film"}, {"from": "1919 in film", "to": "film", "label": "is a list of", "description": "1919 in film - is a list of - film"}, {"from": "P. Ramlee filmography", "to": "film", "label": "is a list of", "description": "P. Ramlee filmography - is a list of - film"}, {"from": "1908 in film", "to": "film", "label": "is a list of", "description": "1908 in film - is a list of - film"}, {"from": "1934 in film", "to": "film", "label": "is a list of", "description": "1934 in film - is a list of - film"}, {"from": "2013 in film", "to": "film", "label": "is a list of", "description": "2013 in film - is a list of - film"}, {"from": "Jean Rochefort", "to": "Jean Rochefort filmography", "label": "filmography", "description": "Jean Rochefort - filmography - Jean Rochefort filmography"}, {"from": "1976 in film", "to": "film", "label": "is a list of", "description": "1976 in film - is a list of - film"}, {"from": "2008 in film", "to": "film", "label": "is a list of", "description": "2008 in film - is a list of - film"}, {"from": "1985 in film", "to": "film", "label": "is a list of", "description": "1985 in film - is a list of - film"}, {"from": "list of South Korean films of 2009", "to": "film", "label": "is a list of", "description": "list of South Korean films of 2009 - is a list of - film"}, {"from": "Walt Disney Pictures", "to": "film", "label": "product or material produced", "description": "Walt Disney Pictures - product or material produced - film"}, {"from": "Akiva Goldsman", "to": "film", "label": "product or material produced", "description": "Akiva Goldsman - product or material produced - film"}, {"from": "Jean Rochefort filmography", "to": "film", "label": "is a list of", "description": "Jean Rochefort filmography - is a list of - film"}, {"from": "list of Jordanian films", "to": "film", "label": "is a list of", "description": "list of Jordanian films - is a list of - film"}, {"from": "list of British films of 2012", "to": "film", "label": "is a list of", "description": "list of British films of 2012 - is a list of - film"}, {"from": "list of films: numbers", "to": "film", "label": "is a list of", "description": "list of films: numbers - is a list of - film"}, {"from": "1926 in film", "to": "film", "label": "facet of", "description": "1926 in film - facet of - film"}, {"from": "list of Japanese films of 2012", "to": "film", "label": "is a list of", "description": "list of Japanese films of 2012 - is a list of - film"}, {"from": "list of banned films", "to": "film", "label": "is a list of", "description": "list of banned films - is a list of - film"}, {"from": "1945 in film", "to": "film", "label": "is a list of", "description": "1945 in film - is a list of - film"}, {"from": "list of South Korean historical drama films", "to": "film", "label": "is a list of", "description": "list of South Korean historical drama films - is a list of - film"}, {"from": "FilmDistrict", "to": "film", "label": "product or material produced", "description": "FilmDistrict - product or material produced - film"}, {"from": "Monster High", "to": "film", "label": "product or material produced", "description": "Monster High - product or material produced - film"}, {"from": "1951 in film", "to": "film", "label": "facet of", "description": "1951 in film - facet of - film"}, {"from": "Donnie Yen filmography", "to": "film", "label": "is a list of", "description": "Donnie Yen filmography - is a list of - film"}, {"from": "AFI's 10 Top 10", "to": "film", "label": "is a list of", "description": "AFI's 10 Top 10 - is a list of - film"}, {"from": "list of American films of 1900", "to": "film", "label": "is a list of", "description": "list of American films of 1900 - is a list of - film"}, {"from": "list of French films of 2009", "to": "film", "label": "is a list of", "description": "list of French films of 2009 - is a list of - film"}, {"from": "2011 in film", "to": "film", "label": "is a list of", "description": "2011 in film - is a list of - film"}, {"from": "1899 in film", "to": "film", "label": "facet of", "description": "1899 in film - facet of - film"}, {"from": "list of Tamil films of 1989", "to": "film", "label": "is a list of", "description": "list of Tamil films of 1989 - is a list of - film"}, {"from": "1925 in film", "to": "film", "label": "facet of", "description": "1925 in film - facet of - film"}, {"from": "list of Tamil films of 2012", "to": "film", "label": "is a list of", "description": "list of Tamil films of 2012 - is a list of - film"}, {"from": "1955 in film", "to": "film", "label": "facet of", "description": "1955 in film - facet of - film"}, {"from": "1946 in film", "to": "film", "label": "facet of", "description": "1946 in film - facet of - film"}, {"from": "Category:Films by city of location", "to": "film", "label": "category contains", "description": "Category:Films by city of location - category contains - film"}, {"from": "1908 in film", "to": "film", "label": "facet of", "description": "1908 in film - facet of - film"}, {"from": "1915 in film", "to": "film", "label": "facet of", "description": "1915 in film - facet of - film"}, {"from": "lists of French films", "to": "film", "label": "is a list of", "description": "lists of French films - is a list of - film"}, {"from": "film", "to": "Movie", "label": "KBpedia ID", "description": "film - KBpedia ID - Movie"}, {"from": "film", "to": "movies", "label": "Maine: An Encyclopedia ID", "description": "film - Maine: An Encyclopedia ID - movies"}, {"from": "1923 in film", "to": "film", "label": "facet of", "description": "1923 in film - facet of - film"}, {"from": "1909 in film", "to": "film", "label": "facet of", "description": "1909 in film - facet of - film"}, {"from": "1933 in film", "to": "film", "label": "facet of", "description": "1933 in film - facet of - film"}, {"from": "1942 in film", "to": "film", "label": "facet of", "description": "1942 in film - facet of - film"}, {"from": "1918 in film", "to": "film", "label": "facet of", "description": "1918 in film - facet of - film"}, {"from": "Imagine Entertainment", "to": "film", "label": "product or material produced", "description": "Imagine Entertainment - product or material produced - film"}, {"from": "1930 in film", "to": "film", "label": "facet of", "description": "1930 in film - facet of - film"}, {"from": "1943 in film", "to": "film", "label": "facet of", "description": "1943 in film - facet of - film"}, {"from": "1941 in film", "to": "film", "label": "facet of", "description": "1941 in film - facet of - film"}, {"from": "1950 in film", "to": "film", "label": "facet of", "description": "1950 in film - facet of - film"}, {"from": "Mary Pickford filmography", "to": "film", "label": "is a list of", "description": "Mary Pickford filmography - is a list of - film"}, {"from": "1949 in film", "to": "film", "label": "facet of", "description": "1949 in film - facet of - film"}, {"from": "1904 in film", "to": "film", "label": "facet of", "description": "1904 in film - facet of - film"}, {"from": "Jean Rochefort filmography", "to": "Jean Rochefort", "label": "main subject", "description": "Jean Rochefort filmography - main subject - Jean Rochefort"}, {"from": "list of Japanese submissions for the Academy Award for Best Foreign Language Film", "to": "film", "label": "is a list of", "description": "list of Japanese submissions for the Academy Award for Best Foreign Language Film - is a list of - film"}, {"from": "easter egg", "to": "film", "label": "location", "description": "easter egg - location - film"}, {"from": "1954 in film", "to": "film", "label": "facet of", "description": "1954 in film - facet of - film"}, {"from": "list of Italian submissions for the Academy Award for Best Foreign Language Film", "to": "film", "label": "is a list of", "description": "list of Italian submissions for the Academy Award for Best Foreign Language Film - is a list of - film"}, {"from": "2013 in film", "to": "film", "label": "facet of", "description": "2013 in film - facet of - film"}, {"from": "Category:Films by city of location", "to": "film", "label": "category combines topics", "description": "Category:Films by city of location - category combines topics - film"}, {"from": "1910 in film", "to": "film", "label": "facet of", "description": "1910 in film - facet of - film"}, {"from": "Buster Keaton filmography", "to": "film", "label": "is a list of", "description": "Buster Keaton filmography - is a list of - film"}, {"from": "film", "to": "film frame", "label": "has part(s)", "description": "film - has part(s) - film frame"}, {"from": "1895 in film", "to": "film", "label": "facet of", "description": "1895 in film - facet of - film"}, {"from": "The Catcher in the Rye", "to": "film", "label": "depicts", "description": "The Catcher in the Rye - depicts - film"}, {"from": "Woody Woodpecker filmography", "to": "film", "label": "is a list of", "description": "Woody Woodpecker filmography - is a list of - film"}, {"from": "1967 in film", "to": "film", "label": "facet of", "description": "1967 in film - facet of - film"}, {"from": "1919 in film", "to": "film", "label": "facet of", "description": "1919 in film - facet of - film"}, {"from": "film", "to": "movies-3513", "label": "CALS Encyclopedia of Arkansas ID", "description": "film - CALS Encyclopedia of Arkansas ID - movies-3513"}, {"from": "list of Russian submissions for the Academy Award for Best Foreign Language Film", "to": "film", "label": "is a list of", "description": "list of Russian submissions for the Academy Award for Best Foreign Language Film - is a list of - film"}, {"from": "1982 in film", "to": "film", "label": "facet of", "description": "1982 in film - facet of - film"}, {"from": "100 words of century", "to": "film", "label": "has part(s)", "description": "100 words of century - has part(s) - film"}, {"from": "1971 in film", "to": "film", "label": "facet of", "description": "1971 in film - facet of - film"}, {"from": "list of French submissions for the Academy Award for Best Foreign Language Film", "to": "film", "label": "is a list of", "description": "list of French submissions for the Academy Award for Best Foreign Language Film - is a list of - film"}, {"from": "film", "to": "film", "label": "El Moudjahid topic ID", "description": "film - El Moudjahid topic ID - film"}, {"from": "1965 in film", "to": "film", "label": "facet of", "description": "1965 in film - facet of - film"}, {"from": "1924 in film", "to": "film", "label": "facet of", "description": "1924 in film - facet of - film"}, {"from": "1989 in film", "to": "film", "label": "facet of", "description": "1989 in film - facet of - film"}, {"from": "1986 in film", "to": "film", "label": "facet of", "description": "1986 in film - facet of - film"}, {"from": "1985 in film", "to": "film", "label": "facet of", "description": "1985 in film - facet of - film"}, {"from": "1934 in film", "to": "film", "label": "facet of", "description": "1934 in film - facet of - film"}, {"from": "2008 in film", "to": "film", "label": "facet of", "description": "2008 in film - facet of - film"}, {"from": "reel", "to": "film", "label": "part of", "description": "reel - part of - film"}, {"from": "1993 in film", "to": "film", "label": "facet of", "description": "1993 in film - facet of - film"}, {"from": "film", "to": "Film", "label": "Süddeutsche Zeitung topic ID", "description": "film - Süddeutsche Zeitung topic ID - Film"}, {"from": "film series", "to": "film", "label": "has part(s) of the class", "description": "film series - has part(s) of the class - film"}, {"from": "list of Iron Man's armors in films", "to": "film", "label": "is a list of", "description": "list of Iron Man's armors in films - is a list of - film"}, {"from": "film", "to": "movie", "label": "Dictionary of Archives Terminology ID", "description": "film - Dictionary of Archives Terminology ID - movie"}, {"from": "film", "to": "filmmat", "label": "Ávvir topic ID", "description": "film - Ávvir topic ID - filmmat"}, {"from": "film", "to": "movies", "label": "subreddit", "description": "film - subreddit - movies"}, {"from": "1920 in film", "to": "film", "label": "facet of", "description": "1920 in film - facet of - film"}], "edge_descriptions": ["list of films shot in Harlem - is a list of - film", "film - Lex ID - film", "Spyglass Media Group - product or material produced - film", "Lucasfilm - product or material produced - film", "Village Roadshow Pictures - product or material produced - film", "list of Disney theatrical animated features - is a list of - film", "Paramount Pictures - product or material produced - film", "Dovzhenko Film Studios - product or material produced - film", "Biograph Company - product or material produced - film", "Toshiba - product or material produced - film", "1950 in film - is a list of - film", "Bad Hat Harry Productions - product or material produced - film", "list of James Bond films - is a list of - film", "Armenfilm - product or material produced - film", "1951 in film - is a list of - film", "Touchstone Pictures - product or material produced - film", "Zentropa - product or material produced - film", "Cinema Service - product or material produced - film", "Edison Studios - product or material produced - film", "list of Daffy Duck cartoons - is a list of - film", "list of highest-grossing films - is a list of - film", "Jean Rochefort - date of birth - 1930-04-29T00:00:00Z", "Lenfilm - product or material produced - film", "1946 in film - is a list of - film", "Summit Entertainment - product or material produced - film", "Mosfilm - product or material produced - film", "film - Lille norske leksikon ID - film", "film - Mississippi Encyclopedia ID - movies", "New Line Cinema - product or material produced - film", "1942 in film - is a list of - film", "Amblin Entertainment - product or material produced - film", "list of films based on Dark Horse Comics properties - is a list of - film", "1989 in film - is a list of - film", "National Film Development Corporation of India - product or material produced - film", "American International Pictures - product or material produced - film", "Castle Rock Entertainment - product or material produced - film", "1943 in film - is a list of - film", "1941 in film - is a list of - film", "1967 in film - is a list of - film", "Columbia Pictures - product or material produced - film", "film - TUBITAK Sosyal Bilimler Ansiklopedisi ID - sinema", "list of Rurouni Kenshin episodes - is a list of - film", "Lionsgate - product or material produced - film", "film - Ávvir topic ID - filbma", "1986 in film - is a list of - film", "list of South Korean films of 1949 - is a list of - film", "1982 in film - is a list of - film", "1955 in film - is a list of - film", "1965 in film - is a list of - film", "Langmuir–Blodgett film - is a list of - film", "list of Asterix films - is a list of - film", "Nimbus Film - product or material produced - film", "1933 in film - is a list of - film", "1949 in film - is a list of - film", "1993 in film - is a list of - film", "list of films based on French-language comics - is a list of - film", "list of films about the Romanian Revolution of 1989 - is a list of - film", "1971 in film - is a list of - film", "Miramax - product or material produced - film", "Kartuli Pilmi - product or material produced - film", "Porky Pig filmography - is a list of - film", "1975 in film - is a list of - film", "1954 in film - is a list of - film", "Kris Aquino - product or material produced - film", "Cines - product or material produced - film", "Universal Pictures - product or material produced - film", "United Artists - product or material produced - film", "Warner Bros. - product or material produced - film", "1919 in film - is a list of - film", "P. Ramlee filmography - is a list of - film", "1908 in film - is a list of - film", "1934 in film - is a list of - film", "2013 in film - is a list of - film", "Jean Rochefort - filmography - Jean Rochefort filmography", "1976 in film - is a list of - film", "2008 in film - is a list of - film", "1985 in film - is a list of - film", "list of South Korean films of 2009 - is a list of - film", "Walt Disney Pictures - product or material produced - film", "Akiva Goldsman - product or material produced - film", "Jean Rochefort filmography - is a list of - film", "list of Jordanian films - is a list of - film", "list of British films of 2012 - is a list of - film", "list of films: numbers - is a list of - film", "1926 in film - facet of - film", "list of Japanese films of 2012 - is a list of - film", "list of banned films - is a list of - film", "1945 in film - is a list of - film", "list of South Korean historical drama films - is a list of - film", "FilmDistrict - product or material produced - film", "Monster High - product or material produced - film", "1951 in film - facet of - film", "Donnie Yen filmography - is a list of - film", "AFI's 10 Top 10 - is a list of - film", "list of American films of 1900 - is a list of - film", "list of French films of 2009 - is a list of - film", "2011 in film - is a list of - film", "1899 in film - facet of - film", "list of Tamil films of 1989 - is a list of - film", "1925 in film - facet of - film", "list of Tamil films of 2012 - is a list of - film", "1955 in film - facet of - film", "1946 in film - facet of - film", "Category:Films by city of location - category contains - film", "1908 in film - facet of - film", "1915 in film - facet of - film", "lists of French films - is a list of - film", "film - KBpedia ID - Movie", "film - Maine: An Encyclopedia ID - movies", "1923 in film - facet of - film", "1909 in film - facet of - film", "1933 in film - facet of - film", "1942 in film - facet of - film", "1918 in film - facet of - film", "Imagine Entertainment - product or material produced - film", "1930 in film - facet of - film", "1943 in film - facet of - film", "1941 in film - facet of - film", "1950 in film - facet of - film", "Mary Pickford filmography - is a list of - film", "1949 in film - facet of - film", "1904 in film - facet of - film", "Jean Rochefort filmography - main subject - Jean Rochefort", "list of Japanese submissions for the Academy Award for Best Foreign Language Film - is a list of - film", "easter egg - location - film", "1954 in film - facet of - film", "list of Italian submissions for the Academy Award for Best Foreign Language Film - is a list of - film", "2013 in film - facet of - film", "Category:Films by city of location - category combines topics - film", "1910 in film - facet of - film", "Buster Keaton filmography - is a list of - film", "film - has part(s) - film frame", "1895 in film - facet of - film", "The Catcher in the Rye - depicts - film", "Woody Woodpecker filmography - is a list of - film", "1967 in film - facet of - film", "1919 in film - facet of - film", "film - CALS Encyclopedia of Arkansas ID - movies-3513", "list of Russian submissions for the Academy Award for Best Foreign Language Film - is a list of - film", "1982 in film - facet of - film", "100 words of century - has part(s) - film", "1971 in film - facet of - film", "list of French submissions for the Academy Award for Best Foreign Language Film - is a list of - film", "film - El Moudjahid topic ID - film", "1965 in film - facet of - film", "1924 in film - facet of - film", "1989 in film - facet of - film", "1986 in film - facet of - film", "1985 in film - facet of - film", "1934 in film - facet of - film", "2008 in film - facet of - film", "reel - part of - film", "1993 in film - facet of - film", "film - Süddeutsche Zeitung topic ID - Film", "film series - has part(s) of the class - film", "list of Iron Man's armors in films - is a list of - film", "film - Dictionary of Archives Terminology ID - movie", "film - Ávvir topic ID - filmmat", "film - subreddit - movies", "1920 in film - facet of - film"]}
+{
+    "ts": 1757356219.320012,
+    "seed_nodes": [
+        "Jean Rochefort",
+        "film"
+    ],
+    "nodes_list": [
+        "100 words of century",
+        "1895 in film",
+        "1899 in film",
+        "1904 in film",
+        "1908 in film",
+        "1909 in film",
+        "1910 in film",
+        "1915 in film",
+        "1918 in film",
+        "1919 in film",
+        "1920 in film",
+        "1923 in film",
+        "1924 in film",
+        "1925 in film",
+        "1926 in film",
+        "1930 in film",
+        "1930-04-29T00:00:00Z",
+        "1933 in film",
+        "1934 in film",
+        "1941 in film",
+        "1942 in film",
+        "1943 in film",
+        "1945 in film",
+        "1946 in film",
+        "1949 in film",
+        "1950 in film",
+        "1951 in film",
+        "1954 in film",
+        "1955 in film",
+        "1965 in film",
+        "1967 in film",
+        "1971 in film",
+        "1975 in film",
+        "1976 in film",
+        "1982 in film",
+        "1985 in film",
+        "1986 in film",
+        "1989 in film",
+        "1993 in film",
+        "2008 in film",
+        "2011 in film",
+        "2013 in film",
+        "AFI's 10 Top 10",
+        "Akiva Goldsman",
+        "Amblin Entertainment",
+        "American International Pictures",
+        "Armenfilm",
+        "Bad Hat Harry Productions",
+        "Biograph Company",
+        "Buster Keaton filmography",
+        "Castle Rock Entertainment",
+        "Category:Films by city of location",
+        "Cinema Service",
+        "Cines",
+        "Columbia Pictures",
+        "Donnie Yen filmography",
+        "Dovzhenko Film Studios",
+        "Edison Studios",
+        "Film",
+        "FilmDistrict",
+        "Imagine Entertainment",
+        "Jean Rochefort",
+        "Jean Rochefort filmography",
+        "Kartuli Pilmi",
+        "Kris Aquino",
+        "Langmuir–Blodgett film",
+        "Lenfilm",
+        "Lionsgate",
+        "Lucasfilm",
+        "Mary Pickford filmography",
+        "Miramax",
+        "Monster High",
+        "Mosfilm",
+        "Movie",
+        "National Film Development Corporation of India",
+        "New Line Cinema",
+        "Nimbus Film",
+        "P. Ramlee filmography",
+        "Paramount Pictures",
+        "Porky Pig filmography",
+        "Spyglass Media Group",
+        "Summit Entertainment",
+        "The Catcher in the Rye",
+        "Toshiba",
+        "Touchstone Pictures",
+        "United Artists",
+        "Universal Pictures",
+        "Village Roadshow Pictures",
+        "Walt Disney Pictures",
+        "Warner Bros.",
+        "Woody Woodpecker filmography",
+        "Zentropa",
+        "easter egg",
+        "filbma",
+        "film",
+        "film frame",
+        "film series",
+        "filmmat",
+        "list of American films of 1900",
+        "list of Asterix films",
+        "list of British films of 2012",
+        "list of Daffy Duck cartoons",
+        "list of Disney theatrical animated features",
+        "list of French films of 2009",
+        "list of French submissions for the Academy Award for Best Foreign Language Film",
+        "list of Iron Man's armors in films",
+        "list of Italian submissions for the Academy Award for Best Foreign Language Film",
+        "list of James Bond films",
+        "list of Japanese films of 2012",
+        "list of Japanese submissions for the Academy Award for Best Foreign Language Film",
+        "list of Jordanian films",
+        "list of Rurouni Kenshin episodes",
+        "list of Russian submissions for the Academy Award for Best Foreign Language Film",
+        "list of South Korean films of 1949",
+        "list of South Korean films of 2009",
+        "list of South Korean historical drama films",
+        "list of Tamil films of 1989",
+        "list of Tamil films of 2012",
+        "list of banned films",
+        "list of films about the Romanian Revolution of 1989",
+        "list of films based on Dark Horse Comics properties",
+        "list of films based on French-language comics",
+        "list of films shot in Harlem",
+        "list of films: numbers",
+        "list of highest-grossing films",
+        "lists of French films",
+        "movie",
+        "movies",
+        "movies-3513",
+        "reel",
+        "sinema"
+    ],
+    "edge_dict_list": [
+        {
+            "from": "list of films shot in Harlem",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of films shot in Harlem - is a list of - film"
+        },
+        {
+            "from": "film",
+            "to": "film",
+            "label": "Lex ID",
+            "description": "film - Lex ID - film"
+        },
+        {
+            "from": "Spyglass Media Group",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Spyglass Media Group - product or material produced - film"
+        },
+        {
+            "from": "Lucasfilm",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Lucasfilm - product or material produced - film"
+        },
+        {
+            "from": "Village Roadshow Pictures",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Village Roadshow Pictures - product or material produced - film"
+        },
+        {
+            "from": "list of Disney theatrical animated features",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of Disney theatrical animated features - is a list of - film"
+        },
+        {
+            "from": "Paramount Pictures",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Paramount Pictures - product or material produced - film"
+        },
+        {
+            "from": "Dovzhenko Film Studios",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Dovzhenko Film Studios - product or material produced - film"
+        },
+        {
+            "from": "Biograph Company",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Biograph Company - product or material produced - film"
+        },
+        {
+            "from": "Toshiba",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Toshiba - product or material produced - film"
+        },
+        {
+            "from": "1950 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1950 in film - is a list of - film"
+        },
+        {
+            "from": "Bad Hat Harry Productions",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Bad Hat Harry Productions - product or material produced - film"
+        },
+        {
+            "from": "list of James Bond films",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of James Bond films - is a list of - film"
+        },
+        {
+            "from": "Armenfilm",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Armenfilm - product or material produced - film"
+        },
+        {
+            "from": "1951 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1951 in film - is a list of - film"
+        },
+        {
+            "from": "Touchstone Pictures",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Touchstone Pictures - product or material produced - film"
+        },
+        {
+            "from": "Zentropa",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Zentropa - product or material produced - film"
+        },
+        {
+            "from": "Cinema Service",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Cinema Service - product or material produced - film"
+        },
+        {
+            "from": "Edison Studios",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Edison Studios - product or material produced - film"
+        },
+        {
+            "from": "list of Daffy Duck cartoons",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of Daffy Duck cartoons - is a list of - film"
+        },
+        {
+            "from": "list of highest-grossing films",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of highest-grossing films - is a list of - film"
+        },
+        {
+            "from": "Jean Rochefort",
+            "to": "1930-04-29T00:00:00Z",
+            "label": "date of birth",
+            "description": "Jean Rochefort - date of birth - 1930-04-29T00:00:00Z"
+        },
+        {
+            "from": "Lenfilm",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Lenfilm - product or material produced - film"
+        },
+        {
+            "from": "1946 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1946 in film - is a list of - film"
+        },
+        {
+            "from": "Summit Entertainment",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Summit Entertainment - product or material produced - film"
+        },
+        {
+            "from": "Mosfilm",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Mosfilm - product or material produced - film"
+        },
+        {
+            "from": "film",
+            "to": "film",
+            "label": "Lille norske leksikon ID",
+            "description": "film - Lille norske leksikon ID - film"
+        },
+        {
+            "from": "film",
+            "to": "movies",
+            "label": "Mississippi Encyclopedia ID",
+            "description": "film - Mississippi Encyclopedia ID - movies"
+        },
+        {
+            "from": "New Line Cinema",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "New Line Cinema - product or material produced - film"
+        },
+        {
+            "from": "1942 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1942 in film - is a list of - film"
+        },
+        {
+            "from": "Amblin Entertainment",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Amblin Entertainment - product or material produced - film"
+        },
+        {
+            "from": "list of films based on Dark Horse Comics properties",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of films based on Dark Horse Comics properties - is a list of - film"
+        },
+        {
+            "from": "1989 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1989 in film - is a list of - film"
+        },
+        {
+            "from": "National Film Development Corporation of India",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "National Film Development Corporation of India - product or material produced - film"
+        },
+        {
+            "from": "American International Pictures",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "American International Pictures - product or material produced - film"
+        },
+        {
+            "from": "Castle Rock Entertainment",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Castle Rock Entertainment - product or material produced - film"
+        },
+        {
+            "from": "1943 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1943 in film - is a list of - film"
+        },
+        {
+            "from": "1941 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1941 in film - is a list of - film"
+        },
+        {
+            "from": "1967 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1967 in film - is a list of - film"
+        },
+        {
+            "from": "Columbia Pictures",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Columbia Pictures - product or material produced - film"
+        },
+        {
+            "from": "film",
+            "to": "sinema",
+            "label": "TUBITAK Sosyal Bilimler Ansiklopedisi ID",
+            "description": "film - TUBITAK Sosyal Bilimler Ansiklopedisi ID - sinema"
+        },
+        {
+            "from": "list of Rurouni Kenshin episodes",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of Rurouni Kenshin episodes - is a list of - film"
+        },
+        {
+            "from": "Lionsgate",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Lionsgate - product or material produced - film"
+        },
+        {
+            "from": "film",
+            "to": "filbma",
+            "label": "Ávvir topic ID",
+            "description": "film - Ávvir topic ID - filbma"
+        },
+        {
+            "from": "1986 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1986 in film - is a list of - film"
+        },
+        {
+            "from": "list of South Korean films of 1949",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of South Korean films of 1949 - is a list of - film"
+        },
+        {
+            "from": "1982 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1982 in film - is a list of - film"
+        },
+        {
+            "from": "1955 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1955 in film - is a list of - film"
+        },
+        {
+            "from": "1965 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1965 in film - is a list of - film"
+        },
+        {
+            "from": "Langmuir–Blodgett film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "Langmuir–Blodgett film - is a list of - film"
+        },
+        {
+            "from": "list of Asterix films",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of Asterix films - is a list of - film"
+        },
+        {
+            "from": "Nimbus Film",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Nimbus Film - product or material produced - film"
+        },
+        {
+            "from": "1933 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1933 in film - is a list of - film"
+        },
+        {
+            "from": "1949 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1949 in film - is a list of - film"
+        },
+        {
+            "from": "1993 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1993 in film - is a list of - film"
+        },
+        {
+            "from": "list of films based on French-language comics",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of films based on French-language comics - is a list of - film"
+        },
+        {
+            "from": "list of films about the Romanian Revolution of 1989",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of films about the Romanian Revolution of 1989 - is a list of - film"
+        },
+        {
+            "from": "1971 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1971 in film - is a list of - film"
+        },
+        {
+            "from": "Miramax",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Miramax - product or material produced - film"
+        },
+        {
+            "from": "Kartuli Pilmi",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Kartuli Pilmi - product or material produced - film"
+        },
+        {
+            "from": "Porky Pig filmography",
+            "to": "film",
+            "label": "is a list of",
+            "description": "Porky Pig filmography - is a list of - film"
+        },
+        {
+            "from": "1975 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1975 in film - is a list of - film"
+        },
+        {
+            "from": "1954 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1954 in film - is a list of - film"
+        },
+        {
+            "from": "Kris Aquino",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Kris Aquino - product or material produced - film"
+        },
+        {
+            "from": "Cines",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Cines - product or material produced - film"
+        },
+        {
+            "from": "Universal Pictures",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Universal Pictures - product or material produced - film"
+        },
+        {
+            "from": "United Artists",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "United Artists - product or material produced - film"
+        },
+        {
+            "from": "Warner Bros.",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Warner Bros. - product or material produced - film"
+        },
+        {
+            "from": "1919 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1919 in film - is a list of - film"
+        },
+        {
+            "from": "P. Ramlee filmography",
+            "to": "film",
+            "label": "is a list of",
+            "description": "P. Ramlee filmography - is a list of - film"
+        },
+        {
+            "from": "1908 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1908 in film - is a list of - film"
+        },
+        {
+            "from": "1934 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1934 in film - is a list of - film"
+        },
+        {
+            "from": "2013 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "2013 in film - is a list of - film"
+        },
+        {
+            "from": "Jean Rochefort",
+            "to": "Jean Rochefort filmography",
+            "label": "filmography",
+            "description": "Jean Rochefort - filmography - Jean Rochefort filmography"
+        },
+        {
+            "from": "1976 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1976 in film - is a list of - film"
+        },
+        {
+            "from": "2008 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "2008 in film - is a list of - film"
+        },
+        {
+            "from": "1985 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1985 in film - is a list of - film"
+        },
+        {
+            "from": "list of South Korean films of 2009",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of South Korean films of 2009 - is a list of - film"
+        },
+        {
+            "from": "Walt Disney Pictures",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Walt Disney Pictures - product or material produced - film"
+        },
+        {
+            "from": "Akiva Goldsman",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Akiva Goldsman - product or material produced - film"
+        },
+        {
+            "from": "Jean Rochefort filmography",
+            "to": "film",
+            "label": "is a list of",
+            "description": "Jean Rochefort filmography - is a list of - film"
+        },
+        {
+            "from": "list of Jordanian films",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of Jordanian films - is a list of - film"
+        },
+        {
+            "from": "list of British films of 2012",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of British films of 2012 - is a list of - film"
+        },
+        {
+            "from": "list of films: numbers",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of films: numbers - is a list of - film"
+        },
+        {
+            "from": "1926 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1926 in film - facet of - film"
+        },
+        {
+            "from": "list of Japanese films of 2012",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of Japanese films of 2012 - is a list of - film"
+        },
+        {
+            "from": "list of banned films",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of banned films - is a list of - film"
+        },
+        {
+            "from": "1945 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "1945 in film - is a list of - film"
+        },
+        {
+            "from": "list of South Korean historical drama films",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of South Korean historical drama films - is a list of - film"
+        },
+        {
+            "from": "FilmDistrict",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "FilmDistrict - product or material produced - film"
+        },
+        {
+            "from": "Monster High",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Monster High - product or material produced - film"
+        },
+        {
+            "from": "1951 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1951 in film - facet of - film"
+        },
+        {
+            "from": "Donnie Yen filmography",
+            "to": "film",
+            "label": "is a list of",
+            "description": "Donnie Yen filmography - is a list of - film"
+        },
+        {
+            "from": "AFI's 10 Top 10",
+            "to": "film",
+            "label": "is a list of",
+            "description": "AFI's 10 Top 10 - is a list of - film"
+        },
+        {
+            "from": "list of American films of 1900",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of American films of 1900 - is a list of - film"
+        },
+        {
+            "from": "list of French films of 2009",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of French films of 2009 - is a list of - film"
+        },
+        {
+            "from": "2011 in film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "2011 in film - is a list of - film"
+        },
+        {
+            "from": "1899 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1899 in film - facet of - film"
+        },
+        {
+            "from": "list of Tamil films of 1989",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of Tamil films of 1989 - is a list of - film"
+        },
+        {
+            "from": "1925 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1925 in film - facet of - film"
+        },
+        {
+            "from": "list of Tamil films of 2012",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of Tamil films of 2012 - is a list of - film"
+        },
+        {
+            "from": "1955 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1955 in film - facet of - film"
+        },
+        {
+            "from": "1946 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1946 in film - facet of - film"
+        },
+        {
+            "from": "Category:Films by city of location",
+            "to": "film",
+            "label": "category contains",
+            "description": "Category:Films by city of location - category contains - film"
+        },
+        {
+            "from": "1908 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1908 in film - facet of - film"
+        },
+        {
+            "from": "1915 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1915 in film - facet of - film"
+        },
+        {
+            "from": "lists of French films",
+            "to": "film",
+            "label": "is a list of",
+            "description": "lists of French films - is a list of - film"
+        },
+        {
+            "from": "film",
+            "to": "Movie",
+            "label": "KBpedia ID",
+            "description": "film - KBpedia ID - Movie"
+        },
+        {
+            "from": "film",
+            "to": "movies",
+            "label": "Maine: An Encyclopedia ID",
+            "description": "film - Maine: An Encyclopedia ID - movies"
+        },
+        {
+            "from": "1923 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1923 in film - facet of - film"
+        },
+        {
+            "from": "1909 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1909 in film - facet of - film"
+        },
+        {
+            "from": "1933 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1933 in film - facet of - film"
+        },
+        {
+            "from": "1942 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1942 in film - facet of - film"
+        },
+        {
+            "from": "1918 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1918 in film - facet of - film"
+        },
+        {
+            "from": "Imagine Entertainment",
+            "to": "film",
+            "label": "product or material produced",
+            "description": "Imagine Entertainment - product or material produced - film"
+        },
+        {
+            "from": "1930 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1930 in film - facet of - film"
+        },
+        {
+            "from": "1943 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1943 in film - facet of - film"
+        },
+        {
+            "from": "1941 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1941 in film - facet of - film"
+        },
+        {
+            "from": "1950 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1950 in film - facet of - film"
+        },
+        {
+            "from": "Mary Pickford filmography",
+            "to": "film",
+            "label": "is a list of",
+            "description": "Mary Pickford filmography - is a list of - film"
+        },
+        {
+            "from": "1949 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1949 in film - facet of - film"
+        },
+        {
+            "from": "1904 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1904 in film - facet of - film"
+        },
+        {
+            "from": "Jean Rochefort filmography",
+            "to": "Jean Rochefort",
+            "label": "main subject",
+            "description": "Jean Rochefort filmography - main subject - Jean Rochefort"
+        },
+        {
+            "from": "list of Japanese submissions for the Academy Award for Best Foreign Language Film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of Japanese submissions for the Academy Award for Best Foreign Language Film - is a list of - film"
+        },
+        {
+            "from": "easter egg",
+            "to": "film",
+            "label": "location",
+            "description": "easter egg - location - film"
+        },
+        {
+            "from": "1954 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1954 in film - facet of - film"
+        },
+        {
+            "from": "list of Italian submissions for the Academy Award for Best Foreign Language Film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of Italian submissions for the Academy Award for Best Foreign Language Film - is a list of - film"
+        },
+        {
+            "from": "2013 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "2013 in film - facet of - film"
+        },
+        {
+            "from": "Category:Films by city of location",
+            "to": "film",
+            "label": "category combines topics",
+            "description": "Category:Films by city of location - category combines topics - film"
+        },
+        {
+            "from": "1910 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1910 in film - facet of - film"
+        },
+        {
+            "from": "Buster Keaton filmography",
+            "to": "film",
+            "label": "is a list of",
+            "description": "Buster Keaton filmography - is a list of - film"
+        },
+        {
+            "from": "film",
+            "to": "film frame",
+            "label": "has part(s)",
+            "description": "film - has part(s) - film frame"
+        },
+        {
+            "from": "1895 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1895 in film - facet of - film"
+        },
+        {
+            "from": "The Catcher in the Rye",
+            "to": "film",
+            "label": "depicts",
+            "description": "The Catcher in the Rye - depicts - film"
+        },
+        {
+            "from": "Woody Woodpecker filmography",
+            "to": "film",
+            "label": "is a list of",
+            "description": "Woody Woodpecker filmography - is a list of - film"
+        },
+        {
+            "from": "1967 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1967 in film - facet of - film"
+        },
+        {
+            "from": "1919 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1919 in film - facet of - film"
+        },
+        {
+            "from": "film",
+            "to": "movies-3513",
+            "label": "CALS Encyclopedia of Arkansas ID",
+            "description": "film - CALS Encyclopedia of Arkansas ID - movies-3513"
+        },
+        {
+            "from": "list of Russian submissions for the Academy Award for Best Foreign Language Film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of Russian submissions for the Academy Award for Best Foreign Language Film - is a list of - film"
+        },
+        {
+            "from": "1982 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1982 in film - facet of - film"
+        },
+        {
+            "from": "100 words of century",
+            "to": "film",
+            "label": "has part(s)",
+            "description": "100 words of century - has part(s) - film"
+        },
+        {
+            "from": "1971 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1971 in film - facet of - film"
+        },
+        {
+            "from": "list of French submissions for the Academy Award for Best Foreign Language Film",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of French submissions for the Academy Award for Best Foreign Language Film - is a list of - film"
+        },
+        {
+            "from": "film",
+            "to": "film",
+            "label": "El Moudjahid topic ID",
+            "description": "film - El Moudjahid topic ID - film"
+        },
+        {
+            "from": "1965 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1965 in film - facet of - film"
+        },
+        {
+            "from": "1924 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1924 in film - facet of - film"
+        },
+        {
+            "from": "1989 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1989 in film - facet of - film"
+        },
+        {
+            "from": "1986 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1986 in film - facet of - film"
+        },
+        {
+            "from": "1985 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1985 in film - facet of - film"
+        },
+        {
+            "from": "1934 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1934 in film - facet of - film"
+        },
+        {
+            "from": "2008 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "2008 in film - facet of - film"
+        },
+        {
+            "from": "reel",
+            "to": "film",
+            "label": "part of",
+            "description": "reel - part of - film"
+        },
+        {
+            "from": "1993 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1993 in film - facet of - film"
+        },
+        {
+            "from": "film",
+            "to": "Film",
+            "label": "Süddeutsche Zeitung topic ID",
+            "description": "film - Süddeutsche Zeitung topic ID - Film"
+        },
+        {
+            "from": "film series",
+            "to": "film",
+            "label": "has part(s) of the class",
+            "description": "film series - has part(s) of the class - film"
+        },
+        {
+            "from": "list of Iron Man's armors in films",
+            "to": "film",
+            "label": "is a list of",
+            "description": "list of Iron Man's armors in films - is a list of - film"
+        },
+        {
+            "from": "film",
+            "to": "movie",
+            "label": "Dictionary of Archives Terminology ID",
+            "description": "film - Dictionary of Archives Terminology ID - movie"
+        },
+        {
+            "from": "film",
+            "to": "filmmat",
+            "label": "Ávvir topic ID",
+            "description": "film - Ávvir topic ID - filmmat"
+        },
+        {
+            "from": "film",
+            "to": "movies",
+            "label": "subreddit",
+            "description": "film - subreddit - movies"
+        },
+        {
+            "from": "1920 in film",
+            "to": "film",
+            "label": "facet of",
+            "description": "1920 in film - facet of - film"
+        }
+    ],
+    "edge_descriptions": [
+        "list of films shot in Harlem - is a list of - film",
+        "film - Lex ID - film",
+        "Spyglass Media Group - product or material produced - film",
+        "Lucasfilm - product or material produced - film",
+        "Village Roadshow Pictures - product or material produced - film",
+        "list of Disney theatrical animated features - is a list of - film",
+        "Paramount Pictures - product or material produced - film",
+        "Dovzhenko Film Studios - product or material produced - film",
+        "Biograph Company - product or material produced - film",
+        "Toshiba - product or material produced - film",
+        "1950 in film - is a list of - film",
+        "Bad Hat Harry Productions - product or material produced - film",
+        "list of James Bond films - is a list of - film",
+        "Armenfilm - product or material produced - film",
+        "1951 in film - is a list of - film",
+        "Touchstone Pictures - product or material produced - film",
+        "Zentropa - product or material produced - film",
+        "Cinema Service - product or material produced - film",
+        "Edison Studios - product or material produced - film",
+        "list of Daffy Duck cartoons - is a list of - film",
+        "list of highest-grossing films - is a list of - film",
+        "Jean Rochefort - date of birth - 1930-04-29T00:00:00Z",
+        "Lenfilm - product or material produced - film",
+        "1946 in film - is a list of - film",
+        "Summit Entertainment - product or material produced - film",
+        "Mosfilm - product or material produced - film",
+        "film - Lille norske leksikon ID - film",
+        "film - Mississippi Encyclopedia ID - movies",
+        "New Line Cinema - product or material produced - film",
+        "1942 in film - is a list of - film",
+        "Amblin Entertainment - product or material produced - film",
+        "list of films based on Dark Horse Comics properties - is a list of - film",
+        "1989 in film - is a list of - film",
+        "National Film Development Corporation of India - product or material produced - film",
+        "American International Pictures - product or material produced - film",
+        "Castle Rock Entertainment - product or material produced - film",
+        "1943 in film - is a list of - film",
+        "1941 in film - is a list of - film",
+        "1967 in film - is a list of - film",
+        "Columbia Pictures - product or material produced - film",
+        "film - TUBITAK Sosyal Bilimler Ansiklopedisi ID - sinema",
+        "list of Rurouni Kenshin episodes - is a list of - film",
+        "Lionsgate - product or material produced - film",
+        "film - Ávvir topic ID - filbma",
+        "1986 in film - is a list of - film",
+        "list of South Korean films of 1949 - is a list of - film",
+        "1982 in film - is a list of - film",
+        "1955 in film - is a list of - film",
+        "1965 in film - is a list of - film",
+        "Langmuir–Blodgett film - is a list of - film",
+        "list of Asterix films - is a list of - film",
+        "Nimbus Film - product or material produced - film",
+        "1933 in film - is a list of - film",
+        "1949 in film - is a list of - film",
+        "1993 in film - is a list of - film",
+        "list of films based on French-language comics - is a list of - film",
+        "list of films about the Romanian Revolution of 1989 - is a list of - film",
+        "1971 in film - is a list of - film",
+        "Miramax - product or material produced - film",
+        "Kartuli Pilmi - product or material produced - film",
+        "Porky Pig filmography - is a list of - film",
+        "1975 in film - is a list of - film",
+        "1954 in film - is a list of - film",
+        "Kris Aquino - product or material produced - film",
+        "Cines - product or material produced - film",
+        "Universal Pictures - product or material produced - film",
+        "United Artists - product or material produced - film",
+        "Warner Bros. - product or material produced - film",
+        "1919 in film - is a list of - film",
+        "P. Ramlee filmography - is a list of - film",
+        "1908 in film - is a list of - film",
+        "1934 in film - is a list of - film",
+        "2013 in film - is a list of - film",
+        "Jean Rochefort - filmography - Jean Rochefort filmography",
+        "1976 in film - is a list of - film",
+        "2008 in film - is a list of - film",
+        "1985 in film - is a list of - film",
+        "list of South Korean films of 2009 - is a list of - film",
+        "Walt Disney Pictures - product or material produced - film",
+        "Akiva Goldsman - product or material produced - film",
+        "Jean Rochefort filmography - is a list of - film",
+        "list of Jordanian films - is a list of - film",
+        "list of British films of 2012 - is a list of - film",
+        "list of films: numbers - is a list of - film",
+        "1926 in film - facet of - film",
+        "list of Japanese films of 2012 - is a list of - film",
+        "list of banned films - is a list of - film",
+        "1945 in film - is a list of - film",
+        "list of South Korean historical drama films - is a list of - film",
+        "FilmDistrict - product or material produced - film",
+        "Monster High - product or material produced - film",
+        "1951 in film - facet of - film",
+        "Donnie Yen filmography - is a list of - film",
+        "AFI's 10 Top 10 - is a list of - film",
+        "list of American films of 1900 - is a list of - film",
+        "list of French films of 2009 - is a list of - film",
+        "2011 in film - is a list of - film",
+        "1899 in film - facet of - film",
+        "list of Tamil films of 1989 - is a list of - film",
+        "1925 in film - facet of - film",
+        "list of Tamil films of 2012 - is a list of - film",
+        "1955 in film - facet of - film",
+        "1946 in film - facet of - film",
+        "Category:Films by city of location - category contains - film",
+        "1908 in film - facet of - film",
+        "1915 in film - facet of - film",
+        "lists of French films - is a list of - film",
+        "film - KBpedia ID - Movie",
+        "film - Maine: An Encyclopedia ID - movies",
+        "1923 in film - facet of - film",
+        "1909 in film - facet of - film",
+        "1933 in film - facet of - film",
+        "1942 in film - facet of - film",
+        "1918 in film - facet of - film",
+        "Imagine Entertainment - product or material produced - film",
+        "1930 in film - facet of - film",
+        "1943 in film - facet of - film",
+        "1941 in film - facet of - film",
+        "1950 in film - facet of - film",
+        "Mary Pickford filmography - is a list of - film",
+        "1949 in film - facet of - film",
+        "1904 in film - facet of - film",
+        "Jean Rochefort filmography - main subject - Jean Rochefort",
+        "list of Japanese submissions for the Academy Award for Best Foreign Language Film - is a list of - film",
+        "easter egg - location - film",
+        "1954 in film - facet of - film",
+        "list of Italian submissions for the Academy Award for Best Foreign Language Film - is a list of - film",
+        "2013 in film - facet of - film",
+        "Category:Films by city of location - category combines topics - film",
+        "1910 in film - facet of - film",
+        "Buster Keaton filmography - is a list of - film",
+        "film - has part(s) - film frame",
+        "1895 in film - facet of - film",
+        "The Catcher in the Rye - depicts - film",
+        "Woody Woodpecker filmography - is a list of - film",
+        "1967 in film - facet of - film",
+        "1919 in film - facet of - film",
+        "film - CALS Encyclopedia of Arkansas ID - movies-3513",
+        "list of Russian submissions for the Academy Award for Best Foreign Language Film - is a list of - film",
+        "1982 in film - facet of - film",
+        "100 words of century - has part(s) - film",
+        "1971 in film - facet of - film",
+        "list of French submissions for the Academy Award for Best Foreign Language Film - is a list of - film",
+        "film - El Moudjahid topic ID - film",
+        "1965 in film - facet of - film",
+        "1924 in film - facet of - film",
+        "1989 in film - facet of - film",
+        "1986 in film - facet of - film",
+        "1985 in film - facet of - film",
+        "1934 in film - facet of - film",
+        "2008 in film - facet of - film",
+        "reel - part of - film",
+        "1993 in film - facet of - film",
+        "film - Süddeutsche Zeitung topic ID - Film",
+        "film series - has part(s) of the class - film",
+        "list of Iron Man's armors in films - is a list of - film",
+        "film - Dictionary of Archives Terminology ID - movie",
+        "film - Ávvir topic ID - filmmat",
+        "film - subreddit - movies",
+        "1920 in film - facet of - film"
+    ]
+}
