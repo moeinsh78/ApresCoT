@@ -37,6 +37,8 @@ Please provide your answer to this question based on the provided context, and e
 
 
 def create_prompt(question: str, kg_name: str, rag: bool, llm: str, edge_descriptions: List[str], new_reasoning: bool = True):
+    if llm == "o3-mini":
+        return "", f"{question}\nAnswer this question by thinking step by step, and provide your reasoning process.\n"
     if new_reasoning:
         if kg_name == "wikidata":
             return WIKIDATA_REASONING_INSTRUCTION, f"# QUERY:\n{question}\n\nPlease provide your answer to this question and explain your reasoning step by step.\n"

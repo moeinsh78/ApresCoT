@@ -20,8 +20,8 @@ def _cache_key(kg: str, question: str, depth: int, params: Dict[str, Any]) -> st
         "kg": kg,
         "question": question.strip(),
         "depth": depth,
-        "params": params,           # include knobs that affect retrieval
-        "v": 1,                     # bump if schema changes
+        "params": params,
+        "v": 1,
     }
     s = json.dumps(payload, sort_keys=True, ensure_ascii=False)
     return hashlib.sha256(s.encode("utf-8")).hexdigest()
@@ -83,6 +83,7 @@ def retrieve_subgraph(question: str, kg: str, depth: int, use_srtk: bool):
         total_cap_per_node = 256
         max_nodes = 350
         scorer_model = "drt/srtk-scorer"
+        # scorer_model = "sentence-transformers/all-MiniLM-L6-v2"
         compare_to_hypothetical_answer = False
         retriever_params = {
             "use_srtk": True,

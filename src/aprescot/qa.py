@@ -26,14 +26,30 @@ def ask_llm(llm: str, instruction_msg: str, prompt: str, new_reasoning: bool = T
 
     else:
         client = OpenAI()
+        if llm == "o3-mini":
+            response = client.responses.create(
+                model=llm,
+                input=[{
+                    "role": "user",
+                    "content": prompt,
+                }],
+                reasoning={"effort": "medium", "summary": "auto"},
+                store=False,
+            )
+            answer_text = response.output_text
+            reasoning_summary = response.reasoning.summary
+            reasoning_tok = response.usage.output_tokens_details.reasoning_tokens
 
-        response = client.responses.create(
-            model=llm,
-            instructions=instruction_msg,
-            input=prompt,
-        )
-        return response.output_text, [], []
+            output = "Reasoning Tokens: " + str(reasoning_tok) + "\n\n" + "Reasoning: \n" + reasoning_summary + "\n\n" + "Answer: \n" + answer_text + "\n\n"
+            return output, [], []
 
+        else:
+            response = client.responses.create(
+                model=llm,
+                instructions=instruction_msg,
+                input=prompt,
+            )
+            return response.output_text, [], []
 
 def perform_qa(llm: str, kg: str, question: str, rag: bool):
     new_reasoning = True
