@@ -10,6 +10,8 @@ __pycache__/
 # Dataset (KG)
 kg/
 
+# PID file for webapp
+webapp_pid.txt
 
 # Distribution / packaging
 .Python

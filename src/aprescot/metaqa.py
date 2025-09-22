@@ -3,6 +3,8 @@ import networkx as nx
 import pandas as pd
 import numpy as np
 from queue import PriorityQueue
+from openai import OpenAI
+
 
 from sklearn.metrics.pairwise import cosine_similarity
 from sentence_transformers import SentenceTransformer
@@ -211,6 +213,101 @@ class MetaQAKnowledgeGraph:
         return edge_dict_list, self.get_nodes_set(edge_dict_list)
     
 
+    def get_srtk_style_subgraph(
+        self,
+        graph,
+        similarity_model,
+        question: str,
+        seed_entities: List[str],
+        max_hops: int = 2,
+        beam_size: int = 12,
+        max_nodes: int = 100,
+        not_to_expand_relation_labels: List[str] = None,
+        compare_to_hypothetical_answers: bool = False,
+    ):
+        if not_to_expand_relation_labels is None:
+            not_to_expand_relation_labels = []
+
+        not_to_expand_relation_set = set(not_to_expand_relation_labels)
+        if compare_to_hypothetical_answers:
+            hypothetical_answer = generate_hypothetical_answer(question)
+            print("Hypothetical Answer:", hypothetical_answer)
+            q_emb = similarity_model.encode(hypothetical_answer)
+        else:
+            q_emb = similarity_model.encode(question, show_progress_bar=False)
+
+        triples = []
+        seeds = [entity for entity in seed_entities if graph.has_node(entity)]
+        seen_edges = set()
+        seen_nodes = set(seeds)
+        frontier = set(seeds)
+
+        for hop in range(max_hops):
+            candidates = []
+
+            for node in frontier:
+                neighbors = list(nx.bfs_edges(graph, node, depth_limit=1))
+                for pair in neighbors:
+                    for i in range(graph.number_of_edges(pair[0], pair[1])):
+                        edge_dict = {
+                            "from": pair[0],
+                            "to": pair[1],
+                            "label": graph.edges[pair[0], pair[1], i]["label"],
+                            "description": graph.edges[pair[0], pair[1], i]["description"],
+                        }
+                        key = (edge_dict["from"], edge_dict["label"], edge_dict["to"])
+                        if key in seen_edges:
+                            continue
+                        seen_edges.add(key)
+
+                        score = path_similarity(q_emb, edge_dict["description"], similarity_model)
+                        candidates.append((score, edge_dict))
+
+            if not candidates:
+                break
+
+            # sort by similarity and keep top beam_size
+            candidates.sort(key=lambda x: x[0], reverse=True)
+            keep = candidates[:beam_size]
+
+            new_frontier = set()
+            for score, edge in keep:
+                triples.append(edge)
+                if edge["label"] not in not_to_expand_relation_set:
+                    new_frontier.add(edge["to"])
+                seen_nodes.add(edge["from"])
+                seen_nodes.add(edge["to"])
+                if len(triples) >= max_nodes:
+                    break
+
+            frontier = new_frontier
+            if len(triples) >= max_nodes or not frontier:
+                break
+
+        return triples, seen_nodes
+
+
+    def extract_relevant_subgraph_srtk(self, seed_entities, question, max_hops, beam_size, max_nodes):
+        graph = self.build_knowledge_graph(edge_list_file=self.kg_directory)
+        similarity_model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+
+        edge_dict_list, nodes_set = self.get_srtk_style_subgraph(
+            graph,
+            similarity_model,
+            question,
+            seed_entities,
+            max_hops=max_hops,
+            beam_size=beam_size,
+            max_nodes=max_nodes,
+            not_to_expand_relation_labels=["release_year", "in_language", "has_tags",
+                                           "has_genre", "has_imdb_rating", "has_imdb_votes"],
+            compare_to_hypothetical_answers=True,
+        )
+
+        return edge_dict_list, nodes_set
+
+    
+
 
 def print_pool(path_pool: PriorityQueue[Tuple]):
     print("#############################################\nPrinting the whole pool queue...")
@@ -228,3 +325,20 @@ def print_pool(path_pool: PriorityQueue[Tuple]):
 def path_similarity(question_embedding, context, similarity_model):
     context_embedding = similarity_model.encode(context, show_progress_bar=False)
     return cosine_similarity(np.array([question_embedding], dtype=object), np.array([context_embedding], dtype=object))[0][0]
+
+
+def generate_hypothetical_answer(question: str, model_name="gpt-4o-mini", temperature=0.7, max_tokens=512, n=1) -> str:
+    client = OpenAI()
+    result = client.chat.completions.create(
+        messages=[{"role":"user", "content": HYPOTHETICAL_ANSWER_PROMPT.format(question)}],
+        model=model_name,
+        max_completion_tokens=max_tokens,
+        temperature=temperature,
+        n=n,
+    )
+    return result.choices[0].message.content
+
+
+HYPOTHETICAL_ANSWER_PROMPT = """Please write a passage to answer the question.
+Question: {}
+Passage:"""

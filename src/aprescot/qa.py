@@ -52,17 +52,16 @@ def ask_llm(llm: str, instruction_msg: str, prompt: str, new_reasoning: bool = T
             return response.output_text, [], []
 
 def perform_qa(llm: str, kg: str, question: str, rag: bool):
-    new_reasoning = True
-    parse_to_triples = True
-    # Subgraph Retrieval
+    new_reasoning = True            # New reasoning format is not bound to CoT and JSON formatting
+    parse_to_triples = True         # Indicates whether to parse reasoning to triples since it affects matching too
+    experiment_setup = True         # Whether the code is running for the purpose of experimenting and benchmarking 
+
     seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list = None, None, None, None
     instruction_msg, prompt = None, None
     llm_response, llm_final_answers, llm_cot = None, [], []
 
     start = time.perf_counter()
-
-    seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list = retrieve_subgraph(question, kg, depth=2, use_srtk=True)
-
+    seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list = retrieve_subgraph(question, kg, depth=3, experiment_setup=experiment_setup, use_srtk=True)
     end = time.perf_counter()
 
     instruction_msg, prompt = create_prompt(question, kg, rag, llm, subgraph_edge_desc_list, new_reasoning)

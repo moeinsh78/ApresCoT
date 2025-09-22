@@ -355,6 +355,7 @@ def build_demo_welcome_alert() -> dbc.Alert:
                     "\n\nBelow, you may find and use some sample questions with their corresponding KG to get started: \n"
                     "What other movies have the same director with the movie Inception? --> KG: MetaQA Movies \n"
                     "What were the release years of the films starred by Jean Rochefort? --> KG: MetaQA Movies \n"
+                    "What types are the films starred by actors in The Exploding Girl? --> KG: MetaQA Movies \n"
                     "What types of animals are affected by dysfunctions caused by Fungus? --> KG: UMLS Relations \n"
                     "Which countries have land borders with Germany's neighbours? --> KG: WikiData \n"
                 ),

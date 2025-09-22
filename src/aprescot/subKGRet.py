@@ -76,7 +76,7 @@ def get_seed_entities(question: str, kg: str):
 
     return response_json["seed entities"]
 
-def retrieve_subgraph(question: str, kg: str, depth: int, use_srtk: bool):
+def retrieve_subgraph(question: str, kg: str, depth: int, experiment_setup: bool, use_srtk: bool):
     if use_srtk and kg == "wikidata":
         beam_size = 30
         per_pred_cap = 32
@@ -121,6 +121,7 @@ def retrieve_subgraph(question: str, kg: str, depth: int, use_srtk: bool):
                 max_nodes=max_nodes,
                 compare_to_hypothetical_answer=compare_to_hypothetical_answer,
                 add_labels=True,
+                experiment_setup=experiment_setup,
             )
 
             print("Seed Labels:", seed_labels)
@@ -148,9 +149,18 @@ def retrieve_subgraph(question: str, kg: str, depth: int, use_srtk: bool):
         movies_qa = MetaQAKnowledgeGraph()
         seed_nodes = get_seed_entities(question, kg)
         print("Seed Nodes: ", seed_nodes)
-    
-        edge_dict_list, nodes_set = movies_qa.extract_surrounding_subgraph(seed_nodes, depth)
-        # edge_dict_list, nodes_set = movies_qa.extract_relevant_subgraph(seed_nodes, question, depth)
+
+        if use_srtk:
+            edge_dict_list, nodes_set = movies_qa.extract_relevant_subgraph_srtk(
+                seed_nodes, 
+                question, 
+                max_hops=depth, 
+                beam_size=20, 
+                max_nodes=100,
+            )
+        else:
+            edge_dict_list, nodes_set = movies_qa.extract_surrounding_subgraph(seed_nodes, depth)
+
         edge_descriptions = movies_qa.extract_subgraph_edge_descriptions(edge_dict_list)
 
         return seed_nodes, nodes_set, edge_dict_list, edge_descriptions

@@ -430,6 +430,7 @@ class WikiDataKnowledgeGraph:
         max_nodes: int = 2000,
         compare_to_hypothetical_answer: bool = True,
         add_labels: bool = True,
+        experiment_setup: bool = False,
     ):
         """
         Returns:
