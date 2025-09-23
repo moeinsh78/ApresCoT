@@ -100,6 +100,8 @@ class MetaQAKnowledgeGraph:
     
         edge_dict_list = []
         for entity in seed_entities:
+            if not graph.has_node(entity):
+                continue
             edges = self.get_bfs_subgraph(graph, entity, depth, expand_ending_nodes = False)
             edge_dict_list.extend(edges)
     
@@ -255,7 +257,8 @@ class MetaQAKnowledgeGraph:
                             "label": graph.edges[pair[0], pair[1], i]["label"],
                             "description": graph.edges[pair[0], pair[1], i]["description"],
                         }
-                        key = (edge_dict["from"], edge_dict["label"], edge_dict["to"])
+                        # key = (edge_dict["from"], edge_dict["label"], edge_dict["to"])
+                        key = tuple(sorted([edge_dict["from"], edge_dict["to"]])) + (edge_dict["label"],)
                         if key in seen_edges:
                             continue
                         seen_edges.add(key)

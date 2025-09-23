@@ -3,6 +3,7 @@ from src.aprescot.prompting import create_prompt
 from src.aprescot.matching import match_edges, match_nodes
 from src.aprescot.cytoVis import build_cyto_subgraph_elements_list
 from src.aprescot.parsing import parse_llm_response, concat_triple
+from src.aprescot.experiments import evaluate_subgraph_extraction
 from langchain_openai import ChatOpenAI
 from openai import OpenAI
 import json
@@ -55,14 +56,13 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
     new_reasoning = True            # New reasoning format is not bound to CoT and JSON formatting
     parse_to_triples = True         # Indicates whether to parse reasoning to triples since it affects matching too
     experiment_setup = True         # Whether the code is running for the purpose of experimenting and benchmarking 
+    precision, recall, f1 = 0, 0, 0
 
     seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list = None, None, None, None
     instruction_msg, prompt = None, None
     llm_response, llm_final_answers, llm_cot = None, [], []
 
-    start = time.perf_counter()
-    seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list = retrieve_subgraph(question, kg, depth=3, experiment_setup=experiment_setup, use_srtk=True)
-    end = time.perf_counter()
+    seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, time_elapsed = retrieve_subgraph(question, kg, depth=3, experiment_setup=experiment_setup, use_srtk=False)
 
     instruction_msg, prompt = create_prompt(question, kg, rag, llm, subgraph_edge_desc_list, new_reasoning)
     llm_response, llm_final_answers, llm_cot = ask_llm(llm, instruction_msg, prompt, new_reasoning)
@@ -77,34 +77,42 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
     node_to_answer_match, node_to_answer_id = match_nodes(nodes_set, llm_final_answers)
     matched_cot_list, edge_to_cot_match = match_edges(subgraph_edge_desc_list, llm_cot, cot_in_triples=parse_to_triples)
 
-    print("Done matching and subgraph")
-    print("Seed Nodes:", seed_nodes)
-    print("Nodes:", nodes_set)
-    print("Edges:")
-    for edge in edge_dict_list:
-        print(edge)
-    
-    print("Edge to CoT Match:")
-    for match in edge_to_cot_match.items():
-        print(match)
+    if not experiment_setup:
+        print("Done matching and subgraph")
+        print("Seed Nodes:", seed_nodes)
+        print("Nodes:", nodes_set)
+        print("Edges:")
+        for edge in edge_dict_list:
+            print(edge)
+        
+        print("Edge to CoT Match:")
+        for match in edge_to_cot_match.items():
+            print(match)
 
-    print("Node to Answer ID Match:")
-    for match in node_to_answer_id.items():
-        print(match)
+        print("Node to Answer ID Match:")
+        for match in node_to_answer_id.items():
+            print(match)
 
     # Visualizations
     subgraph_elements_list = build_cyto_subgraph_elements_list(seed_nodes, nodes_set, edge_dict_list, edge_to_cot_match, node_to_answer_id)
 
-    print("Subgraph Elements List:")
-    for element in subgraph_elements_list:
-        print(element)
+    if not experiment_setup:
+        print("Subgraph Elements List:")
+        for element in subgraph_elements_list:
+            print(element)
 
-    elapsed = end - start
+    if experiment_setup:
+        precision, recall, f1 = evaluate_subgraph_extraction(
+            gt_file=f"kg/metaqa-3hop-ground-truth.txt",
+            pred_edges=edge_dict_list,
+            undirected=True
+        )
 
-    minutes = int(elapsed // 60)
-    seconds = elapsed % 60
+        minutes = int(time_elapsed // 60)
+        seconds = time_elapsed % 60
 
-    print(f"Subgraph Retrieval Execution Time: {minutes} min {seconds:.2f} sec")
+        print(f"Precision= {precision:.3f}, Recall= {recall:.3f}, F1= {f1:.3f}, Time= {time_elapsed:.2f}s")
+        print(f"Subgraph Retrieval Execution Time: {minutes} min {seconds:.2f} sec")
 
 
     return instruction_msg, prompt, llm_response, subgraph_edge_desc_list, node_to_answer_match, matched_cot_list, subgraph_elements_list, llm_final_answers, llm_cot

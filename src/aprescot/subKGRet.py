@@ -77,6 +77,8 @@ def get_seed_entities(question: str, kg: str):
     return response_json["seed entities"]
 
 def retrieve_subgraph(question: str, kg: str, depth: int, experiment_setup: bool, use_srtk: bool):
+    seed_entities = get_seed_entities(question, kg)
+
     if use_srtk and kg == "wikidata":
         beam_size = 30
         per_pred_cap = 32
@@ -101,15 +103,16 @@ def retrieve_subgraph(question: str, kg: str, depth: int, experiment_setup: bool
             seed_labels, nodes_set, edge_dict_list, edge_descriptions = cached
         else:
             wikidata_qa = WikiDataKnowledgeGraph(scorer_model=scorer_model)
-            # seed_entities_txt = get_seed_entities(question, kg)
-            seed_entities_txt = ["Germany"]
-            # seed_entities_txt = ["Jean Rochefort"]
-            # seed_entities_txt = ["President of the United States", "Q362 — World War II"]
+            # seed_entities = ["Germany"]
+            # seed_entities = ["Jean Rochefort"]
+            # seed_entities = ["President of the United States", "Q362 — World War II"]
 
-            print("Seed Entities:", seed_entities_txt)
-            wikidata_seed_nodes = wikidata_qa.find_wikidata_entities(seed_entities_txt)
+            print("Seed Entities:", seed_entities)
+            wikidata_seed_nodes = wikidata_qa.find_wikidata_entities(seed_entities)
             print("Seed QIDs:", wikidata_seed_nodes)
             q_ids = [node[0] for node in wikidata_seed_nodes]
+
+            start = time.perf_counter()
 
             seed_labels, nodes_set, edge_dict_list, edge_descriptions = wikidata_qa.retrieve_with_srtk_style(
                 question,
@@ -123,6 +126,7 @@ def retrieve_subgraph(question: str, kg: str, depth: int, experiment_setup: bool
                 add_labels=True,
                 experiment_setup=experiment_setup,
             )
+            end = time.perf_counter()
 
             print("Seed Labels:", seed_labels)
             print("Nodes:", nodes_set)
@@ -133,48 +137,56 @@ def retrieve_subgraph(question: str, kg: str, depth: int, experiment_setup: bool
                                 seed_nodes=seed_labels, nodes_set=nodes_set,
                                 edge_dict_list=edge_dict_list, edge_desc_list=edge_descriptions)
 
-        return seed_labels, nodes_set, edge_dict_list, edge_descriptions
+        return seed_labels, nodes_set, edge_dict_list, edge_descriptions, end - start
         
     elif kg == "wikidata" and not use_srtk:
         wikidata_qa = WikiDataKnowledgeGraph()
-        seed_entities_txt = get_seed_entities(question, kg)
-        wikidata_seed_nodes = wikidata_qa.find_wikidata_entities(seed_entities_txt)
+        wikidata_seed_nodes = wikidata_qa.find_wikidata_entities(seed_entities)
         q_ids = [node[0] for node in wikidata_seed_nodes]
         seed_labels = [node[0] for node in wikidata_seed_nodes]
+        
+        start = time.perf_counter()
         nodes_set, edge_dict_list, edge_descriptions = wikidata_qa.extract_relevant_subgraph(q_ids)
+        end = time.perf_counter()
 
-        return seed_labels, nodes_set, edge_dict_list, edge_descriptions
+        return seed_labels, nodes_set, edge_dict_list, edge_descriptions, start - end
 
     elif kg == "meta-qa":
         movies_qa = MetaQAKnowledgeGraph()
-        seed_nodes = get_seed_entities(question, kg)
-        print("Seed Nodes: ", seed_nodes)
+        print("Seed Entities: ", seed_entities)
+        
+        start = time.perf_counter()
 
         if use_srtk:
             edge_dict_list, nodes_set = movies_qa.extract_relevant_subgraph_srtk(
-                seed_nodes, 
+                seed_entities, 
                 question, 
                 max_hops=depth, 
                 beam_size=20, 
                 max_nodes=100,
             )
         else:
-            edge_dict_list, nodes_set = movies_qa.extract_surrounding_subgraph(seed_nodes, depth)
+            edge_dict_list, nodes_set = movies_qa.extract_surrounding_subgraph(seed_entities, depth)
+        
+        end = time.perf_counter()
 
         edge_descriptions = movies_qa.extract_subgraph_edge_descriptions(edge_dict_list)
 
-        return seed_nodes, nodes_set, edge_dict_list, edge_descriptions
+        return seed_entities, nodes_set, edge_dict_list, edge_descriptions, end - start
 
     elif kg == "umls":
         umls_qa = UMLSKnowledgeGraph()
-        seed_nodes = get_seed_entities(question, kg)
-        print("Seed Nodes: ", seed_nodes)
+        print("Seed Entities: ", seed_entities)
 
         # edge_dict_list, nodes_set = umls_qa.extract_surrounding_subgraph(seed_nodes, depth)
-        edge_dict_list, nodes_set = umls_qa.extract_relevant_subgraph(seed_nodes, question, depth)
+        
+        start = time.perf_counter()
+        edge_dict_list, nodes_set = umls_qa.extract_relevant_subgraph(seed_entities, question, depth)
+        end = time.perf_counter()
+
         edge_descriptions = umls_qa.extract_subgraph_edge_descriptions(edge_dict_list)
 
-        return seed_nodes, nodes_set, edge_dict_list, edge_descriptions
+        return seed_entities, nodes_set, edge_dict_list, edge_descriptions, end - start
 
     else:
         print("Invalid Knowledge Graph:", kg)
