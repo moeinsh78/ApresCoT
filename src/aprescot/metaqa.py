@@ -224,14 +224,14 @@ class MetaQAKnowledgeGraph:
         max_hops: int = 2,
         beam_size: int = 12,
         max_nodes: int = 100,
+        compare_to_hypothetical_answer: bool = False,
         not_to_expand_relation_labels: List[str] = None,
-        compare_to_hypothetical_answers: bool = False,
     ):
         if not_to_expand_relation_labels is None:
             not_to_expand_relation_labels = []
 
         not_to_expand_relation_set = set(not_to_expand_relation_labels)
-        if compare_to_hypothetical_answers:
+        if compare_to_hypothetical_answer:
             hypothetical_answer = generate_hypothetical_answer(question)
             print("Hypothetical Answer:", hypothetical_answer)
             q_emb = similarity_model.encode(hypothetical_answer)
@@ -290,7 +290,7 @@ class MetaQAKnowledgeGraph:
         return triples, seen_nodes
 
 
-    def extract_relevant_subgraph_srtk(self, seed_entities, question, max_hops, beam_size, max_nodes):
+    def extract_relevant_subgraph_srtk(self, seed_entities, question, max_hops, beam_size, max_nodes, compare_to_hypothetical_answer = False):
         graph = self.build_knowledge_graph(edge_list_file=self.kg_directory)
         similarity_model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
@@ -302,9 +302,9 @@ class MetaQAKnowledgeGraph:
             max_hops=max_hops,
             beam_size=beam_size,
             max_nodes=max_nodes,
+            compare_to_hypothetical_answer=compare_to_hypothetical_answer,
             not_to_expand_relation_labels=["release_year", "in_language", "has_tags",
                                            "has_genre", "has_imdb_rating", "has_imdb_votes"],
-            compare_to_hypothetical_answers=True,
         )
 
         return edge_dict_list, nodes_set

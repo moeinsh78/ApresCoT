@@ -76,7 +76,8 @@ def get_seed_entities(question: str, kg: str):
 
     return response_json["seed entities"]
 
-def retrieve_subgraph(question: str, kg: str, depth: int, experiment_setup: bool, use_srtk: bool):
+def retrieve_subgraph(question: str, kg: str, depth: int, experiment_setup: bool, use_srtk: bool, hyde: bool = False):
+    compare_to_hypothetical_answer = hyde
     seed_entities = get_seed_entities(question, kg)
 
     if use_srtk and kg == "wikidata":
@@ -86,7 +87,6 @@ def retrieve_subgraph(question: str, kg: str, depth: int, experiment_setup: bool
         max_nodes = 350
         scorer_model = "drt/srtk-scorer"
         # scorer_model = "sentence-transformers/all-MiniLM-L6-v2"
-        compare_to_hypothetical_answer = False
         retriever_params = {
             "use_srtk": True,
             "max_hops": depth,
@@ -164,6 +164,7 @@ def retrieve_subgraph(question: str, kg: str, depth: int, experiment_setup: bool
                 max_hops=depth, 
                 beam_size=20, 
                 max_nodes=100,
+                compare_to_hypothetical_answer=compare_to_hypothetical_answer,
             )
         else:
             edge_dict_list, nodes_set = movies_qa.extract_surrounding_subgraph(seed_entities, depth)
