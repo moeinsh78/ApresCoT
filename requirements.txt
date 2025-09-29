@@ -15,3 +15,4 @@ spacy
 tqdm
 srtk
 openai
+neo4j

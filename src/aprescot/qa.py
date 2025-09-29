@@ -53,7 +53,7 @@ def ask_llm(llm: str, instruction_msg: str, prompt: str, new_reasoning: bool = T
             return response.output_text, [], []
 
 def perform_qa(llm: str, kg: str, question: str, rag: bool):
-    experiment_setup = True         # Whether the code is running for the purpose of experimenting and benchmarking 
+    is_experiment = True         # Whether the code is running for the purpose of experimenting and benchmarking 
 
     new_reasoning = True            # New reasoning format is not bound to CoT and JSON formatting
 
@@ -61,21 +61,21 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
 
     use_srtk = True
     use_hyde = True
-    depth = 2
+    depth = 1
 
     seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list = None, None, None, None
     instruction_msg, prompt = None, None
     llm_response, llm_final_answers, llm_cot = None, [], []
     precision, recall, f1 = 0, 0, 0
 
-    if experiment_setup:
+    if is_experiment:
         ground_truth_file_dir = "ground_truth/shawshank.txt"
         get_ground_truth = False   # Whether to get ground-truth edges and answers for evaluation and matching
 
         if get_ground_truth:
             seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, time_elapsed = load_ground_truth_subgraph(ground_truth_file_dir)
         else:
-            seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, time_elapsed = retrieve_subgraph(question, kg, depth=depth, experiment_setup=experiment_setup, use_srtk=use_srtk, hyde=use_hyde)
+            seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, time_elapsed = retrieve_subgraph(question, kg, depth=depth, is_experiment_setup=is_experiment, use_srtk=use_srtk, hyde=use_hyde)
 
 
         llm_final_answers, llm_cot = get_nodes_and_edges_matching_gt(gt_file=ground_truth_file_dir, pred_edges=edge_dict_list, undirected=True)
@@ -101,7 +101,7 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
 
     
     else:
-        seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, time_elapsed = retrieve_subgraph(question, kg, depth=depth, experiment_setup=experiment_setup, use_srtk=use_srtk, hyde=use_hyde)
+        seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, time_elapsed = retrieve_subgraph(question, kg, depth=depth, is_experiment_setup=is_experiment, use_srtk=use_srtk, hyde=use_hyde)
 
         instruction_msg, prompt = create_prompt(question, kg, rag, llm, subgraph_edge_desc_list, new_reasoning)
         llm_response, llm_final_answers, llm_cot = ask_llm(llm, instruction_msg, prompt, new_reasoning)

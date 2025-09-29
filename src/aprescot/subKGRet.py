@@ -76,17 +76,17 @@ def get_seed_entities(question: str, kg: str):
 
     return response_json["seed entities"]
 
-def retrieve_subgraph(question: str, kg: str, depth: int, experiment_setup: bool, use_srtk: bool, hyde: bool = False):
+def retrieve_subgraph(question: str, kg: str, depth: int, is_experiment_setup: bool, use_srtk: bool, hyde: bool = False):
     compare_to_hypothetical_answer = hyde
     seed_entities = get_seed_entities(question, kg)
 
     if use_srtk and kg == "wikidata":
         beam_size = 30
-        per_pred_cap = 32
+        per_pred_cap = 20
         total_cap_per_node = 256
         max_nodes = 350
-        scorer_model = "drt/srtk-scorer"
-        # scorer_model = "sentence-transformers/all-MiniLM-L6-v2"
+        # scorer_model = "drt/srtk-scorer"
+        scorer_model = "sentence-transformers/all-MiniLM-L6-v2"
         retriever_params = {
             "use_srtk": True,
             "max_hops": depth,
@@ -99,10 +99,10 @@ def retrieve_subgraph(question: str, kg: str, depth: int, experiment_setup: bool
         }
         seed_labels, nodes_set, edge_dict_list, edge_descriptions = None, None, None, None
         cached = load_subgraph_cache(kg, question, depth, params=retriever_params)
-        if cached:
+        if cached and not is_experiment_setup:
             seed_labels, nodes_set, edge_dict_list, edge_descriptions = cached
         else:
-            wikidata_qa = WikiDataKnowledgeGraph(scorer_model=scorer_model)
+            wikidata_qa = WikiDataKnowledgeGraph(scorer_model=scorer_model, use_local_db=is_experiment_setup)
             # seed_entities = ["Germany"]
             # seed_entities = ["Jean Rochefort"]
             # seed_entities = ["President of the United States", "Q362 — World War II"]
@@ -124,7 +124,6 @@ def retrieve_subgraph(question: str, kg: str, depth: int, experiment_setup: bool
                 max_nodes=max_nodes,
                 compare_to_hypothetical_answer=compare_to_hypothetical_answer,
                 add_labels=True,
-                experiment_setup=experiment_setup,
             )
             end = time.perf_counter()
 
@@ -140,16 +139,18 @@ def retrieve_subgraph(question: str, kg: str, depth: int, experiment_setup: bool
         return seed_labels, nodes_set, edge_dict_list, edge_descriptions, end - start
         
     elif kg == "wikidata" and not use_srtk:
-        wikidata_qa = WikiDataKnowledgeGraph()
-        wikidata_seed_nodes = wikidata_qa.find_wikidata_entities(seed_entities)
-        q_ids = [node[0] for node in wikidata_seed_nodes]
-        seed_labels = [node[0] for node in wikidata_seed_nodes]
+        # Implement BFS for wikidata
+        pass
+        # wikidata_qa = WikiDataKnowledgeGraph()
+        # wikidata_seed_nodes = wikidata_qa.find_wikidata_entities(seed_entities)
+        # q_ids = [node[0] for node in wikidata_seed_nodes]
+        # seed_labels = [node[0] for node in wikidata_seed_nodes]
         
-        start = time.perf_counter()
-        nodes_set, edge_dict_list, edge_descriptions = wikidata_qa.extract_relevant_subgraph(q_ids)
-        end = time.perf_counter()
+        # start = time.perf_counter()
+        # nodes_set, edge_dict_list, edge_descriptions = wikidata_qa.extract_relevant_subgraph(q_ids)
+        # end = time.perf_counter()
 
-        return seed_labels, nodes_set, edge_dict_list, edge_descriptions, start - end
+        # return seed_labels, nodes_set, edge_dict_list, edge_descriptions, start - end
 
     elif kg == "meta-qa":
         movies_qa = MetaQAKnowledgeGraph()
