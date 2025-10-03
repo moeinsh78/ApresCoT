@@ -1,5 +1,5 @@
 import json
-from typing import Tuple, Dict, List
+from typing import Union, Tuple, Dict, List
 import networkx as nx
 import pandas as pd
 import numpy as np
@@ -159,17 +159,17 @@ class WikiDataKnowledgeGraph:
         neo4j_user: str = "neo4j",
         neo4j_password: str = NEO4J_PASSWORD,
     ):
-        # existing init...
         self.endpoint = sparql_endpoint
         self.headers = {"Accept": "application/sparql-results+json", "User-Agent": user_agent}
         self.req_timeout_s = req_timeout_s
         self.sleep_between = 1.0 / max(polite_qps, 1e-6)
 
-        # encoder setup unchanged...
         self.tokenizer = AutoTokenizer.from_pretrained(scorer_model)
         self.model = AutoModel.from_pretrained(scorer_model)
         if device is None:
             device = "cuda" if torch.cuda.is_available() else ("mps" if torch.backends.mps.is_available() else "cpu")
+        
+        print("DEVICE:", device)
         self.device = device
         self.model.to(self.device).eval()
 
@@ -201,20 +201,22 @@ class WikiDataKnowledgeGraph:
     ):
         """
         Returns:
-          {
+        {
             "question": str,
             "seeds": [Q...],
             "triples": [{"s":"Q..","p":"P..","o":"Q.."|literal}, ...],
             "labels": { "Q..": "Label", "P..": "prop label", ... }
-          }
+        }
         """
+        curr_beam_size = beam_size
+
         start = time.perf_counter()
         if compare_to_hypothetical_answer:
             hypothetical_answer = generate_hypothetical_answer(question)
             print("Hypothetical Answer:", hypothetical_answer)
-            q_vec = self._encode_text(hypothetical_answer)
+            q_vec = self._encode_text(hypothetical_answer)[0]  # [H]
         else:
-            q_vec = self._encode_text(question)
+            q_vec = self._encode_text(question)[0]
 
         print("## TIME ## after generating hyde:", time.perf_counter() - start)
 
@@ -227,41 +229,46 @@ class WikiDataKnowledgeGraph:
         print("Retrieving: ", frontier, seed_qids)
 
         for hop in range(max_hops):
-            # gather candidate edges from frontier
             candidates: List[Tuple[float, Dict[str, str]]] = []
+
             for qid in list(frontier):
                 print("Adding neighbors for:", qid)
                 if self.use_local_db:
-                    neigh = self._neighbors_local_db(qid, direction="out",
-                                            per_pred_cap=per_pred_cap,
-                                            total_cap=total_cap_per_node)
-                    
-                    print("## TIME ## after finding", qid, "'s neighbours:", time.perf_counter() - start)
-
+                    neigh = self._neighbors_local_db(qid, "out", per_pred_cap, total_cap_per_node)
                 else:
-                    neigh = self._neighbors_api(qid, direction="out",
-                                                per_pred_cap=per_pred_cap,
-                                                total_cap=total_cap_per_node)
-                for t in neigh:
-                    key = (t["s"], t["p"], t["o"])
-                    if key in seen_triple:
-                        continue
-                    # textualize edge for scoring
-                    text = self._edge_textualization(t)
-                    # print("Edge Textualization => Triple: ", key, " -- Text: ", text)
-                    score = self._score_text(q_vec, text)
-                    # print("Edge score: ", score)
-                    candidates.append((score, t))
-                    
-                print("## TIME ## scoring candidates for", qid, ":", time.perf_counter() - start)
+                    neigh = self._neighbors_api(qid, "out", per_pred_cap, total_cap_per_node)
 
+                print(f"## TIME ## after finding {len(neigh)} neighbors of {qid}:", time.perf_counter() - start)
+                if not neigh:
+                    continue
+
+                # Batch encode + score all neighbors at once
+                texts = [self._edge_textualization(t) for t in neigh]
+                print(f"## TIME ## after textualizing {len(neigh)} neighbors of {qid}:", time.perf_counter() - start)
+                scores = self._score_text(q_vec, texts)
+                print(f"## TIME ## after scoring {len(neigh)} neighbors of {qid}:", time.perf_counter() - start)
+
+                # for t, s, txt in zip(neigh, scores, texts):
+                #     key = (t["s"], t["p"], t["o"])
+                #     if key not in seen_triple:
+                #         candidates.append((s, t))
+                #         print(f"Score: {s:.4f} | Text: {txt}")
+
+                for t, s in zip(neigh, scores):
+                    key = (t["s"], t["p"], t["o"])
+                    if key not in seen_triple:
+                        candidates.append((s, t))
+
+                print(f"## TIME ## after finding {len(neigh)} neighbors of {qid}:", time.perf_counter() - start)
 
             if not candidates:
                 break
 
             # beam: keep only top scoring edges this hop
             candidates.sort(key=lambda x: x[0], reverse=True)
-            keep = candidates[:beam_size]
+            keep = candidates[:curr_beam_size]
+            for s, t in keep:
+                print(f"Keeping score {s:.4f} | {self._edge_textualization(t)}")
 
             # add to graph + build next frontier
             new_frontier: Set[str] = set()
@@ -283,6 +290,8 @@ class WikiDataKnowledgeGraph:
             frontier = new_frontier
             if len(triples) >= max_nodes or not frontier:
                 break
+            
+            curr_beam_size = curr_beam_size * beam_size
 
         result = {"question": question, "seeds": seed_qids, "triples": triples, "labels": {}}
 
@@ -293,6 +302,7 @@ class WikiDataKnowledgeGraph:
             result["labels"] = labels
 
         return self.srtk_output_to_labeled_graph(result)
+
     
     def srtk_output_to_labeled_graph(self, res: Dict):
         """
@@ -339,24 +349,45 @@ class WikiDataKnowledgeGraph:
     # ------------------ scoring ------------------
 
     @torch.inference_mode()
-    def _encode_text(self, text: str) -> torch.Tensor:
-        tokens = self.tokenizer(text, return_tensors="pt", truncation=True, max_length=128)
+    def _encode_text(self, text: Union[str, List[str]]) -> torch.Tensor:
+        # Support both single string and list of strings
+        if isinstance(text, str):
+            texts = [text]
+        else:
+            texts = text
+
+        tokens = self.tokenizer(
+            texts,
+            return_tensors="pt",
+            padding=True,
+            truncation=True,
+            max_length=128
+        )
         tokens = {k: v.to(self.device) for k, v in tokens.items()}
+
         outputs = self.model(**tokens)
-        # mean-pool (works well for many sentence encoders)
-        last_hidden = outputs.last_hidden_state  # [1, L, H]
-        attn_mask = tokens["attention_mask"].unsqueeze(-1)  # [1, L, 1]
+        last_hidden = outputs.last_hidden_state
+        attn_mask = tokens["attention_mask"].unsqueeze(-1)
         masked = last_hidden * attn_mask
         emb = masked.sum(dim=1) / (attn_mask.sum(dim=1) + 1e-9)
-        return emb[0].detach().cpu()
 
-    def _score_text(self, q_vec: torch.Tensor, text: str) -> float:
-        v = self._encode_text(text)
-        return _cosine_sim(q_vec, v)
+        return emb.detach()
 
-    def _neighbors_local_db(self, qid, direction, per_pred_cap, total_cap, domain = None):
-        """Fetch neighbors from Neo4j"""
-        print(f"Fetching neighbors from local Neo4j DB for {qid}"),
+
+    def _score_text(self, q_vec: torch.Tensor, texts: List[str]) -> List[float]:
+        # Encode all candidate texts at once
+        v = self._encode_text(texts)  # [N, H]
+        # Normalize vectors
+        q = q_vec / (q_vec.norm() + 1e-9)
+        v = v / (v.norm(dim=1, keepdim=True) + 1e-9)
+        # Cosine similarity = dot product
+        scores = (v @ q.unsqueeze(-1)).squeeze(-1)  # [N]
+        return scores.tolist()
+
+
+    def _neighbors_local_db(self, qid, direction, per_pred_cap, total_cap, domain=None):
+        """Fetch neighbors from Neo4j, returning IDs and labels directly"""
+        print(f"Fetching neighbors from local Neo4j DB for {qid}")
         triples = []
         skip_props = self._get_skip_props(domain)
 
@@ -364,28 +395,27 @@ class WikiDataKnowledgeGraph:
             if direction in ("out", "both"):
                 q = """
                 MATCH (s {id:$qid})-[r]->(o)
-                WHERE NOT r.prop_id IN $skip_props
-                RETURN s.id AS s, r.prop_id AS p, o.id AS o
+                WHERE NOT r.prop_id IN $skip_props AND NOT o.label STARTS WITH 'Germany'
+                RETURN s.id AS s, s.label AS s_lbl,
+                    r.prop_id AS p, r.prop_label AS p_lbl,
+                    o.id AS o, o.label AS o_lbl
                 """
-                res = session.run(q, qid=qid,
-                                skip_props=list(skip_props),
-                                # limit=total_cap
-                                )
+                res = session.run(q, qid=qid, skip_props=list(skip_props))
                 triples.extend([dict(record) for record in res])
 
             if direction in ("in", "both"):
                 q = """
                 MATCH (s)-[r]->(o {id:$qid})
                 WHERE NOT r.prop_id IN $skip_props
-                RETURN s.id AS s, r.prop_id AS p, o.id AS o
+                RETURN s.id AS s, s.label AS s_lbl,
+                    r.prop_id AS p, r.prop_label AS p_lbl,
+                    o.id AS o, o.label AS o_lbl
                 """
-                res = session.run(q, qid=qid,
-                                skip_props=list(skip_props),
-                                # limit=total_cap
-                                )
+                res = session.run(q, qid=qid, skip_props=list(skip_props))
                 triples.extend([dict(record) for record in res])
 
         print("Number of edges found for", qid, ":", len(triples))
+
         # Apply per-predicate cap
         limited, counts = [], {}
         for t in triples:
@@ -393,45 +423,9 @@ class WikiDataKnowledgeGraph:
             counts[key2] = counts.get(key2, 0) + 1
             if counts[key2] <= per_pred_cap:
                 limited.append(t)
-        print("Number of edges found for", qid, " after applying per-pred cap:", len(limited))
+
+        print("Number of edges found for", qid, "after applying per-pred cap:", len(limited))
         return limited
-
-    # def _neighbors_local_db(self, qid, direction, per_pred_cap, total_cap):
-    #     """Fetch neighbors from Neo4j"""
-    #     print(f"Fetching neighbors from local Neo4j DB for {qid}"),
-    #     triples = []
-    #     with self.driver.session() as session:
-    #         if direction in ("out", "both"):
-    #             q = """
-    #             MATCH (s {id:$qid})-[r]->(o)
-    #             RETURN s.id AS s, r.prop_id AS p, o.id AS o
-    #             LIMIT $limit
-    #             """
-    #             res = session.run(q, qid=qid, limit=total_cap)
-
-    #             triples.extend([dict(record) for record in res])
-
-    #         if direction in ("in", "both"):
-    #             q = """
-    #             MATCH (s)-[r]->(o {id:$qid})
-    #             RETURN s.id AS s, r.prop_id AS p, o.id AS o
-    #             LIMIT $limit
-    #             """
-    #             res = session.run(q, qid=qid, limit=total_cap)
-
-    #             triples.extend([dict(record) for record in res])
-
-    #     print("Number of edges found for", qid, ":", len(triples))
-    #     # cap per (s,p)
-    #     limited, counts = [], {}
-    #     for t in triples:
-    #         key2 = (t["s"], t["p"])
-    #         counts[key2] = counts.get(key2, 0) + 1
-    #         if counts[key2] <= per_pred_cap:
-    #             limited.append(t)
-    #     print("Number of edges found for", qid, " after applying per-pred cap:", len(limited))
-    #     return limited
-
 
     def _neighbors_api(self, qid, direction, per_pred_cap, total_cap) -> List[Dict[str, str]]:
         print(f"Fetching neighbors from Wikidata API for {qid}")
@@ -499,20 +493,26 @@ class WikiDataKnowledgeGraph:
     def _get_skip_props(self, domain: Optional[str] = None) -> set:
         skip_props = ALWAYS_SKIP.copy()
         if domain and domain in NOT_TO_SKIP:
-            skip_props -= NOT_TO_SKIP[domain]  # rescue some props
+            skip_props -= NOT_TO_SKIP[domain] 
         return skip_props
 
     # ------------------ textualization + labels ------------------
 
     def _edge_textualization(self, t: Dict[str, str]) -> str:
-        s = t["s"]; p = t["p"]; o = t["o"]
-        s_lbl = self._label(s)
-        p_lbl = self._label(p)
-        if isinstance(o, str) and o.startswith("Q"):
-            o_lbl = self._label(o)
-            return f"{s_lbl} — {p_lbl} — {o_lbl}"
-        else:
-            return f"{s_lbl} — {p_lbl} — {o}"
+        s_lbl = t.get("s_lbl", t["s"])
+        p_lbl = t.get("p_lbl", t["p"])
+        o_lbl = t.get("o_lbl", t["o"])
+        return f"{s_lbl} — {p_lbl} — {o_lbl}"
+
+    # def _edge_textualization(self, t: Dict[str, str]) -> str:
+    #     s = t["s"]; p = t["p"]; o = t["o"]
+    #     s_lbl = self._label(s)
+    #     p_lbl = self._label(p)
+    #     if isinstance(o, str) and o.startswith("Q"):
+    #         o_lbl = self._label(o)
+    #         return f"{s_lbl} — {p_lbl} — {o_lbl}"
+    #     else:
+    #         return f"{s_lbl} — {p_lbl} — {o}"
 
     def _label(self, pid_or_qid: str) -> str:
         if pid_or_qid in self._label_cache:

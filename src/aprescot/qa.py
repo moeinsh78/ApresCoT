@@ -60,8 +60,8 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
     parse_to_triples = True         # Indicates whether to parse reasoning to triples since it affects matching too
 
     use_srtk = True
-    use_hyde = True
-    depth = 1
+    use_hyde = False
+    depth = 2
 
     seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list = None, None, None, None
     instruction_msg, prompt = None, None
@@ -70,16 +70,19 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
 
     if is_experiment:
         ground_truth_file_dir = "ground_truth/shawshank.txt"
-        get_ground_truth = False   # Whether to get ground-truth edges and answers for evaluation and matching
+        get_ground_truth = True   # Whether to get ground-truth edges and answers for evaluation and matching
 
         if get_ground_truth:
             seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, time_elapsed = load_ground_truth_subgraph(ground_truth_file_dir)
         else:
             seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, time_elapsed = retrieve_subgraph(question, kg, depth=depth, is_experiment_setup=is_experiment, use_srtk=use_srtk, hyde=use_hyde)
 
-
         llm_final_answers, llm_cot = get_nodes_and_edges_matching_gt(gt_file=ground_truth_file_dir, pred_edges=edge_dict_list, undirected=True)
 
+        llm_final_answers = []
+        llm_cot = []
+        instruction_msg, prompt = create_prompt(question, kg, rag, llm, subgraph_edge_desc_list, new_reasoning)
+        
         node_to_answer_match, node_to_answer_id = match_nodes(nodes_set, llm_final_answers)
         matched_cot_list, edge_to_cot_match = match_edges(subgraph_edge_desc_list, llm_cot, cot_in_triples=parse_to_triples)
 
@@ -94,10 +97,10 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
         minutes = int(time_elapsed // 60)
         seconds = time_elapsed % 60
 
-        print(f"\nPrecision= {precision:.3f}, Recall= {recall:.3f}, F1= {f1:.3f}, Time= {time_elapsed:.2f}s")
+        print(f"\nPrecision= {precision:.3f}, Recall= {recall:.3f}, F1= {f1:.3f}")
         print(f"\nSubgraph Retrieval Execution Time: {minutes} min {seconds:.2f} sec")
 
-        return None, None, None, subgraph_edge_desc_list, node_to_answer_match, matched_cot_list, subgraph_elements_list, llm_final_answers, llm_cot
+        return instruction_msg, prompt, None, subgraph_edge_desc_list, node_to_answer_match, matched_cot_list, subgraph_elements_list, llm_final_answers, llm_cot
 
     
     else:

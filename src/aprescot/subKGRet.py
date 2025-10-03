@@ -81,11 +81,12 @@ def retrieve_subgraph(question: str, kg: str, depth: int, is_experiment_setup: b
     seed_entities = get_seed_entities(question, kg)
 
     if use_srtk and kg == "wikidata":
-        beam_size = 30
-        per_pred_cap = 20
+        beam_size = 10
+        per_pred_cap = 32
         total_cap_per_node = 256
         max_nodes = 350
         # scorer_model = "drt/srtk-scorer"
+        # scorer_model = "sentence-transformers/paraphrase-MiniLM-L3-v2"
         scorer_model = "sentence-transformers/all-MiniLM-L6-v2"
         retriever_params = {
             "use_srtk": True,
@@ -103,7 +104,7 @@ def retrieve_subgraph(question: str, kg: str, depth: int, is_experiment_setup: b
             seed_labels, nodes_set, edge_dict_list, edge_descriptions = cached
         else:
             wikidata_qa = WikiDataKnowledgeGraph(scorer_model=scorer_model, use_local_db=is_experiment_setup)
-            # seed_entities = ["Germany"]
+            seed_entities = ["Germany"]
             # seed_entities = ["Jean Rochefort"]
             # seed_entities = ["President of the United States", "Q362 — World War II"]
 
@@ -126,11 +127,6 @@ def retrieve_subgraph(question: str, kg: str, depth: int, is_experiment_setup: b
                 add_labels=True,
             )
             end = time.perf_counter()
-
-            print("Seed Labels:", seed_labels)
-            print("Nodes:", nodes_set)
-            print("Edge Count:", len(edge_dict_list))
-            print("Edges:", edge_dict_list)
 
             save_subgraph_cache(kg, question, depth, params=retriever_params,
                                 seed_nodes=seed_labels, nodes_set=nodes_set,

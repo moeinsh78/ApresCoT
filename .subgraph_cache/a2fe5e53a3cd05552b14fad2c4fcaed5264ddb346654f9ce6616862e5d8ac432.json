@@ -1,0 +1,865 @@
+{
+  "params": {
+    "use_srtk": true,
+    "max_hops": 2,
+    "beam_size": 10,
+    "per_pred_cap": 32,
+    "total_cap_per_node": 256,
+    "max_nodes": 350,
+    "scorer_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "hypothetical_answer": true
+  },
+  "ts": 1759336949.0901291,
+  "seed_nodes": [
+    "Germany"
+  ],
+  "nodes_list": [
+    "Andorra",
+    "Arnsberg Government Region",
+    "Austria",
+    "Austria–Czech Republic border",
+    "Belarus",
+    "Belgium",
+    "Benelux",
+    "Brazil",
+    "Brussels-Capital Region",
+    "Canton of Appenzell Ausserrhoden",
+    "Canton of Nidwalden",
+    "Capital Region of Denmark",
+    "Central Denmark",
+    "Central Europe",
+    "Cologne Government Region",
+    "Copenhagen County",
+    "Czech Republic",
+    "Czech Republic–Germany border",
+    "Czech Republic–Poland border",
+    "Czech Republic–Slovakia border",
+    "Denmark",
+    "Detmold Government Region",
+    "Düsseldorf Government Region",
+    "Europe",
+    "European Economic Area",
+    "European Union",
+    "Flemish Region",
+    "France",
+    "Gelderland",
+    "German-speaking Community of Belgium",
+    "Germany",
+    "Hesse",
+    "Hungary",
+    "Italy",
+    "Kingdom of the Netherlands",
+    "Liechtenstein",
+    "Limburg",
+    "Lithuania",
+    "Lower Saxony",
+    "Luxembourg",
+    "Münster Government Region",
+    "Netherlands",
+    "Nordic countries",
+    "North Holland",
+    "North Jutland County",
+    "North Jutland Region",
+    "North Rhine",
+    "North Rhine-Westphalia",
+    "Northern Europe",
+    "Norway",
+    "Overijssel",
+    "Poland",
+    "Province of Liege",
+    "Region Zealand",
+    "Rhine-Ruhr Metropolitan Region",
+    "Rhineland-Palatinate",
+    "Roskilde County",
+    "Russia",
+    "Schengen Area",
+    "Slovakia",
+    "Slovenia",
+    "South Jutland County",
+    "Southern Denmark",
+    "Spain",
+    "Suriname",
+    "Sweden",
+    "Switzerland",
+    "Ukraine",
+    "Wallonia",
+    "Western Europe",
+    "district of Germany",
+    "geography of North Rhine-Westphalia",
+    "independent city of Germany"
+  ],
+  "edge_dict_list": [
+    {
+      "from": "Germany",
+      "to": "Denmark",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Denmark"
+    },
+    {
+      "from": "Germany",
+      "to": "France",
+      "label": "shares border with",
+      "description": "Germany - shares border with - France"
+    },
+    {
+      "from": "Germany",
+      "to": "Switzerland",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Switzerland"
+    },
+    {
+      "from": "Germany",
+      "to": "Poland",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Poland"
+    },
+    {
+      "from": "Germany",
+      "to": "Netherlands",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Netherlands"
+    },
+    {
+      "from": "Germany",
+      "to": "Belgium",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Belgium"
+    },
+    {
+      "from": "Germany",
+      "to": "Austria",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Austria"
+    },
+    {
+      "from": "Germany",
+      "to": "Luxembourg",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Luxembourg"
+    },
+    {
+      "from": "Germany",
+      "to": "Czech Republic",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Czech Republic"
+    },
+    {
+      "from": "Germany",
+      "to": "North Rhine-Westphalia",
+      "label": "contains the administrative territorial entity",
+      "description": "Germany - contains the administrative territorial entity - North Rhine-Westphalia"
+    },
+    {
+      "from": "North Rhine-Westphalia",
+      "to": "Wallonia",
+      "label": "shares border with",
+      "description": "North Rhine-Westphalia - shares border with - Wallonia"
+    },
+    {
+      "from": "North Rhine-Westphalia",
+      "to": "Lower Saxony",
+      "label": "shares border with",
+      "description": "North Rhine-Westphalia - shares border with - Lower Saxony"
+    },
+    {
+      "from": "Belgium",
+      "to": "Kingdom of the Netherlands",
+      "label": "shares border with",
+      "description": "Belgium - shares border with - Kingdom of the Netherlands"
+    },
+    {
+      "from": "North Rhine-Westphalia",
+      "to": "Province of Liege",
+      "label": "shares border with",
+      "description": "North Rhine-Westphalia - shares border with - Province of Liege"
+    },
+    {
+      "from": "North Rhine-Westphalia",
+      "to": "Gelderland",
+      "label": "shares border with",
+      "description": "North Rhine-Westphalia - shares border with - Gelderland"
+    },
+    {
+      "from": "France",
+      "to": "Kingdom of the Netherlands",
+      "label": "shares border with",
+      "description": "France - shares border with - Kingdom of the Netherlands"
+    },
+    {
+      "from": "North Rhine-Westphalia",
+      "to": "Overijssel",
+      "label": "shares border with",
+      "description": "North Rhine-Westphalia - shares border with - Overijssel"
+    },
+    {
+      "from": "Austria",
+      "to": "Switzerland",
+      "label": "shares border with",
+      "description": "Austria - shares border with - Switzerland"
+    },
+    {
+      "from": "Switzerland",
+      "to": "European Union",
+      "label": "shares border with",
+      "description": "Switzerland - shares border with - European Union"
+    },
+    {
+      "from": "North Rhine-Westphalia",
+      "to": "Hesse",
+      "label": "shares border with",
+      "description": "North Rhine-Westphalia - shares border with - Hesse"
+    },
+    {
+      "from": "Switzerland",
+      "to": "Austria",
+      "label": "shares border with",
+      "description": "Switzerland - shares border with - Austria"
+    },
+    {
+      "from": "Austria",
+      "to": "Liechtenstein",
+      "label": "shares border with",
+      "description": "Austria - shares border with - Liechtenstein"
+    },
+    {
+      "from": "Denmark",
+      "to": "Norway",
+      "label": "shares border with",
+      "description": "Denmark - shares border with - Norway"
+    },
+    {
+      "from": "Denmark",
+      "to": "Sweden",
+      "label": "shares border with",
+      "description": "Denmark - shares border with - Sweden"
+    },
+    {
+      "from": "North Rhine-Westphalia",
+      "to": "Limburg",
+      "label": "shares border with",
+      "description": "North Rhine-Westphalia - shares border with - Limburg"
+    },
+    {
+      "from": "North Rhine-Westphalia",
+      "to": "Rhineland-Palatinate",
+      "label": "shares border with",
+      "description": "North Rhine-Westphalia - shares border with - Rhineland-Palatinate"
+    },
+    {
+      "from": "Netherlands",
+      "to": "Belgium",
+      "label": "shares border with",
+      "description": "Netherlands - shares border with - Belgium"
+    },
+    {
+      "from": "France",
+      "to": "Belgium",
+      "label": "shares border with",
+      "description": "France - shares border with - Belgium"
+    },
+    {
+      "from": "Belgium",
+      "to": "Netherlands",
+      "label": "shares border with",
+      "description": "Belgium - shares border with - Netherlands"
+    },
+    {
+      "from": "Belgium",
+      "to": "France",
+      "label": "shares border with",
+      "description": "Belgium - shares border with - France"
+    },
+    {
+      "from": "France",
+      "to": "Switzerland",
+      "label": "shares border with",
+      "description": "France - shares border with - Switzerland"
+    },
+    {
+      "from": "Switzerland",
+      "to": "France",
+      "label": "shares border with",
+      "description": "Switzerland - shares border with - France"
+    },
+    {
+      "from": "Switzerland",
+      "to": "Liechtenstein",
+      "label": "shares border with",
+      "description": "Switzerland - shares border with - Liechtenstein"
+    },
+    {
+      "from": "Austria",
+      "to": "Slovenia",
+      "label": "shares border with",
+      "description": "Austria - shares border with - Slovenia"
+    },
+    {
+      "from": "Poland",
+      "to": "Russia",
+      "label": "shares border with",
+      "description": "Poland - shares border with - Russia"
+    },
+    {
+      "from": "Belgium",
+      "to": "Luxembourg",
+      "label": "shares border with",
+      "description": "Belgium - shares border with - Luxembourg"
+    },
+    {
+      "from": "Austria",
+      "to": "Slovakia",
+      "label": "shares border with",
+      "description": "Austria - shares border with - Slovakia"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Austria–Czech Republic border",
+      "label": "has boundary",
+      "description": "Czech Republic - has boundary - Austria–Czech Republic border"
+    },
+    {
+      "from": "Luxembourg",
+      "to": "Belgium",
+      "label": "shares border with",
+      "description": "Luxembourg - shares border with - Belgium"
+    },
+    {
+      "from": "Switzerland",
+      "to": "Italy",
+      "label": "shares border with",
+      "description": "Switzerland - shares border with - Italy"
+    },
+    {
+      "from": "Austria",
+      "to": "Czech Republic",
+      "label": "shares border with",
+      "description": "Austria - shares border with - Czech Republic"
+    },
+    {
+      "from": "Poland",
+      "to": "Slovakia",
+      "label": "shares border with",
+      "description": "Poland - shares border with - Slovakia"
+    },
+    {
+      "from": "Austria",
+      "to": "Italy",
+      "label": "shares border with",
+      "description": "Austria - shares border with - Italy"
+    },
+    {
+      "from": "France",
+      "to": "Luxembourg",
+      "label": "shares border with",
+      "description": "France - shares border with - Luxembourg"
+    },
+    {
+      "from": "Poland",
+      "to": "Czech Republic",
+      "label": "shares border with",
+      "description": "Poland - shares border with - Czech Republic"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Austria",
+      "label": "shares border with",
+      "description": "Czech Republic - shares border with - Austria"
+    },
+    {
+      "from": "Luxembourg",
+      "to": "France",
+      "label": "shares border with",
+      "description": "Luxembourg - shares border with - France"
+    },
+    {
+      "from": "France",
+      "to": "Italy",
+      "label": "shares border with",
+      "description": "France - shares border with - Italy"
+    },
+    {
+      "from": "France",
+      "to": "Spain",
+      "label": "shares border with",
+      "description": "France - shares border with - Spain"
+    },
+    {
+      "from": "Poland",
+      "to": "Belarus",
+      "label": "shares border with",
+      "description": "Poland - shares border with - Belarus"
+    },
+    {
+      "from": "Austria",
+      "to": "Hungary",
+      "label": "shares border with",
+      "description": "Austria - shares border with - Hungary"
+    },
+    {
+      "from": "Poland",
+      "to": "Lithuania",
+      "label": "shares border with",
+      "description": "Poland - shares border with - Lithuania"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Poland",
+      "label": "shares border with",
+      "description": "Czech Republic - shares border with - Poland"
+    },
+    {
+      "from": "Poland",
+      "to": "Ukraine",
+      "label": "shares border with",
+      "description": "Poland - shares border with - Ukraine"
+    },
+    {
+      "from": "Denmark",
+      "to": "North Jutland Region",
+      "label": "contains the administrative territorial entity",
+      "description": "Denmark - contains the administrative territorial entity - North Jutland Region"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Czech Republic–Germany border",
+      "label": "has boundary",
+      "description": "Czech Republic - has boundary - Czech Republic–Germany border"
+    },
+    {
+      "from": "North Rhine-Westphalia",
+      "to": "Cologne Government Region",
+      "label": "contains the administrative territorial entity",
+      "description": "North Rhine-Westphalia - contains the administrative territorial entity - Cologne Government Region"
+    },
+    {
+      "from": "Denmark",
+      "to": "Central Denmark",
+      "label": "contains the administrative territorial entity",
+      "description": "Denmark - contains the administrative territorial entity - Central Denmark"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Czech Republic–Poland border",
+      "label": "has boundary",
+      "description": "Czech Republic - has boundary - Czech Republic–Poland border"
+    },
+    {
+      "from": "Denmark",
+      "to": "Schengen Area",
+      "label": "member of",
+      "description": "Denmark - member of - Schengen Area"
+    },
+    {
+      "from": "Denmark",
+      "to": "Northern Europe",
+      "label": "part of",
+      "description": "Denmark - part of - Northern Europe"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Slovakia",
+      "label": "shares border with",
+      "description": "Czech Republic - shares border with - Slovakia"
+    },
+    {
+      "from": "Denmark",
+      "to": "Southern Denmark",
+      "label": "contains the administrative territorial entity",
+      "description": "Denmark - contains the administrative territorial entity - Southern Denmark"
+    },
+    {
+      "from": "North Rhine-Westphalia",
+      "to": "Münster Government Region",
+      "label": "contains the administrative territorial entity",
+      "description": "North Rhine-Westphalia - contains the administrative territorial entity - Münster Government Region"
+    },
+    {
+      "from": "France",
+      "to": "Brazil",
+      "label": "shares border with",
+      "description": "France - shares border with - Brazil"
+    },
+    {
+      "from": "France",
+      "to": "Andorra",
+      "label": "shares border with",
+      "description": "France - shares border with - Andorra"
+    },
+    {
+      "from": "North Rhine-Westphalia",
+      "to": "Arnsberg Government Region",
+      "label": "contains the administrative territorial entity",
+      "description": "North Rhine-Westphalia - contains the administrative territorial entity - Arnsberg Government Region"
+    },
+    {
+      "from": "North Rhine-Westphalia",
+      "to": "Detmold Government Region",
+      "label": "contains the administrative territorial entity",
+      "description": "North Rhine-Westphalia - contains the administrative territorial entity - Detmold Government Region"
+    },
+    {
+      "from": "Belgium",
+      "to": "Brussels-Capital Region",
+      "label": "has part(s)",
+      "description": "Belgium - has part(s) - Brussels-Capital Region"
+    },
+    {
+      "from": "Denmark",
+      "to": "Capital Region of Denmark",
+      "label": "contains the administrative territorial entity",
+      "description": "Denmark - contains the administrative territorial entity - Capital Region of Denmark"
+    },
+    {
+      "from": "Denmark",
+      "to": "European Union",
+      "label": "part of",
+      "description": "Denmark - part of - European Union"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Czech Republic–Slovakia border",
+      "label": "has boundary",
+      "description": "Czech Republic - has boundary - Czech Republic–Slovakia border"
+    },
+    {
+      "from": "Belgium",
+      "to": "Europe",
+      "label": "part of",
+      "description": "Belgium - part of - Europe"
+    },
+    {
+      "from": "North Rhine-Westphalia",
+      "to": "Düsseldorf Government Region",
+      "label": "contains the administrative territorial entity",
+      "description": "North Rhine-Westphalia - contains the administrative territorial entity - Düsseldorf Government Region"
+    },
+    {
+      "from": "Belgium",
+      "to": "Schengen Area",
+      "label": "member of",
+      "description": "Belgium - member of - Schengen Area"
+    },
+    {
+      "from": "Denmark",
+      "to": "Region Zealand",
+      "label": "contains the administrative territorial entity",
+      "description": "Denmark - contains the administrative territorial entity - Region Zealand"
+    },
+    {
+      "from": "North Rhine-Westphalia",
+      "to": "independent city of Germany",
+      "label": "has part(s) of the class",
+      "description": "North Rhine-Westphalia - has part(s) of the class - independent city of Germany"
+    },
+    {
+      "from": "Denmark",
+      "to": "North Jutland County",
+      "label": "contains the administrative territorial entity",
+      "description": "Denmark - contains the administrative territorial entity - North Jutland County"
+    },
+    {
+      "from": "Belgium",
+      "to": "Western Europe",
+      "label": "part of",
+      "description": "Belgium - part of - Western Europe"
+    },
+    {
+      "from": "Belgium",
+      "to": "European Union",
+      "label": "part of",
+      "description": "Belgium - part of - European Union"
+    },
+    {
+      "from": "North Rhine-Westphalia",
+      "to": "Rhine-Ruhr Metropolitan Region",
+      "label": "has part(s)",
+      "description": "North Rhine-Westphalia - has part(s) - Rhine-Ruhr Metropolitan Region"
+    },
+    {
+      "from": "Denmark",
+      "to": "European Economic Area",
+      "label": "part of",
+      "description": "Denmark - part of - European Economic Area"
+    },
+    {
+      "from": "North Rhine-Westphalia",
+      "to": "North Rhine",
+      "label": "follows",
+      "description": "North Rhine-Westphalia - follows - North Rhine"
+    },
+    {
+      "from": "Belgium",
+      "to": "German-speaking Community of Belgium",
+      "label": "contains the administrative territorial entity",
+      "description": "Belgium - contains the administrative territorial entity - German-speaking Community of Belgium"
+    },
+    {
+      "from": "Belgium",
+      "to": "Flemish Region",
+      "label": "has part(s)",
+      "description": "Belgium - has part(s) - Flemish Region"
+    },
+    {
+      "from": "Denmark",
+      "to": "Copenhagen County",
+      "label": "contains the administrative territorial entity",
+      "description": "Denmark - contains the administrative territorial entity - Copenhagen County"
+    },
+    {
+      "from": "Belgium",
+      "to": "Brussels-Capital Region",
+      "label": "contains the administrative territorial entity",
+      "description": "Belgium - contains the administrative territorial entity - Brussels-Capital Region"
+    },
+    {
+      "from": "Switzerland",
+      "to": "Schengen Area",
+      "label": "member of",
+      "description": "Switzerland - member of - Schengen Area"
+    },
+    {
+      "from": "Denmark",
+      "to": "Nordic countries",
+      "label": "part of",
+      "description": "Denmark - part of - Nordic countries"
+    },
+    {
+      "from": "North Rhine-Westphalia",
+      "to": "district of Germany",
+      "label": "has part(s) of the class",
+      "description": "North Rhine-Westphalia - has part(s) of the class - district of Germany"
+    },
+    {
+      "from": "Switzerland",
+      "to": "Central Europe",
+      "label": "part of",
+      "description": "Switzerland - part of - Central Europe"
+    },
+    {
+      "from": "North Rhine-Westphalia",
+      "to": "geography of North Rhine-Westphalia",
+      "label": "geography of topic",
+      "description": "North Rhine-Westphalia - geography of topic - geography of North Rhine-Westphalia"
+    },
+    {
+      "from": "Belgium",
+      "to": "Wallonia",
+      "label": "has part(s)",
+      "description": "Belgium - has part(s) - Wallonia"
+    },
+    {
+      "from": "Belgium",
+      "to": "Flemish Region",
+      "label": "contains the administrative territorial entity",
+      "description": "Belgium - contains the administrative territorial entity - Flemish Region"
+    },
+    {
+      "from": "Switzerland",
+      "to": "Canton of Nidwalden",
+      "label": "contains the administrative territorial entity",
+      "description": "Switzerland - contains the administrative territorial entity - Canton of Nidwalden"
+    },
+    {
+      "from": "Belgium",
+      "to": "German-speaking Community of Belgium",
+      "label": "has part(s)",
+      "description": "Belgium - has part(s) - German-speaking Community of Belgium"
+    },
+    {
+      "from": "Netherlands",
+      "to": "North Holland",
+      "label": "contains the administrative territorial entity",
+      "description": "Netherlands - contains the administrative territorial entity - North Holland"
+    },
+    {
+      "from": "France",
+      "to": "Schengen Area",
+      "label": "member of",
+      "description": "France - member of - Schengen Area"
+    },
+    {
+      "from": "Netherlands",
+      "to": "Schengen Area",
+      "label": "member of",
+      "description": "Netherlands - member of - Schengen Area"
+    },
+    {
+      "from": "France",
+      "to": "Suriname",
+      "label": "shares border with",
+      "description": "France - shares border with - Suriname"
+    },
+    {
+      "from": "Denmark",
+      "to": "South Jutland County",
+      "label": "contains the administrative territorial entity",
+      "description": "Denmark - contains the administrative territorial entity - South Jutland County"
+    },
+    {
+      "from": "Belgium",
+      "to": "Benelux",
+      "label": "part of",
+      "description": "Belgium - part of - Benelux"
+    },
+    {
+      "from": "Austria",
+      "to": "Schengen Area",
+      "label": "member of",
+      "description": "Austria - member of - Schengen Area"
+    },
+    {
+      "from": "Luxembourg",
+      "to": "Western Europe",
+      "label": "part of",
+      "description": "Luxembourg - part of - Western Europe"
+    },
+    {
+      "from": "Denmark",
+      "to": "Europe",
+      "label": "continent",
+      "description": "Denmark - continent - Europe"
+    },
+    {
+      "from": "Luxembourg",
+      "to": "Schengen Area",
+      "label": "member of",
+      "description": "Luxembourg - member of - Schengen Area"
+    },
+    {
+      "from": "Denmark",
+      "to": "Roskilde County",
+      "label": "contains the administrative territorial entity",
+      "description": "Denmark - contains the administrative territorial entity - Roskilde County"
+    },
+    {
+      "from": "Belgium",
+      "to": "Western Europe",
+      "label": "located in/on physical feature",
+      "description": "Belgium - located in/on physical feature - Western Europe"
+    },
+    {
+      "from": "Switzerland",
+      "to": "Canton of Appenzell Ausserrhoden",
+      "label": "contains the administrative territorial entity",
+      "description": "Switzerland - contains the administrative territorial entity - Canton of Appenzell Ausserrhoden"
+    },
+    {
+      "from": "Luxembourg",
+      "to": "European Union",
+      "label": "part of",
+      "description": "Luxembourg - part of - European Union"
+    }
+  ],
+  "edge_descriptions": [
+    "Germany - shares border with - Denmark",
+    "Germany - shares border with - France",
+    "Germany - shares border with - Switzerland",
+    "Germany - shares border with - Poland",
+    "Germany - shares border with - Netherlands",
+    "Germany - shares border with - Belgium",
+    "Germany - shares border with - Austria",
+    "Germany - shares border with - Luxembourg",
+    "Germany - shares border with - Czech Republic",
+    "Germany - contains the administrative territorial entity - North Rhine-Westphalia",
+    "North Rhine-Westphalia - shares border with - Wallonia",
+    "North Rhine-Westphalia - shares border with - Lower Saxony",
+    "Belgium - shares border with - Kingdom of the Netherlands",
+    "North Rhine-Westphalia - shares border with - Province of Liege",
+    "North Rhine-Westphalia - shares border with - Gelderland",
+    "France - shares border with - Kingdom of the Netherlands",
+    "North Rhine-Westphalia - shares border with - Overijssel",
+    "Austria - shares border with - Switzerland",
+    "Switzerland - shares border with - European Union",
+    "North Rhine-Westphalia - shares border with - Hesse",
+    "Switzerland - shares border with - Austria",
+    "Austria - shares border with - Liechtenstein",
+    "Denmark - shares border with - Norway",
+    "Denmark - shares border with - Sweden",
+    "North Rhine-Westphalia - shares border with - Limburg",
+    "North Rhine-Westphalia - shares border with - Rhineland-Palatinate",
+    "Netherlands - shares border with - Belgium",
+    "France - shares border with - Belgium",
+    "Belgium - shares border with - Netherlands",
+    "Belgium - shares border with - France",
+    "France - shares border with - Switzerland",
+    "Switzerland - shares border with - France",
+    "Switzerland - shares border with - Liechtenstein",
+    "Austria - shares border with - Slovenia",
+    "Poland - shares border with - Russia",
+    "Belgium - shares border with - Luxembourg",
+    "Austria - shares border with - Slovakia",
+    "Czech Republic - has boundary - Austria–Czech Republic border",
+    "Luxembourg - shares border with - Belgium",
+    "Switzerland - shares border with - Italy",
+    "Austria - shares border with - Czech Republic",
+    "Poland - shares border with - Slovakia",
+    "Austria - shares border with - Italy",
+    "France - shares border with - Luxembourg",
+    "Poland - shares border with - Czech Republic",
+    "Czech Republic - shares border with - Austria",
+    "Luxembourg - shares border with - France",
+    "France - shares border with - Italy",
+    "France - shares border with - Spain",
+    "Poland - shares border with - Belarus",
+    "Austria - shares border with - Hungary",
+    "Poland - shares border with - Lithuania",
+    "Czech Republic - shares border with - Poland",
+    "Poland - shares border with - Ukraine",
+    "Denmark - contains the administrative territorial entity - North Jutland Region",
+    "Czech Republic - has boundary - Czech Republic–Germany border",
+    "North Rhine-Westphalia - contains the administrative territorial entity - Cologne Government Region",
+    "Denmark - contains the administrative territorial entity - Central Denmark",
+    "Czech Republic - has boundary - Czech Republic–Poland border",
+    "Denmark - member of - Schengen Area",
+    "Denmark - part of - Northern Europe",
+    "Czech Republic - shares border with - Slovakia",
+    "Denmark - contains the administrative territorial entity - Southern Denmark",
+    "North Rhine-Westphalia - contains the administrative territorial entity - Münster Government Region",
+    "France - shares border with - Brazil",
+    "France - shares border with - Andorra",
+    "North Rhine-Westphalia - contains the administrative territorial entity - Arnsberg Government Region",
+    "North Rhine-Westphalia - contains the administrative territorial entity - Detmold Government Region",
+    "Belgium - has part(s) - Brussels-Capital Region",
+    "Denmark - contains the administrative territorial entity - Capital Region of Denmark",
+    "Denmark - part of - European Union",
+    "Czech Republic - has boundary - Czech Republic–Slovakia border",
+    "Belgium - part of - Europe",
+    "North Rhine-Westphalia - contains the administrative territorial entity - Düsseldorf Government Region",
+    "Belgium - member of - Schengen Area",
+    "Denmark - contains the administrative territorial entity - Region Zealand",
+    "North Rhine-Westphalia - has part(s) of the class - independent city of Germany",
+    "Denmark - contains the administrative territorial entity - North Jutland County",
+    "Belgium - part of - Western Europe",
+    "Belgium - part of - European Union",
+    "North Rhine-Westphalia - has part(s) - Rhine-Ruhr Metropolitan Region",
+    "Denmark - part of - European Economic Area",
+    "North Rhine-Westphalia - follows - North Rhine",
+    "Belgium - contains the administrative territorial entity - German-speaking Community of Belgium",
+    "Belgium - has part(s) - Flemish Region",
+    "Denmark - contains the administrative territorial entity - Copenhagen County",
+    "Belgium - contains the administrative territorial entity - Brussels-Capital Region",
+    "Switzerland - member of - Schengen Area",
+    "Denmark - part of - Nordic countries",
+    "North Rhine-Westphalia - has part(s) of the class - district of Germany",
+    "Switzerland - part of - Central Europe",
+    "North Rhine-Westphalia - geography of topic - geography of North Rhine-Westphalia",
+    "Belgium - has part(s) - Wallonia",
+    "Belgium - contains the administrative territorial entity - Flemish Region",
+    "Switzerland - contains the administrative territorial entity - Canton of Nidwalden",
+    "Belgium - has part(s) - German-speaking Community of Belgium",
+    "Netherlands - contains the administrative territorial entity - North Holland",
+    "France - member of - Schengen Area",
+    "Netherlands - member of - Schengen Area",
+    "France - shares border with - Suriname",
+    "Denmark - contains the administrative territorial entity - South Jutland County",
+    "Belgium - part of - Benelux",
+    "Austria - member of - Schengen Area",
+    "Luxembourg - part of - Western Europe",
+    "Denmark - continent - Europe",
+    "Luxembourg - member of - Schengen Area",
+    "Denmark - contains the administrative territorial entity - Roskilde County",
+    "Belgium - located in/on physical feature - Western Europe",
+    "Switzerland - contains the administrative territorial entity - Canton of Appenzell Ausserrhoden",
+    "Luxembourg - part of - European Union"
+  ]
+}

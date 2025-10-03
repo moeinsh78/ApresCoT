@@ -1,0 +1,872 @@
+{
+  "params": {
+    "use_srtk": true,
+    "max_hops": 2,
+    "beam_size": 10,
+    "per_pred_cap": 32,
+    "total_cap_per_node": 256,
+    "max_nodes": 350,
+    "scorer_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "hypothetical_answer": false
+  },
+  "ts": 1759337783.1698291,
+  "seed_nodes": [
+    "Germany"
+  ],
+  "nodes_list": [
+    "Austria",
+    "Austria–Czech Republic border",
+    "Auvergne-Rhône-Alpes",
+    "Baden-Württemberg",
+    "Bavaria",
+    "Belarus",
+    "Belgium",
+    "Benelux",
+    "Boundary Stone 147",
+    "Brazil",
+    "Brussels-Capital Region",
+    "Burgenland",
+    "Canton of Appenzell Ausserrhoden",
+    "Canton of Neuchâtel",
+    "Canton of Nidwalden",
+    "Canton of St. Gallen",
+    "Czech Republic",
+    "Czech Republic–Germany border",
+    "Czech Republic–Poland border",
+    "Czech Republic–Slovakia border",
+    "Denmark",
+    "Europe",
+    "European Union",
+    "France",
+    "Friesland",
+    "Gauteng",
+    "Gelderland",
+    "German-speaking Community of Belgium",
+    "Germany",
+    "Guangdong",
+    "Hesse",
+    "Hungary",
+    "Italy",
+    "Karlovy Vary Region",
+    "Karnataka",
+    "Kingdom of Bavaria",
+    "Kingdom of the Netherlands",
+    "Landtag of Bavaria",
+    "Liberec Region",
+    "Liechtenstein",
+    "Limburg",
+    "Lithuania",
+    "Lower Bavaria",
+    "Lower Franconia",
+    "Luxembourg",
+    "Markus Söder",
+    "Middle Franconia",
+    "Munich",
+    "Netherlands",
+    "North Jutland Region",
+    "Norway",
+    "Plzeň Region",
+    "Poland",
+    "Quebec",
+    "Region Zealand",
+    "Russia",
+    "Salzburg",
+    "Saxony",
+    "Schengen Area",
+    "Shandong",
+    "Slovakia",
+    "Slovenia",
+    "South Bohemian Region",
+    "Southern Germany",
+    "Spain",
+    "Suriname",
+    "Swabia",
+    "Sweden",
+    "Switzerland",
+    "São Paulo",
+    "Thuringia",
+    "Tyrol",
+    "Ukraine",
+    "Upper Austria",
+    "Upper Bavaria",
+    "Upper Franconia",
+    "Upper Palatinate",
+    "Vorarlberg",
+    "Wallonia",
+    "Zeeland"
+  ],
+  "edge_dict_list": [
+    {
+      "from": "Germany",
+      "to": "France",
+      "label": "shares border with",
+      "description": "Germany - shares border with - France"
+    },
+    {
+      "from": "Germany",
+      "to": "Poland",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Poland"
+    },
+    {
+      "from": "Germany",
+      "to": "Netherlands",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Netherlands"
+    },
+    {
+      "from": "Germany",
+      "to": "Switzerland",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Switzerland"
+    },
+    {
+      "from": "Germany",
+      "to": "Denmark",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Denmark"
+    },
+    {
+      "from": "Germany",
+      "to": "Austria",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Austria"
+    },
+    {
+      "from": "Germany",
+      "to": "Belgium",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Belgium"
+    },
+    {
+      "from": "Germany",
+      "to": "Czech Republic",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Czech Republic"
+    },
+    {
+      "from": "Germany",
+      "to": "Luxembourg",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Luxembourg"
+    },
+    {
+      "from": "Germany",
+      "to": "Bavaria",
+      "label": "contains the administrative territorial entity",
+      "description": "Germany - contains the administrative territorial entity - Bavaria"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Plzeň Region",
+      "label": "shares border with",
+      "description": "Bavaria - shares border with - Plzeň Region"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Hesse",
+      "label": "shares border with",
+      "description": "Bavaria - shares border with - Hesse"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Austria–Czech Republic border",
+      "label": "has boundary",
+      "description": "Czech Republic - has boundary - Austria–Czech Republic border"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Karlovy Vary Region",
+      "label": "shares border with",
+      "description": "Bavaria - shares border with - Karlovy Vary Region"
+    },
+    {
+      "from": "Bavaria",
+      "to": "South Bohemian Region",
+      "label": "shares border with",
+      "description": "Bavaria - shares border with - South Bohemian Region"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Upper Austria",
+      "label": "shares border with",
+      "description": "Bavaria - shares border with - Upper Austria"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Baden-Württemberg",
+      "label": "shares border with",
+      "description": "Bavaria - shares border with - Baden-Württemberg"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Saxony",
+      "label": "shares border with",
+      "description": "Bavaria - shares border with - Saxony"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Thuringia",
+      "label": "shares border with",
+      "description": "Bavaria - shares border with - Thuringia"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Vorarlberg",
+      "label": "shares border with",
+      "description": "Bavaria - shares border with - Vorarlberg"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Czech Republic–Germany border",
+      "label": "has boundary",
+      "description": "Czech Republic - has boundary - Czech Republic–Germany border"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Tyrol",
+      "label": "shares border with",
+      "description": "Bavaria - shares border with - Tyrol"
+    },
+    {
+      "from": "Belgium",
+      "to": "Kingdom of the Netherlands",
+      "label": "shares border with",
+      "description": "Belgium - shares border with - Kingdom of the Netherlands"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Czech Republic–Poland border",
+      "label": "has boundary",
+      "description": "Czech Republic - has boundary - Czech Republic–Poland border"
+    },
+    {
+      "from": "Austria",
+      "to": "Liechtenstein",
+      "label": "shares border with",
+      "description": "Austria - shares border with - Liechtenstein"
+    },
+    {
+      "from": "France",
+      "to": "Kingdom of the Netherlands",
+      "label": "shares border with",
+      "description": "France - shares border with - Kingdom of the Netherlands"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Canton of St. Gallen",
+      "label": "shares border with",
+      "description": "Bavaria - shares border with - Canton of St. Gallen"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Czech Republic–Slovakia border",
+      "label": "has boundary",
+      "description": "Czech Republic - has boundary - Czech Republic–Slovakia border"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Swabia",
+      "label": "contains the administrative territorial entity",
+      "description": "Bavaria - contains the administrative territorial entity - Swabia"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Southern Germany",
+      "label": "part of",
+      "description": "Bavaria - part of - Southern Germany"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Lower Franconia",
+      "label": "contains the administrative territorial entity",
+      "description": "Bavaria - contains the administrative territorial entity - Lower Franconia"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Upper Franconia",
+      "label": "contains the administrative territorial entity",
+      "description": "Bavaria - contains the administrative territorial entity - Upper Franconia"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Middle Franconia",
+      "label": "contains the administrative territorial entity",
+      "description": "Bavaria - contains the administrative territorial entity - Middle Franconia"
+    },
+    {
+      "from": "Austria",
+      "to": "Switzerland",
+      "label": "shares border with",
+      "description": "Austria - shares border with - Switzerland"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Europe",
+      "label": "continent",
+      "description": "Bavaria - continent - Europe"
+    },
+    {
+      "from": "Poland",
+      "to": "Russia",
+      "label": "shares border with",
+      "description": "Poland - shares border with - Russia"
+    },
+    {
+      "from": "Poland",
+      "to": "Belarus",
+      "label": "shares border with",
+      "description": "Poland - shares border with - Belarus"
+    },
+    {
+      "from": "Switzerland",
+      "to": "Austria",
+      "label": "shares border with",
+      "description": "Switzerland - shares border with - Austria"
+    },
+    {
+      "from": "Austria",
+      "to": "Slovenia",
+      "label": "shares border with",
+      "description": "Austria - shares border with - Slovenia"
+    },
+    {
+      "from": "Belgium",
+      "to": "Netherlands",
+      "label": "shares border with",
+      "description": "Belgium - shares border with - Netherlands"
+    },
+    {
+      "from": "Austria",
+      "to": "Slovakia",
+      "label": "shares border with",
+      "description": "Austria - shares border with - Slovakia"
+    },
+    {
+      "from": "Switzerland",
+      "to": "Liechtenstein",
+      "label": "shares border with",
+      "description": "Switzerland - shares border with - Liechtenstein"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Upper Bavaria",
+      "label": "contains the administrative territorial entity",
+      "description": "Bavaria - contains the administrative territorial entity - Upper Bavaria"
+    },
+    {
+      "from": "Netherlands",
+      "to": "Belgium",
+      "label": "shares border with",
+      "description": "Netherlands - shares border with - Belgium"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Lower Bavaria",
+      "label": "contains the administrative territorial entity",
+      "description": "Bavaria - contains the administrative territorial entity - Lower Bavaria"
+    },
+    {
+      "from": "Belgium",
+      "to": "France",
+      "label": "shares border with",
+      "description": "Belgium - shares border with - France"
+    },
+    {
+      "from": "France",
+      "to": "Belgium",
+      "label": "shares border with",
+      "description": "France - shares border with - Belgium"
+    },
+    {
+      "from": "Austria",
+      "to": "Italy",
+      "label": "shares border with",
+      "description": "Austria - shares border with - Italy"
+    },
+    {
+      "from": "Poland",
+      "to": "Slovakia",
+      "label": "shares border with",
+      "description": "Poland - shares border with - Slovakia"
+    },
+    {
+      "from": "Austria",
+      "to": "Czech Republic",
+      "label": "shares border with",
+      "description": "Austria - shares border with - Czech Republic"
+    },
+    {
+      "from": "Austria",
+      "to": "Hungary",
+      "label": "shares border with",
+      "description": "Austria - shares border with - Hungary"
+    },
+    {
+      "from": "France",
+      "to": "Switzerland",
+      "label": "shares border with",
+      "description": "France - shares border with - Switzerland"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Boundary Stone 147",
+      "label": "has boundary",
+      "description": "Bavaria - has boundary - Boundary Stone 147"
+    },
+    {
+      "from": "Switzerland",
+      "to": "France",
+      "label": "shares border with",
+      "description": "Switzerland - shares border with - France"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Salzburg",
+      "label": "shares border with",
+      "description": "Bavaria - shares border with - Salzburg"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Upper Palatinate",
+      "label": "contains the administrative territorial entity",
+      "description": "Bavaria - contains the administrative territorial entity - Upper Palatinate"
+    },
+    {
+      "from": "Switzerland",
+      "to": "European Union",
+      "label": "shares border with",
+      "description": "Switzerland - shares border with - European Union"
+    },
+    {
+      "from": "France",
+      "to": "Brazil",
+      "label": "shares border with",
+      "description": "France - shares border with - Brazil"
+    },
+    {
+      "from": "Poland",
+      "to": "Czech Republic",
+      "label": "shares border with",
+      "description": "Poland - shares border with - Czech Republic"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Austria",
+      "label": "shares border with",
+      "description": "Czech Republic - shares border with - Austria"
+    },
+    {
+      "from": "Belgium",
+      "to": "Luxembourg",
+      "label": "shares border with",
+      "description": "Belgium - shares border with - Luxembourg"
+    },
+    {
+      "from": "Switzerland",
+      "to": "Italy",
+      "label": "shares border with",
+      "description": "Switzerland - shares border with - Italy"
+    },
+    {
+      "from": "Belgium",
+      "to": "Wallonia",
+      "label": "has part(s)",
+      "description": "Belgium - has part(s) - Wallonia"
+    },
+    {
+      "from": "France",
+      "to": "Italy",
+      "label": "shares border with",
+      "description": "France - shares border with - Italy"
+    },
+    {
+      "from": "Poland",
+      "to": "Lithuania",
+      "label": "shares border with",
+      "description": "Poland - shares border with - Lithuania"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Kingdom of Bavaria",
+      "label": "follows",
+      "description": "Bavaria - follows - Kingdom of Bavaria"
+    },
+    {
+      "from": "France",
+      "to": "Spain",
+      "label": "shares border with",
+      "description": "France - shares border with - Spain"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Poland",
+      "label": "shares border with",
+      "description": "Czech Republic - shares border with - Poland"
+    },
+    {
+      "from": "Poland",
+      "to": "Ukraine",
+      "label": "shares border with",
+      "description": "Poland - shares border with - Ukraine"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Gauteng",
+      "label": "twinned administrative body",
+      "description": "Bavaria - twinned administrative body - Gauteng"
+    },
+    {
+      "from": "Luxembourg",
+      "to": "Belgium",
+      "label": "shares border with",
+      "description": "Luxembourg - shares border with - Belgium"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Landtag of Bavaria",
+      "label": "legislative body",
+      "description": "Bavaria - legislative body - Landtag of Bavaria"
+    },
+    {
+      "from": "France",
+      "to": "Luxembourg",
+      "label": "shares border with",
+      "description": "France - shares border with - Luxembourg"
+    },
+    {
+      "from": "Denmark",
+      "to": "Sweden",
+      "label": "shares border with",
+      "description": "Denmark - shares border with - Sweden"
+    },
+    {
+      "from": "Belgium",
+      "to": "Schengen Area",
+      "label": "member of",
+      "description": "Belgium - member of - Schengen Area"
+    },
+    {
+      "from": "Austria",
+      "to": "Burgenland",
+      "label": "contains the administrative territorial entity",
+      "description": "Austria - contains the administrative territorial entity - Burgenland"
+    },
+    {
+      "from": "Switzerland",
+      "to": "Canton of Appenzell Ausserrhoden",
+      "label": "contains the administrative territorial entity",
+      "description": "Switzerland - contains the administrative territorial entity - Canton of Appenzell Ausserrhoden"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Shandong",
+      "label": "twinned administrative body",
+      "description": "Bavaria - twinned administrative body - Shandong"
+    },
+    {
+      "from": "Switzerland",
+      "to": "Canton of Nidwalden",
+      "label": "contains the administrative territorial entity",
+      "description": "Switzerland - contains the administrative territorial entity - Canton of Nidwalden"
+    },
+    {
+      "from": "Luxembourg",
+      "to": "France",
+      "label": "shares border with",
+      "description": "Luxembourg - shares border with - France"
+    },
+    {
+      "from": "Belgium",
+      "to": "Liechtenstein",
+      "label": "diplomatic relation",
+      "description": "Belgium - diplomatic relation - Liechtenstein"
+    },
+    {
+      "from": "Belgium",
+      "to": "German-speaking Community of Belgium",
+      "label": "contains the administrative territorial entity",
+      "description": "Belgium - contains the administrative territorial entity - German-speaking Community of Belgium"
+    },
+    {
+      "from": "France",
+      "to": "Auvergne-Rhône-Alpes",
+      "label": "contains the administrative territorial entity",
+      "description": "France - contains the administrative territorial entity - Auvergne-Rhône-Alpes"
+    },
+    {
+      "from": "Denmark",
+      "to": "Norway",
+      "label": "shares border with",
+      "description": "Denmark - shares border with - Norway"
+    },
+    {
+      "from": "Belgium",
+      "to": "Brussels-Capital Region",
+      "label": "has part(s)",
+      "description": "Belgium - has part(s) - Brussels-Capital Region"
+    },
+    {
+      "from": "Belgium",
+      "to": "Wallonia",
+      "label": "contains the administrative territorial entity",
+      "description": "Belgium - contains the administrative territorial entity - Wallonia"
+    },
+    {
+      "from": "Belgium",
+      "to": "Europe",
+      "label": "part of",
+      "description": "Belgium - part of - Europe"
+    },
+    {
+      "from": "Netherlands",
+      "to": "Schengen Area",
+      "label": "member of",
+      "description": "Netherlands - member of - Schengen Area"
+    },
+    {
+      "from": "France",
+      "to": "Suriname",
+      "label": "shares border with",
+      "description": "France - shares border with - Suriname"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Slovakia",
+      "label": "shares border with",
+      "description": "Czech Republic - shares border with - Slovakia"
+    },
+    {
+      "from": "Bavaria",
+      "to": "São Paulo",
+      "label": "twinned administrative body",
+      "description": "Bavaria - twinned administrative body - São Paulo"
+    },
+    {
+      "from": "Austria",
+      "to": "Schengen Area",
+      "label": "member of",
+      "description": "Austria - member of - Schengen Area"
+    },
+    {
+      "from": "Netherlands",
+      "to": "Limburg",
+      "label": "contains the administrative territorial entity",
+      "description": "Netherlands - contains the administrative territorial entity - Limburg"
+    },
+    {
+      "from": "Belgium",
+      "to": "Europe",
+      "label": "continent",
+      "description": "Belgium - continent - Europe"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Markus Söder",
+      "label": "head of government",
+      "description": "Bavaria - head of government - Markus Söder"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Karnataka",
+      "label": "twinned administrative body",
+      "description": "Bavaria - twinned administrative body - Karnataka"
+    },
+    {
+      "from": "Netherlands",
+      "to": "Friesland",
+      "label": "contains the administrative territorial entity",
+      "description": "Netherlands - contains the administrative territorial entity - Friesland"
+    },
+    {
+      "from": "Netherlands",
+      "to": "Zeeland",
+      "label": "contains the administrative territorial entity",
+      "description": "Netherlands - contains the administrative territorial entity - Zeeland"
+    },
+    {
+      "from": "Denmark",
+      "to": "North Jutland Region",
+      "label": "contains the administrative territorial entity",
+      "description": "Denmark - contains the administrative territorial entity - North Jutland Region"
+    },
+    {
+      "from": "Denmark",
+      "to": "Schengen Area",
+      "label": "member of",
+      "description": "Denmark - member of - Schengen Area"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Quebec",
+      "label": "twinned administrative body",
+      "description": "Bavaria - twinned administrative body - Quebec"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Munich",
+      "label": "capital",
+      "description": "Bavaria - capital - Munich"
+    },
+    {
+      "from": "Belgium",
+      "to": "Benelux",
+      "label": "part of",
+      "description": "Belgium - part of - Benelux"
+    },
+    {
+      "from": "Belgium",
+      "to": "German-speaking Community of Belgium",
+      "label": "has part(s)",
+      "description": "Belgium - has part(s) - German-speaking Community of Belgium"
+    },
+    {
+      "from": "Netherlands",
+      "to": "Gelderland",
+      "label": "contains the administrative territorial entity",
+      "description": "Netherlands - contains the administrative territorial entity - Gelderland"
+    },
+    {
+      "from": "Denmark",
+      "to": "Region Zealand",
+      "label": "contains the administrative territorial entity",
+      "description": "Denmark - contains the administrative territorial entity - Region Zealand"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Liberec Region",
+      "label": "contains the administrative territorial entity",
+      "description": "Czech Republic - contains the administrative territorial entity - Liberec Region"
+    },
+    {
+      "from": "Switzerland",
+      "to": "Canton of Neuchâtel",
+      "label": "contains the administrative territorial entity",
+      "description": "Switzerland - contains the administrative territorial entity - Canton of Neuchâtel"
+    },
+    {
+      "from": "Bavaria",
+      "to": "Guangdong",
+      "label": "twinned administrative body",
+      "description": "Bavaria - twinned administrative body - Guangdong"
+    },
+    {
+      "from": "Netherlands",
+      "to": "Benelux",
+      "label": "part of",
+      "description": "Netherlands - part of - Benelux"
+    }
+  ],
+  "edge_descriptions": [
+    "Germany - shares border with - France",
+    "Germany - shares border with - Poland",
+    "Germany - shares border with - Netherlands",
+    "Germany - shares border with - Switzerland",
+    "Germany - shares border with - Denmark",
+    "Germany - shares border with - Austria",
+    "Germany - shares border with - Belgium",
+    "Germany - shares border with - Czech Republic",
+    "Germany - shares border with - Luxembourg",
+    "Germany - contains the administrative territorial entity - Bavaria",
+    "Bavaria - shares border with - Plzeň Region",
+    "Bavaria - shares border with - Hesse",
+    "Czech Republic - has boundary - Austria–Czech Republic border",
+    "Bavaria - shares border with - Karlovy Vary Region",
+    "Bavaria - shares border with - South Bohemian Region",
+    "Bavaria - shares border with - Upper Austria",
+    "Bavaria - shares border with - Baden-Württemberg",
+    "Bavaria - shares border with - Saxony",
+    "Bavaria - shares border with - Thuringia",
+    "Bavaria - shares border with - Vorarlberg",
+    "Czech Republic - has boundary - Czech Republic–Germany border",
+    "Bavaria - shares border with - Tyrol",
+    "Belgium - shares border with - Kingdom of the Netherlands",
+    "Czech Republic - has boundary - Czech Republic–Poland border",
+    "Austria - shares border with - Liechtenstein",
+    "France - shares border with - Kingdom of the Netherlands",
+    "Bavaria - shares border with - Canton of St. Gallen",
+    "Czech Republic - has boundary - Czech Republic–Slovakia border",
+    "Bavaria - contains the administrative territorial entity - Swabia",
+    "Bavaria - part of - Southern Germany",
+    "Bavaria - contains the administrative territorial entity - Lower Franconia",
+    "Bavaria - contains the administrative territorial entity - Upper Franconia",
+    "Bavaria - contains the administrative territorial entity - Middle Franconia",
+    "Austria - shares border with - Switzerland",
+    "Bavaria - continent - Europe",
+    "Poland - shares border with - Russia",
+    "Poland - shares border with - Belarus",
+    "Switzerland - shares border with - Austria",
+    "Austria - shares border with - Slovenia",
+    "Belgium - shares border with - Netherlands",
+    "Austria - shares border with - Slovakia",
+    "Switzerland - shares border with - Liechtenstein",
+    "Bavaria - contains the administrative territorial entity - Upper Bavaria",
+    "Netherlands - shares border with - Belgium",
+    "Bavaria - contains the administrative territorial entity - Lower Bavaria",
+    "Belgium - shares border with - France",
+    "France - shares border with - Belgium",
+    "Austria - shares border with - Italy",
+    "Poland - shares border with - Slovakia",
+    "Austria - shares border with - Czech Republic",
+    "Austria - shares border with - Hungary",
+    "France - shares border with - Switzerland",
+    "Bavaria - has boundary - Boundary Stone 147",
+    "Switzerland - shares border with - France",
+    "Bavaria - shares border with - Salzburg",
+    "Bavaria - contains the administrative territorial entity - Upper Palatinate",
+    "Switzerland - shares border with - European Union",
+    "France - shares border with - Brazil",
+    "Poland - shares border with - Czech Republic",
+    "Czech Republic - shares border with - Austria",
+    "Belgium - shares border with - Luxembourg",
+    "Switzerland - shares border with - Italy",
+    "Belgium - has part(s) - Wallonia",
+    "France - shares border with - Italy",
+    "Poland - shares border with - Lithuania",
+    "Bavaria - follows - Kingdom of Bavaria",
+    "France - shares border with - Spain",
+    "Czech Republic - shares border with - Poland",
+    "Poland - shares border with - Ukraine",
+    "Bavaria - twinned administrative body - Gauteng",
+    "Luxembourg - shares border with - Belgium",
+    "Bavaria - legislative body - Landtag of Bavaria",
+    "France - shares border with - Luxembourg",
+    "Denmark - shares border with - Sweden",
+    "Belgium - member of - Schengen Area",
+    "Austria - contains the administrative territorial entity - Burgenland",
+    "Switzerland - contains the administrative territorial entity - Canton of Appenzell Ausserrhoden",
+    "Bavaria - twinned administrative body - Shandong",
+    "Switzerland - contains the administrative territorial entity - Canton of Nidwalden",
+    "Luxembourg - shares border with - France",
+    "Belgium - diplomatic relation - Liechtenstein",
+    "Belgium - contains the administrative territorial entity - German-speaking Community of Belgium",
+    "France - contains the administrative territorial entity - Auvergne-Rhône-Alpes",
+    "Denmark - shares border with - Norway",
+    "Belgium - has part(s) - Brussels-Capital Region",
+    "Belgium - contains the administrative territorial entity - Wallonia",
+    "Belgium - part of - Europe",
+    "Netherlands - member of - Schengen Area",
+    "France - shares border with - Suriname",
+    "Czech Republic - shares border with - Slovakia",
+    "Bavaria - twinned administrative body - São Paulo",
+    "Austria - member of - Schengen Area",
+    "Netherlands - contains the administrative territorial entity - Limburg",
+    "Belgium - continent - Europe",
+    "Bavaria - head of government - Markus Söder",
+    "Bavaria - twinned administrative body - Karnataka",
+    "Netherlands - contains the administrative territorial entity - Friesland",
+    "Netherlands - contains the administrative territorial entity - Zeeland",
+    "Denmark - contains the administrative territorial entity - North Jutland Region",
+    "Denmark - member of - Schengen Area",
+    "Bavaria - twinned administrative body - Quebec",
+    "Bavaria - capital - Munich",
+    "Belgium - part of - Benelux",
+    "Belgium - has part(s) - German-speaking Community of Belgium",
+    "Netherlands - contains the administrative territorial entity - Gelderland",
+    "Denmark - contains the administrative territorial entity - Region Zealand",
+    "Czech Republic - contains the administrative territorial entity - Liberec Region",
+    "Switzerland - contains the administrative territorial entity - Canton of Neuchâtel",
+    "Bavaria - twinned administrative body - Guangdong",
+    "Netherlands - part of - Benelux"
+  ]
+}

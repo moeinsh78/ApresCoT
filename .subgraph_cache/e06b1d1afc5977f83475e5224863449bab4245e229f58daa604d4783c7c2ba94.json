@@ -1,0 +1,261 @@
+{
+  "params": {
+    "use_srtk": true,
+    "max_hops": 1,
+    "beam_size": 30,
+    "per_pred_cap": 20,
+    "total_cap_per_node": 256,
+    "max_nodes": 350,
+    "scorer_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "hypothetical_answer": true
+  },
+  "ts": 1759187043.008739,
+  "seed_nodes": [
+    "Germany",
+    "Czech Republic"
+  ],
+  "nodes_list": [
+    "Austria",
+    "Austria–Czech Republic border",
+    "Category:Maps of the Czech Republic",
+    "Central Bohemian Region",
+    "Central Europe",
+    "Czech Republic",
+    "Czech Republic–Germany border",
+    "Czech Republic–Poland border",
+    "Czech Republic–Slovakia border",
+    "Czech Silesia",
+    "Czech and Slovak Federal Republic",
+    "Czech part of Lower Austria",
+    "Eastern Europe",
+    "Europe",
+    "European Economic Area",
+    "European Union",
+    "German",
+    "Germany",
+    "Liberec Region",
+    "Moravian-Silesian Region",
+    "Poland",
+    "Polish",
+    "Schengen Area",
+    "South Bohemian Region",
+    "Zlín Region",
+    "geography of the Czech Republic",
+    "history of the Czech lands",
+    "outline of the Czech Republic"
+  ],
+  "edge_dict_list": [
+    {
+      "from": "Czech Republic",
+      "to": "Austria–Czech Republic border",
+      "label": "has boundary",
+      "description": "Czech Republic - has boundary - Austria–Czech Republic border"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Czech Republic–Poland border",
+      "label": "has boundary",
+      "description": "Czech Republic - has boundary - Czech Republic–Poland border"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Czech part of Lower Austria",
+      "label": "has part(s)",
+      "description": "Czech Republic - has part(s) - Czech part of Lower Austria"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Czech Republic–Germany border",
+      "label": "has boundary",
+      "description": "Czech Republic - has boundary - Czech Republic–Germany border"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "geography of the Czech Republic",
+      "label": "geography of topic",
+      "description": "Czech Republic - geography of topic - geography of the Czech Republic"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Czech Republic–Slovakia border",
+      "label": "has boundary",
+      "description": "Czech Republic - has boundary - Czech Republic–Slovakia border"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "history of the Czech lands",
+      "label": "history of topic",
+      "description": "Czech Republic - history of topic - history of the Czech lands"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Central Bohemian Region",
+      "label": "contains the administrative territorial entity",
+      "description": "Czech Republic - contains the administrative territorial entity - Central Bohemian Region"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "outline of the Czech Republic",
+      "label": "Wikimedia outline",
+      "description": "Czech Republic - Wikimedia outline - outline of the Czech Republic"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Schengen Area",
+      "label": "member of",
+      "description": "Czech Republic - member of - Schengen Area"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "South Bohemian Region",
+      "label": "contains the administrative territorial entity",
+      "description": "Czech Republic - contains the administrative territorial entity - South Bohemian Region"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Central Europe",
+      "label": "part of",
+      "description": "Czech Republic - part of - Central Europe"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Moravian-Silesian Region",
+      "label": "contains the administrative territorial entity",
+      "description": "Czech Republic - contains the administrative territorial entity - Moravian-Silesian Region"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Czech and Slovak Federal Republic",
+      "label": "follows",
+      "description": "Czech Republic - follows - Czech and Slovak Federal Republic"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Czech and Slovak Federal Republic",
+      "label": "replaces",
+      "description": "Czech Republic - replaces - Czech and Slovak Federal Republic"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Poland",
+      "label": "shares border with",
+      "description": "Czech Republic - shares border with - Poland"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Germany",
+      "label": "shares border with",
+      "description": "Czech Republic - shares border with - Germany"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Category:Maps of the Czech Republic",
+      "label": "category for maps or plans",
+      "description": "Czech Republic - category for maps or plans - Category:Maps of the Czech Republic"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "European Union",
+      "label": "part of",
+      "description": "Czech Republic - part of - European Union"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Eastern Europe",
+      "label": "part of",
+      "description": "Czech Republic - part of - Eastern Europe"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Austria",
+      "label": "shares border with",
+      "description": "Czech Republic - shares border with - Austria"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Austria",
+      "label": "diplomatic relation",
+      "description": "Czech Republic - diplomatic relation - Austria"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Czech Silesia",
+      "label": "has part(s)",
+      "description": "Czech Republic - has part(s) - Czech Silesia"
+    },
+    {
+      "from": "Germany",
+      "to": "Czech Republic",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Czech Republic"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Liberec Region",
+      "label": "contains the administrative territorial entity",
+      "description": "Czech Republic - contains the administrative territorial entity - Liberec Region"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "German",
+      "label": "language used",
+      "description": "Czech Republic - language used - German"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Europe",
+      "label": "continent",
+      "description": "Czech Republic - continent - Europe"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Zlín Region",
+      "label": "contains the administrative territorial entity",
+      "description": "Czech Republic - contains the administrative territorial entity - Zlín Region"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Polish",
+      "label": "language used",
+      "description": "Czech Republic - language used - Polish"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "European Economic Area",
+      "label": "part of",
+      "description": "Czech Republic - part of - European Economic Area"
+    }
+  ],
+  "edge_descriptions": [
+    "Czech Republic - has boundary - Austria–Czech Republic border",
+    "Czech Republic - has boundary - Czech Republic–Poland border",
+    "Czech Republic - has part(s) - Czech part of Lower Austria",
+    "Czech Republic - has boundary - Czech Republic–Germany border",
+    "Czech Republic - geography of topic - geography of the Czech Republic",
+    "Czech Republic - has boundary - Czech Republic–Slovakia border",
+    "Czech Republic - history of topic - history of the Czech lands",
+    "Czech Republic - contains the administrative territorial entity - Central Bohemian Region",
+    "Czech Republic - Wikimedia outline - outline of the Czech Republic",
+    "Czech Republic - member of - Schengen Area",
+    "Czech Republic - contains the administrative territorial entity - South Bohemian Region",
+    "Czech Republic - part of - Central Europe",
+    "Czech Republic - contains the administrative territorial entity - Moravian-Silesian Region",
+    "Czech Republic - follows - Czech and Slovak Federal Republic",
+    "Czech Republic - replaces - Czech and Slovak Federal Republic",
+    "Czech Republic - shares border with - Poland",
+    "Czech Republic - shares border with - Germany",
+    "Czech Republic - category for maps or plans - Category:Maps of the Czech Republic",
+    "Czech Republic - part of - European Union",
+    "Czech Republic - part of - Eastern Europe",
+    "Czech Republic - shares border with - Austria",
+    "Czech Republic - diplomatic relation - Austria",
+    "Czech Republic - has part(s) - Czech Silesia",
+    "Germany - shares border with - Czech Republic",
+    "Czech Republic - contains the administrative territorial entity - Liberec Region",
+    "Czech Republic - language used - German",
+    "Czech Republic - continent - Europe",
+    "Czech Republic - contains the administrative territorial entity - Zlín Region",
+    "Czech Republic - language used - Polish",
+    "Czech Republic - part of - European Economic Area"
+  ]
+}

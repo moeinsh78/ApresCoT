@@ -13,7 +13,16 @@ from sentence_transformers import SentenceTransformer
 from torch import topk
                     
 class MetaQAKnowledgeGraph:
-    kg_directory = "kg/meta-qa-kb.txt"
+
+    def __init__(self, kg_directory: str = "kg/meta-qa-kb.txt"):
+        self.graph = self.build_knowledge_graph(edge_list_file = kg_directory)
+
+    def node_count(self):
+        return self.graph.number_of_nodes()
+    
+    def edge_count(self):
+        return self.graph.number_of_edges()
+    
 
     def create_description(self, head, relation, tail):
         if relation == "directed_by":
@@ -46,7 +55,7 @@ class MetaQAKnowledgeGraph:
         return kg_relations
     
     
-    def get_bfs_subgraph(self, graph: nx.MultiGraph, source_node: str, depth: int, expand_ending_nodes: bool = False) -> list[dict]:
+    def get_bfs_subgraph(self, source_node: str, depth: int, expand_ending_nodes: bool = False) -> list[dict]:
         print("Search begins from Node: ", source_node)
         ending_node_relations = ["release_year", "in_language", "has_tags", "has_genre", "has_imdb_rating", "has_imdb_votes"]
         edge_dict_list = []
@@ -61,22 +70,22 @@ class MetaQAKnowledgeGraph:
                 curr_node = to_be_expanded.pop(0)
                 if curr_node in visited:
                     continue
-                neighbors = list(nx.bfs_edges(graph, curr_node, depth_limit=1))
+                neighbors = list(nx.bfs_edges(self.graph, curr_node, depth_limit=1))
                 visited.add(curr_node)
                 for pair in neighbors:
                     # Node to be expanded is always in the second position
                     if pair[1] in visited:
                         continue
                     edge = {}
-                    if (expand_ending_nodes) or (graph.edges[pair[0], pair[1], 0]["label"] not in ending_node_relations):
+                    if (expand_ending_nodes) or (self.graph.edges[pair[0], pair[1], 0]["label"] not in ending_node_relations):
                         to_be_expanded.append(pair[1])
-                    for i in range(graph.number_of_edges(pair[0], pair[1])):
+                    for i in range(self.graph.number_of_edges(pair[0], pair[1])):
                         nodes.add(pair[1])
                         edge = {}
                         edge["from"] = pair[0]
                         edge["to"] = pair[1]
-                        edge["label"] = graph.edges[pair[0], pair[1], i]["label"]
-                        edge["description"] = graph.edges[pair[0], pair[1], i]["description"]
+                        edge["label"] = self.graph.edges[pair[0], pair[1], i]["label"]
+                        edge["description"] = self.graph.edges[pair[0], pair[1], i]["description"]
                         edge_dict_list.append(edge)
             
             curr_depth += 1
@@ -96,13 +105,11 @@ class MetaQAKnowledgeGraph:
     
     
     def extract_surrounding_subgraph(self, seed_entities, depth = 2):
-        graph = self.build_knowledge_graph(edge_list_file = self.kg_directory)
-    
         edge_dict_list = []
         for entity in seed_entities:
-            if not graph.has_node(entity):
+            if not self.graph.has_node(entity):
                 continue
-            edges = self.get_bfs_subgraph(graph, entity, depth, expand_ending_nodes = False)
+            edges = self.get_bfs_subgraph(entity, depth, expand_ending_nodes = False)
             edge_dict_list.extend(edges)
     
         return edge_dict_list, self.get_nodes_set(edge_dict_list)
@@ -119,7 +126,7 @@ class MetaQAKnowledgeGraph:
 
 
 
-    def get_similarity_based_subgraph(self, graph, similarity_model, question, seed_entities, 
+    def get_similarity_based_subgraph(self, similarity_model, question, seed_entities, 
                                       depth, not_to_expand_relation_labels = [], path_similarity_cutoff = 0.2):
         edge_list = []
         question_embedding = similarity_model.encode(question, show_progress_bar=False)
@@ -131,14 +138,14 @@ class MetaQAKnowledgeGraph:
 
         for entity in seed_entities:
             visited.add(entity)
-            neighbors = list(nx.bfs_edges(graph, entity, depth_limit=1))
+            neighbors = list(nx.bfs_edges(self.graph, entity, depth_limit=1))
             for pair in neighbors:
-                for i in range(graph.number_of_edges(pair[0], pair[1])):
+                for i in range(self.graph.number_of_edges(pair[0], pair[1])):
                     edge_dict = {}
                     edge_dict["from"] = pair[0]
                     edge_dict["to"] = pair[1]
-                    edge_dict["label"] = graph.edges[pair[0], pair[1], i]["label"]
-                    edge_dict["description"] = graph.edges[pair[0], pair[1], i]["description"]
+                    edge_dict["label"] = self.graph.edges[pair[0], pair[1], i]["label"]
+                    edge_dict["description"] = self.graph.edges[pair[0], pair[1], i]["description"]
                     
                     path_description = edge_dict["description"]
                     path_pool.put((-path_similarity(question_embedding, path_description, similarity_model), edge_dict, path_description))
@@ -171,14 +178,14 @@ class MetaQAKnowledgeGraph:
             # Adding new node's neighbours to possible paths
             node_to_be_expanded = most_relevant_edge["to"]
             visited.add(node_to_be_expanded)
-            neighbors = list(nx.bfs_edges(graph, node_to_be_expanded, depth_limit=1))
+            neighbors = list(nx.bfs_edges(self.graph, node_to_be_expanded, depth_limit=1))
             for pair in neighbors:
-                for i in range(graph.number_of_edges(pair[0], pair[1])):
+                for i in range(self.graph.number_of_edges(pair[0], pair[1])):
                     edge_dict = {}
                     edge_dict["from"] = pair[0]
                     edge_dict["to"] = pair[1]
-                    edge_dict["label"] = graph.edges[pair[0], pair[1], i]["label"]
-                    edge_dict["description"] = graph.edges[pair[0], pair[1], i]["description"]
+                    edge_dict["label"] = self.graph.edges[pair[0], pair[1], i]["label"]
+                    edge_dict["description"] = self.graph.edges[pair[0], pair[1], i]["description"]
                     
                     path_description = most_relevant_edge_description + " " + edge_dict["description"]
                     new_path_similarity = path_similarity(question_embedding, path_description, similarity_model)
@@ -205,19 +212,18 @@ class MetaQAKnowledgeGraph:
         return nodes_set
 
 
-    def extract_relevant_subgraph(self, seed_entities, question, depth = 2):
-        graph = self.build_knowledge_graph(edge_list_file = self.kg_directory)
-        similarity_model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+    # def extract_relevant_subgraph(self, seed_entities, question, depth = 2):
+    #     # graph = self.build_knowledge_graph(edge_list_file = self.kg_directory)
+    #     similarity_model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
-        edge_dict_list = self.get_similarity_based_subgraph(graph, similarity_model, question, seed_entities, depth, 
-                                                            not_to_expand_relation_labels = ["release_year", "in_language", "has_tags", "has_genre", "has_imdb_rating", "has_imdb_votes"])
+    #     edge_dict_list = self.get_similarity_based_subgraph(similarity_model, question, seed_entities, depth, 
+    #                                                         not_to_expand_relation_labels = ["release_year", "in_language", "has_tags", "has_genre", "has_imdb_rating", "has_imdb_votes"])
         
-        return edge_dict_list, self.get_nodes_set(edge_dict_list)
+    #     return edge_dict_list, self.get_nodes_set(edge_dict_list)
     
 
     def get_srtk_style_subgraph(
         self,
-        graph,
         similarity_model,
         question: str,
         seed_entities: List[str],
@@ -239,7 +245,7 @@ class MetaQAKnowledgeGraph:
             q_emb = similarity_model.encode(question, show_progress_bar=False)
 
         triples = []
-        seeds = [entity for entity in seed_entities if graph.has_node(entity)]
+        seeds = [entity for entity in seed_entities if self.graph.has_node(entity)]
         seen_edges = set()
         seen_nodes = set(seeds)
         frontier = set(seeds)
@@ -248,14 +254,14 @@ class MetaQAKnowledgeGraph:
             candidates = []
 
             for node in frontier:
-                neighbors = list(nx.bfs_edges(graph, node, depth_limit=1))
+                neighbors = list(nx.bfs_edges(self.graph, node, depth_limit=1))
                 for pair in neighbors:
-                    for i in range(graph.number_of_edges(pair[0], pair[1])):
+                    for i in range(self.graph.number_of_edges(pair[0], pair[1])):
                         edge_dict = {
                             "from": pair[0],
                             "to": pair[1],
-                            "label": graph.edges[pair[0], pair[1], i]["label"],
-                            "description": graph.edges[pair[0], pair[1], i]["description"],
+                            "label": self.graph.edges[pair[0], pair[1], i]["label"],
+                            "description": self.graph.edges[pair[0], pair[1], i]["description"],
                         }
                         # key = (edge_dict["from"], edge_dict["label"], edge_dict["to"])
                         key = tuple(sorted([edge_dict["from"], edge_dict["to"]])) + (edge_dict["label"],)
@@ -291,11 +297,9 @@ class MetaQAKnowledgeGraph:
 
 
     def extract_relevant_subgraph_srtk(self, seed_entities, question, max_hops, beam_size, max_nodes, compare_to_hypothetical_answer = False):
-        graph = self.build_knowledge_graph(edge_list_file=self.kg_directory)
         similarity_model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
         edge_dict_list, nodes_set = self.get_srtk_style_subgraph(
-            graph,
             similarity_model,
             question,
             seed_entities,

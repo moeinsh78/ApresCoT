@@ -11,9 +11,15 @@ from sentence_transformers import SentenceTransformer
 from torch import topk
 
 class UMLSKnowledgeGraph:
-    kg_directory = "kg/umls-kb.txt"
+    def __init__(self, kg_directory: str = "kg/umls-kb.txt"):
+        self.graph = self.build_knowledge_graph(edge_list_file = kg_directory)
 
-
+    def node_count(self):
+        return self.graph.number_of_nodes()
+    
+    def edge_count(self):
+        return self.graph.number_of_edges()
+    
     def create_description(self, head, relation, tail):
         relation_label = relation.replace("_", " ")
         if relation_label == "isa": 
@@ -29,8 +35,7 @@ class UMLSKnowledgeGraph:
         
         return kg_relations
     
-    
-    def get_bfs_subgraph(self, graph: nx.MultiDiGraph, source_node: str, depth: int) -> list[dict]:
+    def get_bfs_subgraph(self, source_node: str, depth: int) -> list[dict]:
         print("Search begins starting from Node: ", source_node)
         # ending_node_relations = ["release_year", "in_language", "has_tags", "has_genre", "has_imdb_rating", "has_imdb_votes"]
         edge_dict_list = []
@@ -45,7 +50,7 @@ class UMLSKnowledgeGraph:
                 curr_node = to_be_expanded.pop(0)
                 if curr_node in visited:
                     continue
-                neighbors = list(graph.out_edges(curr_node))
+                neighbors = list(self.graph.out_edges(curr_node))
                 visited.add(curr_node)
                 for pair in neighbors:
                     # Node to be expanded is always in the second position
@@ -53,13 +58,13 @@ class UMLSKnowledgeGraph:
                         continue
                     edge = {}
                     to_be_expanded.append(pair[1])
-                    for i in range(graph.number_of_edges(pair[0], pair[1])):
+                    for i in range(self.graph.number_of_edges(pair[0], pair[1])):
                         nodes.add(pair[1])
                         edge = {}
                         edge["from"] = pair[0]
                         edge["to"] = pair[1]
-                        edge["label"] = graph.edges[pair[0], pair[1], i]["label"]
-                        edge["description"] = graph.edges[pair[0], pair[1], i]["description"]
+                        edge["label"] = self.graph.edges[pair[0], pair[1], i]["label"]
+                        edge["description"] = self.graph.edges[pair[0], pair[1], i]["description"]
                         edge_dict_list.append(edge)
             
             curr_depth += 1
@@ -78,12 +83,10 @@ class UMLSKnowledgeGraph:
         return graph
     
     
-    def extract_surrounding_subgraph(self, seed_entities, depth = 2):
-        graph = self.build_knowledge_graph(edge_list_file = self.kg_directory)
-    
+    def extract_surrounding_subgraph(self, seed_entities, depth = 2):    
         edge_dict_list = []
         for entity in seed_entities:
-            edges = self.get_bfs_subgraph(graph, entity, depth)
+            edges = self.get_bfs_subgraph(entity, depth)
             edge_dict_list.extend(edges)
     
         return edge_dict_list, self.get_nodes_set(edge_dict_list)
@@ -101,7 +104,7 @@ class UMLSKnowledgeGraph:
 
 
     def get_similarity_based_subgraph(
-            self, graph, similarity_model, question, seed_entities, depth, 
+            self, similarity_model, question, seed_entities, depth, 
             not_to_expand_relation_labels = [], path_similarity_cutoff = 0.2
         ):
 
@@ -114,17 +117,17 @@ class UMLSKnowledgeGraph:
         visited = set()
 
         for entity in seed_entities:
-            if not graph.has_node(entity):
+            if not self.graph.has_node(entity):
                 continue
             visited.add(entity)
-            neighbors = list(graph.out_edges(entity))
+            neighbors = list(self.graph.out_edges(entity))
             for pair in neighbors:
-                for i in range(graph.number_of_edges(pair[0], pair[1])):
+                for i in range(self.graph.number_of_edges(pair[0], pair[1])):
                     edge_dict = {}
                     edge_dict["from"] = pair[0]
                     edge_dict["to"] = pair[1]
-                    edge_dict["label"] = graph.edges[pair[0], pair[1], i]["label"]
-                    edge_dict["description"] = graph.edges[pair[0], pair[1], i]["description"]
+                    edge_dict["label"] = self.graph.edges[pair[0], pair[1], i]["label"]
+                    edge_dict["description"] = self.graph.edges[pair[0], pair[1], i]["description"]
                     
                     path_description = edge_dict["description"]
                     path_pool.put((-path_similarity(question_embedding, path_description, similarity_model), edge_dict, path_description))
@@ -157,14 +160,14 @@ class UMLSKnowledgeGraph:
             # Adding new node's neighbours to possible paths
             node_to_be_expanded = most_relevant_edge["to"]
             visited.add(node_to_be_expanded)
-            neighbors = list(nx.bfs_edges(graph, node_to_be_expanded, depth_limit=1))
+            neighbors = list(nx.bfs_edges(self.graph, node_to_be_expanded, depth_limit=1))
             for pair in neighbors:
-                for i in range(graph.number_of_edges(pair[0], pair[1])):
+                for i in range(self.graph.number_of_edges(pair[0], pair[1])):
                     edge_dict = {}
                     edge_dict["from"] = pair[0]
                     edge_dict["to"] = pair[1]
-                    edge_dict["label"] = graph.edges[pair[0], pair[1], i]["label"]
-                    edge_dict["description"] = graph.edges[pair[0], pair[1], i]["description"]
+                    edge_dict["label"] = self.graph.edges[pair[0], pair[1], i]["label"]
+                    edge_dict["description"] = self.graph.edges[pair[0], pair[1], i]["description"]
                     
                     path_description = most_relevant_edge_description + " " + edge_dict["description"]
                     new_path_similarity = path_similarity(question_embedding, path_description, similarity_model)
@@ -190,10 +193,9 @@ class UMLSKnowledgeGraph:
 
 
     def extract_relevant_subgraph(self, seed_entities, question, depth = 2):
-        graph = self.build_knowledge_graph(edge_list_file = self.kg_directory)
         similarity_model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
-        edge_dict_list = self.get_similarity_based_subgraph(graph, similarity_model, question, seed_entities, depth, 
+        edge_dict_list = self.get_similarity_based_subgraph(similarity_model, question, seed_entities, depth, 
                                                             not_to_expand_relation_labels = ["release_year", "in_language", "has_tags", "has_genre", "has_imdb_rating", "has_imdb_votes"])
         
         return edge_dict_list, self.get_nodes_set(edge_dict_list)

@@ -1,0 +1,50 @@
+#SEEDS: Germany
+Germany|shares border with|Austria
+Germany|shares border with|Belgium
+Germany|shares border with|Czech Republic
+Germany|shares border with|Denmark
+Germany|shares border with|France
+Germany|shares border with|Luxembourg
+Germany|shares border with|Netherlands
+Germany|shares border with|Poland
+Germany|shares border with|Switzerland
+Austria|shares border with|Czech Republic
+Austria|shares border with|Hungary
+Austria|shares border with|Italy
+Austria|shares border with|Liechtenstein
+Austria|shares border with|Slovakia
+Austria|shares border with|Slovenia
+Austria|shares border with|Switzerland
+Belgium|shares border with|France
+Belgium|shares border with|Kingdom of the Netherlands
+Belgium|shares border with|Luxembourg
+Belgium|shares border with|Netherlands
+Czech Republic|shares border with|Austria
+Czech Republic|shares border with|Poland
+Czech Republic|shares border with|Slovakia
+Denmark|shares border with|Norway
+Denmark|shares border with|Sweden
+France|shares border with|Andorra
+France|shares border with|Belgium
+France|shares border with|Brazil
+France|shares border with|Italy
+France|shares border with|Kingdom of the Netherlands
+France|shares border with|Luxembourg
+France|shares border with|Monaco
+France|shares border with|Spain
+France|shares border with|Suriname
+France|shares border with|Switzerland
+Luxembourg|shares border with|Belgium
+Luxembourg|shares border with|France
+Netherlands|shares border with|Belgium
+Poland|shares border with|Belarus
+Poland|shares border with|Czech Republic
+Poland|shares border with|Lithuania
+Poland|shares border with|Russia
+Poland|shares border with|Slovakia
+Poland|shares border with|Ukraine
+Switzerland|shares border with|Austria
+Switzerland|shares border with|European Union
+Switzerland|shares border with|France
+Switzerland|shares border with|Italy
+Switzerland|shares border with|Liechtenstein

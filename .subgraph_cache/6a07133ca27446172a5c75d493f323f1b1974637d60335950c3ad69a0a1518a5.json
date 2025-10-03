@@ -1,0 +1,414 @@
+{
+  "params": {
+    "use_srtk": true,
+    "max_hops": 1,
+    "beam_size": 100,
+    "per_pred_cap": 32,
+    "total_cap_per_node": 256,
+    "max_nodes": 350,
+    "scorer_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "hypothetical_answer": true
+  },
+  "ts": 1759189140.708065,
+  "seed_nodes": [
+    "Germany",
+    "Czech Republic"
+  ],
+  "nodes_list": [
+    "Austria",
+    "Austria–Czech Republic border",
+    "Bavaria",
+    "Belgium",
+    "Bohemia",
+    "Central Bohemian Region",
+    "Central Europe",
+    "Czech Republic",
+    "Czech Republic–Germany border",
+    "Czech Republic–Poland border",
+    "Czech Republic–Slovakia border",
+    "Czech Silesia",
+    "Czech and Slovak Federal Republic",
+    "Czech part of Lower Austria",
+    "Denmark",
+    "Eastern Europe",
+    "Europe",
+    "European Union",
+    "France",
+    "Germany",
+    "Hradec Králové Region",
+    "Hungary",
+    "Karlovy Vary Region",
+    "Liberec Region",
+    "Liechtenstein",
+    "Luxembourg",
+    "Moravian-Silesian Region",
+    "Netherlands",
+    "Plzeň Region",
+    "Poland",
+    "Prague",
+    "Saarland",
+    "Saxony-Anhalt",
+    "Schengen Area",
+    "Slovakia",
+    "South Bohemian Region",
+    "South Moravian Region",
+    "Switzerland",
+    "Zlín Region",
+    "geography of the Czech Republic",
+    "Ústí nad Labem Region"
+  ],
+  "edge_dict_list": [
+    {
+      "from": "Germany",
+      "to": "Czech Republic",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Czech Republic"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Germany",
+      "label": "shares border with",
+      "description": "Czech Republic - shares border with - Germany"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Poland",
+      "label": "shares border with",
+      "description": "Czech Republic - shares border with - Poland"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Austria",
+      "label": "shares border with",
+      "description": "Czech Republic - shares border with - Austria"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Austria–Czech Republic border",
+      "label": "has boundary",
+      "description": "Czech Republic - has boundary - Austria–Czech Republic border"
+    },
+    {
+      "from": "Germany",
+      "to": "Poland",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Poland"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Slovakia",
+      "label": "shares border with",
+      "description": "Czech Republic - shares border with - Slovakia"
+    },
+    {
+      "from": "Germany",
+      "to": "Austria",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Austria"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Czech Republic–Germany border",
+      "label": "has boundary",
+      "description": "Czech Republic - has boundary - Czech Republic–Germany border"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Czech Republic–Poland border",
+      "label": "has boundary",
+      "description": "Czech Republic - has boundary - Czech Republic–Poland border"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Czech Republic–Slovakia border",
+      "label": "has boundary",
+      "description": "Czech Republic - has boundary - Czech Republic–Slovakia border"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Czech part of Lower Austria",
+      "label": "has part(s)",
+      "description": "Czech Republic - has part(s) - Czech part of Lower Austria"
+    },
+    {
+      "from": "Germany",
+      "to": "Switzerland",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Switzerland"
+    },
+    {
+      "from": "Germany",
+      "to": "Luxembourg",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Luxembourg"
+    },
+    {
+      "from": "Germany",
+      "to": "France",
+      "label": "shares border with",
+      "description": "Germany - shares border with - France"
+    },
+    {
+      "from": "Germany",
+      "to": "Netherlands",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Netherlands"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Liberec Region",
+      "label": "contains the administrative territorial entity",
+      "description": "Czech Republic - contains the administrative territorial entity - Liberec Region"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Czech Silesia",
+      "label": "has part(s)",
+      "description": "Czech Republic - has part(s) - Czech Silesia"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Schengen Area",
+      "label": "member of",
+      "description": "Czech Republic - member of - Schengen Area"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Moravian-Silesian Region",
+      "label": "contains the administrative territorial entity",
+      "description": "Czech Republic - contains the administrative territorial entity - Moravian-Silesian Region"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "European Union",
+      "label": "part of",
+      "description": "Czech Republic - part of - European Union"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "South Bohemian Region",
+      "label": "contains the administrative territorial entity",
+      "description": "Czech Republic - contains the administrative territorial entity - South Bohemian Region"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Germany",
+      "label": "diplomatic relation",
+      "description": "Czech Republic - diplomatic relation - Germany"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Central Bohemian Region",
+      "label": "contains the administrative territorial entity",
+      "description": "Czech Republic - contains the administrative territorial entity - Central Bohemian Region"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Czech and Slovak Federal Republic",
+      "label": "follows",
+      "description": "Czech Republic - follows - Czech and Slovak Federal Republic"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Bohemia",
+      "label": "has part(s)",
+      "description": "Czech Republic - has part(s) - Bohemia"
+    },
+    {
+      "from": "Germany",
+      "to": "Belgium",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Belgium"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Zlín Region",
+      "label": "contains the administrative territorial entity",
+      "description": "Czech Republic - contains the administrative territorial entity - Zlín Region"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Liechtenstein",
+      "label": "diplomatic relation",
+      "description": "Czech Republic - diplomatic relation - Liechtenstein"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Central Europe",
+      "label": "part of",
+      "description": "Czech Republic - part of - Central Europe"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Austria",
+      "label": "diplomatic relation",
+      "description": "Czech Republic - diplomatic relation - Austria"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Karlovy Vary Region",
+      "label": "contains the administrative territorial entity",
+      "description": "Czech Republic - contains the administrative territorial entity - Karlovy Vary Region"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Prague",
+      "label": "contains the administrative territorial entity",
+      "description": "Czech Republic - contains the administrative territorial entity - Prague"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "South Moravian Region",
+      "label": "contains the administrative territorial entity",
+      "description": "Czech Republic - contains the administrative territorial entity - South Moravian Region"
+    },
+    {
+      "from": "Germany",
+      "to": "Denmark",
+      "label": "shares border with",
+      "description": "Germany - shares border with - Denmark"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Poland",
+      "label": "diplomatic relation",
+      "description": "Czech Republic - diplomatic relation - Poland"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Europe",
+      "label": "continent",
+      "description": "Czech Republic - continent - Europe"
+    },
+    {
+      "from": "Germany",
+      "to": "Saxony-Anhalt",
+      "label": "contains the administrative territorial entity",
+      "description": "Germany - contains the administrative territorial entity - Saxony-Anhalt"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Ústí nad Labem Region",
+      "label": "contains the administrative territorial entity",
+      "description": "Czech Republic - contains the administrative territorial entity - Ústí nad Labem Region"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Eastern Europe",
+      "label": "part of",
+      "description": "Czech Republic - part of - Eastern Europe"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Hungary",
+      "label": "diplomatic relation",
+      "description": "Czech Republic - diplomatic relation - Hungary"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Plzeň Region",
+      "label": "contains the administrative territorial entity",
+      "description": "Czech Republic - contains the administrative territorial entity - Plzeň Region"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "geography of the Czech Republic",
+      "label": "geography of topic",
+      "description": "Czech Republic - geography of topic - geography of the Czech Republic"
+    },
+    {
+      "from": "Germany",
+      "to": "Bavaria",
+      "label": "contains the administrative territorial entity",
+      "description": "Germany - contains the administrative territorial entity - Bavaria"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Hradec Králové Region",
+      "label": "contains the administrative territorial entity",
+      "description": "Czech Republic - contains the administrative territorial entity - Hradec Králové Region"
+    },
+    {
+      "from": "Germany",
+      "to": "Schengen Area",
+      "label": "member of",
+      "description": "Germany - member of - Schengen Area"
+    },
+    {
+      "from": "Germany",
+      "to": "Saarland",
+      "label": "contains the administrative territorial entity",
+      "description": "Germany - contains the administrative territorial entity - Saarland"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Slovakia",
+      "label": "diplomatic relation",
+      "description": "Czech Republic - diplomatic relation - Slovakia"
+    },
+    {
+      "from": "Czech Republic",
+      "to": "Czech Republic",
+      "label": "follows",
+      "description": "Czech Republic - follows - Czech Republic"
+    },
+    {
+      "from": "Germany",
+      "to": "Central Europe",
+      "label": "located in/on physical feature",
+      "description": "Germany - located in/on physical feature - Central Europe"
+    }
+  ],
+  "edge_descriptions": [
+    "Germany - shares border with - Czech Republic",
+    "Czech Republic - shares border with - Germany",
+    "Czech Republic - shares border with - Poland",
+    "Czech Republic - shares border with - Austria",
+    "Czech Republic - has boundary - Austria–Czech Republic border",
+    "Germany - shares border with - Poland",
+    "Czech Republic - shares border with - Slovakia",
+    "Germany - shares border with - Austria",
+    "Czech Republic - has boundary - Czech Republic–Germany border",
+    "Czech Republic - has boundary - Czech Republic–Poland border",
+    "Czech Republic - has boundary - Czech Republic–Slovakia border",
+    "Czech Republic - has part(s) - Czech part of Lower Austria",
+    "Germany - shares border with - Switzerland",
+    "Germany - shares border with - Luxembourg",
+    "Germany - shares border with - France",
+    "Germany - shares border with - Netherlands",
+    "Czech Republic - contains the administrative territorial entity - Liberec Region",
+    "Czech Republic - has part(s) - Czech Silesia",
+    "Czech Republic - member of - Schengen Area",
+    "Czech Republic - contains the administrative territorial entity - Moravian-Silesian Region",
+    "Czech Republic - part of - European Union",
+    "Czech Republic - contains the administrative territorial entity - South Bohemian Region",
+    "Czech Republic - diplomatic relation - Germany",
+    "Czech Republic - contains the administrative territorial entity - Central Bohemian Region",
+    "Czech Republic - follows - Czech and Slovak Federal Republic",
+    "Czech Republic - has part(s) - Bohemia",
+    "Germany - shares border with - Belgium",
+    "Czech Republic - contains the administrative territorial entity - Zlín Region",
+    "Czech Republic - diplomatic relation - Liechtenstein",
+    "Czech Republic - part of - Central Europe",
+    "Czech Republic - diplomatic relation - Austria",
+    "Czech Republic - contains the administrative territorial entity - Karlovy Vary Region",
+    "Czech Republic - contains the administrative territorial entity - Prague",
+    "Czech Republic - contains the administrative territorial entity - South Moravian Region",
+    "Germany - shares border with - Denmark",
+    "Czech Republic - diplomatic relation - Poland",
+    "Czech Republic - continent - Europe",
+    "Germany - contains the administrative territorial entity - Saxony-Anhalt",
+    "Czech Republic - contains the administrative territorial entity - Ústí nad Labem Region",
+    "Czech Republic - part of - Eastern Europe",
+    "Czech Republic - diplomatic relation - Hungary",
+    "Czech Republic - contains the administrative territorial entity - Plzeň Region",
+    "Czech Republic - geography of topic - geography of the Czech Republic",
+    "Germany - contains the administrative territorial entity - Bavaria",
+    "Czech Republic - contains the administrative territorial entity - Hradec Králové Region",
+    "Germany - member of - Schengen Area",
+    "Germany - contains the administrative territorial entity - Saarland",
+    "Czech Republic - diplomatic relation - Slovakia",
+    "Czech Republic - follows - Czech Republic",
+    "Germany - located in/on physical feature - Central Europe"
+  ]
+}
