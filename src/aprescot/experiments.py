@@ -124,10 +124,34 @@ def load_ground_truth_subgraph(gt_file: str) -> Tuple[List[Dict], Set[str], List
                 "from": head,
                 "to": tail,
                 "label": relation,
-                "description": f"{head} {relation} {tail}"
+                "description": create_meta_qa_description(head, relation, tail)
             }
             edge_dict_list.append(edge)
             nodes_set.update([head, tail])
             edge_descriptions.append(edge["description"])
 
     return seed_nodes, nodes_set, edge_dict_list, edge_descriptions, 0
+
+
+# This is a copy of the create_description function in metaqa.py to create edge descriptions for MetaQA dataset in experiments. 
+def create_meta_qa_description(head, relation, tail):
+    if relation == "directed_by":
+        return "Movie \"{}\" was directed by \"{}\".".format(head, tail)
+    elif relation == "has_genre":
+        return "Movie \"{}\" has genre {}.".format(head, tail)
+    elif relation == "has_imdb_rating":
+        return "Movie \"{}\" is rated {} in imdb.".format(head, tail)
+    elif relation == "has_imdb_votes":
+        return "Movie \"{}\" is voted {} in imdb.".format(head, tail)
+    elif relation == "has_tags":
+        return "Movie \"{}\" is tagged with \"{}\".".format(head, tail)
+    elif relation == "in_language":
+        return "Movie \"{}\" is in {} language.".format(head, tail)
+    elif relation == "release_year":
+        return "Movie \"{}\" was released in {}.".format(head, tail)
+    elif relation == "starred_actors":
+        return "Actor \"{}\" starred in \"{}\".".format(tail, head)
+    elif relation == "written_by":
+        return "Movie \"{}\" was written by \"{}\".".format(head, tail)
+    else:
+        return ""

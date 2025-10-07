@@ -5,6 +5,53 @@ import ast
 import re
 
 
+import re
+
+def parse_reasoning_output(text: str):
+    """
+    Parse model output containing the following sections:
+      ---REASONING---
+      ---PARSED ATOMIC REASONING STEPS---
+      ---FINAL ANSWERS---
+
+    Returns:
+        answers: list[str]
+        atomic_steps: list[str]
+    """
+
+    # Normalize newlines and trim whitespace
+    text = text.replace("\r", "").strip()
+
+    # Regex patterns for each section
+    reasoning_pattern = r"---REASONING---(.*?)---PARSED ATOMIC REASONING STEPS---"
+    atomic_pattern = r"---PARSED ATOMIC REASONING STEPS---(.*?)---FINAL ANSWERS---"
+    answers_pattern = r"---FINAL ANSWERS---(.*)"
+
+    reasoning_match = re.search(reasoning_pattern, text, re.DOTALL | re.IGNORECASE)
+    atomic_match = re.search(atomic_pattern, text, re.DOTALL | re.IGNORECASE)
+    answers_match = re.search(answers_pattern, text, re.DOTALL | re.IGNORECASE)
+
+    reasoning = reasoning_match.group(1).strip() if reasoning_match else ""
+    atomic_text = atomic_match.group(1).strip() if atomic_match else ""
+    answers_text = answers_match.group(1).strip() if answers_match else ""
+
+    # Parse atomic steps: one per line (ignore empty or bullet characters)
+    atomic_steps = [
+        line.strip("-• \t")
+        for line in atomic_text.splitlines()
+        if line.strip()
+    ]
+
+    # Parse final answers: one per line (or comma-separated)
+    answers = [
+        item.strip("-• \t")
+        for item in re.split(r"[\n,]+", answers_text)
+        if item.strip()
+    ]
+
+    return answers, atomic_steps
+
+
 
 def parse_llm_response(response: str, question: str, triples: bool = False) -> Dict[str, List[str]]:
     qa_llm = ChatOpenAI(model="gpt-4o-mini", temperature=0, model_kwargs={"response_format": {"type": "json_object"} })

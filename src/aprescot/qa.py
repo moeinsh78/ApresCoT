@@ -2,27 +2,42 @@ from src.aprescot.subKGRet import retrieve_subgraph, retrieve_uc2_subgraph
 from src.aprescot.prompting import create_prompt
 from src.aprescot.matching import match_edges, match_nodes
 from src.aprescot.cytoVis import build_cyto_subgraph_elements_list
-from src.aprescot.parsing import parse_llm_response, concat_triple
+from src.aprescot.parsing import parse_llm_response, concat_triple, parse_reasoning_output
 from src.aprescot.experiments import evaluate_subgraph_extraction, get_nodes_and_edges_matching_gt, load_ground_truth_subgraph
 from langchain_openai import ChatOpenAI
+from langchain_core.messages import SystemMessage, HumanMessage
 from openai import OpenAI
 import json
 import time
 
+def ask_llm(llm: str, instruction_msg: str, prompt: str, new_reasoning: bool = True, extension: bool = False):
+    if extension:
+        json_formatting = False
+    elif new_reasoning:
+        json_formatting = True
 
-def ask_llm(llm: str, instruction_msg: str, prompt: str, new_reasoning: bool = True):
-    json_formatting = not new_reasoning
     if json_formatting:
-        qa_llm = ChatOpenAI(model=llm, temperature=0, model_kwargs={"response_format": {"type": "json_object"} })
-        messages = [
-            ("system", instruction_msg),
-            ("user", prompt),
-        ]
-        response = qa_llm.invoke(messages)
-        response_json = json.loads(response.content)
+        qa_llm = ChatOpenAI(
+            model=llm,
+            temperature=0,
+            model_kwargs={"response_format": {"type": "json_object"}}
+        )
 
-        answer_list = [str(answer) for answer in response_json["Answer"]]
-        cot_list = [str(cot) for cot in response_json["Chain of Thought"]]
+        messages = [
+            SystemMessage(content=instruction_msg),
+            HumanMessage(content=prompt),
+        ]
+
+        response = qa_llm.invoke(messages)
+
+        try:
+            response_json = json.loads(response.content)
+        except json.JSONDecodeError:
+            raise ValueError("Invalid JSON returned from LLM:\n" + response.content)
+
+        answer_list = [str(a) for a in response_json.get("Answers", [])]
+        cot_list = [str(c) for c in response_json.get("Chain of Thought", [])]
+
         return response.content, answer_list, cot_list
 
     else:
@@ -46,6 +61,7 @@ def ask_llm(llm: str, instruction_msg: str, prompt: str, new_reasoning: bool = T
 
         else:
             response = client.responses.create(
+                temperature=0,
                 model=llm,
                 instructions=instruction_msg,
                 input=prompt,
@@ -53,15 +69,18 @@ def ask_llm(llm: str, instruction_msg: str, prompt: str, new_reasoning: bool = T
             return response.output_text, [], []
 
 def perform_qa(llm: str, kg: str, question: str, rag: bool):
-    is_experiment = True         # Whether the code is running for the purpose of experimenting and benchmarking 
+    is_experiment = True            # Whether the code is running for the purpose of experimenting and benchmarking 
+    get_ground_truth = False        # Whether to get ground-truth edges and answers for evaluation and matching
+    ground_truth_file_dir = "ground_truth/germany.txt"
 
-    new_reasoning = True            # New reasoning format is not bound to CoT and JSON formatting
+    new_reasoning = False           # New reasoning format is not bound to CoT and JSON formatting
+    extension = True                # Whether to use the extended prompt with context from the retrieved subgraph
 
-    parse_to_triples = True         # Indicates whether to parse reasoning to triples since it affects matching too
+    parse_to_triples = False        # Indicates whether to parse reasoning to triples since it affects matching too
 
     use_srtk = True
     use_hyde = False
-    depth = 2
+    use_subgraph_cache = False
 
     seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list = None, None, None, None
     instruction_msg, prompt = None, None
@@ -69,19 +88,17 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
     precision, recall, f1 = 0, 0, 0
 
     if is_experiment:
-        ground_truth_file_dir = "ground_truth/shawshank.txt"
-        get_ground_truth = True   # Whether to get ground-truth edges and answers for evaluation and matching
-
         if get_ground_truth:
             seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, time_elapsed = load_ground_truth_subgraph(ground_truth_file_dir)
         else:
-            seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, time_elapsed = retrieve_subgraph(question, kg, depth=depth, is_experiment_setup=is_experiment, use_srtk=use_srtk, hyde=use_hyde)
+            seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, time_elapsed = retrieve_subgraph(question, kg, is_experiment_setup=is_experiment, 
+                                                                                                             use_srtk=use_srtk, use_hyde=use_hyde, use_cache=use_subgraph_cache)
 
         llm_final_answers, llm_cot = get_nodes_and_edges_matching_gt(gt_file=ground_truth_file_dir, pred_edges=edge_dict_list, undirected=True)
 
         llm_final_answers = []
         llm_cot = []
-        instruction_msg, prompt = create_prompt(question, kg, rag, llm, subgraph_edge_desc_list, new_reasoning)
+        instruction_msg, prompt = create_prompt(question, kg, rag, llm, subgraph_edge_desc_list, new_reasoning, extension=False)
         
         node_to_answer_match, node_to_answer_id = match_nodes(nodes_set, llm_final_answers)
         matched_cot_list, edge_to_cot_match = match_edges(subgraph_edge_desc_list, llm_cot, cot_in_triples=parse_to_triples)
@@ -104,10 +121,14 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
 
     
     else:
-        seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, time_elapsed = retrieve_subgraph(question, kg, depth=depth, is_experiment_setup=is_experiment, use_srtk=use_srtk, hyde=use_hyde)
+        seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, time_elapsed = retrieve_subgraph(question, kg, is_experiment_setup=is_experiment, 
+                                                                                                         use_srtk=use_srtk, use_hyde=use_hyde, use_cache=use_subgraph_cache)
 
-        instruction_msg, prompt = create_prompt(question, kg, rag, llm, subgraph_edge_desc_list, new_reasoning)
-        llm_response, llm_final_answers, llm_cot = ask_llm(llm, instruction_msg, prompt, new_reasoning)
+        instruction_msg, prompt = create_prompt(question, kg, rag, llm, subgraph_edge_desc_list, new_reasoning, extension=extension)
+        llm_response, llm_final_answers, llm_cot = ask_llm(llm, instruction_msg, prompt, new_reasoning, extension)
+
+        if extension:
+            llm_final_answers, llm_cot = parse_reasoning_output(llm_response)
 
         if new_reasoning:
             llm_final_answers, llm_cot = parse_llm_response(llm_response, question, triples=parse_to_triples)

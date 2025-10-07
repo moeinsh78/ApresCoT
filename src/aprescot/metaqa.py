@@ -34,7 +34,7 @@ class MetaQAKnowledgeGraph:
         elif relation == "has_imdb_votes":
             return "Movie \"{}\" is voted {} in imdb.".format(head, tail)
         elif relation == "has_tags":
-            return "Movie \"{}\" is described with \"{}\" tag.".format(head, tail)
+            return "Movie \"{}\" is tagged with \"{}\".".format(head, tail)
         elif relation == "in_language":
             return "Movie \"{}\" is in {} language.".format(head, tail)
         elif relation == "release_year":
@@ -329,12 +329,12 @@ def print_pool(path_pool: PriorityQueue[Tuple]):
     print("Printing Complete...\n#############################################")
 
 
-def path_similarity(question_embedding, context, similarity_model):
+def path_similarity(question_embedding, context, similarity_model): 
     context_embedding = similarity_model.encode(context, show_progress_bar=False)
     return cosine_similarity(np.array([question_embedding], dtype=object), np.array([context_embedding], dtype=object))[0][0]
 
 
-def generate_hypothetical_answer(question: str, model_name="gpt-4o-mini", temperature=0.7, max_tokens=512, n=1) -> str:
+def generate_hypothetical_answer(question: str, model_name="gpt-4o-mini", temperature=0.7, max_tokens=256, n=1) -> str:
     client = OpenAI()
     result = client.chat.completions.create(
         messages=[{"role":"user", "content": HYPOTHETICAL_ANSWER_PROMPT.format(question)}],
