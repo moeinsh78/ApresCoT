@@ -117,8 +117,6 @@ class WikiDataKnowledgeGraph:
     def __init__(
         self,
         scorer_model,
-        is_experiment_setup: bool = False,
-        kg_path: str = "",
         sparql_endpoint: str = WIKIDATA_SPARQL,
         device: Optional[str] = None,
         user_agent: str = "ApresCoT/1.0 (mailto:moeiiinsh@gmail.com)",
@@ -129,56 +127,30 @@ class WikiDataKnowledgeGraph:
         neo4j_user: str = NEO4J_USER,
         neo4j_password: str = NEO4J_PASSWORD,
     ):
-        self.is_experiment_setup = is_experiment_setup
-        if is_experiment_setup:
-            self.similarity_model = SentenceTransformer(scorer_model)
-            self.graph = self.load_graph_from_file(kg_path)
-        else: 
-            self.endpoint = sparql_endpoint
-            self.headers = {"Accept": "application/sparql-results+json", "User-Agent": user_agent}
-            self.req_timeout_s = req_timeout_s
-            self.sleep_between = 1.0 / max(polite_qps, 1e-6)
+        self.endpoint = sparql_endpoint
+        self.headers = {"Accept": "application/sparql-results+json", "User-Agent": user_agent}
+        self.req_timeout_s = req_timeout_s
+        self.sleep_between = 1.0 / max(polite_qps, 1e-6)
+        self.tokenizer = AutoTokenizer.from_pretrained(scorer_model)
+        self.model = AutoModel.from_pretrained(scorer_model)
 
-            self.tokenizer = AutoTokenizer.from_pretrained(scorer_model)
-            self.model = AutoModel.from_pretrained(scorer_model)
-            if device is None:
-                device = "cuda" if torch.cuda.is_available() else ("mps" if torch.backends.mps.is_available() else "cpu")
-            
-            print("DEVICE:", device)
-            self.device = device
-            self.model.to(self.device).eval()
+        if device is None:
+            device = "cuda" if torch.cuda.is_available() else ("mps" if torch.backends.mps.is_available() else "cpu")
+        
+        print("DEVICE:", device)
+        self.device = device
+        self.model.to(self.device).eval()
 
-            # caches
-            self._label_cache = {}
-            self._neighbors_cache = {}
+        # caches
+        self._label_cache = {}
+        self._neighbors_cache = {}
 
-            # new: Neo4j driver
-            self.use_local_db = use_local_db
-            if self.use_local_db:
-                self.driver = GraphDatabase.driver(neo4j_uri, auth=(neo4j_user, neo4j_password))
-            else:
-                self.driver = None
-
-
-    def load_graph_from_file(self, file_path: str) -> nx.MultiDiGraph:
-        G = nx.MultiDiGraph()
-
-        with open(file_path, "r", encoding="utf-8") as f:
-            for line in f:
-                line = line.strip()
-                if not line or line.startswith("#"):
-                    continue  # skip comments or empty lines
-                parts = line.split("|")
-                if len(parts) != 3:
-                    continue
-
-                head, relation, tail = parts
-                description = f"{head} {relation} {tail}"
-                G.add_edge(head, tail, label=relation, description=description)
-                # G.add_edge(head, tail, label=relation)
-
-        print(f"Loaded KG with {G.number_of_nodes()} nodes and {G.number_of_edges()} edges.")
-        return G
+        # new: Neo4j driver
+        self.use_local_db = use_local_db
+        if self.use_local_db:
+            self.driver = GraphDatabase.driver(neo4j_uri, auth=(neo4j_user, neo4j_password))
+        else:
+            self.driver = None
 
     def search_wikidata_entity(self, query, language="en"):
         url = "https://www.wikidata.org/w/api.php"
@@ -236,9 +208,6 @@ class WikiDataKnowledgeGraph:
             "labels": { "Q..": "Label", "P..": "prop label", ... }
         }
         """
-        if self.is_experiment_setup:
-            return self.retrieve_from_nx_graph(seed_qids, question, max_hops, beam_size, max_nodes, compare_to_hypothetical_answer)
-
         curr_beam_size = beam_size
 
         start = time.perf_counter()
@@ -333,29 +302,6 @@ class WikiDataKnowledgeGraph:
             result["labels"] = labels
 
         return self.srtk_output_to_labeled_graph(result)
-
-
-    def retrieve_from_nx_graph(self, seed_entities: Set[str], question: str, depth: int, beam_size: int, max_nodes: int, compare_to_hypothetical_answer: bool = True):
-        edge_dict_list, nodes_set = self.extract_relevant_subgraph_srtk(
-            seed_entities, 
-            question, 
-            max_hops=depth, 
-            beam_size=beam_size, 
-            max_nodes=max_nodes,
-            compare_to_hypothetical_answer=compare_to_hypothetical_answer,
-        )
-
-        edge_descriptions = self.extract_subgraph_edge_descriptions(edge_dict_list)
-
-        return seed_entities, nodes_set, edge_dict_list, edge_descriptions
-        
-    def extract_subgraph_edge_descriptions(self, edge_dict_list):
-        edge_desc_list = []
-
-        for edge_dict in edge_dict_list:    
-            edge_desc_list.append(edge_dict["description"])
-
-        return edge_desc_list
     
     def extract_relevant_subgraph_srtk(
         self, 

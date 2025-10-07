@@ -329,7 +329,7 @@ def print_pool(path_pool: PriorityQueue[Tuple]):
     print("Printing Complete...\n#############################################")
 
 
-def path_similarity(question_embedding, context, similarity_model): 
+def path_similarity(question_embedding, context, similarity_model):
     context_embedding = similarity_model.encode(context, show_progress_bar=False)
     return cosine_similarity(np.array([question_embedding], dtype=object), np.array([context_embedding], dtype=object))[0][0]
 

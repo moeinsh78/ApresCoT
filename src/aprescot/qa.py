@@ -1,4 +1,4 @@
-from src.aprescot.subKGRet import retrieve_subgraph, retrieve_uc2_subgraph
+from src.aprescot.subKGRet import retrieve_demo_subgraph, retrieve_experiment_subgraph, retrieve_uc2_subgraph
 from src.aprescot.prompting import create_prompt
 from src.aprescot.matching import match_edges, match_nodes
 from src.aprescot.cytoVis import build_cyto_subgraph_elements_list
@@ -71,7 +71,7 @@ def ask_llm(llm: str, instruction_msg: str, prompt: str, new_reasoning: bool = T
 def perform_qa(llm: str, kg: str, question: str, rag: bool):
     is_experiment = True            # Whether the code is running for the purpose of experimenting and benchmarking 
     get_ground_truth = False        # Whether to get ground-truth edges and answers for evaluation and matching
-    ground_truth_file_dir = "ground_truth/germany.txt"
+    ground_truth_file_dir = "ground_truth/shawshank.txt"
 
     new_reasoning = False           # New reasoning format is not bound to CoT and JSON formatting
     extension = True                # Whether to use the extended prompt with context from the retrieved subgraph
@@ -79,7 +79,7 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
     parse_to_triples = False        # Indicates whether to parse reasoning to triples since it affects matching too
 
     use_srtk = True
-    use_hyde = False
+    use_hyde = True
     use_subgraph_cache = False
 
     seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list = None, None, None, None
@@ -91,8 +91,15 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
         if get_ground_truth:
             seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, time_elapsed = load_ground_truth_subgraph(ground_truth_file_dir)
         else:
-            seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, time_elapsed = retrieve_subgraph(question, kg, is_experiment_setup=is_experiment, 
-                                                                                                             use_srtk=use_srtk, use_hyde=use_hyde, use_cache=use_subgraph_cache)
+            seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, time_elapsed = \
+                retrieve_experiment_subgraph(
+                    question, 
+                    kg_name=kg,
+                    use_srtk=use_srtk,
+                    use_hyde=use_hyde,
+                    # graph_file="experiments/germany_subgraph_depth2.txt",
+                    graph_file="kg/meta-qa-kb.txt",
+                )
 
         llm_final_answers, llm_cot = get_nodes_and_edges_matching_gt(gt_file=ground_truth_file_dir, pred_edges=edge_dict_list, undirected=True)
 
@@ -121,7 +128,7 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
 
     
     else:
-        seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, time_elapsed = retrieve_subgraph(question, kg, is_experiment_setup=is_experiment, 
+        seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, time_elapsed = retrieve_demo_subgraph(question, kg, is_experiment_setup=is_experiment, 
                                                                                                          use_srtk=use_srtk, use_hyde=use_hyde, use_cache=use_subgraph_cache)
 
         instruction_msg, prompt = create_prompt(question, kg, rag, llm, subgraph_edge_desc_list, new_reasoning, extension=extension)

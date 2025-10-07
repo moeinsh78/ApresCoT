@@ -90,7 +90,6 @@ class UMLSKnowledgeGraph:
             edge_dict_list.extend(edges)
     
         return edge_dict_list, self.get_nodes_set(edge_dict_list)
-    
 
 
     def extract_subgraph_edge_descriptions(self, edge_dict_list):

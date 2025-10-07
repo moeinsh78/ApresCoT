@@ -1,5 +1,186 @@
 from typing import List, Dict, Tuple, Set
+import numpy as np
+import networkx as nx
+from openai import OpenAI
 
+from sklearn.metrics.pairwise import cosine_similarity
+from sentence_transformers import SentenceTransformer
+
+
+class ExperimentSubgraphRetriever:
+    def __init__(self, kg_name: str, kg_directory: str, scorer_model: str):
+        self.kg_name = kg_name
+        self.graph = self.load_graph_from_file(edge_list_file=kg_directory)
+        self.similarity_model = SentenceTransformer(scorer_model)
+
+    def load_graph_from_file(self, edge_list_file: str) -> nx.MultiDiGraph | nx.MultiGraph:
+        if self.kg_name == "meta-qa":
+            G = nx.MultiGraph()
+        elif self.kg_name in ["wikidata", "umls"]:
+            G = nx.MultiDiGraph()
+
+        with open(edge_list_file, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith("#"):
+                    continue  # skip comments or empty lines
+                parts = line.split("|")
+                if len(parts) != 3:
+                    continue
+
+                head, relation, tail = parts
+                if self.kg_name == "meta_qa":
+                    description = create_meta_qa_description(head, relation, tail)
+                    G.add_edge(head, tail, label=relation, description=description)
+                else:
+                    description = f"{head} {relation} {tail}"
+                G.add_edge(head, tail, label=relation, description=description)
+
+        return G
+
+    def get_bfs_subgraph(self, source_node: str, depth: int, expand_ending_nodes: bool = True) -> list[dict]:
+        print("Search begins from Node: ", source_node)
+        ending_node_relations = ["release_year", "in_language", "has_tags", "has_genre", "has_imdb_rating", "has_imdb_votes"]
+        edge_dict_list = []
+        to_be_expanded = [source_node]
+        visited = set()
+        curr_depth = 0
+        nodes = set()
+        nodes.add(source_node)
+        while curr_depth < depth:
+            to_expand_count = len(to_be_expanded)
+            for _ in range(to_expand_count):
+                curr_node = to_be_expanded.pop(0)
+                if curr_node in visited:
+                    continue
+                neighbors = list(nx.bfs_edges(self.graph, curr_node, depth_limit=1))
+                visited.add(curr_node)
+                for pair in neighbors:
+                    # Node to be expanded is always in the second position
+                    if pair[1] in visited:
+                        continue
+                    edge = {}
+                    if (expand_ending_nodes) or (self.graph.edges[pair[0], pair[1], 0]["label"] not in ending_node_relations):
+                        to_be_expanded.append(pair[1])
+                    for i in range(self.graph.number_of_edges(pair[0], pair[1])):
+                        nodes.add(pair[1])
+                        edge = {}
+                        edge["from"] = pair[0]
+                        edge["to"] = pair[1]
+                        edge["label"] = self.graph.edges[pair[0], pair[1], i]["label"]
+                        edge["description"] = self.graph.edges[pair[0], pair[1], i]["description"]
+                        edge_dict_list.append(edge)
+            
+            curr_depth += 1
+            
+        return edge_dict_list
+
+    def extract_with_srtk(
+        self, 
+        seed_entities: List[str],
+        question: str,
+        max_hops,
+        beam_size,
+        max_nodes,
+        compare_to_hypothetical_answer: bool = False,
+        not_to_expand_relation_labels: List[str] = None,
+    ):
+        if not_to_expand_relation_labels is None:
+            not_to_expand_relation_labels = []
+
+        not_to_expand_relation_set = set(not_to_expand_relation_labels)
+        if compare_to_hypothetical_answer:
+            hypothetical_answer = generate_hypothetical_answer(question)
+            print("Hypothetical Answer:", hypothetical_answer)
+            q_emb = self.similarity_model.encode(hypothetical_answer)
+        else:
+            q_emb = self.similarity_model.encode(question, show_progress_bar=False)
+
+        triples = []
+        seeds = [entity for entity in seed_entities if self.graph.has_node(entity)]
+        seen_edges = set()
+        seen_nodes = set(seeds)
+        frontier = set(seeds)
+        curr_beam_size = beam_size
+
+        for hop in range(max_hops):
+            candidates = []
+
+            for node in frontier:
+                neighbors = list(nx.bfs_edges(self.graph, node, depth_limit=1))
+                for pair in neighbors:
+                    for i in range(self.graph.number_of_edges(pair[0], pair[1])):
+                        edge_dict = {
+                            "from": pair[0],
+                            "to": pair[1],
+                            "label": self.graph.edges[pair[0], pair[1], i]["label"],
+                            "description": self.graph.edges[pair[0], pair[1], i]["description"],
+                        }
+                        if self.kg_name in ["wikidata", "umls"]:                                                # directed graphs
+                            key = (edge_dict["from"], edge_dict["label"], edge_dict["to"])
+                        else:                                                                                   # undirected graphs
+                            key = tuple(sorted([edge_dict["from"], edge_dict["to"]])) + (edge_dict["label"],)
+                        if key in seen_edges:
+                            continue
+                        seen_edges.add(key)
+
+                        score = path_similarity(q_emb, edge_dict["description"], self.similarity_model)
+                        candidates.append((score, edge_dict))
+
+            if not candidates:
+                break
+
+            # sort by similarity and keep top beam_size
+            candidates.sort(key=lambda x: x[0], reverse=True)
+            keep = candidates[:curr_beam_size]
+
+            new_frontier = set()
+            for score, edge in keep:
+                triples.append(edge)
+                if edge["label"] not in not_to_expand_relation_set:
+                    new_frontier.add(edge["to"])
+                seen_nodes.add(edge["from"])
+                seen_nodes.add(edge["to"])
+                if len(triples) >= max_nodes:
+                    break
+
+            frontier = new_frontier
+            if len(triples) >= max_nodes or not frontier:
+                break
+
+            curr_beam_size = curr_beam_size * beam_size
+
+        return triples, seen_nodes
+
+
+def path_similarity(question_embedding, context, similarity_model):
+    context_embedding = similarity_model.encode(context, show_progress_bar=False)
+    return cosine_similarity(np.array([question_embedding], dtype=object), np.array([context_embedding], dtype=object))[0][0]
+
+def generate_hypothetical_answer(question: str, model_name="gpt-4o-mini", temperature=0.7, max_tokens=256, n=1) -> str:
+    client = OpenAI()
+    result = client.chat.completions.create(
+        messages=[{"role":"user", "content": HYPOTHETICAL_ANSWER_PROMPT.format(question)}],
+        model=model_name,
+        max_completion_tokens=max_tokens,
+        temperature=temperature,
+        n=n,
+    )
+    return result.choices[0].message.content
+
+
+HYPOTHETICAL_ANSWER_PROMPT = """Please write a passage to answer the question.
+Question: {}
+Passage:"""
+
+
+
+
+
+
+#########################################################################
+############# Evaluation and Ground-Truth Loading Functions #############
+#########################################################################
 
 def evaluate_subgraph_extraction(
     gt_file: str,

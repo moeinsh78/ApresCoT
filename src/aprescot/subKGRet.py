@@ -5,6 +5,7 @@ from langchain_openai import ChatOpenAI
 from src.aprescot.metaqa import MetaQAKnowledgeGraph
 from src.aprescot.umls import UMLSKnowledgeGraph
 from src.aprescot.wikidata import WikiDataKnowledgeGraph
+from src.aprescot.experiments import ExperimentSubgraphRetriever
 from src.aprescot.prompting import (
     SEED_ENTITY_INSTRUCTIONS, 
     SEED_ENTITY_PROMPT, 
@@ -77,9 +78,59 @@ def get_seed_entities(question: str, kg: str):
     return response_json["seed entities"]
 
 
-#### Retrieves subgraph for a given question and knowledge graph ####
+def retrieve_experiment_subgraph(question: str, kg_name: str, use_srtk: bool, use_hyde: bool = False, graph_file: str = None):
+    ##########################################################
+    ################## Retrieval Parameters ##################
+    scorer_model = "sentence-transformers/all-MiniLM-L6-v2"
+    depth = 3
+    beam_size = 16
+    max_nodes = 500
+    compare_to_hypothetical_answer = use_hyde
+    ##########################################################
 
-def retrieve_subgraph(question: str, kg: str, is_experiment_setup: bool, use_srtk: bool, use_hyde: bool = False, use_cache: bool = True):
+    experiment_retriever = ExperimentSubgraphRetriever(kg_name=kg_name, kg_directory=graph_file, scorer_model=scorer_model)
+    
+    start = time.perf_counter()
+    seed_entities = get_seed_entities(question, kg_name)
+
+    if not use_srtk:
+        edge_dict_list = experiment_retriever.get_bfs_subgraph(seed_entities, depth=depth)
+        end = time.perf_counter()
+
+        edge_descriptions = experiment_retriever.extract_subgraph_edge_descriptions(edge_dict_list)
+        nodes_set = get_nodes_set(edge_dict_list)
+    else:
+        edge_dict_list, nodes_set = experiment_retriever.extract_with_srtk(
+            seed_entities, 
+            question, 
+            max_hops=depth, 
+            beam_size=beam_size, 
+            max_nodes=max_nodes,
+            compare_to_hypothetical_answer=compare_to_hypothetical_answer,
+        )
+        end = time.perf_counter()
+        edge_descriptions = extract_subgraph_edge_descriptions(edge_dict_list)
+        
+    return seed_entities, nodes_set, edge_dict_list, edge_descriptions, end - start
+
+def get_nodes_set(edge_dict_list: List[Dict]):
+    nodes_set = set()
+    for edge in edge_dict_list:
+        nodes_set.add(edge["from"])
+        nodes_set.add(edge["to"])
+    return nodes_set
+
+
+def extract_subgraph_edge_descriptions(edge_dict_list):
+    edge_desc_list = []
+
+    for edge_dict in edge_dict_list:    
+        edge_desc_list.append(edge_dict["description"])
+
+    return edge_desc_list
+
+
+def retrieve_demo_subgraph(question: str, kg: str, use_srtk: bool, use_hyde: bool = False, use_cache: bool = True):
     depth = 2
     compare_to_hypothetical_answer = use_hyde
     seed_entities = get_seed_entities(question, kg)
@@ -110,18 +161,15 @@ def retrieve_subgraph(question: str, kg: str, is_experiment_setup: bool, use_srt
                     seed_labels, nodes_set, edge_dict_list, edge_descriptions = cached
                     end = time.perf_counter()
                 else:
-                    wikidata_qa = WikiDataKnowledgeGraph(scorer_model=scorer_model, use_local_db=True, is_experiment_setup=is_experiment_setup, kg_path="experiments/germany_subgraph_depth2.txt")
+                    wikidata_qa = WikiDataKnowledgeGraph(scorer_model=scorer_model, use_local_db=True)
                     # seed_entities = ["Germany"]
                     # seed_entities = ["Jean Rochefort"]
                     # seed_entities = ["President of the United States", "Q362 — World War II"]
 
                     print("Seed Entities:", seed_entities)
-                    if not is_experiment_setup:
-                        wikidata_seed_nodes = wikidata_qa.find_wikidata_entities(seed_entities)
-                        print("Seed QIDs:", wikidata_seed_nodes)
-                        seed_qids = [node[0] for node in wikidata_seed_nodes]
-                    else:
-                        seed_qids = seed_entities
+                    wikidata_seed_nodes = wikidata_qa.find_wikidata_entities(seed_entities)
+                    print("Seed QIDs:", wikidata_seed_nodes)
+                    seed_qids = [node[0] for node in wikidata_seed_nodes]
 
                     start = time.perf_counter()
 
