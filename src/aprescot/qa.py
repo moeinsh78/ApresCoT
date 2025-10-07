@@ -80,6 +80,7 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
 
     use_srtk = True
     use_hyde = True
+    use_cumulative_context = False
     use_subgraph_cache = False
 
     seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list = None, None, None, None
@@ -97,6 +98,7 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
                     kg_name=kg,
                     use_srtk=use_srtk,
                     use_hyde=use_hyde,
+                    use_cc=use_cumulative_context,
                     # graph_file="experiments/germany_subgraph_depth2.txt",
                     graph_file="kg/meta-qa-kb.txt",
                 )

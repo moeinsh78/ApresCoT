@@ -78,7 +78,7 @@ def get_seed_entities(question: str, kg: str):
     return response_json["seed entities"]
 
 
-def retrieve_experiment_subgraph(question: str, kg_name: str, use_srtk: bool, use_hyde: bool = False, graph_file: str = None):
+def retrieve_experiment_subgraph(question: str, kg_name: str, use_srtk: bool, use_hyde: bool = False, use_cc: bool = False, graph_file: str = None):
     ##########################################################
     ################## Retrieval Parameters ##################
     scorer_model = "sentence-transformers/all-MiniLM-L6-v2"
@@ -100,14 +100,25 @@ def retrieve_experiment_subgraph(question: str, kg_name: str, use_srtk: bool, us
         edge_descriptions = experiment_retriever.extract_subgraph_edge_descriptions(edge_dict_list)
         nodes_set = get_nodes_set(edge_dict_list)
     else:
-        edge_dict_list, nodes_set = experiment_retriever.extract_with_srtk(
-            seed_entities, 
-            question, 
-            max_hops=depth, 
-            beam_size=beam_size, 
-            max_nodes=max_nodes,
-            compare_to_hypothetical_answer=compare_to_hypothetical_answer,
-        )
+        if use_cc:
+            edge_dict_list, nodes_set = experiment_retriever.extract_with_srtk_cumulative_context(
+                seed_entities, 
+                question, 
+                max_hops=depth, 
+                beam_size=beam_size, 
+                max_nodes=max_nodes,
+                compare_to_hypothetical_answer=compare_to_hypothetical_answer,
+            )
+
+        else:
+            edge_dict_list, nodes_set = experiment_retriever.extract_with_srtk(
+                seed_entities, 
+                question, 
+                max_hops=depth, 
+                beam_size=beam_size, 
+                max_nodes=max_nodes,
+                compare_to_hypothetical_answer=compare_to_hypothetical_answer,
+            )
         end = time.perf_counter()
         edge_descriptions = extract_subgraph_edge_descriptions(edge_dict_list)
         

@@ -83,12 +83,7 @@ class ExperimentSubgraphRetriever:
         beam_size,
         max_nodes,
         compare_to_hypothetical_answer: bool = False,
-        not_to_expand_relation_labels: List[str] = None,
     ):
-        if not_to_expand_relation_labels is None:
-            not_to_expand_relation_labels = []
-
-        not_to_expand_relation_set = set(not_to_expand_relation_labels)
         if compare_to_hypothetical_answer:
             hypothetical_answer = generate_hypothetical_answer(question)
             print("Hypothetical Answer:", hypothetical_answer)
@@ -137,8 +132,7 @@ class ExperimentSubgraphRetriever:
             new_frontier = set()
             for score, edge in keep:
                 triples.append(edge)
-                if edge["label"] not in not_to_expand_relation_set:
-                    new_frontier.add(edge["to"])
+                new_frontier.add(edge["to"])
                 seen_nodes.add(edge["from"])
                 seen_nodes.add(edge["to"])
                 if len(triples) >= max_nodes:
@@ -151,6 +145,96 @@ class ExperimentSubgraphRetriever:
             curr_beam_size = curr_beam_size * beam_size
 
         return triples, seen_nodes
+
+    def extract_with_srtk_cumulative_context(
+        self, 
+        seed_entities: List[str],
+        question: str,
+        max_hops,
+        beam_size,
+        max_nodes,
+        compare_to_hypothetical_answer: bool = False,
+    ):
+        if compare_to_hypothetical_answer:
+            hypothetical_answer = generate_hypothetical_answer(question)
+            print("Hypothetical Answer:", hypothetical_answer)
+            q_emb = self.similarity_model.encode(hypothetical_answer)
+        else:
+            q_emb = self.similarity_model.encode(question, show_progress_bar=False)
+
+        triples = []
+        seeds = [entity for entity in seed_entities if self.graph.has_node(entity)]
+        seen_edges = set()
+        seen_nodes = set(seeds)
+        # Frontier now holds (node, cumulative_description)
+        frontier = {(seed, seed) for seed in seeds}
+        curr_beam_size = beam_size
+
+        print(f"\n[INFO] Starting cumulative-context SRTK retrieval with {len(seeds)} seeds")
+        print(f"[INFO] Question: {question}\n")
+
+        for hop in range(max_hops):
+            print(f"\n=== HOP {hop+1}/{max_hops} ===")
+            candidates = []
+
+            for node, cum_desc in frontier:
+                neighbors = list(nx.bfs_edges(self.graph, node, depth_limit=1))
+                for pair in neighbors:
+                    for i in range(self.graph.number_of_edges(pair[0], pair[1])):
+                        edge_dict = {
+                            "from": pair[0],
+                            "to": pair[1],
+                            "label": self.graph.edges[pair[0], pair[1], i]["label"],
+                            "description": self.graph.edges[pair[0], pair[1], i]["description"],
+                        }
+
+                        # Unique key: directed or undirected
+                        if self.kg_name in ["wikidata", "umls"]:
+                            key = (edge_dict["from"], edge_dict["label"], edge_dict["to"])
+                        else:
+                            key = tuple(sorted([edge_dict["from"], edge_dict["to"]])) + (edge_dict["label"],)
+                        if key in seen_edges:
+                            continue
+                        seen_edges.add(key)
+
+                        # Build cumulative description
+                        new_desc = f"{cum_desc}; {edge_dict['description']}"
+                        score = path_similarity(q_emb, new_desc, self.similarity_model)
+                        candidates.append((score, edge_dict, new_desc))
+
+            if not candidates:
+                print("[INFO] No more candidates to expand.")
+                break
+
+            # sort by similarity and keep top beam_size
+            candidates.sort(key=lambda x: x[0], reverse=True)
+            keep = candidates[:curr_beam_size]
+
+            print(f"[INFO] {len(candidates)} candidates → keeping top {len(keep)} edges.")
+            print("[DEBUG] Top 3 edges:")
+            for score, edge, description in keep[:3]:
+                print(f"  ({edge['from']} -[{edge['label']}]-> {edge['to']}) \n    Description: {description} \n    Score={score:.4f}")
+
+            new_frontier = set()
+            for score, edge, new_desc in keep:
+                triples.append(edge)
+                new_frontier.add((edge["to"], new_desc))
+                seen_nodes.add(edge["from"])
+                seen_nodes.add(edge["to"])
+                if len(triples) >= max_nodes:
+                    break
+
+            frontier = new_frontier
+            if len(triples) >= max_nodes or not frontier:
+                print(f"Triples collected: {len(triples)}")
+                print("[INFO] Reached node/edge limit or no frontier left.")
+                break
+
+            curr_beam_size *= beam_size
+
+        print(f"\n[INFO] Completed retrieval. Collected {len(triples)} edges, {len(seen_nodes)} nodes.")
+        return triples, seen_nodes
+
 
 
 def path_similarity(question_embedding, context, similarity_model):
@@ -172,10 +256,6 @@ def generate_hypothetical_answer(question: str, model_name="gpt-4o-mini", temper
 HYPOTHETICAL_ANSWER_PROMPT = """Please write a passage to answer the question.
 Question: {}
 Passage:"""
-
-
-
-
 
 
 #########################################################################
