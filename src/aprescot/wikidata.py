@@ -473,7 +473,7 @@ class WikiDataKnowledgeGraph:
             if direction in ("out", "both"):
                 q = """
                 MATCH (s {id:$qid})-[r]->(o)
-                WHERE NOT r.prop_id IN $skip_props AND NOT o.label STARTS WITH 'Germany'
+                WHERE NOT r.prop_id IN $skip_props
                 RETURN s.id AS s, s.label AS s_lbl,
                     r.prop_id AS p, r.prop_label AS p_lbl,
                     o.id AS o, o.label AS o_lbl

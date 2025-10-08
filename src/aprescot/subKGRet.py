@@ -78,11 +78,11 @@ def get_seed_entities(question: str, kg: str):
     return response_json["seed entities"]
 
 
-def retrieve_experiment_subgraph(question: str, kg_name: str, use_srtk: bool, use_hyde: bool = False, use_cc: bool = False, graph_file: str = None):
+def retrieve_experiment_subgraph(question: str, kg_name: str, use_srtk: bool, use_hyde: bool = False, use_pasr: bool = False, graph_file: str = None):
     ##########################################################
     ################## Retrieval Parameters ##################
     scorer_model = "sentence-transformers/all-MiniLM-L6-v2"
-    depth = 3
+    depth = 2
     beam_size = 16
     max_nodes = 500
     compare_to_hypothetical_answer = use_hyde
@@ -94,13 +94,12 @@ def retrieve_experiment_subgraph(question: str, kg_name: str, use_srtk: bool, us
     seed_entities = get_seed_entities(question, kg_name)
 
     if not use_srtk:
-        edge_dict_list = experiment_retriever.get_bfs_subgraph(seed_entities, depth=depth)
+        edge_dict_list, nodes_set = experiment_retriever.get_bfs_subgraph(seed_entities, depth=depth, expand_ending_nodes=False)
         end = time.perf_counter()
 
-        edge_descriptions = experiment_retriever.extract_subgraph_edge_descriptions(edge_dict_list)
-        nodes_set = get_nodes_set(edge_dict_list)
+        edge_descriptions = extract_subgraph_edge_descriptions(edge_dict_list)
     else:
-        if use_cc:
+        if use_pasr:
             edge_dict_list, nodes_set = experiment_retriever.extract_with_srtk_cumulative_context(
                 seed_entities, 
                 question, 
@@ -124,13 +123,6 @@ def retrieve_experiment_subgraph(question: str, kg_name: str, use_srtk: bool, us
         
     return seed_entities, nodes_set, edge_dict_list, edge_descriptions, end - start
 
-def get_nodes_set(edge_dict_list: List[Dict]):
-    nodes_set = set()
-    for edge in edge_dict_list:
-        nodes_set.add(edge["from"])
-        nodes_set.add(edge["to"])
-    return nodes_set
-
 
 def extract_subgraph_edge_descriptions(edge_dict_list):
     edge_desc_list = []
@@ -142,19 +134,18 @@ def extract_subgraph_edge_descriptions(edge_dict_list):
 
 
 def retrieve_demo_subgraph(question: str, kg: str, use_srtk: bool, use_hyde: bool = False, use_cache: bool = True):
-    depth = 2
+    depth = 1
+    beam_size = 24
+    per_pred_cap = 32
+    total_cap_per_node = 256
+    max_nodes = 500
+    scorer_model = "sentence-transformers/all-MiniLM-L6-v2"
     compare_to_hypothetical_answer = use_hyde
     seed_entities = get_seed_entities(question, kg)
     
     match kg:
         case "wikidata":
             if use_srtk:
-                beam_size = 16
-                per_pred_cap = 32
-                total_cap_per_node = 256
-                max_nodes = 500
-                # scorer_model = "sentence-transformers/paraphrase-MiniLM-L3-v2"
-                scorer_model = "sentence-transformers/all-MiniLM-L6-v2"
                 retriever_params = {
                     "use_srtk": True,
                     "max_hops": depth,

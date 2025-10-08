@@ -1,0 +1,9 @@
+#ANSWERS: 1994|2007|1999|2001
+The Shawshank Redemption is directed by Frank Darabont. 
+The Shawshank Redemption was release in 1994. 
+The Mist is directed by Frank Darabont. 
+The Green Mile is directed by Frank Darabont.
+The Majestic is directed by Frank Darabont.
+The Mist was released in 2007.
+The Green Mile was released in 1999.
+The Majestic wasreleased in 2001.

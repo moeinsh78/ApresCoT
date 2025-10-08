@@ -62,11 +62,14 @@ EXTENSION_FREE_FORM_INSTRUCTION = \
 For each question, follow these steps:
 
 1. Think step by step, showing your reasoning in natural language in the REASONING section.
+
 2. After reasoning, rewrite your reasoning steps by extracting all the atomic factual statement you used or implied.
    - list the sentences in the PARSED ATOMIC REASONING STEPS section.
    - Each atomic fact must express exactly one piece of information.
-   - Avoid combining facts with words like "and", "also", or "which".
+   - Avoid combining facts with words like "and", "also", or "which", or separating them with commas.
+
 3. Then extract from your reasoning all the final answers you found by listing them in the FINAL ANSWERS section.
+
 4. Use the following exact format:
 
 ---REASONING---
@@ -93,7 +96,7 @@ For each question, follow these steps:
 2. Rewrite your reasoning steps by extracting all the atomic factual statements in the Context that you used or implied.
    - List these in the PARSED ATOMIC REASONING STEPS section.
    - Each atomic fact must express exactly one piece of information.
-   - Avoid combining facts with words like "and", "also", or "which".
+   - Avoid combining facts with words like "and", "also", or "which", or separating them with commas.
 
 3. Then extract from your reasoning all final answers you found and list them in the
    FINAL ANSWERS section (one per line). 
@@ -105,34 +108,6 @@ For each question, follow these steps:
 
 ---PARSED ATOMIC REASONING STEPS---
 <each statement from the context on a new line>
-
----FINAL ANSWERS---
-<list of final answers each in a separate line>
-
-Do not include anything outside these three sections.
-"""
-
-
-
-EXTENSION_RAG_REE_FORM_INSTRUCTION = \
-"""You are a reasoning assistant for question answering.
-You will be given a question and a block of context text retrieved from a knowledge base.
-
-For each question, follow these steps:
-
-1. Think step by step, showing your reasoning in natural language in the REASONING section.
-2. After reasoning, rewrite your reasoning steps by extracting all the atomic factual statement you used or implied.
-   - list the sentences in the PARSED ATOMIC REASONING STEPS section.
-   - Each atomic fact must express exactly one piece of information.
-   - Avoid combining facts with words like "and", "also", or "which".
-3. Then extract from your reasoning all the final answers you found by listing them in the FINAL ANSWERS section.
-4. Use the following exact format:
-
----REASONING---
-<your detailed reasoning here>
-
----PARSED ATOMIC REASONING STEPS---
-<each piece of information on a new line>
 
 ---FINAL ANSWERS---
 <list of final answers each in a separate line>
@@ -188,7 +163,7 @@ EXTENSION_RAG_PROMPT = \
 {question}
 </Question>
 
-Let’s answer the Question by reasoning step by step.
+Let’s answer the Question by reasoning step by step. 
 """
 
 EXTENSION_VANILLA_PROMPT = \
@@ -196,7 +171,7 @@ EXTENSION_VANILLA_PROMPT = \
 {question}
 </Question>
 
-Let’s answer the Question by reasoning step by step.
+Let’s answer the Question by reasoning step by step, and then parse your reasoning steps into atomic facts.
 """
 
 
