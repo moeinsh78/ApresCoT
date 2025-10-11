@@ -106,6 +106,8 @@ class ExperimentSubgraphRetriever:
         seen_nodes = set(seeds)
         frontier = set(seeds)
 
+        curr_beam_size = beam_size
+
         for hop in range(max_hops):
             candidates = []
 
@@ -135,7 +137,7 @@ class ExperimentSubgraphRetriever:
 
             # sort by similarity and keep top beam_size
             candidates.sort(key=lambda x: x[0], reverse=True)
-            keep = candidates[:beam_size]
+            keep = candidates[:curr_beam_size]
 
             new_frontier = set()
             for score, edge in keep:
@@ -150,6 +152,7 @@ class ExperimentSubgraphRetriever:
             if len(triples) >= max_nodes or not frontier:
                 break
 
+            curr_beam_size = curr_beam_size * beam_size
 
         return triples, seen_nodes
 
@@ -175,6 +178,7 @@ class ExperimentSubgraphRetriever:
         seen_nodes = set(seeds)
         # Frontier now holds (node, cumulative_description)
         frontier = {(seed, "") for seed in seeds}
+        curr_beam_size = beam_size
 
         # print(f"\n[INFO] Starting cumulative-context SRTK retrieval with {len(seeds)} seeds")
         # print(f"[INFO] Question: {question}\n")
@@ -214,7 +218,7 @@ class ExperimentSubgraphRetriever:
 
             # sort by similarity and keep top beam_size
             candidates.sort(key=lambda x: x[0], reverse=True)
-            keep = candidates[:beam_size]
+            keep = candidates[:curr_beam_size]
 
             # print(f"[INFO] {len(candidates)} candidates → keeping top {len(keep)} edges.")
             # print("[DEBUG] Top 3 edges:")
@@ -236,6 +240,7 @@ class ExperimentSubgraphRetriever:
                 # print("[INFO] Reached node/edge limit or no frontier left.")
                 break
 
+            curr_beam_size = curr_beam_size * beam_size
 
         print(f"\n[INFO] Completed retrieval. Collected {len(triples)} edges, {len(seen_nodes)} nodes.")
         return triples, seen_nodes
@@ -246,7 +251,7 @@ def path_similarity(question_embedding, context, similarity_model):
     context_embedding = similarity_model.encode(context, show_progress_bar=False)
     return cosine_similarity(np.array([question_embedding], dtype=object), np.array([context_embedding], dtype=object))[0][0]
 
-def generate_hypothetical_answer(question: str, model_name="gpt-4o-mini", temperature=0, max_tokens=128, n=1) -> str:
+def generate_hypothetical_answer(question: str, model_name="gpt-4o-mini", temperature=0, max_tokens=512, n=1) -> str:
     client = OpenAI()
     result = client.chat.completions.create(
         messages=[{"role":"user", "content": HYPOTHETICAL_ANSWER_PROMPT.format(question)}],

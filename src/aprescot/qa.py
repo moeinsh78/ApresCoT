@@ -86,10 +86,10 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
     is_directed_kg = (kg != "meta-qa")
 
     
-    use_srtk, use_hyde, use_pasr = False, False, False          # BFS
-    # use_srtk, use_hyde, use_pasr = True, False, False           # Plain Similarity
-    # use_srtk, use_hyde, use_pasr = True, True, False            # Similarity + Hypothetical Answer
+    # use_srtk, use_hyde, use_pasr = False, False, False          # BFS
+    use_srtk, use_hyde, use_pasr = True, False, False           # Plain Similarity
     # use_srtk, use_hyde, use_pasr = True, False, True            # Similarity + PASR
+    # use_srtk, use_hyde, use_pasr = True, True, False            # Similarity + Hypothetical Answer
     # use_srtk, use_hyde, use_pasr = True, True, True             # Similarity + Hypothetical Answer + PASR
 
     use_subgraph_cache = False
@@ -117,18 +117,14 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
         # llm_final_answers, llm_cot = get_nodes_and_edges_matching_gt(gt_file=ground_truth_file_dir, pred_edges=edge_dict_list, directed=is_directed_kg)
         llm_final_answers, llm_cot = get_experiment_llm_answers(answers_file=llm_answers_file_dir)
 
-        print("LLM Final Answers:", llm_final_answers)
-        print("LLM Reasoning Steps:")
-        for step in llm_cot:
-            print(step)
         # llm_final_answers = []
         # llm_cot = []
         instruction_msg, prompt = create_prompt(question, kg, rag, llm, subgraph_edge_desc_list, new_reasoning, extension=False)
         
         # node_to_answer_match, node_to_answer_id = match_nodes(nodes_set, llm_final_answers)
         start = time.perf_counter()
-        node_to_answer_match, node_to_answer_id = match_nodes_using_embeddings(nodes_set, llm_final_answers)
-        matched_cot_list, edge_to_cot_match = match_edges(subgraph_edge_desc_list, llm_cot, cot_in_triples=parse_to_triples)
+        node_to_answer_match, node_to_answer_id = match_nodes_using_embeddings(nodes_set, llm_final_answers[:1])
+        matched_cot_list, edge_to_cot_match = match_edges(subgraph_edge_desc_list, llm_cot[:1], cot_in_triples=parse_to_triples)
         end = time.perf_counter()
 
         matching_time_elapsed = end - start
