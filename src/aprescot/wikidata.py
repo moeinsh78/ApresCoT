@@ -291,7 +291,7 @@ class WikiDataKnowledgeGraph:
             if len(triples) >= max_nodes or not frontier:
                 break
             
-            curr_beam_size = curr_beam_size * beam_size
+            # curr_beam_size = curr_beam_size * beam_size
 
         result = {"question": question, "seeds": seed_qids, "triples": triples, "labels": {}}
 

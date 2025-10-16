@@ -1,0 +1,72 @@
+[
+  {
+    "id": "Q1",
+    "question": "What were the release years of the films directed by the director of The Shawshank Redemption?",
+    "kg": "meta-qa",
+    "ground_truth": "experiments/ground_truth/shawshank.txt",
+    "llm_answers": "experiments/llm_answers/shawshank.txt",
+    "seeds": ["The Shawshank Redemption"],
+    "graph_file": "kg/meta-qa-kb.txt",
+    "params": {
+      "depth": 3,
+      "beam_size": 20,
+      "max_nodes": 200
+    }
+  },
+  {
+    "id": "Q2",
+    "question": "Which countries have land borders with Germany's neighbours?",
+    "kg": "wikidata",
+    "ground_truth": "experiments/ground_truth/germany.txt",
+    "llm_answers": "experiments/llm_answers/germany.txt",
+    "seeds": ["Germany"],
+    "graph_file": "experiments/subgraphs/germany_subgraph_depth2.txt",
+    "params": {
+      "depth": 2,
+      "beam_size": 16,
+      "max_nodes": 500
+    }
+  },
+  {
+    "id": "Q3",
+    "question": "Where is the hometown of the clubs Arjen Robben has played for?",
+    "kg": "wikidata",
+    "ground_truth": "experiments/ground_truth/robben.txt",
+    "llm_answers": "experiments/llm_answers/robben.txt",
+    "seeds": ["Arjen Robben"],
+    "graph_file": "experiments/subgraphs/robben_depth2.txt",
+    "params": {
+      "depth": 2,
+      "beam_size": 50,
+      "max_nodes": 500
+    }
+  },
+  {
+    "id": "Q4",
+    "question": "Which countries have football clubs where both Thierry Henry and Eden Hazard have played during their careers?",
+    "kg": "wikidata",
+    "ground_truth": "experiments/ground_truth/henry_hazard.txt",
+    "llm_answers": "experiments/llm_answers/henry_hazard.txt",
+    "seeds": ["Thierry Henry", "Eden Hazard"],
+    "graph_file": "experiments/subgraphs/henry_hazard_depth2.txt",
+    "params": {
+      "depth": 2,
+      "beam_size": 64,
+      "max_nodes": 500
+    }
+  },
+  {
+    "id": "Q5",
+    "question": "In which continents are the clubs that Edinson Cavani has played for based?",
+    "kg": "wikidata",
+    "ground_truth": "experiments/ground_truth/cavani.txt",
+    "llm_answers": "experiments/llm_answers/cavani.txt",
+    "seeds": ["Edinson Cavani"],
+    "graph_file": "experiments/subgraphs/cavani_depth3.txt",
+    "params": {
+      "depth": 3,
+      "beam_size": 64,
+      "max_nodes": 1000
+    }
+  }
+]

@@ -152,7 +152,7 @@ class ExperimentSubgraphRetriever:
             if len(triples) >= max_nodes or not frontier:
                 break
 
-            curr_beam_size = curr_beam_size * beam_size
+            # curr_beam_size = curr_beam_size * beam_size
 
         return triples, seen_nodes
 
@@ -176,8 +176,10 @@ class ExperimentSubgraphRetriever:
         seeds = [entity for entity in seed_entities if self.graph.has_node(entity)]
         seen_edges = set()
         seen_nodes = set(seeds)
+
         # Frontier now holds (node, cumulative_description)
         frontier = {(seed, "") for seed in seeds}
+
         curr_beam_size = beam_size
 
         # print(f"\n[INFO] Starting cumulative-context SRTK retrieval with {len(seeds)} seeds")
@@ -240,7 +242,7 @@ class ExperimentSubgraphRetriever:
                 # print("[INFO] Reached node/edge limit or no frontier left.")
                 break
 
-            curr_beam_size = curr_beam_size * beam_size
+            # curr_beam_size = curr_beam_size * beam_size
 
         print(f"\n[INFO] Completed retrieval. Collected {len(triples)} edges, {len(seen_nodes)} nodes.")
         return triples, seen_nodes

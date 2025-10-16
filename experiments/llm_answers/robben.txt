@@ -1,0 +1,11 @@
+#ANSWERS: Eindhoven|Madrid|Groningen|London
+Arjen Robben member of sports team PSV Eindhoven
+Arjen Robben member of sports team Real Madrid CF
+Arjen Robben member of sports team FC Groningen
+Arjen Robben member of sports team Chelsea F.C.
+Arjen Robben member of sports team VV Bedum
+Arjen Robben member of sports team Netherlands national association football team
+PSV Eindhoven headquarters location Eindhoven
+Real Madrid CF headquarters location Madrid
+FC Groningen headquarters location Groningen
+Chelsea F.C. headquarters location London

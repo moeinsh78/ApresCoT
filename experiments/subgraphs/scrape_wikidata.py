@@ -59,25 +59,25 @@ def scrape_subgraph_to_file(driver, seed_qids, depth, edges_file, frontier_csv, 
             f.write(e + "\n")
     print(f"Saved {len(edges)} edges to {edges_file}")
 
-    # Save frontier (nodes at max depth)
-    with open(frontier_csv, "w", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
-        writer.writerow(["label"])
-        for node in sorted(nodes_at_max_depth):
-            writer.writerow([node])
-    print(f"Saved {len(nodes_at_max_depth)} frontier nodes to {frontier_csv}")
+    # # Save frontier (nodes at max depth)
+    # with open(frontier_csv, "w", newline="", encoding="utf-8") as f:
+    #     writer = csv.writer(f)
+    #     writer.writerow(["label"])
+    #     for node in sorted(nodes_at_max_depth):
+    #         writer.writerow([node])
+    # print(f"Saved {len(nodes_at_max_depth)} frontier nodes to {frontier_csv}")
 
-    # Save visited nodes
-    with open(visited_csv, "w", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
-        writer.writerow(["label"])
-        for node in sorted(visited):
-            writer.writerow([node])
-    print(f"Saved {len(visited)} visited nodes to {visited_csv}")
+    # # Save visited nodes
+    # with open(visited_csv, "w", newline="", encoding="utf-8") as f:
+    #     writer = csv.writer(f)
+    #     writer.writerow(["label"])
+    #     for node in sorted(visited):
+    #         writer.writerow([node])
+    # print(f"Saved {len(visited)} visited nodes to {visited_csv}")
 
 
 # Example usage
-seed_qids = ["Q183"]  # Germany
+seed_qids = ["Q45901", "Q214204"]  # Therry Henry, Eden Hazard
 neo4j_uri = "bolt://localhost:7687"
 neo4j_user = "neo4j"
 neo4j_password = "moein1378"
@@ -87,7 +87,7 @@ scrape_subgraph_to_file(
     driver,
     seed_qids,
     depth=2,
-    edges_file="germany_subgraph_depth2.txt",
-    frontier_csv="germany_depth2_frontier.csv",
-    visited_csv="germany_seen_nodes.csv"
+    edges_file="henry_hazard_depth2.txt",
+    frontier_csv="henry_hazard_depth2_frontier.csv",
+    visited_csv="henry_hazard_depth2_seen.csv"
 )

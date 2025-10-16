@@ -1,19 +1,23 @@
-from src.aprescot.subKGRet import retrieve_demo_subgraph, retrieve_experiment_subgraph, retrieve_uc2_subgraph
-from src.aprescot.prompting import create_prompt
-from src.aprescot.matching import match_edges, match_nodes, match_nodes_using_embeddings
-from src.aprescot.cytoVis import build_cyto_subgraph_elements_list
-from src.aprescot.parsing import parse_llm_response, concat_triple, parse_reasoning_output
-from src.aprescot.experiments import (
-    evaluate_subgraph_extraction, 
-    get_nodes_and_edges_matching_gt, 
-    load_ground_truth_subgraph,
-    get_experiment_llm_answers,
-)
+from src.aprescot.subKGRet import *
+from src.aprescot.prompting import *
+from src.aprescot.matching import *
+from src.aprescot.cytoVis import *
+from src.aprescot.parsing import *
+from experiments.subgraph_retriever import *
+
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import SystemMessage, HumanMessage
 from openai import OpenAI
 import json
 import time
+
+RETRIEVAL_SETTINGS = [
+    {"name": "BFS", "use_srtk": False, "use_hyde": False, "use_pasr": False},
+    {"name": "SSR", "use_srtk": True,  "use_hyde": False, "use_pasr": False},
+    {"name": "SSR+HyDE", "use_srtk": True, "use_hyde": True, "use_pasr": False},
+    {"name": "SSR+PASR", "use_srtk": True, "use_hyde": False, "use_pasr": True},
+    {"name": "SSR+HyDE+PASR", "use_srtk": True, "use_hyde": True, "use_pasr": True},
+]
 
 def ask_llm(llm: str, instruction_msg: str, prompt: str, new_reasoning: bool = True, extension: bool = False):
     if extension:
@@ -80,16 +84,12 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
     parse_to_triples = False        # Indicates whether to parse reasoning to triples since it affects matching too
 
     is_experiment = True            # Whether the code is running for the purpose of experimenting and benchmarking 
-    get_ground_truth = False        # Whether to get ground-truth edges and answers for evaluation and matching
-    ground_truth_file_dir = "ground_truth/germany.txt"
-    llm_answers_file_dir = "llm_answers/germany.txt"
-    is_directed_kg = (kg != "meta-qa")
 
     
     # use_srtk, use_hyde, use_pasr = False, False, False          # BFS
-    use_srtk, use_hyde, use_pasr = True, False, False           # Plain Similarity
+    # use_srtk, use_hyde, use_pasr = True, False, False           # Plain Similarity
     # use_srtk, use_hyde, use_pasr = True, False, True            # Similarity + PASR
-    # use_srtk, use_hyde, use_pasr = True, True, False            # Similarity + Hypothetical Answer
+    use_srtk, use_hyde, use_pasr = True, True, False            # Similarity + Hypothetical Answer
     # use_srtk, use_hyde, use_pasr = True, True, True             # Similarity + Hypothetical Answer + PASR
 
     use_subgraph_cache = False
@@ -97,61 +97,53 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
     seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list = None, None, None, None
     instruction_msg, prompt = None, None
     llm_response, llm_final_answers, llm_cot = None, [], []
-    precision, recall, f1 = 0, 0, 0
 
     if is_experiment:
-        if get_ground_truth:
-            seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, subgraph_retrieval_time_elapsed = load_ground_truth_subgraph(ground_truth_file_dir)
-        else:
-            seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, subgraph_retrieval_time_elapsed = \
-                retrieve_experiment_subgraph(
-                    question, 
-                    kg_name=kg,
-                    use_srtk=use_srtk,
-                    use_hyde=use_hyde,
-                    use_pasr=use_pasr,
-                    graph_file="experiments/germany_subgraph_depth3.txt",
-                    # graph_file="kg/meta-qa-kb.txt",
-                )
+        questions = ["Q1", "Q2", "Q3", "Q4", "Q5"]
+        for q in questions:
+            print(f"\n\n\n\n==========================")
+            print(f"Running experiments for {q}")
+            print(f"==========================")
+            instruction_msg, prompt, llm_response, subgraph_edge_desc_list, node_to_answer_match, matched_cot_list, subgraph_elements_list, llm_final_answers, llm_cot = \
+                run_experiments(
+                config_path="experiments/config.json",
+                results_csv="experiments/results/results_log.csv",
+                question_id=q
+            )
+        return instruction_msg, prompt, llm_response, subgraph_edge_desc_list, node_to_answer_match, matched_cot_list, subgraph_elements_list, llm_final_answers, llm_cot
 
-        # llm_final_answers, llm_cot = get_nodes_and_edges_matching_gt(gt_file=ground_truth_file_dir, pred_edges=edge_dict_list, directed=is_directed_kg)
-        llm_final_answers, llm_cot = get_experiment_llm_answers(answers_file=llm_answers_file_dir)
-
-        # llm_final_answers = []
-        # llm_cot = []
-        instruction_msg, prompt = create_prompt(question, kg, rag, llm, subgraph_edge_desc_list, new_reasoning, extension=False)
-        
-        # node_to_answer_match, node_to_answer_id = match_nodes(nodes_set, llm_final_answers)
-        start = time.perf_counter()
-        node_to_answer_match, node_to_answer_id = match_nodes_using_embeddings(nodes_set, llm_final_answers[:1])
-        matched_cot_list, edge_to_cot_match = match_edges(subgraph_edge_desc_list, llm_cot[:1], cot_in_triples=parse_to_triples)
-        end = time.perf_counter()
-
-        matching_time_elapsed = end - start
-        subgraph_elements_list = build_cyto_subgraph_elements_list(seed_nodes, nodes_set, edge_dict_list, edge_to_cot_match, node_to_answer_id)
-
-        precision, recall, f1 = evaluate_subgraph_extraction(
-            gt_file=ground_truth_file_dir,
-            pred_edges=edge_dict_list,
-            undirected=True
-        )
-
-        print(f"\nPrecision= {precision:.3f}, Recall= {recall:.3f}, F1= {f1:.3f}")
-        print(f"\nSubgraph Retrieval Time: {subgraph_retrieval_time_elapsed:.2f} sec")
-        print(f"\nMatching Time: {matching_time_elapsed:.2f} sec")
-
-        return instruction_msg, prompt, None, subgraph_edge_desc_list, node_to_answer_match, matched_cot_list, subgraph_elements_list, llm_final_answers, llm_cot
-
-    
     else:
-        seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, time_elapsed = \
-            retrieve_demo_subgraph(question, kg, use_srtk=use_srtk, use_hyde=use_hyde, use_cache=use_subgraph_cache)
+        # seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, time_elapsed = \
+        #     retrieve_demo_subgraph(question, kg, use_srtk=use_srtk, use_hyde=use_hyde, use_cache=use_subgraph_cache)
 
+        seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, subgraph_retrieval_time_elapsed = \
+            retrieve_demo_subgraph(
+                question, 
+                kg=kg,
+                use_srtk=use_srtk,
+                use_hyde=use_hyde,
+                # use_pasr=use_pasr,
+                use_cache=use_subgraph_cache,
+                # graph_file="experiments/germany_subgraph_depth3.txt",
+                # graph_file="kg/meta-qa-kb.txt",
+            )
+        
         instruction_msg, prompt = create_prompt(question, kg, rag, llm, subgraph_edge_desc_list, new_reasoning, extension=extension)
         llm_response, llm_final_answers, llm_cot = ask_llm(llm, instruction_msg, prompt, new_reasoning, extension)
 
         if extension:
-            llm_final_answers, llm_cot = parse_reasoning_output(llm_response)
+            # llm_final_answers, llm_cot = parse_reasoning_output(llm_response)
+            llm_final_answers, reasoning = parse_reasoning_output(llm_response)
+            
+            
+            llm_cot = extract_facts_as_triples(reasoning)
+            print("WITH THE NEW METHOD: ")
+            print("Final Answers:", llm_final_answers)
+            print("Reasoning:\n", reasoning)
+            print("Extracted Facts:")
+
+            for fact in llm_cot:
+                print(f" - {fact}")
 
         if new_reasoning:
             llm_final_answers, llm_cot = parse_llm_response(llm_response, question, triples=parse_to_triples)
@@ -187,3 +179,95 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
             print(element)
 
         return instruction_msg, prompt, llm_response, subgraph_edge_desc_list, node_to_answer_match, matched_cot_list, subgraph_elements_list, llm_final_answers, llm_cot
+
+
+def run_experiments(config_path: str, results_csv: str, question_id: str, get_ground_truth: bool = False):
+    with open(config_path, "r", encoding="utf-8") as f:
+        questions = json.load(f)
+
+    # Find the matching question
+    question_conf = next((q for q in questions if q["id"] == question_id), None)
+    if not question_conf:
+        print(f"ERROR: Question ID '{question_id}' not found in {config_path}")
+        return
+
+    q = question_conf
+    print(f"\n==========================")
+    print(f"Running experiments for {q['id']} — {q['question']}")
+    print(f"==========================")
+
+    is_directed_kg = (q["kg"] != "meta-qa")
+
+    results = []
+
+    for setting in RETRIEVAL_SETTINGS:
+        algo_name = setting["name"]
+        print(f"\n----- Algorithm: {algo_name} -----")
+
+        if get_ground_truth:
+            seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, subgraph_time = \
+                load_ground_truth_subgraph(q["ground_truth"])
+        else:
+            params = {
+                "depth": q["params"].get("depth"),
+                "beam_size": q["params"].get("beam_size"),
+                "max_nodes": q["params"].get("max_nodes"),
+            }
+            seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, subgraph_time = \
+                retrieve_experiment_subgraph(
+                    q["question"],
+                    seed_entities=q["seeds"],
+                    kg_name=q["kg"],
+                    params=params,
+                    use_srtk=setting["use_srtk"],
+                    use_hyde=setting["use_hyde"],
+                    use_pasr=setting["use_pasr"],
+                    graph_file=q["graph_file"]
+                )
+
+        # --- Load LLM answers ---
+        llm_final_answers, llm_cot = get_experiment_llm_answers(q["llm_answers"])
+
+        # --- Matching phase ---
+        start_match = time.perf_counter()
+        node_to_answer_match, node_to_answer_id = match_nodes_using_embeddings(nodes_set, llm_final_answers[:1])
+        matched_cot_list, edge_to_cot_match = match_edges(subgraph_edge_desc_list, llm_cot[:1], cot_in_triples=True)
+        match_time = time.perf_counter() - start_match
+
+        # --- Evaluate metrics ---
+        precision, recall, f1 = evaluate_subgraph_extraction(
+            gt_file=q["ground_truth"],
+            pred_edges=edge_dict_list,
+            undirected=not is_directed_kg
+        )
+        subgraph_elements_list = build_cyto_subgraph_elements_list(seed_nodes, nodes_set, edge_dict_list, edge_to_cot_match, node_to_answer_id)
+
+
+        print(f"Precision={precision:.3f}  Recall={recall:.3f}  F1={f1:.3f}")
+        print(f"Subgraph Retrieval Time={subgraph_time:.2f}s  Matching Time={match_time:.2f}s")
+
+        res = {
+            "question_id": q["id"],
+            "algorithm": algo_name,
+            "precision": round(precision, 3),
+            "recall": round(recall, 3),
+            "f1": round(f1, 3),
+            "subgraph_time": round(subgraph_time, 3),
+            "matching_time": round(match_time, 3),
+            "total_edges": len(edge_dict_list),
+            "total_nodes": len(nodes_set)
+        }
+        print("Result:", res)
+        results.append(res)
+
+    # --- Save or append results ---
+    df = pd.DataFrame(results)
+    try:
+        existing = pd.read_csv(results_csv)
+        df = pd.concat([existing, df], ignore_index=True)
+    except FileNotFoundError:
+        pass
+    df.to_csv(results_csv, index=False)
+
+    print(f"\nFinished all algorithms for {q['id']}. Results appended to {results_csv}.")
+    return None, None, None, subgraph_edge_desc_list, node_to_answer_match, matched_cot_list, subgraph_elements_list, llm_final_answers, llm_cot

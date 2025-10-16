@@ -5,7 +5,7 @@ from langchain_openai import ChatOpenAI
 from src.aprescot.metaqa import MetaQAKnowledgeGraph
 from src.aprescot.umls import UMLSKnowledgeGraph
 from src.aprescot.wikidata import WikiDataKnowledgeGraph
-from src.aprescot.experiments import ExperimentSubgraphRetriever
+from experiments.subgraph_retriever import ExperimentSubgraphRetriever
 from src.aprescot.prompting import (
     SEED_ENTITY_INSTRUCTIONS, 
     SEED_ENTITY_PROMPT, 
@@ -78,20 +78,19 @@ def get_seed_entities(question: str, kg: str):
     return response_json["seed entities"]
 
 
-def retrieve_experiment_subgraph(question: str, kg_name: str, use_srtk: bool, use_hyde: bool = False, use_pasr: bool = False, graph_file: str = None):
+def retrieve_experiment_subgraph(question: str, seed_entities : str, kg_name: str, params: Dict[str, Any], use_srtk: bool, use_hyde: bool = False, use_pasr: bool = False, graph_file: str = None):
     ##########################################################
     ################## Retrieval Parameters ##################
     scorer_model = "sentence-transformers/all-MiniLM-L6-v2"
-    depth = 2
-    beam_size = 16
-    max_nodes = 500
+    depth = params.get("depth", 2)
+    beam_size = params.get("beam_size", 16)
+    max_nodes = params.get("max_nodes", 500)
     compare_to_hypothetical_answer = use_hyde
     ##########################################################
 
     experiment_retriever = ExperimentSubgraphRetriever(kg_name=kg_name, kg_directory=graph_file, scorer_model=scorer_model)
     
     start = time.perf_counter()
-    seed_entities = get_seed_entities(question, kg_name)
 
     if not use_srtk:
         edge_dict_list, nodes_set = experiment_retriever.get_bfs_subgraph(seed_entities, depth=depth, expand_ending_nodes=False)
@@ -134,11 +133,11 @@ def extract_subgraph_edge_descriptions(edge_dict_list):
 
 
 def retrieve_demo_subgraph(question: str, kg: str, use_srtk: bool, use_hyde: bool = False, use_cache: bool = True):
-    depth = 1
-    beam_size = 24
+    depth = 2
+    beam_size = 32
     per_pred_cap = 32
     total_cap_per_node = 256
-    max_nodes = 500
+    max_nodes = 2000
     scorer_model = "sentence-transformers/all-MiniLM-L6-v2"
     compare_to_hypothetical_answer = use_hyde
     seed_entities = get_seed_entities(question, kg)
@@ -167,6 +166,11 @@ def retrieve_demo_subgraph(question: str, kg: str, use_srtk: bool, use_hyde: boo
                     # seed_entities = ["Germany"]
                     # seed_entities = ["Jean Rochefort"]
                     # seed_entities = ["President of the United States", "Q362 — World War II"]
+                    # seed_entities = ["Alexander Fleming"]
+                    # seed_entities = ["Albert Einstein"]
+                    # seed_entities = ["Arjen Robben"]
+                    # seed_entities = ["Julián Alvarezz", "Ángel Di María"]
+                    seed_entities = ["Thierry Henry", "Eden Hazard"]
 
                     print("Seed Entities:", seed_entities)
                     wikidata_seed_nodes = wikidata_qa.find_wikidata_entities(seed_entities)

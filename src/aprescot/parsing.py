@@ -2,55 +2,147 @@ from typing import List, Dict, Sequence
 from langchain_openai import ChatOpenAI
 import json
 import ast
+
+import spacy
+import nltk
+from nltk import sent_tokenize
 import re
 
+# Download required NLTK data on first run
+try:
+    nltk.data.find('tokenizers/punkt_tab')
+except LookupError:
+    nltk.download('punkt_tab', quiet=True)
 
-import re
+# Load spaCy model
+nlp = spacy.load("en_core_web_sm")
+
+
+def extract_facts_as_triples(reasoning_text: str):
+    """
+    Extract simple subject-verb-object triples using spaCy dependency parsing.
+    Handles compound objects and improves extraction quality.
+    """
+    # Handle None or non-string input
+    if not reasoning_text or not isinstance(reasoning_text, str):
+        return []
+    
+    facts = []
+    seen = set()  # Track duplicates
+    
+    for sent in sent_tokenize(reasoning_text):
+        doc = nlp(sent)
+        
+        # Extract subject-verb-object patterns
+        for token in doc:
+            if token.pos_ == "VERB":
+                subjects = [child for child in token.children if child.dep_ in ("nsubj", "nsubjpass")]
+                objects = [child for child in token.children if child.dep_ in ("dobj", "pobj", "attr")]
+                
+                # Also check for conjuncts (objects connected by 'and')
+                extended_objects = objects.copy()
+                for obj in objects:
+                    for conj_child in obj.children:
+                        if conj_child.dep_ == "conj":
+                            extended_objects.append(conj_child)
+                
+                for subj in subjects:
+                    for obj in extended_objects:
+                        # Get noun phrases (limit to avoid overly complex phrases)
+                        subj_phrase = " ".join([t.text for t in subj.subtree if not t.dep_ in ("punct", "cc")])
+                        obj_phrase = " ".join([t.text for t in obj.subtree if not t.dep_ in ("punct", "cc")])
+                        verb_phrase = token.lemma_
+                        
+                        # Split if object still contains commas or 'and'
+                        individual_objects = re.split(r',\s*(?:and\s+)?|\s+and\s+', obj_phrase)
+                        individual_objects = [o.strip() for o in individual_objects if o.strip()]
+                        
+                        for single_obj in individual_objects:
+                            fact = f"{subj_phrase} {verb_phrase} {single_obj}."
+                            
+                            # Deduplicate
+                            fact_normalized = fact.lower().strip()
+                            if fact_normalized not in seen:
+                                seen.add(fact_normalized)
+                                facts.append(fact)
+    
+    return facts
+
 
 def parse_reasoning_output(text: str):
     """
-    Parse model output containing the following sections:
-      ---REASONING---
-      ---PARSED ATOMIC REASONING STEPS---
-      ---FINAL ANSWERS---
-
-    Returns:
-        answers: list[str]
-        atomic_steps: list[str]
+    Parse model output containing free-form reasoning followed by:
+        ---FINAL ANSWERS---
+        <answers>
     """
 
-    # Normalize newlines and trim whitespace
+    # Normalize and strip whitespace
     text = text.replace("\r", "").strip()
 
-    # Regex patterns for each section
-    reasoning_pattern = r"---REASONING---(.*?)---PARSED ATOMIC REASONING STEPS---"
-    atomic_pattern = r"---PARSED ATOMIC REASONING STEPS---(.*?)---FINAL ANSWERS---"
-    answers_pattern = r"---FINAL ANSWERS---(.*)"
+    # Split reasoning and answers
+    match = re.search(r"---FINAL ANSWERS---(.*)", text, re.DOTALL | re.IGNORECASE)
 
-    reasoning_match = re.search(reasoning_pattern, text, re.DOTALL | re.IGNORECASE)
-    atomic_match = re.search(atomic_pattern, text, re.DOTALL | re.IGNORECASE)
-    answers_match = re.search(answers_pattern, text, re.DOTALL | re.IGNORECASE)
+    if match:
+        reasoning = text[: match.start()].strip()
+        answers_text = match.group(1).strip()
+    else:
+        # Fallback: no final answers section found
+        reasoning = text
+        answers_text = ""
 
-    reasoning = reasoning_match.group(1).strip() if reasoning_match else ""
-    atomic_text = atomic_match.group(1).strip() if atomic_match else ""
-    answers_text = answers_match.group(1).strip() if answers_match else ""
-
-    # Parse atomic steps: one per line (ignore empty or bullet characters)
-    atomic_steps = [
-        line.strip("-• \t")
-        for line in atomic_text.splitlines()
-        if line.strip()
-    ]
-
-    # Parse final answers: one per line (or comma-separated)
+    # Parse answers: one per line or comma-separated
     answers = [
         item.strip("-• \t")
         for item in re.split(r"[\n,]+", answers_text)
         if item.strip()
     ]
 
-    return answers, atomic_steps
+    return answers, reasoning
 
+
+# def parse_reasoning_output(text: str):
+#     """
+#     Parse model output containing the following sections:
+#       ---REASONING---
+#       ---PARSED ATOMIC REASONING STEPS---
+#       ---FINAL ANSWERS---
+
+#     Returns:
+#         answers: list[str]
+#         atomic_steps: list[str]
+#     """
+
+#     # Normalize newlines and trim whitespace
+#     text = text.replace("\r", "").strip()
+
+#     # Regex patterns for each section
+#     reasoning_pattern = r"---REASONING---(.*?)---PARSED ATOMIC REASONING STEPS---"
+#     atomic_pattern = r"---PARSED ATOMIC REASONING STEPS---(.*?)---FINAL ANSWERS---"
+#     answers_pattern = r"---FINAL ANSWERS---(.*)"
+
+#     reasoning_match = re.search(reasoning_pattern, text, re.DOTALL | re.IGNORECASE)
+#     atomic_match = re.search(atomic_pattern, text, re.DOTALL | re.IGNORECASE)
+#     answers_match = re.search(answers_pattern, text, re.DOTALL | re.IGNORECASE)
+
+#     reasoning = reasoning_match.group(1).strip() if reasoning_match else ""
+#     atomic_text = atomic_match.group(1).strip() if atomic_match else ""
+#     answers_text = answers_match.group(1).strip() if answers_match else ""
+
+#     # Parse atomic steps: one per line (ignore empty or bullet characters)
+#     atomic_steps = [
+#         line.strip("-• \t")
+#         for line in atomic_text.splitlines()
+#         if line.strip()
+#     ]
+
+#     # Parse final answers: one per line (or comma-separated)
+#     answers = [
+#         item.strip("-• \t")
+#         for item in re.split(r"[\n,]+", answers_text)
+#         if item.strip()
+#     ]
+
+#     return answers, atomic_steps
 
 
 def parse_llm_response(response: str, question: str, triples: bool = False) -> Dict[str, List[str]]:

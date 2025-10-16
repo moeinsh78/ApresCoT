@@ -1,4 +1,4 @@
-#ANSWERS: Czech Republic|Hungary|Italy|Liechtenstein|Slovakia|Slovenia|Switzerland|France|Luxembourg|Netherlands|Austria|Poland|Norway|Sweden|Andorra|Belgium|Brazil|Monaco|Spain|Suriname|Belarus|Lithuania|Russia|Ukraine
+#ANSWERS: Czech Republic|Hungary|Italy|Liechtenstein|Slovakia|Slovenia|Switzerland|France|Netherlands|Luxembourg|Austria|Poland|Norway|Sweden|Belgium|Brazil|Andorra|Suriname|Monaco|Spain|Belarus|Lithuania|Russia
 Germany shares border with Austria
 Germany shares border with Belgium
 Germany shares border with Czech Republic

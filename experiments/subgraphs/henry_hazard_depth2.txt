@@ -1,0 +1,3419 @@
+1998 FIFA World Cup|competition class|men's association football
+1998 FIFA World Cup|country|France
+1998 FIFA World Cup|final event|1998 FIFA World Cup Final
+1998 FIFA World Cup|followed by|2002 FIFA World Cup
+1998 FIFA World Cup|follows|1994 FIFA World Cup
+1998 FIFA World Cup|has part(s)|1998 FIFA World Cup knockout stage
+1998 FIFA World Cup|instance of|sports season
+1998 FIFA World Cup|league or competition|FIFA World Cup
+1998 FIFA World Cup|location|Parc des Princes
+1998 FIFA World Cup|location|Stade Bollaert-Delelis
+1998 FIFA World Cup|location|Stade Chaban-Delmas
+1998 FIFA World Cup|location|Stade Geoffroy-Guichard
+1998 FIFA World Cup|location|Stade V\u00E9lodrome
+1998 FIFA World Cup|location|Stade de France
+1998 FIFA World Cup|location|Stade de Gerland
+1998 FIFA World Cup|location|Stade de la Beaujoire
+1998 FIFA World Cup|location|Stade de la Mosson
+1998 FIFA World Cup|location|Stadium Municipal
+1998 FIFA World Cup|mascot|Footix
+1998 FIFA World Cup|organizer|FIFA
+1998 FIFA World Cup|organizer|French Football Federation
+1998 FIFA World Cup|participating team|Argentina men's national association football team
+1998 FIFA World Cup|participating team|Austria men's national football team
+1998 FIFA World Cup|participating team|Belgium men's national football team
+1998 FIFA World Cup|participating team|Brazil men's national football team
+1998 FIFA World Cup|participating team|Bulgaria men's national football team
+1998 FIFA World Cup|participating team|Cameroon men's national football team
+1998 FIFA World Cup|participating team|Chile men's national football team
+1998 FIFA World Cup|participating team|Colombia men's national football team
+1998 FIFA World Cup|participating team|Croatia men's national football team
+1998 FIFA World Cup|participating team|Denmark men's national football team
+1998 FIFA World Cup|participating team|England men's national association football team
+1998 FIFA World Cup|participating team|France men's national association football team
+1998 FIFA World Cup|participating team|Germany men's national association football team
+1998 FIFA World Cup|participating team|Iran men's national football team
+1998 FIFA World Cup|participating team|Italy men's national association football team
+1998 FIFA World Cup|participating team|Jamaica men's national association football team
+1998 FIFA World Cup|participating team|Japan men's national football team
+1998 FIFA World Cup|participating team|Mexico men's national football team
+1998 FIFA World Cup|participating team|Morocco men's national football team
+1998 FIFA World Cup|participating team|Netherlands national association football team
+1998 FIFA World Cup|participating team|Nigeria men's national football team
+1998 FIFA World Cup|participating team|Norway men's national association football team
+1998 FIFA World Cup|participating team|Paraguay men's national football team
+1998 FIFA World Cup|participating team|Romania men's national association football team
+1998 FIFA World Cup|participating team|Saudi Arabia men's national football team
+1998 FIFA World Cup|participating team|Scotland men's national football team
+1998 FIFA World Cup|participating team|Serbia and Montenegro national football team
+1998 FIFA World Cup|participating team|South Africa men's national association football team
+1998 FIFA World Cup|participating team|South Korea men's national football team
+1998 FIFA World Cup|participating team|Spain men's national football team
+1998 FIFA World Cup|participating team|Tunisia men's national football team
+1998 FIFA World Cup|participating team|United States men's national soccer team
+1998 FIFA World Cup|sports season of league or competition|FIFA World Cup
+1998 FIFA World Cup|sport|association football
+1998 FIFA World Cup|statistical leader|Davor \u0160uker
+1998 FIFA World Cup|statistical leader|Fabien Barthez
+1998 FIFA World Cup|statistical leader|Michael Owen
+1998 FIFA World Cup|statistical leader|Ronaldo
+1998 FIFA World Cup|topic has template|Template:1998 FIFA World Cup
+1998 FIFA World Cup|topic's main category|Category:1998 FIFA World Cup
+1998 FIFA World Cup|winner|France men's national association football team
+2002 FIFA World Cup|competition class|men's association football
+2002 FIFA World Cup|country|Japan
+2002 FIFA World Cup|country|South Korea
+2002 FIFA World Cup|final event|2002 FIFA World Cup Final
+2002 FIFA World Cup|followed by|2006 FIFA World Cup
+2002 FIFA World Cup|follows|1998 FIFA World Cup
+2002 FIFA World Cup|instance of|sports season
+2002 FIFA World Cup|league or competition|FIFA World Cup
+2002 FIFA World Cup|location|Busan Asiad Main Stadium
+2002 FIFA World Cup|location|Daegu Stadium
+2002 FIFA World Cup|location|Daejeon World Cup Stadium
+2002 FIFA World Cup|location|Denka Big Swan Stadium
+2002 FIFA World Cup|location|Gwangju World Cup Stadium
+2002 FIFA World Cup|location|Incheon Munhak Sports Complex
+2002 FIFA World Cup|location|International Stadium Yokohama
+2002 FIFA World Cup|location|Jeju World Cup Stadium
+2002 FIFA World Cup|location|Jeonju World Cup Stadium
+2002 FIFA World Cup|location|Kashima Soccer Stadium
+2002 FIFA World Cup|location|Maracan\u00E3 District
+2002 FIFA World Cup|location|Q&A Stadium Miyagi
+2002 FIFA World Cup|location|Saitama Stadium 2002
+2002 FIFA World Cup|location|Sapporo Dome
+2002 FIFA World Cup|location|Seoul World Cup Stadium
+2002 FIFA World Cup|location|Suwon World Cup Stadium
+2002 FIFA World Cup|location|Ulsan Munsu Football Stadium
+2002 FIFA World Cup|location|Wing Stadium Kobe
+2002 FIFA World Cup|location|Yanmar Stadium Nagai
+2002 FIFA World Cup|location|\u014Cita Stadium
+2002 FIFA World Cup|mascot|Ato, Kaz and Nik
+2002 FIFA World Cup|organizer|FIFA
+2002 FIFA World Cup|participant|Niko Kova\u010D
+2002 FIFA World Cup|participating team|Argentina men's national association football team
+2002 FIFA World Cup|participating team|Belgium men's national football team
+2002 FIFA World Cup|participating team|Brazil men's national football team
+2002 FIFA World Cup|participating team|Cameroon men's national football team
+2002 FIFA World Cup|participating team|China men's national football team
+2002 FIFA World Cup|participating team|Costa Rica men's national football team
+2002 FIFA World Cup|participating team|Croatia men's national football team
+2002 FIFA World Cup|participating team|Denmark men's national football team
+2002 FIFA World Cup|participating team|Ecuador men's national football team
+2002 FIFA World Cup|participating team|England men's national association football team
+2002 FIFA World Cup|participating team|France men's national association football team
+2002 FIFA World Cup|participating team|Germany men's national association football team
+2002 FIFA World Cup|participating team|Italy men's national association football team
+2002 FIFA World Cup|participating team|Japan men's national football team
+2002 FIFA World Cup|participating team|Mexico men's national football team
+2002 FIFA World Cup|participating team|Nigeria men's national football team
+2002 FIFA World Cup|participating team|Paraguay men's national football team
+2002 FIFA World Cup|participating team|Poland men's national football team
+2002 FIFA World Cup|participating team|Portugal men's national football team
+2002 FIFA World Cup|participating team|Republic of Ireland men's national association football team
+2002 FIFA World Cup|participating team|Russia men's national football team
+2002 FIFA World Cup|participating team|Saudi Arabia men's national football team
+2002 FIFA World Cup|participating team|Senegal men's national association football team
+2002 FIFA World Cup|participating team|Slovenia men's national football team
+2002 FIFA World Cup|participating team|South Africa men's national association football team
+2002 FIFA World Cup|participating team|South Korea men's national football team
+2002 FIFA World Cup|participating team|Spain men's national football team
+2002 FIFA World Cup|participating team|Sweden men's national football team
+2002 FIFA World Cup|participating team|Tunisia men's national football team
+2002 FIFA World Cup|participating team|Turkey men's national football team
+2002 FIFA World Cup|participating team|United States men's national soccer team
+2002 FIFA World Cup|participating team|Uruguay men's national football team
+2002 FIFA World Cup|sports season of league or competition|FIFA World Cup
+2002 FIFA World Cup|sport|association football
+2002 FIFA World Cup|statistical leader|Ronaldo
+2002 FIFA World Cup|topic has template|Template:2002 FIFA World Cup
+2002 FIFA World Cup|topic's main category|Category:2002 FIFA World Cup
+2002 FIFA World Cup|winner|Brazil men's national football team
+2006 FIFA World Cup|competition class|men's association football
+2006 FIFA World Cup|country|Germany
+2006 FIFA World Cup|final event|2006 FIFA World Cup Final
+2006 FIFA World Cup|followed by|2010 FIFA World Cup
+2006 FIFA World Cup|follows|2002 FIFA World Cup
+2006 FIFA World Cup|has part(s)|2006 FIFA World Cup knockout stage
+2006 FIFA World Cup|instance of|sports season
+2006 FIFA World Cup|location|Allianz Arena
+2006 FIFA World Cup|location|Arena AufSchalke
+2006 FIFA World Cup|location|Berlin Olympic Stadium
+2006 FIFA World Cup|location|Fritz Walter Stadium
+2006 FIFA World Cup|location|MHPArena
+2006 FIFA World Cup|location|Max-Morlock-Stadion
+2006 FIFA World Cup|location|Niedersachsenstadion
+2006 FIFA World Cup|location|Red Bull Arena
+2006 FIFA World Cup|location|RheinEnergie Stadion
+2006 FIFA World Cup|location|Volksparkstadion
+2006 FIFA World Cup|location|Waldstadion
+2006 FIFA World Cup|location|Westfalenstadion
+2006 FIFA World Cup|mascot|Goleo VI
+2006 FIFA World Cup|motto|A time to make friends
+2006 FIFA World Cup|organizer|2006 FIFA World Cup Organizing Committee
+2006 FIFA World Cup|organizer|FIFA
+2006 FIFA World Cup|participant|Niko Kova\u010D
+2006 FIFA World Cup|participating team|Angola men's national football team
+2006 FIFA World Cup|participating team|Argentina men's national association football team
+2006 FIFA World Cup|participating team|Australia men's national soccer team
+2006 FIFA World Cup|participating team|Brazil men's national football team
+2006 FIFA World Cup|participating team|Costa Rica men's national football team
+2006 FIFA World Cup|participating team|Croatia men's national football team
+2006 FIFA World Cup|participating team|Czechia men's national football team
+2006 FIFA World Cup|participating team|Ecuador men's national football team
+2006 FIFA World Cup|participating team|England men's national association football team
+2006 FIFA World Cup|participating team|France men's national association football team
+2006 FIFA World Cup|participating team|Germany men's national association football team
+2006 FIFA World Cup|participating team|Ghana men's national football team
+2006 FIFA World Cup|participating team|Iran men's national football team
+2006 FIFA World Cup|participating team|Italy men's national association football team
+2006 FIFA World Cup|participating team|Ivory Coast men's national football team
+2006 FIFA World Cup|participating team|Japan men's national football team
+2006 FIFA World Cup|participating team|Mexico men's national football team
+2006 FIFA World Cup|participating team|Netherlands national association football team
+2006 FIFA World Cup|participating team|Paraguay men's national football team
+2006 FIFA World Cup|participating team|Poland men's national football team
+2006 FIFA World Cup|participating team|Portugal men's national football team
+2006 FIFA World Cup|participating team|Saudi Arabia men's national football team
+2006 FIFA World Cup|participating team|Serbia and Montenegro national football team
+2006 FIFA World Cup|participating team|South Korea men's national football team
+2006 FIFA World Cup|participating team|Spain men's national football team
+2006 FIFA World Cup|participating team|Sweden men's national football team
+2006 FIFA World Cup|participating team|Switzerland men's national football team
+2006 FIFA World Cup|participating team|Togo men's national football team
+2006 FIFA World Cup|participating team|Trinidad and Tobago men's national football team
+2006 FIFA World Cup|participating team|Tunisia men's national football team
+2006 FIFA World Cup|participating team|Ukraine men's national football team
+2006 FIFA World Cup|participating team|United States men's national soccer team
+2006 FIFA World Cup|sports season of league or competition|FIFA World Cup
+2006 FIFA World Cup|sport|association football
+2006 FIFA World Cup|statistical leader|Miroslav Klose
+2006 FIFA World Cup|topic has template|Template:2006 FIFA World Cup
+2006 FIFA World Cup|topic's main Wikimedia portal|Portal:2006 FIFA World Cup
+2006 FIFA World Cup|topic's main category|Category:2006 FIFA World Cup
+2006 FIFA World Cup|winner|Italy men's national association football team
+2010 FIFA World Cup|competition class|men's association football
+2010 FIFA World Cup|country|South Africa
+2010 FIFA World Cup|final event|2010 FIFA World Cup Final
+2010 FIFA World Cup|followed by|2014 FIFA World Cup
+2010 FIFA World Cup|follows|2006 FIFA World Cup
+2010 FIFA World Cup|has part(s)|2010 FIFA World Cup knockout stage
+2010 FIFA World Cup|instance of|sports season
+2010 FIFA World Cup|league or competition|FIFA World Cup
+2010 FIFA World Cup|location|Cape Town Stadium
+2010 FIFA World Cup|location|Ellis Park Stadium
+2010 FIFA World Cup|location|Free State Stadium
+2010 FIFA World Cup|location|Loftus Versfeld Stadium
+2010 FIFA World Cup|location|Mbombela Stadium
+2010 FIFA World Cup|location|Moses Mabhida Stadium
+2010 FIFA World Cup|location|Nelson Mandela Bay Stadium
+2010 FIFA World Cup|location|Peter Mokaba Stadium
+2010 FIFA World Cup|location|Royal Bafokeng Stadium
+2010 FIFA World Cup|location|Soccer City Stadium
+2010 FIFA World Cup|mascot|Zakami
+2010 FIFA World Cup|organizer|FIFA
+2010 FIFA World Cup|participant|Idriss Carlos Kameni
+2010 FIFA World Cup|participant|J\u00FAlio Baptista
+2010 FIFA World Cup|participating team|Algeria men's national football team
+2010 FIFA World Cup|participating team|Argentina men's national association football team
+2010 FIFA World Cup|participating team|Australia men's national soccer team
+2010 FIFA World Cup|participating team|Brazil men's national football team
+2010 FIFA World Cup|participating team|Cameroon men's national football team
+2010 FIFA World Cup|participating team|Chile men's national football team
+2010 FIFA World Cup|participating team|Denmark men's national football team
+2010 FIFA World Cup|participating team|England men's national association football team
+2010 FIFA World Cup|participating team|France men's national association football team
+2010 FIFA World Cup|participating team|Germany men's national association football team
+2010 FIFA World Cup|participating team|Ghana men's national football team
+2010 FIFA World Cup|participating team|Greece men's national football team
+2010 FIFA World Cup|participating team|Honduras men's national football team
+2010 FIFA World Cup|participating team|Italy men's national association football team
+2010 FIFA World Cup|participating team|Ivory Coast men's national football team
+2010 FIFA World Cup|participating team|Japan men's national football team
+2010 FIFA World Cup|participating team|Mexico men's national football team
+2010 FIFA World Cup|participating team|Netherlands national association football team
+2010 FIFA World Cup|participating team|New Zealand men's national football team
+2010 FIFA World Cup|participating team|Nigeria men's national football team
+2010 FIFA World Cup|participating team|North Korea men's national football team
+2010 FIFA World Cup|participating team|Paraguay men's national football team
+2010 FIFA World Cup|participating team|Portugal men's national football team
+2010 FIFA World Cup|participating team|Serbia men's national football team
+2010 FIFA World Cup|participating team|Slovakia men's national football team
+2010 FIFA World Cup|participating team|Slovenia men's national football team
+2010 FIFA World Cup|participating team|South Africa men's national association football team
+2010 FIFA World Cup|participating team|South Korea men's national football team
+2010 FIFA World Cup|participating team|Spain men's national football team
+2010 FIFA World Cup|participating team|Switzerland men's national football team
+2010 FIFA World Cup|participating team|United States men's national soccer team
+2010 FIFA World Cup|participating team|Uruguay men's national football team
+2010 FIFA World Cup|prerequisite|2010 FIFA World Cup qualification (AFC)
+2010 FIFA World Cup|sports season of league or competition|FIFA World Cup
+2010 FIFA World Cup|sport|association football
+2010 FIFA World Cup|statistical leader|David Villa
+2010 FIFA World Cup|statistical leader|Diego Forl\u00E1n
+2010 FIFA World Cup|statistical leader|Thomas M\u00FCller
+2010 FIFA World Cup|statistical leader|Wesley Sneijder
+2010 FIFA World Cup|topic has template|Template:2010 FIFA World Cup
+2010 FIFA World Cup|topic's main category|Category:2010 FIFA World Cup
+2010 FIFA World Cup|winner|Spain men's national football team
+2014 FIFA World Cup|competition class|men's association football
+2014 FIFA World Cup|country|Brazil
+2014 FIFA World Cup|final event|2014 FIFA World Cup Final
+2014 FIFA World Cup|followed by|2018 FIFA World Cup
+2014 FIFA World Cup|follows|2010 FIFA World Cup
+2014 FIFA World Cup|has part(s)|2014 FIFA World Cup group stage
+2014 FIFA World Cup|has part(s)|2014 FIFA World Cup knockout stage
+2014 FIFA World Cup|has part(s)|2014 FIFA World Cup qualification
+2014 FIFA World Cup|instance of|sports season
+2014 FIFA World Cup|location|Arena Amaz\u00F4nia
+2014 FIFA World Cup|location|Arena Cidade da Copa
+2014 FIFA World Cup|location|Arena Fonte Nova
+2014 FIFA World Cup|location|Arena Pantaloneta
+2014 FIFA World Cup|location|Arena da Baixada
+2014 FIFA World Cup|location|Arena das Dunas
+2014 FIFA World Cup|location|Castel\u00E3o
+2014 FIFA World Cup|location|Est\u00E1dio Beira-Rio
+2014 FIFA World Cup|location|Est\u00E1dio Nacional de Bras\u00EDlia
+2014 FIFA World Cup|location|Maracan\u00E3 Stadium
+2014 FIFA World Cup|location|Mineir\u00E3o
+2014 FIFA World Cup|location|Neo Qu\u00EDmica Arena
+2014 FIFA World Cup|mascot|Fuleco
+2014 FIFA World Cup|organizer|FIFA
+2014 FIFA World Cup|participating team|Algeria men's national football team
+2014 FIFA World Cup|participating team|Argentina men's national association football team
+2014 FIFA World Cup|participating team|Australia men's national soccer team
+2014 FIFA World Cup|participating team|Belgium men's national football team
+2014 FIFA World Cup|participating team|Bosnia and Herzegovina men's national football team
+2014 FIFA World Cup|participating team|Brazil men's national football team
+2014 FIFA World Cup|participating team|Cameroon men's national football team
+2014 FIFA World Cup|participating team|Chile men's national football team
+2014 FIFA World Cup|participating team|Colombia men's national football team
+2014 FIFA World Cup|participating team|Costa Rica men's national football team
+2014 FIFA World Cup|participating team|Croatia men's national football team
+2014 FIFA World Cup|participating team|Ecuador men's national football team
+2014 FIFA World Cup|participating team|England men's national association football team
+2014 FIFA World Cup|participating team|France men's national association football team
+2014 FIFA World Cup|participating team|Germany men's national association football team
+2014 FIFA World Cup|participating team|Ghana men's national football team
+2014 FIFA World Cup|participating team|Greece men's national football team
+2014 FIFA World Cup|participating team|Honduras men's national football team
+2014 FIFA World Cup|participating team|Iran men's national football team
+2014 FIFA World Cup|participating team|Italy men's national association football team
+2014 FIFA World Cup|participating team|Ivory Coast men's national football team
+2014 FIFA World Cup|participating team|Japan men's national football team
+2014 FIFA World Cup|participating team|Mexico men's national football team
+2014 FIFA World Cup|participating team|Netherlands national association football team
+2014 FIFA World Cup|participating team|Nigeria men's national football team
+2014 FIFA World Cup|participating team|Portugal men's national football team
+2014 FIFA World Cup|participating team|Russia men's national football team
+2014 FIFA World Cup|participating team|South Korea men's national football team
+2014 FIFA World Cup|participating team|Spain men's national football team
+2014 FIFA World Cup|participating team|Switzerland men's national football team
+2014 FIFA World Cup|participating team|United States men's national soccer team
+2014 FIFA World Cup|participating team|Uruguay men's national football team
+2014 FIFA World Cup|sponsor|Adidas AG
+2014 FIFA World Cup|sports season of league or competition|FIFA World Cup
+2014 FIFA World Cup|sport|association football
+2014 FIFA World Cup|statistical leader|James Rodr\u00EDguez
+2014 FIFA World Cup|statistical leader|Lionel Messi
+2014 FIFA World Cup|statistical leader|Manuel Neuer
+2014 FIFA World Cup|statistical leader|Paul Pogba
+2014 FIFA World Cup|topic has template|Template:2014 FIFA World Cup
+2014 FIFA World Cup|topic's main category|Category:2014 FIFA World Cup
+2014 FIFA World Cup|winner|Germany men's national association football team
+2018 FIFA World Cup|competition class|men's association football
+2018 FIFA World Cup|country|Russia
+2018 FIFA World Cup|final event|2018 FIFA World Cup Final
+2018 FIFA World Cup|followed by|2022 FIFA World Cup
+2018 FIFA World Cup|follows|2014 FIFA World Cup
+2018 FIFA World Cup|has part(s)|2018 FIFA World Cup Group A
+2018 FIFA World Cup|has part(s)|2018 FIFA World Cup Group B
+2018 FIFA World Cup|has part(s)|2018 FIFA World Cup Group C
+2018 FIFA World Cup|has part(s)|2018 FIFA World Cup Group D
+2018 FIFA World Cup|has part(s)|2018 FIFA World Cup Group E
+2018 FIFA World Cup|has part(s)|2018 FIFA World Cup Group F
+2018 FIFA World Cup|has part(s)|2018 FIFA World Cup Group G
+2018 FIFA World Cup|has part(s)|2018 FIFA World Cup Group H
+2018 FIFA World Cup|has part(s)|2018 FIFA World Cup knockout stage
+2018 FIFA World Cup|has part(s)|2018 FIFA World Cup opening ceremony
+2018 FIFA World Cup|instance of|sports season
+2018 FIFA World Cup|league or competition|FIFA World Cup
+2018 FIFA World Cup|location|Central Stadium Yekaterinburg
+2018 FIFA World Cup|location|Fisht Olympic Stadium
+2018 FIFA World Cup|location|Gazprom Arena
+2018 FIFA World Cup|location|Kazan Arena
+2018 FIFA World Cup|location|Lukoil Arena
+2018 FIFA World Cup|location|Luzhniki Stadium
+2018 FIFA World Cup|location|Mordovia Arena
+2018 FIFA World Cup|location|Nizhny Novgorod Stadium
+2018 FIFA World Cup|location|Rostec Arena
+2018 FIFA World Cup|location|Rostov Arena
+2018 FIFA World Cup|location|Samara Arena
+2018 FIFA World Cup|location|Volgograd Arena
+2018 FIFA World Cup|mascot|Zabivaka
+2018 FIFA World Cup|organizer|FIFA
+2018 FIFA World Cup|participating team|Argentina at the 2018 FIFA World Cup
+2018 FIFA World Cup|participating team|Australia at the 2018 FIFA World Cup
+2018 FIFA World Cup|participating team|Belgium at the 2018 FIFA World Cup
+2018 FIFA World Cup|participating team|Brazil at the 2018 FIFA World Cup\u200E
+2018 FIFA World Cup|participating team|Colombia at the 2018 FIFA World Cup
+2018 FIFA World Cup|participating team|Costa Rica at the 2018 FIFA World Cup
+2018 FIFA World Cup|participating team|Croatia at the 2018 FIFA World Cup
+2018 FIFA World Cup|participating team|Denmark at the 2018 FIFA World Cup
+2018 FIFA World Cup|participating team|Egypt at the 2018 FIFA World Cup\u200E
+2018 FIFA World Cup|participating team|England at the 2018 FIFA World Cup\u200E
+2018 FIFA World Cup|participating team|France at the 2018 FIFA World Cup\u200E
+2018 FIFA World Cup|participating team|Germany at the 2018 FIFA World Cup
+2018 FIFA World Cup|participating team|Iceland at the 2018 FIFA World Cup
+2018 FIFA World Cup|participating team|Iran at the 2018 FIFA World Cup
+2018 FIFA World Cup|participating team|Japan at the 2018 FIFA World Cup
+2018 FIFA World Cup|participating team|Mexico at the 2018 FIFA World Cup
+2018 FIFA World Cup|participating team|Morocco at the 2018 FIFA World Cup\u200E
+2018 FIFA World Cup|participating team|Nigeria at the 2018 FIFA World Cup\u200E
+2018 FIFA World Cup|participating team|Panama at the 2018 FIFA World Cup
+2018 FIFA World Cup|participating team|Peru at the 2018 FIFA World Cup
+2018 FIFA World Cup|participating team|Poland at the 2018 FIFA World Cup
+2018 FIFA World Cup|participating team|Portugal at the 2018 FIFA World Cup\u200E
+2018 FIFA World Cup|participating team|Russia at the 2018 FIFA World Cup
+2018 FIFA World Cup|participating team|Saudi Arabia at the 2018 FIFA World Cup
+2018 FIFA World Cup|participating team|Senegal at the 2018 FIFA World Cup\u200E
+2018 FIFA World Cup|participating team|Serbia at the 2018 FIFA World Cup
+2018 FIFA World Cup|participating team|South Korea at the 2018 FIFA World Cup
+2018 FIFA World Cup|participating team|Spain at the 2018 FIFA World Cup
+2018 FIFA World Cup|participating team|Sweden at the 2018 FIFA World Cup
+2018 FIFA World Cup|participating team|Switzerland at the 2018 FIFA World Cup
+2018 FIFA World Cup|participating team|Tunisia at the 2018 FIFA World Cup
+2018 FIFA World Cup|participating team|Uruguay at the 2018 FIFA World Cup\u200E
+2018 FIFA World Cup|sports season of league or competition|FIFA World Cup
+2018 FIFA World Cup|sport|association football
+2018 FIFA World Cup|statistical leader|Harry Kane
+2018 FIFA World Cup|statistical leader|Kylian Mbapp\u00E9
+2018 FIFA World Cup|statistical leader|Luka Modri\u0107
+2018 FIFA World Cup|statistical leader|Thibaut Courtois
+2018 FIFA World Cup|topic has template|Template:2018 FIFA World Cup
+2018 FIFA World Cup|topic's main category|Category:2018 FIFA World Cup
+2018 FIFA World Cup|winner|France men's national association football team
+2022 FIFA World Cup|competition class|men's association football
+2022 FIFA World Cup|country|Qatar
+2022 FIFA World Cup|final event|2022 FIFA World Cup final
+2022 FIFA World Cup|followed by|2026 FIFA World Cup
+2022 FIFA World Cup|follows|2018 FIFA World Cup
+2022 FIFA World Cup|has part(s)|2022 FIFA World Cup Group A
+2022 FIFA World Cup|has part(s)|2022 FIFA World Cup Group B
+2022 FIFA World Cup|has part(s)|2022 FIFA World Cup Group C
+2022 FIFA World Cup|has part(s)|2022 FIFA World Cup Group D
+2022 FIFA World Cup|has part(s)|2022 FIFA World Cup Group E
+2022 FIFA World Cup|has part(s)|2022 FIFA World Cup Group F
+2022 FIFA World Cup|has part(s)|2022 FIFA World Cup Group G
+2022 FIFA World Cup|has part(s)|2022 FIFA World Cup Group H
+2022 FIFA World Cup|has part(s)|2022 FIFA World Cup knockout stage
+2022 FIFA World Cup|has part(s)|Argentina at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Australia at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Belgium at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Brazil at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Cameroon at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Canada at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Costa Rica at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Croatia at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Denmark at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Ecuador at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|England at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Ghana at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Iran at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Japan at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Mexico at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Morocco at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Netherlands at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Poland at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Portugal at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Qatar at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Saudi Arabia at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Senegal at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Serbia at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|South Korea at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Spain at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Switzerland at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Tunisia at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|United States of America at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Uruguay at the 2022 FIFA World Cup
+2022 FIFA World Cup|has part(s)|Wales at the 2022 FIFA World Cup
+2022 FIFA World Cup|instance of|association football competition
+2022 FIFA World Cup|instance of|sports season
+2022 FIFA World Cup|instance of|tournament
+2022 FIFA World Cup|location|Ahmad bin Ali Stadium
+2022 FIFA World Cup|location|Al Bayt Stadium
+2022 FIFA World Cup|location|Al Janoub Stadium
+2022 FIFA World Cup|location|Al Thumama Stadium
+2022 FIFA World Cup|location|Education City Stadium
+2022 FIFA World Cup|location|Khalifa International Stadium
+2022 FIFA World Cup|location|Lusail Stadium
+2022 FIFA World Cup|location|Stadium 974
+2022 FIFA World Cup|mascot|La'eeb
+2022 FIFA World Cup|organizer|FIFA
+2022 FIFA World Cup|participant|Argentina at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Australia at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Belgium at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Brazil at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Cameroon at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Canada at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Costa Rica at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Croatia at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Denmark at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Ecuador at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|England at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|France at the 2022 FIFA World Cup\u200E
+2022 FIFA World Cup|participant|Germany at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Ghana at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Iran at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Japan at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Mexico at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Morocco at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Netherlands at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Poland at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Portugal at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Qatar at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Saudi Arabia at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Senegal at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Serbia at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|South Korea at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Spain at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Switzerland at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Tunisia at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|United States of America at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Uruguay at the 2022 FIFA World Cup
+2022 FIFA World Cup|participant|Wales at the 2022 FIFA World Cup
+2022 FIFA World Cup|participating team|Argentina men's national association football team
+2022 FIFA World Cup|participating team|Croatia men's national football team
+2022 FIFA World Cup|participating team|France men's national association football team
+2022 FIFA World Cup|participating team|Morocco men's national football team
+2022 FIFA World Cup|sports season of league or competition|FIFA World Cup
+2022 FIFA World Cup|sport|association football
+2022 FIFA World Cup|statistical leader|Emiliano Mart\u00EDnez
+2022 FIFA World Cup|statistical leader|Enzo Fern\u00E1ndez
+2022 FIFA World Cup|statistical leader|Kylian Mbapp\u00E9
+2022 FIFA World Cup|statistical leader|Lionel Messi
+2022 FIFA World Cup|topic has template|Template:2022 FIFA World Cup
+2022 FIFA World Cup|topic's main category|Category:2022 FIFA World Cup
+2022 FIFA World Cup|winner|Argentina men's national association football team
+AS Monaco FC|category for members of a team|Category:AS Monaco FC players
+AS Monaco FC|chairperson|Dmitry Rybolovlev
+AS Monaco FC|competition won|2002\u201303 Coupe de la Ligue
+AS Monaco FC|country|Monaco
+AS Monaco FC|different from|Monaco national football team
+AS Monaco FC|genre|association football video game
+AS Monaco FC|has part(s)|AS Monaco FC II
+AS Monaco FC|head coach|Adi H\u00FCtter
+AS Monaco FC|headquarters location|Commune of Monaco
+AS Monaco FC|home venue|Stade Louis II
+AS Monaco FC|instance of|association football club
+AS Monaco FC|league or competition|Ligue 1
+AS Monaco FC|legal form|Soci\u00E9t\u00E9 Anonyme Mon\u00E9gasque
+AS Monaco FC|official color|red
+AS Monaco FC|official color|white
+AS Monaco FC|owned by|Dmitry Rybolovlev
+AS Monaco FC|owned by|House of Grimaldi
+AS Monaco FC|owner of|Stade Louis II
+AS Monaco FC|part of|Association sportive de Monaco
+AS Monaco FC|participant in|2020\u201321 Ligue 1
+AS Monaco FC|sport|association football
+AS Monaco FC|topic has template|Template:Fb team Monaco
+AS Monaco FC|topic's main category|Category:AS Monaco FC
+Arsenal F.C.|award received|BBC Sports Personality Team of the Year Award
+Arsenal F.C.|category for members of a team|Category:Arsenal F.C. players
+Arsenal F.C.|chairperson|Stan Kroenke
+Arsenal F.C.|competition won|1988\u201389 Football League First Division
+Arsenal F.C.|competition won|2003\u201304 FA Premier League
+Arsenal F.C.|country|United Kingdom
+Arsenal F.C.|different from|Arsenal W.F.C.
+Arsenal F.C.|founded by|David Danskin
+Arsenal F.C.|has works in the collection|Netherlands Open Air Museum
+Arsenal F.C.|head coach|Mikel Arteta
+Arsenal F.C.|headquarters location|London
+Arsenal F.C.|home venue|Emirates Stadium
+Arsenal F.C.|instance of|association football club
+Arsenal F.C.|league or competition|Premier League
+Arsenal F.C.|named after|Royal Arsenal
+Arsenal F.C.|official color|red
+Arsenal F.C.|official color|white
+Arsenal F.C.|owned by|Kroenke Sports & Entertainment
+Arsenal F.C.|owner of|Emirates Stadium
+Arsenal F.C.|owner of|Highbury Square
+Arsenal F.C.|owner of|Manor Ground, Plumstead
+Arsenal F.C.|participant in|1927 FA Cup Final
+Arsenal F.C.|participant in|1930 FA Cup Final
+Arsenal F.C.|participant in|1932 FA Cup Final
+Arsenal F.C.|participant in|1933 FA Cup Final
+Arsenal F.C.|participant in|1936 FA Cup Final
+Arsenal F.C.|participant in|1950 FA Cup Final
+Arsenal F.C.|participant in|1952 FA Cup Final
+Arsenal F.C.|participant in|1995 UEFA Cup Winners' Cup Final
+Arsenal F.C.|participant in|2016\u201317 Premier League
+Arsenal F.C.|participant in|2019 UEFA Europa League Final
+Arsenal F.C.|participant in|2019\u201320 Premier League
+Arsenal F.C.|sponsor|Emirates
+Arsenal F.C.|sport|association football
+Arsenal F.C.|statistical leader|David O'Leary
+Arsenal F.C.|statistical leader|Thierry Henry
+Arsenal F.C.|topic has template|Template:Arsenal F.C.
+Arsenal F.C.|topic has template|Template:Fb team Arsenal
+Arsenal F.C.|topic's main category|Category:Arsenal F.C.
+Belgium men's national football team|category for members of a team|Category:Belgium men's international footballers
+Belgium men's national football team|competition class|men's association football
+Belgium men's national football team|country for sport|Belgium
+Belgium men's national football team|country|Belgium
+Belgium men's national football team|head coach|Rudi Garcia
+Belgium men's national football team|history of topic|history of the Belgium national football team
+Belgium men's national football team|home venue|King Baudouin Stadium
+Belgium men's national football team|instance of|men's national association football team
+Belgium men's national football team|kit supplier|Adidas AG
+Belgium men's national football team|official color|black
+Belgium men's national football team|official color|red
+Belgium men's national football team|official color|yellow
+Belgium men's national football team|owned by|Royal Belgian Football Association
+Belgium men's national football team|participant in|1930 FIFA World Cup
+Belgium men's national football team|participant in|1934 FIFA World Cup
+Belgium men's national football team|participant in|1938 FIFA World Cup
+Belgium men's national football team|participant in|1954 FIFA World Cup
+Belgium men's national football team|participant in|1970 FIFA World Cup
+Belgium men's national football team|participant in|1982 FIFA World Cup
+Belgium men's national football team|participant in|1986 FIFA World Cup
+Belgium men's national football team|participant in|1990 FIFA World Cup
+Belgium men's national football team|participant in|1994 FIFA World Cup
+Belgium men's national football team|participant in|1998 FIFA World Cup
+Belgium men's national football team|participant in|2002 FIFA World Cup
+Belgium men's national football team|participant in|2014 FIFA World Cup
+Belgium men's national football team|participant in|2018 FIFA World Cup
+Belgium men's national football team|participant in|Cyprus v Belgium
+Belgium men's national football team|sport|association football
+Belgium men's national football team|statistical leader|Jan Vertonghen
+Belgium men's national football team|statistical leader|Romelu Lukaku
+Belgium men's national football team|team captain|Jan Vertonghen
+Belgium men's national football team|topic has template|Template:Belgium national football team
+Belgium men's national football team|topic's main category|Category:Belgium national football team
+Belgium|Wikimedia outline|outline of Belgium
+Belgium|\u200Emost populous urban area|Brussels-Capital Region
+Belgium|anthem|The Braban\u00E7onne
+Belgium|basic form of government|constitutional monarchy
+Belgium|basic form of government|parliamentary monarchy
+Belgium|capital|City of Brussels
+Belgium|category for films shot at this location|Category:Films shot in Belgium
+Belgium|category for honorary citizens of entity|Category:Honorary citizens of Belgium
+Belgium|category for maps or plans|Category:Maps of Belgium
+Belgium|category for people born here|Category:Births in Belgium
+Belgium|category for people buried here|Category:Burials in Belgium
+Belgium|category for people who died here|Category:Deaths in Belgium
+Belgium|category of associated people|Category:Belgian people
+Belgium|central bank|National Bank of Belgium
+Belgium|coat of arms|coat of arms of Belgium
+Belgium|contains the administrative territorial entity|Brussels-Capital Region
+Belgium|contains the administrative territorial entity|Flemish Community
+Belgium|contains the administrative territorial entity|Flemish Region
+Belgium|contains the administrative territorial entity|French Community of Belgium
+Belgium|contains the administrative territorial entity|German-speaking Community of Belgium
+Belgium|contains the administrative territorial entity|Wallonia
+Belgium|continent|Europe
+Belgium|country|Belgium
+Belgium|culture|culture of Belgium
+Belgium|currency|euro
+Belgium|demographics of topic|demographics of Belgium
+Belgium|described by source|1922 Encyclop\u00E6dia Britannica
+Belgium|described by source|Armenian Soviet Encyclopedia
+Belgium|described by source|Brockhaus and Efron Encyclopedic Dictionary
+Belgium|described by source|Catholic Encyclopedia
+Belgium|described by source|Draft History of Qing
+Belgium|described by source|Encyclop\u00E6dia Britannica 11th edition
+Belgium|described by source|Granat Encyclopedic Dictionary
+Belgium|described by source|Great Soviet Encyclopedia (1926\u20131947)
+Belgium|described by source|Jewish Encyclopedia of Brockhaus and Efron
+Belgium|described by source|Orthodox Theological Encyclopedia
+Belgium|described by source|Pax Leksikon
+Belgium|described by source|Small Brockhaus and Efron Encyclopedic Dictionary
+Belgium|described by source|Sytin Military Encyclopedia
+Belgium|described by source|TASS Encyclopedia
+Belgium|described by source|The Nuttall Encyclop\u00E6dia
+Belgium|different from|Belgi\u00EB
+Belgium|different from|Belgique
+Belgium|different from|Belgium
+Belgium|diplomatic relation|Australia
+Belgium|diplomatic relation|Canada
+Belgium|diplomatic relation|Democratic Republic of the Congo
+Belgium|diplomatic relation|Denmark
+Belgium|diplomatic relation|France
+Belgium|diplomatic relation|Georgia
+Belgium|diplomatic relation|Germany
+Belgium|diplomatic relation|Greece
+Belgium|diplomatic relation|Hungary
+Belgium|diplomatic relation|India
+Belgium|diplomatic relation|Indonesia
+Belgium|diplomatic relation|Israel
+Belgium|diplomatic relation|Italy
+Belgium|diplomatic relation|Kingdom of the Netherlands
+Belgium|diplomatic relation|Kosovo
+Belgium|diplomatic relation|Liechtenstein
+Belgium|diplomatic relation|Luxembourg
+Belgium|diplomatic relation|Malaysia
+Belgium|diplomatic relation|Mauritius
+Belgium|diplomatic relation|Mexico
+Belgium|diplomatic relation|Netherlands
+Belgium|diplomatic relation|North Korea
+Belgium|diplomatic relation|Pakistan
+Belgium|diplomatic relation|People's Republic of China
+Belgium|diplomatic relation|Russia
+Belgium|diplomatic relation|Taiwan
+Belgium|diplomatic relation|Turkey
+Belgium|diplomatic relation|Ukraine
+Belgium|diplomatic relation|United Kingdom
+Belgium|diplomatic relation|United States
+Belgium|diplomatic relation|Uruguay
+Belgium|driving side|right
+Belgium|economy of topic|economy of Belgium
+Belgium|electrical plug type|Europlug
+Belgium|electrical plug type|Type E
+Belgium|emergency phone number|100
+Belgium|emergency phone number|101
+Belgium|emergency phone number|102
+Belgium|emergency phone number|112
+Belgium|executive body|Federal Government of Belgium
+Belgium|flag|flag of Belgium
+Belgium|geography of topic|geography of Belgium
+Belgium|has characteristic|free country
+Belgium|has part(s)|Brussels-Capital Region
+Belgium|has part(s)|Flanders
+Belgium|has part(s)|Flemish Community
+Belgium|has part(s)|Flemish Region
+Belgium|has part(s)|French Community of Belgium
+Belgium|has part(s)|German-speaking Community of Belgium
+Belgium|has part(s)|Wallonia
+Belgium|head of government|Bart De Wever
+Belgium|head of state|Philippe of Belgium
+Belgium|highest judicial authority|Belgian Court of Cassation
+Belgium|highest judicial authority|Constitutional Court of Belgium
+Belgium|highest judicial authority|Council of State
+Belgium|highest point|Signal de Botrange
+Belgium|history of topic|history of Belgium
+Belgium|instance of|country
+Belgium|instance of|federation
+Belgium|instance of|sovereign state
+Belgium|language used|Belgian Dutch
+Belgium|language used|Belgian French
+Belgium|language used|Brusselian
+Belgium|language used|Champenois
+Belgium|language used|Dutch
+Belgium|language used|Flemish
+Belgium|language used|Flemish Sign Language
+Belgium|language used|French
+Belgium|language used|French Belgian Sign Language
+Belgium|language used|German
+Belgium|language used|German Sign Language
+Belgium|language used|Limburgish
+Belgium|language used|Lorrain
+Belgium|language used|Low Dietsch dialects
+Belgium|language used|Luxembourgish
+Belgium|language used|Picard
+Belgium|language used|Sinte Romani
+Belgium|language used|Walloon
+Belgium|language used|West Flemish
+Belgium|language used|Yiddish
+Belgium|legislative body|Belgian Federal Parliament
+Belgium|located in or next to body of water|North Sea
+Belgium|located in time zone|UTC+01:00
+Belgium|located in time zone|UTC+02:00
+Belgium|located in/on physical feature|Western Europe
+Belgium|lowest point|De Moeren
+Belgium|main regulatory text|Constitution of Belgium
+Belgium|maintained by WikiProject|WikiProject Belgium
+Belgium|member of|African Development Bank
+Belgium|member of|Antarctic Treaty System
+Belgium|member of|Asian Development Bank
+Belgium|member of|Australia Group
+Belgium|member of|Belgium\u2013Luxembourg Economic Union
+Belgium|member of|Benelux
+Belgium|member of|Council of Europe
+Belgium|member of|Dutch Language Union
+Belgium|member of|Eurocontrol
+Belgium|member of|European Air Transport Command
+Belgium|member of|European Coal and Steel Community
+Belgium|member of|European Payments Union
+Belgium|member of|European Southern Observatory
+Belgium|member of|European Space Agency
+Belgium|member of|European Union
+Belgium|member of|Global Biodiversity Information Facility
+Belgium|member of|Group on Earth Observations
+Belgium|member of|International Bank for Reconstruction and Development
+Belgium|member of|International Centre for Settlement of Investment Disputes
+Belgium|member of|International Development Association
+Belgium|member of|International Energy Agency
+Belgium|member of|International Finance Corporation
+Belgium|member of|International Holocaust Remembrance Alliance
+Belgium|member of|International Hydrographic Organization
+Belgium|member of|International Telecommunication Union
+Belgium|member of|Interpol
+Belgium|member of|Missile Technology Control Regime
+Belgium|member of|Movement Coordination Centre Europe
+Belgium|member of|Multilateral Investment Guarantee Agency
+Belgium|member of|NATO
+Belgium|member of|Nuclear Suppliers Group
+Belgium|member of|Organisation for Joint Armament Cooperation
+Belgium|member of|Organisation for the Prohibition of Chemical Weapons
+Belgium|member of|Organisation internationale de la Francophonie
+Belgium|member of|Organization for Economic Cooperation and Development
+Belgium|member of|Organization for Security and Co-operation in Europe
+Belgium|member of|Schengen Area
+Belgium|member of|Treaty on Open Skies
+Belgium|member of|Treaty on the Non-Proliferation of Nuclear Weapons
+Belgium|member of|UNESCO
+Belgium|member of|United Nations
+Belgium|member of|Universal Postal Union UPU
+Belgium|member of|Visa Waiver Program
+Belgium|member of|World Customs Organization
+Belgium|member of|World Health Organization
+Belgium|member of|World Meteorological Organization
+Belgium|member of|World Trade Organization
+Belgium|motto|Unity makes strength
+Belgium|named after|Belgae
+Belgium|named after|Gallia Belgica
+Belgium|office held by head of government|Prime Minister of Belgium
+Belgium|office held by head of state|Monarch of the Belgians
+Belgium|official language|Dutch
+Belgium|official language|French
+Belgium|official language|German
+Belgium|official symbol|Papaver rhoeas
+Belgium|on focus list of Wikimedia project|WikiProject Zika Corpus
+Belgium|on focus list of Wikimedia project|Wikipedia:Vital articles/Level/4
+Belgium|open data portal|data.gov.be
+Belgium|owner of|Meise Botanic Garden
+Belgium|owner of|Memorial interalli\u00E9 de Cointe
+Belgium|part of|Allies of the First World War
+Belgium|part of|Benelux
+Belgium|part of|Europe
+Belgium|part of|European Economic Area
+Belgium|part of|European Union
+Belgium|part of|Low Countries
+Belgium|part of|Western Europe
+Belgium|patron saint|Joseph
+Belgium|public holiday|All Saints' Day
+Belgium|public holiday|Armistice Day
+Belgium|public holiday|Assumption of Mary
+Belgium|public holiday|Belgian National Day
+Belgium|public holiday|Christmas Day
+Belgium|public holiday|Easter
+Belgium|public holiday|Easter Monday
+Belgium|public holiday|Feast of the Ascension
+Belgium|public holiday|New Year's Day
+Belgium|public holiday|Pentecost
+Belgium|public holiday|Whit Monday
+Belgium|railway traffic side|left
+Belgium|replaces|United Kingdom of the Netherlands
+Belgium|represented by|Belgian State
+Belgium|shares border with|France
+Belgium|shares border with|Germany
+Belgium|shares border with|Kingdom of the Netherlands
+Belgium|shares border with|Luxembourg
+Belgium|shares border with|Netherlands
+Belgium|significant event|Belgian Revolution
+Belgium|significant event|Treaty of London
+Belgium|top-level Internet domain|.be
+Belgium|topic has template|Template:Subdivisions of Belgium
+Belgium|topic's main Wikimedia portal|Portal:Belgium
+Belgium|topic's main category|Category:Belgium
+CF Montr\u00E9al|category for members of a team|Category:CF Montr\u00E9al players
+CF Montr\u00E9al|country|Canada
+CF Montr\u00E9al|has part(s)|roster of Montreal Impact
+CF Montr\u00E9al|headquarters location|Montreal
+CF Montr\u00E9al|home venue|Saputo Stadium
+CF Montr\u00E9al|instance of|association football club
+CF Montr\u00E9al|instance of|association football team
+CF Montr\u00E9al|league or competition|Major League Soccer
+CF Montr\u00E9al|parent organization|Major League Soccer
+CF Montr\u00E9al|replaces|Montreal Impact
+CF Montr\u00E9al|sponsor|Bank of Montreal
+CF Montr\u00E9al|sport|association football
+CF Montr\u00E9al|topic has template|Template:CF Montr\u00E9al
+CF Montr\u00E9al|topic's main category|Category:CF Montr\u00E9al
+Category:Thierry Henry|category's main topic|Thierry Henry
+Category:Thierry Henry|instance of|Wikimedia category
+Category:Thierry Henry|on focus list of Wikimedia project|Commons categories: recently created wikidata items 3
+Chelsea F.C.|category for members of a team|Category:Chelsea F.C. players
+Chelsea F.C.|chairperson|Todd Boehly
+Chelsea F.C.|competition won|1997\u201398 UEFA Cup Winners' Cup
+Chelsea F.C.|competition won|2011\u201312 UEFA Champions League
+Chelsea F.C.|competition won|2018\u201319 UEFA Europa League
+Chelsea F.C.|country|United Kingdom
+Chelsea F.C.|described by source|Lentapedia
+Chelsea F.C.|founded by|Gus Mears
+Chelsea F.C.|founded by|Joseph Mears
+Chelsea F.C.|head coach|Enzo Maresca
+Chelsea F.C.|headquarters location|London
+Chelsea F.C.|history of topic|history of Chelsea F.C.
+Chelsea F.C.|home venue|Stamford Bridge
+Chelsea F.C.|instance of|association football club
+Chelsea F.C.|league or competition|Premier League
+Chelsea F.C.|official color|royal blue
+Chelsea F.C.|owned by|Todd Boehly
+Chelsea F.C.|owner of|Cobham Training Centre
+Chelsea F.C.|participant in|1915 FA Cup Final
+Chelsea F.C.|participant in|2013\u201314 Premier League
+Chelsea F.C.|participant in|2014\u201315 Premier League
+Chelsea F.C.|participant in|2015\u201316 Premier League
+Chelsea F.C.|participant in|2016\u201317 Premier League
+Chelsea F.C.|participant in|2017\u201318 Premier League
+Chelsea F.C.|participant in|2018\u201319 Premier League
+Chelsea F.C.|participant in|2019\u201320 Premier League
+Chelsea F.C.|participant in|2019\u201320 UEFA Champions League
+Chelsea F.C.|participant in|2020\u201321 Premier League
+Chelsea F.C.|participant in|2021\u201322 Premier League
+Chelsea F.C.|participant in|2022\u201323 Premier League
+Chelsea F.C.|participant in|2023\u201324 Premier League
+Chelsea F.C.|sponsor|Yokohama Rubber Company
+Chelsea F.C.|sport|association football
+Chelsea F.C.|statistical leader|Frank Lampard
+Chelsea F.C.|statistical leader|Ron Harris
+Chelsea F.C.|topic has template|Template:Chelsea F.C.
+Chelsea F.C.|topic has template|Template:Fb team Chelsea
+Chelsea F.C.|topic's main category|Category:Chelsea F.C.
+Eden Hazard|award received|PFA Players' Player of the Year
+Eden Hazard|country for sport|Belgium
+Eden Hazard|country of citizenship|Belgium
+Eden Hazard|family name|Hazard
+Eden Hazard|father|Thierry Hazard
+Eden Hazard|given name|Eden
+Eden Hazard|hair color|black hair
+Eden Hazard|instance of|human
+Eden Hazard|languages spoken, written or signed|French
+Eden Hazard|league or competition|La Liga
+Eden Hazard|league or competition|Ligue 1
+Eden Hazard|league or competition|Premier League
+Eden Hazard|member of sports team|Belgium men's national football team
+Eden Hazard|member of sports team|Chelsea F.C.
+Eden Hazard|member of sports team|Lille OSC
+Eden Hazard|member of sports team|Lille OSC II
+Eden Hazard|member of sports team|Real Madrid CF
+Eden Hazard|native language|French
+Eden Hazard|occupation|association football player
+Eden Hazard|participant in|2014 FIFA World Cup
+Eden Hazard|participant in|2018 FIFA World Cup
+Eden Hazard|participant in|2022 FIFA World Cup
+Eden Hazard|participant in|UEFA Euro 2016
+Eden Hazard|participant in|UEFA Euro 2020
+Eden Hazard|place of birth|La Louvi\u00E8re
+Eden Hazard|position played on team / speciality|winger
+Eden Hazard|sex or gender|male
+Eden Hazard|sibling|Ethan Hazard
+Eden Hazard|sibling|Kylian Hazard
+Eden Hazard|sibling|Thorgan Hazard
+Eden Hazard|sport|association football
+Eden|different from|Eden
+Eden|family name identical to this given name|Eden
+Eden|instance of|given name
+Eden|instance of|male given name
+Eden|instance of|unisex given name
+Eden|language of work or name|Italian
+Eden|language of work or name|West Frisian
+Eden|part of|Eden
+Eden|said to be the same as|Aiden
+Eden|said to be the same as|Dena
+Eden|said to be the same as|E-den
+Eden|said to be the same as|Ed\u00E9n
+Eden|said to be the same as|Edin
+Eden|said to be the same as|Edina
+Eden|said to be the same as|I-deun
+Eden|writing system|Latin script
+English|Ethnologue language status|0 International
+English|UNESCO language status|1 safe
+English|category for films in this language|Category:English-language films
+English|country|American Samoa
+English|country|Anguilla
+English|country|Antigua and Barbuda
+English|country|Aruba
+English|country|Australia
+English|country|Bahrain
+English|country|Barbados
+English|country|Belize
+English|country|Bermuda
+English|country|Bhutan
+English|country|Botswana
+English|country|British Indian Ocean Territory
+English|country|British Virgin Islands
+English|country|Brunei
+English|country|Cambodia
+English|country|Cameroon
+English|country|Canada
+English|country|Cayman Islands
+English|country|Cook Islands
+English|country|Dominica
+English|country|Eritrea
+English|country|Eswatini
+English|country|Ethiopia
+English|country|Falkland Islands
+English|country|Federated States of Micronesia
+English|country|Fiji
+English|country|Ghana
+English|country|Gibraltar
+English|country|Grenada
+English|country|Guernsey
+English|country|Guyana
+English|country|India
+English|country|Indonesia
+English|country|Ireland
+English|country|Isle of Man
+English|country|Israel
+English|country|Jamaica
+English|country|Jersey
+English|country|Kenya
+English|country|Kiribati
+English|country|Lebanon
+English|country|Lesotho
+English|country|Liberia
+English|country|Madagascar
+English|country|Malawi
+English|country|Malaysia
+English|country|Maldives
+English|country|Malta
+English|country|Marshall Islands
+English|country|Mauritius
+English|country|Montserrat
+English|country|Namibia
+English|country|Nauru
+English|country|New Zealand
+English|country|Nigeria
+English|country|Niue
+English|country|Oman
+English|country|Pakistan
+English|country|Palau
+English|country|Papua New Guinea
+English|country|Philippines
+English|country|Pitcairn Islands
+English|country|Rwanda
+English|country|Saint Helena, Ascension and Tristan da Cunha
+English|country|Saint Kitts and Nevis
+English|country|Saint Lucia
+English|country|Saint Vincent and the Grenadines
+English|country|Saint-Martin
+English|country|Samoa
+English|country|Seychelles
+English|country|Sierra Leone
+English|country|Singapore
+English|country|Sint Maarten
+English|country|Solomon Islands
+English|country|South Africa
+English|country|South Sudan
+English|country|Sri Lanka
+English|country|Sudan
+English|country|Tanzania
+English|country|The Bahamas
+English|country|The Gambia
+English|country|Tokelau
+English|country|Tonga
+English|country|Trinidad and Tobago
+English|country|Turks and Caicos Islands
+English|country|Tuvalu
+English|country|Uganda
+English|country|United Arab Emirates
+English|country|United Kingdom
+English|country|United States
+English|country|United States Virgin Islands
+English|country|Vanuatu
+English|country|Zambia
+English|country|Zimbabwe
+English|described by source|Armenian Soviet Encyclopedia, vol. 1
+English|described by source|Brockhaus and Efron Encyclopedic Dictionary
+English|described by source|Encyclop\u00E6dia Britannica 11th edition
+English|described by source|Encyclopedic Lexicon
+English|described by source|Granat Encyclopedic Dictionary
+English|described by source|Great Soviet Encyclopedia (1926\u20131947)
+English|described by source|Small Brockhaus and Efron Encyclopedic Dictionary
+English|different from|Engelsk
+English|different from|Englisch
+English|different from|English
+English|different from|Ingl\u00E9s
+English|different from|Ingles
+English|different from|\u00C4ngelsk
+English|has characteristic|agreement
+English|has edition or translation|Two-fisted science : Vannikov the reflector
+English|has grammatical case|genitive case
+English|has grammatical case|nominative case
+English|has grammatical case|oblique case
+English|has grammatical gender|feminine
+English|has grammatical gender|masculine
+English|has grammatical gender|neuter
+English|has grammatical mood|indicative
+English|has grammatical mood|interrogative
+English|has grammatical mood|subjunctive
+English|has grammatical person|first-person plural
+English|has grammatical person|first-person singular
+English|has grammatical person|second-person plural
+English|has grammatical person|second-person singular
+English|has grammatical person|third-person feminine singular
+English|has grammatical person|third-person masculine singular
+English|has grammatical person|third-person neuter singular
+English|has grammatical person|third-person plural
+English|has part(s)|African American Vernacular English
+English|has part(s)|American English
+English|has part(s)|Australian English
+English|has part(s)|Belizean English
+English|has part(s)|British English
+English|has part(s)|Canadian English
+English|has part(s)|Caribbean English
+English|has part(s)|Euro English
+English|has part(s)|Hiberno-English
+English|has part(s)|Hong Kong English
+English|has part(s)|Indian English
+English|has part(s)|Jamaican English
+English|has part(s)|New Zealand English
+English|has part(s)|Nigerian English
+English|has part(s)|Pakistani English
+English|has part(s)|Quebec English
+English|has part(s)|Scottish English
+English|has part(s)|South African English
+English|has part(s)|Welsh English
+English|has part(s)|received pronunciation
+English|has phoneme|close back rounded vowel
+English|has phoneme|close front unrounded vowel
+English|has phoneme|close-mid back rounded vowel
+English|has phoneme|mid front unrounded vowel
+English|has phoneme|near-close near-back rounded vowel
+English|has phoneme|near-close near-front unrounded vowel
+English|has phoneme|near-open central unrounded vowel
+English|has phoneme|near-open front unrounded vowel
+English|has phoneme|open back rounded vowel
+English|has phoneme|open back unrounded vowel
+English|has phoneme|open-mid back rounded vowel
+English|has phoneme|open-mid front unrounded vowel
+English|has phoneme|schwa
+English|has phoneme|voiced alveolar approximant
+English|has phoneme|voiced alveolar fricative
+English|has phoneme|voiced alveolar lateral approximant
+English|has phoneme|voiced alveolar nasal
+English|has phoneme|voiced bilabial nasal
+English|has phoneme|voiced bilabial plosive
+English|has phoneme|voiced dental fricative
+English|has phoneme|voiced labio-velar approximant
+English|has phoneme|voiced labiodental fricative
+English|has phoneme|voiced palatal approximant
+English|has phoneme|voiced palato-alveolar affricate
+English|has phoneme|voiced palato\u2010alveolar sibilant
+English|has phoneme|voiced velar nasal
+English|has phoneme|voiceless alveolar fricative
+English|has phoneme|voiceless alveolar stop
+English|has phoneme|voiceless bilabial plosive
+English|has phoneme|voiceless dental fricative
+English|has phoneme|voiceless glottal fricative
+English|has phoneme|voiceless labiodental fricative
+English|has phoneme|voiceless palato-alveolar affricate
+English|has phoneme|voiceless palato\u2010alveolar fricative
+English|has phoneme|voiceless velar stop
+English|has tense|continuous pluperfect
+English|has tense|future continuous
+English|has tense|future perfect
+English|has tense|future perfect continuous
+English|has tense|past continuous
+English|has tense|past perfect
+English|has tense|present continuous
+English|has tense|present perfect
+English|has tense|present perfect continuous
+English|has tense|simple future
+English|has tense|simple past
+English|has tense|simple present
+English|history of topic|history of English
+English|indigenous to|England
+English|influenced by|French
+English|influenced by|Germanic languages
+English|influenced by|Greek
+English|influenced by|Old Danish
+English|influenced by|Vulgar Latin
+English|instance of|human language
+English|instance of|language
+English|instance of|literary language
+English|instance of|macrolanguage
+English|instance of|modern language
+English|instance of|natural language
+English|instance of|standard language
+English|linguistic typology|fusional language
+English|linguistic typology|nominative\u2013accusative language
+English|linguistic typology|place\u2013manner\u2013time
+English|linguistic typology|stress-timed language
+English|linguistic typology|subject\u2013verb\u2013object
+English|maintained by WikiProject|Wiktionary:About English
+English|named after|England
+English|on focus list of Wikimedia project|Wikipedia:List of articles all languages should have
+English|on focus list of Wikimedia project|Wikipedia:Vital articles/Level/4
+English|opposite of|non-English
+English|permanent duplicated item|English
+English|related category|Category:English pronunciation
+English|related category|Category:English-language animated films
+English|said to be the same as|Oldspeak
+English|signed form|manually coded English
+English|studied by|English studies
+English|subclass of|Anglic
+English|topic has template|Template:En icon
+English|topic's main Wikimedia portal|Portal:English
+English|topic's main category|Category:English language
+English|uses capitalization for|calendar month
+English|uses capitalization for|day of the week
+English|uses capitalization for|demonym
+English|uses capitalization for|language
+English|uses capitalization for|linguonym
+English|uses capitalization for|proper noun
+English|uses capitalization for|religion
+English|uses capitalization for|religious denomination
+English|writing system|English orthography
+English|writing system|Latin script
+Ethan Hazard|country for sport|Belgium
+Ethan Hazard|country of citizenship|Belgium
+Ethan Hazard|family name|Hazard
+Ethan Hazard|father|Thierry Hazard
+Ethan Hazard|given name|Ethan
+Ethan Hazard|instance of|human
+Ethan Hazard|occupation|association football player
+Ethan Hazard|occupation|reality television participant
+Ethan Hazard|place of birth|La Louvi\u00E8re
+Ethan Hazard|sex or gender|male
+Ethan Hazard|sibling|Eden Hazard
+Ethan Hazard|sibling|Kylian Hazard
+Ethan Hazard|sibling|Thorgan Hazard
+Ethan Hazard|sport|association football
+European Golden Shoe|conferred by|European Sports Media
+European Golden Shoe|instance of|sports award
+European Golden Shoe|sport|association football
+European Golden Shoe|topic has template|Template:European Golden Shoe
+European Golden Shoe|topic's main category|Category:European Golden Shoe
+FC Barcelona|affiliation|Royal Spanish Football Federation
+FC Barcelona|anthem|Cant del Bar\u00E7a
+FC Barcelona|award received|Copa Stadium
+FC Barcelona|award received|FIFA Fair Play Award
+FC Barcelona|award received|IFFHS World's Best Club
+FC Barcelona|award received|Laureus Spirit of Sport Award
+FC Barcelona|award received|Laureus World Sports Award for Team of the Year
+FC Barcelona|board member|Eduard Romeu Barcel\u00F3
+FC Barcelona|board member|Josep Cubells i Rib\u00E9
+FC Barcelona|board member|Maria Elena Fort i Cisneros
+FC Barcelona|board member|Rafael Yuste
+FC Barcelona|category for members of a team|Category:FC Barcelona players
+FC Barcelona|chairperson|Joan Laporta
+FC Barcelona|chief executive officer|Ferran Reverter
+FC Barcelona|competition class|men's association football
+FC Barcelona|competition won|1910 Copa del Rey
+FC Barcelona|competition won|1912 Copa del Rey
+FC Barcelona|competition won|1913 Copa del Rey
+FC Barcelona|competition won|1920 Copa del Rey
+FC Barcelona|competition won|1922 Copa del Rey
+FC Barcelona|competition won|1925 Copa del Rey
+FC Barcelona|competition won|1926 Copa del Rey
+FC Barcelona|competition won|1928 Copa del Rey
+FC Barcelona|competition won|1929 La Liga
+FC Barcelona|competition won|1942 Copa del General\u00EDsimo
+FC Barcelona|competition won|1944\u201345 La Liga
+FC Barcelona|competition won|1947\u201348 La Liga
+FC Barcelona|competition won|1948\u201349 La Liga
+FC Barcelona|competition won|1949 Latin Cup
+FC Barcelona|competition won|1951 Copa del General\u00EDsimo
+FC Barcelona|competition won|1951\u201352 La Liga
+FC Barcelona|competition won|1952 Copa del General\u00EDsimo
+FC Barcelona|competition won|1952 Latin Cup
+FC Barcelona|competition won|1952\u201353 Copa del General\u00EDsimo
+FC Barcelona|competition won|1952\u201353 La Liga
+FC Barcelona|competition won|1955\u201358 Inter-Cities Fairs Cup
+FC Barcelona|competition won|1957 Copa del General\u00EDsimo
+FC Barcelona|competition won|1958\u201359 Copa del General\u00EDsimo
+FC Barcelona|competition won|1958\u201359 La Liga
+FC Barcelona|competition won|1958\u201360 Inter-Cities Fairs Cup
+FC Barcelona|competition won|1959\u201360 La Liga
+FC Barcelona|competition won|1962\u201363 Copa del General\u00EDsimo
+FC Barcelona|competition won|1965\u201366 Inter-Cities Fairs Cup
+FC Barcelona|competition won|1967\u201368 Copa del General\u00EDsimo
+FC Barcelona|competition won|1970\u201371 Copa del General\u00EDsimo
+FC Barcelona|competition won|1973\u201374 La Liga
+FC Barcelona|competition won|1977\u201378 Copa del Rey
+FC Barcelona|competition won|1978\u201379 European Cup Winners' Cup
+FC Barcelona|competition won|1980\u201381 Copa del Rey
+FC Barcelona|competition won|1981\u201382 European Cup Winners' Cup
+FC Barcelona|competition won|1982\u201383 Copa del Rey
+FC Barcelona|competition won|1983 Copa de la Liga
+FC Barcelona|competition won|1983 Supercopa de Espa\u00F1a
+FC Barcelona|competition won|1984\u201385 La Liga
+FC Barcelona|competition won|1986 Copa de la Liga
+FC Barcelona|competition won|1987\u201388 Copa del Rey
+FC Barcelona|competition won|1988\u201389 European Cup Winners' Cup
+FC Barcelona|competition won|1989\u201390 Copa del Rey
+FC Barcelona|competition won|1990\u201391 La Liga
+FC Barcelona|competition won|1991 Supercopa de Espa\u00F1a
+FC Barcelona|competition won|1991\u201392 European Cup
+FC Barcelona|competition won|1991\u201392 La Liga
+FC Barcelona|competition won|1992 European Super Cup
+FC Barcelona|competition won|1992 Supercopa de Espa\u00F1a
+FC Barcelona|competition won|1992\u201393 La Liga
+FC Barcelona|competition won|1993\u201394 La Liga
+FC Barcelona|competition won|1994 Supercopa de Espa\u00F1a
+FC Barcelona|competition won|1996 Supercopa de Espa\u00F1a
+FC Barcelona|competition won|1996\u201397 Copa del Rey
+FC Barcelona|competition won|1996\u201397 UEFA Cup Winners' Cup
+FC Barcelona|competition won|1997 UEFA Super Cup
+FC Barcelona|competition won|1997\u201398 Copa del Rey
+FC Barcelona|competition won|1997\u201398 La Liga
+FC Barcelona|competition won|1998\u201399 La Liga
+FC Barcelona|competition won|2004\u201305 La Liga
+FC Barcelona|competition won|2005 Supercopa de Espa\u00F1a
+FC Barcelona|competition won|2005\u201306 La Liga
+FC Barcelona|competition won|2005\u201306 UEFA Champions League
+FC Barcelona|competition won|2006 Supercopa de Espa\u00F1a
+FC Barcelona|competition won|2008\u201309 Copa del Rey
+FC Barcelona|competition won|2008\u201309 La Liga
+FC Barcelona|competition won|2008\u201309 UEFA Champions League
+FC Barcelona|competition won|2009 FIFA Club World Cup
+FC Barcelona|competition won|2009 Supercopa de Espa\u00F1a
+FC Barcelona|competition won|2009 UEFA Super Cup
+FC Barcelona|competition won|2009\u201310 La Liga
+FC Barcelona|competition won|2010 Supercopa de Espa\u00F1a
+FC Barcelona|competition won|2010\u201311 La Liga
+FC Barcelona|competition won|2010\u201311 UEFA Champions League
+FC Barcelona|competition won|2011 FIFA Club World Cup
+FC Barcelona|competition won|2011 Supercopa de Espa\u00F1a
+FC Barcelona|competition won|2011 UEFA Super Cup
+FC Barcelona|competition won|2011\u201312 Copa del Rey
+FC Barcelona|competition won|2012\u201313 La Liga
+FC Barcelona|competition won|2013 Supercopa de Espa\u00F1a
+FC Barcelona|competition won|2014\u201315 Copa del Rey
+FC Barcelona|competition won|2014\u201315 La Liga
+FC Barcelona|competition won|2014\u201315 UEFA Champions League
+FC Barcelona|competition won|2015 FIFA Club World Cup
+FC Barcelona|competition won|2015 UEFA Super Cup
+FC Barcelona|competition won|2015\u201316 Copa del Rey
+FC Barcelona|competition won|2015\u201316 La Liga
+FC Barcelona|competition won|2016 Supercopa de Espa\u00F1a
+FC Barcelona|competition won|2016\u201317 Copa del Rey
+FC Barcelona|competition won|2017\u201318 Copa del Rey
+FC Barcelona|competition won|2017\u201318 La Liga
+FC Barcelona|competition won|2018 Supercopa de Espa\u00F1a
+FC Barcelona|competition won|2018\u201319 La Liga
+FC Barcelona|competition won|2020\u20132021 Copa del Rey
+FC Barcelona|competition won|2022\u201323 La Liga
+FC Barcelona|competition won|2023 Supercopa de Espa\u00F1a
+FC Barcelona|country|Spain
+FC Barcelona|described by source|Lentapedia
+FC Barcelona|different from|FC Barcelona
+FC Barcelona|director / manager|Deco
+FC Barcelona|field of work|association football
+FC Barcelona|founded by|Hans Max Gamper-Haessig
+FC Barcelona|general manager|Jos\u00E9 Segura
+FC Barcelona|has part(s)|FC Barcelona Atl\u00E8tic
+FC Barcelona|has part(s)|FC Barcelona C
+FC Barcelona|has part(s)|FC Barcelona Juvenil A
+FC Barcelona|head coach|Hansi Flick
+FC Barcelona|headquarters location|Barcelona
+FC Barcelona|history of topic|history of FC Barcelona
+FC Barcelona|home venue|Llu\u00EDs Companys Olympic Stadium
+FC Barcelona|instance of|association football club
+FC Barcelona|instance of|men's association football team
+FC Barcelona|instance of|professional sports team
+FC Barcelona|instance of|representation team
+FC Barcelona|kit supplier|Nike
+FC Barcelona|league or competition|La Liga
+FC Barcelona|legal form|Spanish association
+FC Barcelona|located in the administrative territorial entity|Barcelona
+FC Barcelona|located in the administrative territorial entity|La Maternitat i Sant Ramon
+FC Barcelona|location of formation|Barcelona
+FC Barcelona|location|Camp Nou
+FC Barcelona|member of|FIFA
+FC Barcelona|member of|Union of European Football Associations
+FC Barcelona|motto|M\u00E9s que un club
+FC Barcelona|named after|Barcelona
+FC Barcelona|nominated for|Laureus World Sports Award for Team of the Year
+FC Barcelona|official color|blue
+FC Barcelona|official color|red
+FC Barcelona|official language|Catalan
+FC Barcelona|on focus list of Wikimedia project|WikiProject Football
+FC Barcelona|on focus list of Wikimedia project|WikiProject Football in Spain
+FC Barcelona|operating area|Spain
+FC Barcelona|owner of|Bar\u00E7a Camp Nou
+FC Barcelona|owner of|Bar\u00E7a TV+
+FC Barcelona|owner of|Camp Nou
+FC Barcelona|owner of|Camp de Les Corts
+FC Barcelona|owner of|Camp del Carrer Ind\u00FAstria
+FC Barcelona|owner of|Ciutat Esportiva Joan Gamper
+FC Barcelona|owner of|FC Barcelona Documentation and Study Centre
+FC Barcelona|owner of|FC Barcelona Museum
+FC Barcelona|owner of|FC Barcelona media
+FC Barcelona|owner of|FCBotiga
+FC Barcelona|owner of|La Masia
+FC Barcelona|parent club|FC Barcelona
+FC Barcelona|parent organization|FC Barcelona
+FC Barcelona|part of|FC Barcelona
+FC Barcelona|participant in|1902 Copa de la Coronaci\u00F3n Final
+FC Barcelona|participant in|1909 Copa del Rey
+FC Barcelona|participant in|1910 Copa del Rey Final
+FC Barcelona|participant in|1911 Copa del Rey
+FC Barcelona|participant in|1912 Copa del Rey Final
+FC Barcelona|participant in|1913 Copa del Rey Final
+FC Barcelona|participant in|1916 Copa del Rey
+FC Barcelona|participant in|1919 Copa del Rey Final
+FC Barcelona|participant in|1920 Copa del Rey Final
+FC Barcelona|participant in|1922 Copa del Rey Final
+FC Barcelona|participant in|1924 Copa del Rey
+FC Barcelona|participant in|1925 Copa del Rey Final
+FC Barcelona|participant in|1926 Copa del Rey Final
+FC Barcelona|participant in|1927 Copa del Rey
+FC Barcelona|participant in|1928 Copa del Rey Final
+FC Barcelona|participant in|1929 Copa del Rey Final
+FC Barcelona|participant in|1929 La Liga
+FC Barcelona|participant in|1929\u201330 La Liga
+FC Barcelona|participant in|1930 Copa del Rey
+FC Barcelona|participant in|1930\u201331 La Liga
+FC Barcelona|participant in|1931 Copa del Rey
+FC Barcelona|participant in|1931\u201332 La Liga
+FC Barcelona|participant in|1932 Copa del Rey Final
+FC Barcelona|participant in|1932\u201333 La Liga
+FC Barcelona|participant in|1933 Copa del Presidente de la Rep\u00FAblica
+FC Barcelona|participant in|1933\u201334 La Liga
+FC Barcelona|participant in|1934 Copa del Presidente de la Rep\u00FAblica
+FC Barcelona|participant in|1934\u201335 La Liga
+FC Barcelona|participant in|1935 Copa del Presidente de la Rep\u00FAblica
+FC Barcelona|participant in|1936 Copa del Presidente de la Rep\u00FAblica Final
+FC Barcelona|participant in|1936\u201337 La Liga
+FC Barcelona|participant in|1939\u201340 La Liga
+FC Barcelona|participant in|1940 Copa del General\u00EDsimo
+FC Barcelona|participant in|1940\u201341 La Liga
+FC Barcelona|participant in|1941 Copa del General\u00EDsimo
+FC Barcelona|participant in|1941\u201342 La Liga
+FC Barcelona|participant in|1942 Copa del General\u00EDsimo Final
+FC Barcelona|participant in|1942\u201343 La Liga
+FC Barcelona|participant in|1943 Copa del General\u00EDsimo
+FC Barcelona|participant in|1943\u201344 La Liga
+FC Barcelona|participant in|1944 Copa del General\u00EDsimo
+FC Barcelona|participant in|1944\u201345 La Liga
+FC Barcelona|participant in|1945 Copa del General\u00EDsimo Final
+FC Barcelona|participant in|1945\u201346 La Liga
+FC Barcelona|participant in|1946 Copa del General\u00EDsimo
+FC Barcelona|participant in|1946\u201347 La Liga
+FC Barcelona|participant in|1947\u201348 Copa del General\u00EDsimo
+FC Barcelona|participant in|1947\u201348 La Liga
+FC Barcelona|participant in|1948\u201349 Copa del General\u00EDsimo
+FC Barcelona|participant in|1948\u201349 La Liga
+FC Barcelona|participant in|1949 Latin Cup
+FC Barcelona|participant in|1949\u201350 Copa del General\u00EDsimo
+FC Barcelona|participant in|1949\u201350 La Liga
+FC Barcelona|participant in|1951 Copa del General\u00EDsimo Final
+FC Barcelona|participant in|1952 Copa del General\u00EDsimo Final
+FC Barcelona|participant in|1952 Latin Cup
+FC Barcelona|participant in|1952\u201353 La Liga
+FC Barcelona|participant in|1953 Copa del General\u00EDsimo Final
+FC Barcelona|participant in|1953\u201354 La Liga
+FC Barcelona|participant in|1954 Copa del General\u00EDsimo Final
+FC Barcelona|participant in|1954\u201355 La Liga
+FC Barcelona|participant in|1955 Copa del General\u00EDsimo
+FC Barcelona|participant in|1955\u201356 La Liga
+FC Barcelona|participant in|1956 Copa del General\u00EDsimo
+FC Barcelona|participant in|1956\u201357 La Liga
+FC Barcelona|participant in|1958 Copa del General\u00EDsimo
+FC Barcelona|participant in|1958 Inter-Cities Fairs Cup Final
+FC Barcelona|participant in|1958\u201359 La Liga
+FC Barcelona|participant in|1959 Copa del General\u00EDsimo Final
+FC Barcelona|participant in|1959\u201360 Copa del General\u00EDsimo
+FC Barcelona|participant in|1959\u201360 European Cup
+FC Barcelona|participant in|1960 Inter-Cities Fairs Cup Final
+FC Barcelona|participant in|1960\u201361 Copa del General\u00EDsimo
+FC Barcelona|participant in|1960\u201361 Inter-Cities Fairs Cup
+FC Barcelona|participant in|1960\u201361 La Liga
+FC Barcelona|participant in|1961 European Cup Final
+FC Barcelona|participant in|1961\u201362 Copa del General\u00EDsimo
+FC Barcelona|participant in|1961\u201362 La Liga
+FC Barcelona|participant in|1962 Inter-Cities Fairs Cup Final
+FC Barcelona|participant in|1962\u201363 Inter-Cities Fairs Cup
+FC Barcelona|participant in|1962\u201363 La Liga
+FC Barcelona|participant in|1963 Copa del General\u00EDsimo Final
+FC Barcelona|participant in|1963\u201364 Copa del General\u00EDsimo
+FC Barcelona|participant in|1963\u201364 European Cup Winners' Cup
+FC Barcelona|participant in|1963\u201364 La Liga
+FC Barcelona|participant in|1964\u201365 Copa del General\u00EDsimo
+FC Barcelona|participant in|1964\u201365 Inter-Cities Fairs Cup
+FC Barcelona|participant in|1964\u201365 La Liga
+FC Barcelona|participant in|1965\u201366 Copa del General\u00EDsimo
+FC Barcelona|participant in|1965\u201366 La Liga
+FC Barcelona|participant in|1966 Inter-Cities Fairs Cup Final
+FC Barcelona|participant in|1966\u201367 Copa del General\u00EDsimo
+FC Barcelona|participant in|1966\u201367 Inter-Cities Fairs Cup
+FC Barcelona|participant in|1966\u201367 La Liga
+FC Barcelona|participant in|1967\u201368 Inter-Cities Fairs Cup
+FC Barcelona|participant in|1967\u201368 La Liga
+FC Barcelona|participant in|1968 Copa del General\u00EDsimo Final
+FC Barcelona|participant in|1968\u201369 La Liga
+FC Barcelona|participant in|1969 Copa del General\u00EDsimo
+FC Barcelona|participant in|1969 European Cup Winners' Cup Final
+FC Barcelona|participant in|1969\u201370 Copa del General\u00EDsimo
+FC Barcelona|participant in|1969\u201370 Inter-Cities Fairs Cup
+FC Barcelona|participant in|1969\u201370 La Liga
+FC Barcelona|participant in|1970\u201371 Inter-Cities Fairs Cup
+FC Barcelona|participant in|1970\u201371 La Liga
+FC Barcelona|participant in|1971 Copa del General\u00EDsimo Final
+FC Barcelona|participant in|1971\u201372 Copa del General\u00EDsimo
+FC Barcelona|participant in|1971\u201372 European Cup Winners' Cup
+FC Barcelona|participant in|1971\u201372 La Liga
+FC Barcelona|participant in|1972\u201373 Copa del General\u00EDsimo
+FC Barcelona|participant in|1972\u201373 La Liga
+FC Barcelona|participant in|1972\u201373 UEFA Cup
+FC Barcelona|participant in|1973\u201374 La Liga
+FC Barcelona|participant in|1973\u201374 UEFA Cup
+FC Barcelona|participant in|1974 Copa del General\u00EDsimo Final
+FC Barcelona|participant in|1974\u201375 Copa del General\u00EDsimo
+FC Barcelona|participant in|1974\u201375 European Cup
+FC Barcelona|participant in|1974\u201375 La Liga
+FC Barcelona|participant in|1975\u201376 Copa del General\u00EDsimo
+FC Barcelona|participant in|1975\u201376 La Liga
+FC Barcelona|participant in|1975\u201376 UEFA Cup
+FC Barcelona|participant in|1976\u201377 Copa del Rey
+FC Barcelona|participant in|1976\u201377 La Liga
+FC Barcelona|participant in|1976\u201377 UEFA Cup
+FC Barcelona|participant in|1977\u201378 La Liga
+FC Barcelona|participant in|1977\u201378 UEFA Cup
+FC Barcelona|participant in|1978 Copa del Rey Final
+FC Barcelona|participant in|1978\u201379 Copa del Rey
+FC Barcelona|participant in|1978\u201379 La Liga
+FC Barcelona|participant in|1979 European Cup Winners' Cup Final
+FC Barcelona|participant in|1979 European Super Cup
+FC Barcelona|participant in|1979\u201380 Copa del Rey
+FC Barcelona|participant in|1979\u201380 European Cup Winners' Cup
+FC Barcelona|participant in|1979\u201380 La Liga
+FC Barcelona|participant in|1980\u201381 La Liga
+FC Barcelona|participant in|1980\u201381 UEFA Cup
+FC Barcelona|participant in|1981 Copa del Rey Final
+FC Barcelona|participant in|1981\u201382 Copa del Rey
+FC Barcelona|participant in|1981\u201382 La Liga
+FC Barcelona|participant in|1982 European Cup Winners' Cup Final
+FC Barcelona|participant in|1982 European Super Cup
+FC Barcelona|participant in|1982\u201383 European Cup Winners' Cup
+FC Barcelona|participant in|1982\u201383 La Liga
+FC Barcelona|participant in|1983 Copa de la Liga
+FC Barcelona|participant in|1983 Copa del Rey Final
+FC Barcelona|participant in|1983 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|1983\u201384 European Cup Winners' Cup
+FC Barcelona|participant in|1983\u201384 La Liga
+FC Barcelona|participant in|1984 Copa de la Liga
+FC Barcelona|participant in|1984 Copa del Rey Final
+FC Barcelona|participant in|1984\u201385 Copa del Rey
+FC Barcelona|participant in|1984\u201385 European Cup Winners' Cup
+FC Barcelona|participant in|1984\u201385 La Liga
+FC Barcelona|participant in|1985 Copa de la Liga
+FC Barcelona|participant in|1985 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|1985\u201386 La Liga
+FC Barcelona|participant in|1986 Copa de la Liga
+FC Barcelona|participant in|1986 Copa del Rey Final
+FC Barcelona|participant in|1986 European Cup Final
+FC Barcelona|participant in|1986 European Cup Winners' Cup Final
+FC Barcelona|participant in|1986\u201387 Copa del Rey
+FC Barcelona|participant in|1986\u201387 La Liga
+FC Barcelona|participant in|1986\u201387 UEFA Cup
+FC Barcelona|participant in|1987\u201388 La Liga
+FC Barcelona|participant in|1987\u201388 UEFA Cup
+FC Barcelona|participant in|1988 Copa del Rey Final
+FC Barcelona|participant in|1988 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|1988\u201389 Copa del Rey
+FC Barcelona|participant in|1988\u201389 La Liga
+FC Barcelona|participant in|1989 European Cup Winners' Cup Final
+FC Barcelona|participant in|1989 European Super Cup
+FC Barcelona|participant in|1989\u201390 European Cup Winners' Cup
+FC Barcelona|participant in|1989\u201390 La Liga
+FC Barcelona|participant in|1990 Copa del Rey Final
+FC Barcelona|participant in|1990 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|1990\u201391 Copa del Rey
+FC Barcelona|participant in|1990\u201391 La Liga
+FC Barcelona|participant in|1991 European Cup Winners' Cup Final
+FC Barcelona|participant in|1991 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|1991\u201392 Copa del Rey
+FC Barcelona|participant in|1991\u201392 La Liga
+FC Barcelona|participant in|1992 European Cup Final
+FC Barcelona|participant in|1992 European Super Cup
+FC Barcelona|participant in|1992 Intercontinental Cup
+FC Barcelona|participant in|1992 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|1992\u201393 Copa del Rey
+FC Barcelona|participant in|1992\u201393 La Liga
+FC Barcelona|participant in|1992\u201393 UEFA Champions League
+FC Barcelona|participant in|1993 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|1993\u201394 Copa del Rey
+FC Barcelona|participant in|1993\u201394 La Liga
+FC Barcelona|participant in|1994 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|1994 UEFA Champions League Final
+FC Barcelona|participant in|1994\u201395 Copa del Rey
+FC Barcelona|participant in|1994\u201395 La Liga
+FC Barcelona|participant in|1994\u201395 UEFA Champions League
+FC Barcelona|participant in|1995\u201396 La Liga
+FC Barcelona|participant in|1995\u201396 UEFA Cup
+FC Barcelona|participant in|1996 Copa del Rey Final
+FC Barcelona|participant in|1996 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|1996\u201397 La Liga
+FC Barcelona|participant in|1997 Copa del Rey Final
+FC Barcelona|participant in|1997 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|1997 UEFA Cup Winners' Cup Final
+FC Barcelona|participant in|1997 UEFA Super Cup
+FC Barcelona|participant in|1997\u201398 La Liga
+FC Barcelona|participant in|1997\u201398 UEFA Champions League
+FC Barcelona|participant in|1998 Copa del Rey Final
+FC Barcelona|participant in|1998 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|1998\u201399 Copa del Rey
+FC Barcelona|participant in|1998\u201399 La Liga
+FC Barcelona|participant in|1998\u201399 UEFA Champions League
+FC Barcelona|participant in|1999 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|1999\u20132000 Copa del Rey
+FC Barcelona|participant in|1999\u20132000 La Liga
+FC Barcelona|participant in|1999\u20132000 UEFA Champions League
+FC Barcelona|participant in|2000\u201301 Copa del Rey
+FC Barcelona|participant in|2000\u201301 La Liga
+FC Barcelona|participant in|2000\u201301 UEFA Champions League
+FC Barcelona|participant in|2000\u201301 UEFA Cup
+FC Barcelona|participant in|2001\u201302 Copa del Rey
+FC Barcelona|participant in|2001\u201302 La Liga
+FC Barcelona|participant in|2001\u201302 UEFA Champions League
+FC Barcelona|participant in|2002\u201303 Copa del Rey
+FC Barcelona|participant in|2002\u201303 La Liga
+FC Barcelona|participant in|2002\u201303 UEFA Champions League
+FC Barcelona|participant in|2003\u201304 Copa del Rey
+FC Barcelona|participant in|2003\u201304 La Liga
+FC Barcelona|participant in|2003\u201304 UEFA Cup
+FC Barcelona|participant in|2004\u201305 Copa del Rey
+FC Barcelona|participant in|2004\u201305 La Liga
+FC Barcelona|participant in|2004\u201305 UEFA Champions League
+FC Barcelona|participant in|2005 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|2005\u201306 Copa del Rey
+FC Barcelona|participant in|2005\u201306 La Liga
+FC Barcelona|participant in|2005\u201306 UEFA Champions League
+FC Barcelona|participant in|2006 FIFA Club World Cup
+FC Barcelona|participant in|2006 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|2006 UEFA Super Cup
+FC Barcelona|participant in|2006\u201307 Copa del Rey
+FC Barcelona|participant in|2006\u201307 La Liga
+FC Barcelona|participant in|2006\u201307 UEFA Champions League
+FC Barcelona|participant in|2007\u201308 Copa del Rey
+FC Barcelona|participant in|2007\u201308 La Liga
+FC Barcelona|participant in|2007\u201308 UEFA Champions League
+FC Barcelona|participant in|2008\u201309 La Liga
+FC Barcelona|participant in|2008\u201309 UEFA Champions League
+FC Barcelona|participant in|2009 Copa del Rey Final
+FC Barcelona|participant in|2009 FIFA Club World Cup
+FC Barcelona|participant in|2009 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|2009 UEFA Super Cup
+FC Barcelona|participant in|2009\u201310 Copa del Rey
+FC Barcelona|participant in|2009\u201310 La Liga
+FC Barcelona|participant in|2009\u201310 UEFA Champions League
+FC Barcelona|participant in|2010 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|2010\u201311 La Liga
+FC Barcelona|participant in|2010\u201311 UEFA Champions League
+FC Barcelona|participant in|2011 Copa del Rey Final
+FC Barcelona|participant in|2011 FIFA Club World Cup
+FC Barcelona|participant in|2011 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|2011 UEFA Super Cup
+FC Barcelona|participant in|2011\u201312 La Liga
+FC Barcelona|participant in|2011\u201312 UEFA Champions League
+FC Barcelona|participant in|2012 Copa del Rey Final
+FC Barcelona|participant in|2012 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|2012\u201313 Copa del Rey
+FC Barcelona|participant in|2012\u201313 La Liga
+FC Barcelona|participant in|2012\u201313 UEFA Champions League
+FC Barcelona|participant in|2013 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|2013\u201314 La Liga
+FC Barcelona|participant in|2013\u201314 UEFA Champions League
+FC Barcelona|participant in|2014 Copa del Rey Final
+FC Barcelona|participant in|2014\u201315 La Liga
+FC Barcelona|participant in|2014\u201315 UEFA Champions League
+FC Barcelona|participant in|2015 Copa del Rey Final
+FC Barcelona|participant in|2015 FIFA Club World Cup
+FC Barcelona|participant in|2015 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|2015 UEFA Super Cup
+FC Barcelona|participant in|2015\u201316 La Liga
+FC Barcelona|participant in|2015\u201316 UEFA Champions League
+FC Barcelona|participant in|2016 Copa del Rey Final
+FC Barcelona|participant in|2016 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|2016\u201317 La Liga
+FC Barcelona|participant in|2016\u201317 UEFA Champions League
+FC Barcelona|participant in|2017 Copa del Rey Final
+FC Barcelona|participant in|2017 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|2017\u201318 La Liga
+FC Barcelona|participant in|2017\u201318 UEFA Champions League
+FC Barcelona|participant in|2018 Copa del Rey Final
+FC Barcelona|participant in|2018 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|2018/2019 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|2018\u201319 La Liga
+FC Barcelona|participant in|2018\u201319 UEFA Champions League
+FC Barcelona|participant in|2019 Copa del Rey Final
+FC Barcelona|participant in|2019\u201320 Copa del Rey
+FC Barcelona|participant in|2019\u201320 La Liga
+FC Barcelona|participant in|2019\u201320 UEFA Champions League
+FC Barcelona|participant in|2020 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|2020\u201321 La Liga
+FC Barcelona|participant in|2020\u201321 UEFA Champions League
+FC Barcelona|participant in|2021\u201322 Copa del Rey
+FC Barcelona|participant in|2021\u201322 La Liga
+FC Barcelona|participant in|2021\u201322 UEFA Champions League
+FC Barcelona|participant in|2021\u201322 UEFA Europa League
+FC Barcelona|participant in|2022\u201323 La Liga
+FC Barcelona|participant in|2022\u201323 UEFA Champions League
+FC Barcelona|participant in|2022\u201323 UEFA Europa League
+FC Barcelona|participant in|2023 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|2023\u201324 Copa del Rey
+FC Barcelona|participant in|2023\u201324 La Liga
+FC Barcelona|participant in|2023\u201324 UEFA Champions League
+FC Barcelona|participant in|2024 Supercopa de Espa\u00F1a
+FC Barcelona|participant in|2024\u201325 La Liga
+FC Barcelona|participant in|Copa del Rey de f\u00FAtbol 2022-23
+FC Barcelona|participant in|Final de la Copa del Rey de f\u00FAtbol 2020-21
+FC Barcelona|participant in|Supercopa de Espa\u00F1a de F\u00FAtbol 2022
+FC Barcelona|participant in|Supercopa de Espa\u00F1a de f\u00FAtbol 2025
+FC Barcelona|position held by head of the organization|President of FC Barcelona
+FC Barcelona|represents|Barcelona
+FC Barcelona|significant event|Cant del Bar\u00E7a
+FC Barcelona|significant event|Hesp\u00E8ria Mutiny
+FC Barcelona|significant event|I3 Ventures case
+FC Barcelona|significant event|Negreira case
+FC Barcelona|significant event|Neymargate
+FC Barcelona|significant event|current season of a sports club
+FC Barcelona|significant event|date of establishment
+FC Barcelona|significant event|first match
+FC Barcelona|sponsor|Office of the United Nations High Commissioner for Refugees
+FC Barcelona|sponsor|Spotify
+FC Barcelona|sport|association football
+FC Barcelona|statistical leader|Lionel Messi
+FC Barcelona|team captain|Marc-Andr\u00E9 ter Stegen
+FC Barcelona|topic has template|Template:FC Barcelona
+FC Barcelona|topic has template|Template:FC Barcelona managers
+FC Barcelona|topic has template|Template:FC Barcelona matches
+FC Barcelona|topic has template|Template:FC Barcelona seasons
+FC Barcelona|topic has template|Template:FC Barcelona squad
+FC Barcelona|topic has template|Template:Fb team Barcelona
+FC Barcelona|topic's main category|Category:FC Barcelona
+FWA Footballer of the Year|country|United Kingdom
+FWA Footballer of the Year|instance of|award
+FWA Footballer of the Year|sport|association football
+FWA Footballer of the Year|topic has template|Template:FWA Footballer of the Year
+France men's national association football team|category for members of a team|Category:France men's international footballers
+France men's national association football team|competition class|men's association football
+France men's national association football team|competition won|1985 Artemio Franchi Trophy
+France men's national association football team|competition won|1998 FIFA World Cup
+France men's national association football team|competition won|2001 FIFA Confederations Cup
+France men's national association football team|competition won|2003 FIFA Confederations Cup
+France men's national association football team|competition won|2018 FIFA World Cup
+France men's national association football team|competition won|2020\u201321 UEFA Nations League
+France men's national association football team|competition won|Tournoi de France
+France men's national association football team|competition won|UEFA Euro 1984
+France men's national association football team|competition won|UEFA Euro 2000
+France men's national association football team|country for sport|France
+France men's national association football team|country|France
+France men's national association football team|head coach|Didier Deschamps
+France men's national association football team|history of topic|history of the France national football team
+France men's national association football team|home venue|Stade de France
+France men's national association football team|instance of|men's national association football team
+France men's national association football team|kit supplier|Nike
+France men's national association football team|official color|dark blue
+France men's national association football team|official color|red
+France men's national association football team|official color|white
+France men's national association football team|owned by|French Football Federation
+France men's national association football team|participant in|1930 FIFA World Cup
+France men's national association football team|participant in|1934 FIFA World Cup
+France men's national association football team|participant in|1938 FIFA World Cup
+France men's national association football team|participant in|1954 FIFA World Cup
+France men's national association football team|participant in|1958 FIFA World Cup
+France men's national association football team|participant in|1960 European Nations' Cup
+France men's national association football team|participant in|1962 FIFA World Cup qualification \u2013 UEFA Group 2
+France men's national association football team|participant in|1964 European Nations' Cup qualifying
+France men's national association football team|participant in|1966 FIFA World Cup
+France men's national association football team|participant in|1970 FIFA World Cup qualification \u2013 UEFA Group 5
+France men's national association football team|participant in|1974 FIFA World Cup qualification \u2013 UEFA Group 9
+France men's national association football team|participant in|1978 FIFA World Cup
+France men's national association football team|participant in|1982 FIFA World Cup
+France men's national association football team|participant in|1986 FIFA World Cup
+France men's national association football team|participant in|1990 FIFA World Cup qualification \u2013 UEFA Group 5
+France men's national association football team|participant in|1994 FIFA World Cup qualification \u2013 UEFA Group 6
+France men's national association football team|participant in|1998 FIFA World Cup
+France men's national association football team|participant in|1998 FIFA World Cup Final
+France men's national association football team|participant in|2002 FIFA World Cup
+France men's national association football team|participant in|2006 FIFA World Cup
+France men's national association football team|participant in|2010 FIFA World Cup
+France men's national association football team|participant in|2014 FIFA World Cup
+France men's national association football team|participant in|2018 FIFA World Cup
+France men's national association football team|participant in|2022 FIFA World Cup final
+France men's national association football team|participant in|UEFA Euro 1968 qualifying play-offs
+France men's national association football team|participant in|UEFA Euro 1972 qualifying Group 2
+France men's national association football team|participant in|UEFA Euro 1976 qualifying Group 7
+France men's national association football team|participant in|UEFA Euro 1980 qualifying Group 5
+France men's national association football team|participant in|UEFA Euro 1984
+France men's national association football team|participant in|UEFA Euro 1984 finals
+France men's national association football team|participant in|UEFA Euro 1988 qualifying Group 3
+France men's national association football team|participant in|UEFA Euro 1992
+France men's national association football team|participant in|UEFA Euro 1992 Group 1
+France men's national association football team|participant in|UEFA Euro 1996
+France men's national association football team|participant in|UEFA Euro 2000
+France men's national association football team|participant in|UEFA Euro 2000 Final
+France men's national association football team|participant in|UEFA Euro 2004
+France men's national association football team|participant in|UEFA Euro 2008
+France men's national association football team|participant in|UEFA Euro 2008 Group C
+France men's national association football team|participant in|UEFA Euro 2012
+France men's national association football team|participant in|UEFA Euro 2016
+France men's national association football team|participant in|UEFA Euro 2016 finals: Portugal v France
+France men's national association football team|participant in|UEFA Euro 2020
+France men's national association football team|participant in|West Germany vs France
+France men's national association football team|represents|French Football Federation
+France men's national association football team|sport|association football
+France men's national association football team|subclass of|national sports team
+France men's national association football team|team captain|Hugo Lloris
+France men's national association football team|team captain|Kylian Mbapp\u00E9
+France men's national association football team|topic has template|Template:FRAf
+France men's national association football team|topic has template|Template:France national football team
+France men's national association football team|topic's main category|Category:France national football team
+France national under-16 association football team|competition class|men's U16 association football
+France national under-16 association football team|competition won|Montaigu Tournament
+France national under-16 association football team|country for sport|France
+France national under-16 association football team|country|France
+France national under-16 association football team|head coach|Fran\u00E7ois Blaquart
+France national under-16 association football team|head coach|Francis Smerecki
+France national under-16 association football team|head coach|Guy Ferrier
+France national under-16 association football team|head coach|Jean-Claude Giuntini
+France national under-16 association football team|head coach|Jean-Luc Rabat
+France national under-16 association football team|head coach|Laurent Guyot
+France national under-16 association football team|head coach|Lionel Rouxel
+France national under-16 association football team|head coach|Ludovic Batelli
+France national under-16 association football team|head coach|Patrick Gonfalone
+France national under-16 association football team|head coach|Philippe Bergeroo
+France national under-16 association football team|head coach|Pierre Mankowski
+France national under-16 association football team|head coach|Ren\u00E9 Girard
+France national under-16 association football team|instance of|national under-16 association football team
+France national under-16 association football team|owned by|French Football Federation
+France national under-16 association football team|participant in|1987 UEFA European Under-16 Football Championship
+France national under-16 association football team|participant in|1989 UEFA European Under-16 Football Championship
+France national under-16 association football team|participant in|1996 UEFA European Under-16 Football Championship
+France national under-16 association football team|participant in|2001 UEFA European Under-16 Football Championship
+France national under-16 association football team|participant in|Montaigu Tournament
+France national under-16 association football team|sport|association football
+France national under-16 association football team|subclass of|national association football team
+France national under-17 association football team|competition class|men's U17 association football
+France national under-17 association football team|competition won|2001 FIFA U-17 World Championship
+France national under-17 association football team|competition won|2004 UEFA European Under-17 Football Championship
+France national under-17 association football team|competition won|2015 UEFA European Under-17 Football Championship
+France national under-17 association football team|country for sport|France
+France national under-17 association football team|country|France
+France national under-17 association football team|head coach|Philippe Bergeroo
+France national under-17 association football team|instance of|national under-17 association football team
+France national under-17 association football team|owned by|French Football Federation
+France national under-17 association football team|participant in|2001 FIFA U-17 World Championship
+France national under-17 association football team|participant in|2002 UEFA European Under-17 Football Championship
+France national under-17 association football team|participant in|2004 UEFA European Under-17 Football Championship
+France national under-17 association football team|participant in|2007 FIFA U-17 World Cup
+France national under-17 association football team|participant in|2007 UEFA European Under-17 Football Championship
+France national under-17 association football team|participant in|2008 UEFA European Under-17 Football Championship
+France national under-17 association football team|participant in|2011 FIFA U-17 World Cup
+France national under-17 association football team|participant in|2015 FIFA U-17 World Cup
+France national under-17 association football team|participant in|2017 FIFA U-17 World Cup
+France national under-17 association football team|participant in|2019 FIFA U-17 World Cup
+France national under-17 association football team|sport|association football
+France national under-17 association football team|subclass of|national association football team
+France national under-17 association football team|team captain|Mathys Tel
+France national under-18 association football team|competition class|men's U18 association football
+France national under-18 association football team|competition won|1983 UEFA European Under-18 Championship
+France national under-18 association football team|competition won|1996 UEFA European Under-18 Football Championship
+France national under-18 association football team|competition won|1997 UEFA European Under-18 Football Championship
+France national under-18 association football team|competition won|2000 UEFA European Under-18 Football Championship
+France national under-18 association football team|country for sport|France
+France national under-18 association football team|country|France
+France national under-18 association football team|head coach|Bernard Diom\u00E8de
+France national under-18 association football team|head coach|Erick Mombaerts
+France national under-18 association football team|head coach|Fran\u00E7ois Blaquart
+France national under-18 association football team|head coach|Francis Smerecki
+France national under-18 association football team|head coach|G\u00E9rard Houllier
+France national under-18 association football team|head coach|Jacques Crevoisier
+France national under-18 association football team|head coach|Jean-Claude Giuntini
+France national under-18 association football team|head coach|Jean-Fran\u00E7ois Jodar
+France national under-18 association football team|head coach|Landry Chauvin
+France national under-18 association football team|head coach|Lionel Rouxel
+France national under-18 association football team|head coach|Ludovic Batelli
+France national under-18 association football team|head coach|Philippe Bergeroo
+France national under-18 association football team|head coach|Pierre Mankowski
+France national under-18 association football team|instance of|national under-18 association football team
+France national under-18 association football team|owned by|French Football Federation
+France national under-18 association football team|sport|association football
+France national under-18 association football team|subclass of|national association football team
+France national under-19 association football team|competition class|men's U19 association football
+France national under-19 association football team|country for sport|France
+France national under-19 association football team|country|France
+France national under-19 association football team|instance of|national under-19 association football team
+France national under-19 association football team|owned by|French Football Federation
+France national under-19 association football team|sport|association football
+France national under-19 association football team|subclass of|national association football team
+France national under-20 association football team|competition class|men's U20 association football
+France national under-20 association football team|country for sport|France
+France national under-20 association football team|country|France
+France national under-20 association football team|instance of|national under-20 association football team
+France national under-20 association football team|owned by|French Football Federation
+France national under-20 association football team|sport|association football
+France national under-20 association football team|subclass of|national association football team
+France national under-21 association football team|competition class|men's U21 association football
+France national under-21 association football team|country for sport|France
+France national under-21 association football team|country|France
+France national under-21 association football team|head coach|Sylvain Ripoll
+France national under-21 association football team|instance of|national under-21 association football team
+France national under-21 association football team|owned by|French Football Federation
+France national under-21 association football team|participant in|2019 UEFA European Under-21 Championship
+France national under-21 association football team|sport|association football
+France national under-21 association football team|subclass of|national association football team
+France national under-21 association football team|topic's main category|Category:France national under-21 football team
+France national under-23 football team|country for sport|France
+France national under-23 football team|country|France
+France national under-23 football team|instance of|national under-23 association football team
+France national under-23 football team|sport|association football
+France|Wikimedia outline|outline of France
+France|\u200Emost populous urban area|Paris
+France|anthem|La Marseillaise
+France|award received|Lagun Onari
+France|award received|The Economist country of the year
+France|basic form of government|semi-presidential system
+France|capital|Paris
+France|category for films shot at this location|Category:Films shot in France
+France|category for maps or plans|Category:Maps of France
+France|category for people born here|Category:Births in France
+France|category for people buried here|Category:Burials in France
+France|category for people who died here|Category:Deaths in France
+France|category of associated people|Category:French people
+France|central bank|Bank of France
+France|coat of arms|coat of arms of France
+France|coextensive with|France
+France|contains the administrative territorial entity|Auvergne-Rh\u00F4ne-Alpes
+France|contains the administrative territorial entity|Bourgogne-Franche-Comt\u00E9
+France|contains the administrative territorial entity|Brittany
+France|contains the administrative territorial entity|Centre-Val de Loire
+France|contains the administrative territorial entity|Clipperton Island
+France|contains the administrative territorial entity|Corsica
+France|contains the administrative territorial entity|French Guiana
+France|contains the administrative territorial entity|French Polynesia
+France|contains the administrative territorial entity|French Southern and Antarctic Lands
+France|contains the administrative territorial entity|Grand Est
+France|contains the administrative territorial entity|Guadeloupe
+France|contains the administrative territorial entity|Hauts-de-France
+France|contains the administrative territorial entity|Martinique
+France|contains the administrative territorial entity|Mayotte
+France|contains the administrative territorial entity|New Caledonia
+France|contains the administrative territorial entity|Normandy
+France|contains the administrative territorial entity|Nouvelle-Aquitaine
+France|contains the administrative territorial entity|Occitania
+France|contains the administrative territorial entity|Pays de la Loire
+France|contains the administrative territorial entity|Provence-Alpes-C\u00F4te d'Azur
+France|contains the administrative territorial entity|R\u00E9union
+France|contains the administrative territorial entity|Saint Barth\u00E9lemy
+France|contains the administrative territorial entity|Saint Pierre and Miquelon
+France|contains the administrative territorial entity|Saint-Martin
+France|contains the administrative territorial entity|Wallis and Futuna
+France|contains the administrative territorial entity|\u00CEle-de-France
+France|continent|Europe
+France|country|France
+France|culture|culture of France
+France|currency|CFP Franc
+France|currency|euro
+France|demographics of topic|demographics of France
+France|described by source|Brockhaus and Efron Encyclopedic Dictionary
+France|described by source|Catholic Encyclopedia
+France|described by source|Desktop Encyclopedic Dictionary
+France|described by source|Draft History of Qing
+France|described by source|Encyclop\u00E6dia Britannica 11th edition
+France|described by source|Encyclop\u00E6dia Britannica First Edition
+France|described by source|Granat Encyclopedic Dictionary
+France|described by source|Jewish Encyclopedia of Brockhaus and Efron
+France|described by source|Meyer\u2019s Universum, Neunter Band
+France|described by source|Small Brockhaus and Efron Encyclopedic Dictionary
+France|described by source|The New Student's Reference Work
+France|described by source|The Nuttall Encyclop\u00E6dia
+France|described by source|Vlastensk\u00FD slovn\u00EDk historick\u00FD
+France|different from|French Fifth Republic
+France|diplomatic relation|Albania
+France|diplomatic relation|Algeria
+France|diplomatic relation|Andorra
+France|diplomatic relation|Angola
+France|diplomatic relation|Argentina
+France|diplomatic relation|Armenia
+France|diplomatic relation|Australia
+France|diplomatic relation|Austria
+France|diplomatic relation|Azerbaijan
+France|diplomatic relation|Bangladesh
+France|diplomatic relation|Barbados
+France|diplomatic relation|Belarus
+France|diplomatic relation|Belgium
+France|diplomatic relation|Brazil
+France|diplomatic relation|Brunei
+France|diplomatic relation|Bulgaria
+France|diplomatic relation|Burundi
+France|diplomatic relation|Cambodia
+France|diplomatic relation|Cameroon
+France|diplomatic relation|Canada
+France|diplomatic relation|Cape Verde
+France|diplomatic relation|Chad
+France|diplomatic relation|Chile
+France|diplomatic relation|Colombia
+France|diplomatic relation|Denmark
+France|diplomatic relation|Djibouti
+France|diplomatic relation|Egypt
+France|diplomatic relation|Fiji
+France|diplomatic relation|Finland
+France|diplomatic relation|Gabon
+France|diplomatic relation|Georgia
+France|diplomatic relation|Germany
+France|diplomatic relation|Greece
+France|diplomatic relation|Haiti
+France|diplomatic relation|Holy See
+France|diplomatic relation|Hungary
+France|diplomatic relation|India
+France|diplomatic relation|Indonesia
+France|diplomatic relation|Iran
+France|diplomatic relation|Iraq
+France|diplomatic relation|Ireland
+France|diplomatic relation|Israel
+France|diplomatic relation|Italy
+France|diplomatic relation|Japan
+France|diplomatic relation|Kosovo
+France|diplomatic relation|Kurdistan Region
+France|diplomatic relation|Lebanon
+France|diplomatic relation|Libya
+France|diplomatic relation|Luxembourg
+France|diplomatic relation|Malaysia
+France|diplomatic relation|Mauritania
+France|diplomatic relation|Mauritius
+France|diplomatic relation|Mexico
+France|diplomatic relation|Monaco
+France|diplomatic relation|Mongolia
+France|diplomatic relation|Morocco
+France|diplomatic relation|Myanmar
+France|diplomatic relation|New Zealand
+France|diplomatic relation|Niger
+France|diplomatic relation|Northern Cyprus
+France|diplomatic relation|Norway
+France|diplomatic relation|Pakistan
+France|diplomatic relation|Papua New Guinea
+France|diplomatic relation|People's Republic of China
+France|diplomatic relation|Peru
+France|diplomatic relation|Poland
+France|diplomatic relation|Republic of the Congo
+France|diplomatic relation|Romania
+France|diplomatic relation|Russia
+France|diplomatic relation|Rwanda
+France|diplomatic relation|Saudi Arabia
+France|diplomatic relation|Serbia
+France|diplomatic relation|Singapore
+France|diplomatic relation|Somalia
+France|diplomatic relation|South Africa
+France|diplomatic relation|South Korea
+France|diplomatic relation|Spain
+France|diplomatic relation|Suriname
+France|diplomatic relation|Sweden
+France|diplomatic relation|Switzerland
+France|diplomatic relation|Syria
+France|diplomatic relation|Taiwan
+France|diplomatic relation|Thailand
+France|diplomatic relation|Trinidad and Tobago
+France|diplomatic relation|Tunisia
+France|diplomatic relation|Turkey
+France|diplomatic relation|Turkmenistan
+France|diplomatic relation|Ukraine
+France|diplomatic relation|United Arab Emirates
+France|diplomatic relation|United Kingdom
+France|diplomatic relation|United States
+France|diplomatic relation|Uruguay
+France|diplomatic relation|Vanuatu
+France|diplomatic relation|Venezuela
+France|diplomatic relation|Vietnam
+France|driving side|right
+France|economy of topic|economy of France
+France|electrical plug type|Europlug
+France|electrical plug type|Type E
+France|emergency phone number|112
+France|emergency phone number|114
+France|emergency phone number|15
+France|emergency phone number|17
+France|emergency phone number|18
+France|executive body|Government of the French Republic
+France|flag|flag of France
+France|foundational text|Constitution of France
+France|geography of topic|geography of France
+France|has characteristic|free country
+France|has facility|crematorium
+France|has facility|roundabout
+France|has part(s)|Loire Valley
+France|has seal, badge, or sigil|Great Seal of France
+France|head of government|S\u00E9bastien Lecornu
+France|head of state|Emmanuel Macron
+France|highest judicial authority|Conseil d'\u00C9tat
+France|highest judicial authority|Constitutional Council of France
+France|highest judicial authority|Cour de Justice de la R\u00E9publique
+France|highest judicial authority|Court of Audit
+France|highest judicial authority|Court of Cassation
+France|highest point|Mont Blanc
+France|history of topic|history of France
+France|instance of|country
+France|instance of|republic
+France|instance of|sovereign state
+France|language used|Alsatian
+France|language used|Basque
+France|language used|Breton
+France|language used|Catalan
+France|language used|Occitan
+France|language used|Standard French
+France|legislative body|French Parliament
+France|located in or next to body of water|Atlantic Ocean
+France|located in or next to body of water|English Channel
+France|located in or next to body of water|Mediterranean Sea
+France|located in or next to body of water|North Sea
+France|located in time zone|UTC+01:00
+France|lowest point|\u00C9tang de Lavalduc
+France|maintained by WikiProject|WikiProject France
+France|member of|African Development Bank
+France|member of|Antarctic Treaty System
+France|member of|Asian Development Bank
+France|member of|Australia Group
+France|member of|CERN
+France|member of|Council of Europe
+France|member of|Eurocontrol
+France|member of|European Air Transport Command
+France|member of|European Coal and Steel Community
+France|member of|European Economic Community
+France|member of|European Payments Union
+France|member of|European Southern Observatory
+France|member of|European Space Agency
+France|member of|European Union
+France|member of|G20
+France|member of|G7
+France|member of|G8
+France|member of|Group on Earth Observations
+France|member of|International Bank for Reconstruction and Development
+France|member of|International Centre for Settlement of Investment Disputes
+France|member of|International Civil Defence Organisation
+France|member of|International Development Association
+France|member of|International Energy Agency
+France|member of|International Finance Corporation
+France|member of|International Holocaust Remembrance Alliance
+France|member of|International Hydrographic Organization
+France|member of|International Telecommunication Union
+France|member of|Interpol
+France|member of|League of Nations
+France|member of|Missile Technology Control Regime
+France|member of|Movement Coordination Centre Europe
+France|member of|Multilateral Investment Guarantee Agency
+France|member of|NATO
+France|member of|Nuclear Suppliers Group
+France|member of|Open Government Partnership
+France|member of|Organisation for Joint Armament Cooperation
+France|member of|Organisation for the Prohibition of Chemical Weapons
+France|member of|Organisation internationale de la Francophonie
+France|member of|Organization for Economic Cooperation and Development
+France|member of|Organization for Security and Co-operation in Europe
+France|member of|Schengen Area
+France|member of|Southeast Asia Treaty Organization
+France|member of|Treaty on Open Skies
+France|member of|Treaty on the Non-Proliferation of Nuclear Weapons
+France|member of|UNESCO
+France|member of|United Nations
+France|member of|United Nations Security Council
+France|member of|Universal Postal Union UPU
+France|member of|Visa Waiver Program
+France|member of|World Customs Organization
+France|member of|World Health Organization
+France|member of|World Meteorological Organization
+France|member of|World Trade Organization
+France|member of|states with nuclear weapons
+France|motto|Libert\u00E9, \u00E9galit\u00E9, fraternit\u00E9
+France|named after|Franks
+France|office held by head of government|Prime Minister of France
+France|office held by head of state|President of the French Republic
+France|official language|French
+France|on focus list of Wikimedia project|NADD Wikidata project
+France|on focus list of Wikimedia project|Wikipedia:List of articles all languages should have
+France|on focus list of Wikimedia project|Wikipedia:Vital articles/Level/4
+France|open data portal|data.gouv.fr
+France|part of|European Economic Area
+France|part of|European Union
+France|part of|Pyrenees\u2013Mediterranean Euroregion
+France|part of|Western Europe
+France|permanent duplicated item|Francia
+France|production statistics|champagne
+France|production statistics|cider
+France|public holiday|All Saints' Day
+France|public holiday|Armistice Day
+France|public holiday|Assumption of Mary
+France|public holiday|Bastille Day
+France|public holiday|Christmas
+France|public holiday|Easter Monday
+France|public holiday|Feast of the Ascension
+France|public holiday|Good Friday
+France|public holiday|International Workers' Day
+France|public holiday|New Year's Day
+France|public holiday|Victory in Europe Day
+France|public holiday|Whit Monday
+France|railway traffic side|left
+France|railway traffic side|right
+France|replaces|Free Cities of Menton and Roquebrune
+France|replaces|Kingdom of Bora Bora
+France|replaces|Kingdom of France
+France|replaces|Rauracian Republic
+France|replaces|Republic of Bouillon
+France|shares border with|Andorra
+France|shares border with|Belgium
+France|shares border with|Brazil
+France|shares border with|Germany
+France|shares border with|Italy
+France|shares border with|Kingdom of the Netherlands
+France|shares border with|Luxembourg
+France|shares border with|Monaco
+France|shares border with|Spain
+France|shares border with|Suriname
+France|shares border with|Switzerland
+France|studied by|francology
+France|top-level Internet domain|.fr
+France|topic has template|Template:Regions of France
+France|topic's main Wikimedia portal|Portal:France
+France|topic's main category|Category:France
+French|Ethnologue language status|0 International
+French|UNESCO language status|1 safe
+French|category for films in this language|Category:French-language films
+French|country|Algeria
+French|country|Andorra
+French|country|Belgium
+French|country|Benin
+French|country|Burkina Faso
+French|country|Burundi
+French|country|Cambodia
+French|country|Cameroon
+French|country|Canada
+French|country|Central African Republic
+French|country|Chad
+French|country|Comoros
+French|country|Democratic Republic of the Congo
+French|country|Djibouti
+French|country|Equatorial Guinea
+French|country|France
+French|country|Gabon
+French|country|Guernsey
+French|country|Guinea
+French|country|Haiti
+French|country|India
+French|country|Italy
+French|country|Ivory Coast
+French|country|Jersey
+French|country|Laos
+French|country|Lebanon
+French|country|Luxembourg
+French|country|Madagascar
+French|country|Mali
+French|country|Mauritania
+French|country|Mauritius
+French|country|Monaco
+French|country|Morocco
+French|country|Niger
+French|country|Republic of the Congo
+French|country|Rwanda
+French|country|Senegal
+French|country|Seychelles
+French|country|Switzerland
+French|country|Togo
+French|country|Tunisia
+French|country|United States
+French|country|Vanuatu
+French|country|Vietnam
+French|described by source|Brockhaus and Efron Encyclopedic Dictionary
+French|described by source|Dictionnaire des francophones
+French|described by source|Encyclop\u00E6dia Britannica 11th edition
+French|described by source|Grammaire m\u00E9thodique du fran\u00E7ais
+French|described by source|Small Brockhaus and Efron Encyclopedic Dictionary
+French|described by source|The New Student's Reference Work
+French|different from|Fransk
+French|different from|Franz\u00F6sisch
+French|different from|French
+French|follows|Classical French
+French|has characteristic|agreement
+French|has conjugation class|conjugation of Group I French verbs
+French|has conjugation class|conjugation of Group II French verbs
+French|has conjugation class|conjugation of Group III French verbs
+French|has grammatical gender|feminine
+French|has grammatical gender|masculine
+French|has grammatical mood|conditional
+French|has grammatical mood|imperative
+French|has grammatical mood|indicative
+French|has grammatical mood|infinitive
+French|has grammatical mood|participle
+French|has grammatical mood|subjunctive
+French|has grammatical person|first-person plural
+French|has grammatical person|first-person singular
+French|has grammatical person|second-person plural
+French|has grammatical person|second-person singular
+French|has grammatical person|third-person feminine plural
+French|has grammatical person|third-person feminine singular
+French|has grammatical person|third-person masculine plural
+French|has grammatical person|third-person masculine singular
+French|has grammatical person|third-person plural
+French|has grammatical person|third-person singular
+French|has tense|conditional perfect
+French|has tense|conditional present
+French|has tense|future perfect
+French|has tense|imperfect subjunctive
+French|has tense|near future
+French|has tense|pass\u00E9 compos\u00E9
+French|has tense|past anterior
+French|has tense|past imperative
+French|has tense|past imperfect
+French|has tense|past infinitive
+French|has tense|past participle
+French|has tense|past subjunctive
+French|has tense|pluperfect
+French|has tense|present imperative
+French|has tense|present infinitive
+French|has tense|present participle
+French|has tense|present subjunctive
+French|has tense|present tense
+French|has tense|preterite
+French|has tense|simple future in French
+French|has tense|subjunctive pluperfect
+French|history of topic|history of French
+French|indigenous to|Brussels-Capital Region
+French|indigenous to|Canton of Fribourg
+French|indigenous to|Flemish Brabant
+French|indigenous to|France
+French|indigenous to|Hainaut
+French|indigenous to|Luxembourg
+French|indigenous to|Monaco
+French|indigenous to|Province of Liege
+French|indigenous to|Province of Namur
+French|indigenous to|Walloon Brabant
+French|indigenous to|canton of Jura
+French|indigenous to|canton of Neuch\u00E2tel
+French|indigenous to|canton of Vaud
+French|instance of|language
+French|instance of|modern language
+French|instance of|natural language
+French|language regulatory body|Acad\u00E9mie Fran\u00E7aise
+French|language regulatory body|Academie Royale de Langue et de litt\u00E9rature Fran\u00E7aises
+French|language regulatory body|Office qu\u00E9b\u00E9cois de la langue fran\u00E7aise
+French|linguistic typology|fusional language
+French|linguistic typology|nominative\u2013accusative language
+French|linguistic typology|noun-adjective
+French|linguistic typology|place\u2013manner\u2013time
+French|linguistic typology|subject\u2013verb\u2013object
+French|linguistic typology|syllabic language
+French|linguistic typology|synthetic language
+French|maintained by WikiProject|WikiProject French
+French|on focus list of Wikimedia project|Wikipedia:List of articles all languages should have
+French|on focus list of Wikimedia project|Wikipedia:Vital articles/Level/4
+French|related category|Category:French pronunciation
+French|studied by|French language studies
+French|studied by|French studies
+French|studied by|Romance studies
+French|subclass of|O\u00EFl
+French|subclass of|Southern European language
+French|topic has template|Template:French language
+French|topic has template|Template:Lang-fr
+French|topic's main Wikimedia portal|Wiktionary:About French
+French|topic's main category|Category:French language
+French|uses capitalization for|proper noun
+French|writing system|Latin script
+Hazard|different from|Hazard
+Hazard|instance of|family name
+Hazard|said to be the same as|Hazzard
+Hazard|writing system|Latin script
+Henry|attested in|Finnish Population Information System
+Henry|different from|Henry
+Henry|different from|Henry (film)
+Henry|has list|list of people with the family name Henry
+Henry|instance of|family name
+Henry|language of work or name|English
+Henry|language of work or name|French
+Henry|part of|Henry
+Henry|said to be the same as|Andrin
+Henry|said to be the same as|Enrico
+Henry|said to be the same as|Enrique
+Henry|said to be the same as|Eric
+Henry|said to be the same as|Erich
+Henry|said to be the same as|Erik
+Henry|said to be the same as|Harald
+Henry|said to be the same as|Harold
+Henry|said to be the same as|Harris
+Henry|said to be the same as|Harry
+Henry|said to be the same as|Hein
+Henry|said to be the same as|Heinrich
+Henry|said to be the same as|Heinz
+Henry|said to be the same as|Henk
+Henry|said to be the same as|Henke
+Henry|said to be the same as|Henkle
+Henry|said to be the same as|Henneke
+Henry|said to be the same as|Henri
+Henry|said to be the same as|Henrich
+Henry|said to be the same as|Henrique
+Henry|said to be the same as|Hinrich
+Henry|said to be the same as|Hynek
+Henry|said to be the same as|Jind\u0159ich
+Henry|writing system|Latin script
+Juventus FC|award received|Gold Collar for Sports Merit
+Juventus FC|award received|The UEFA Plaque
+Juventus FC|award received|gold star for sports merit
+Juventus FC|category for members of a team|Category:Juventus FC players
+Juventus FC|chairperson|Gianluca Ferrero
+Juventus FC|child organization/unit|Juventus F.C. Next Gen
+Juventus FC|child organization/unit|Juventus F.C. Women
+Juventus FC|child organization/unit|Juventus F.C. Youth Sector
+Juventus FC|competition won|1983\u201384 European Cup Winners' Cup
+Juventus FC|competition won|1984\u201385 European Cup
+Juventus FC|competition won|1995\u201396 UEFA Champions League
+Juventus FC|competition won|2006\u201307 Serie B
+Juventus FC|competition won|2011\u201312 Serie A
+Juventus FC|competition won|2012\u201313 Serie A
+Juventus FC|competition won|2013\u201314 Serie A
+Juventus FC|competition won|2014\u201315 Coppa Italia
+Juventus FC|competition won|2014\u201315 Serie A
+Juventus FC|competition won|2015\u201316 Coppa Italia
+Juventus FC|competition won|2015\u201316 Serie A
+Juventus FC|competition won|2016\u201317 Coppa Italia
+Juventus FC|competition won|2016\u201317 Serie A
+Juventus FC|competition won|2017\u201318 Coppa Italia
+Juventus FC|competition won|2017\u201318 Serie A
+Juventus FC|competition won|2018 Supercoppa Italiana
+Juventus FC|competition won|2018\u201319 Serie A
+Juventus FC|competition won|2019\u201320 Serie A
+Juventus FC|country|Italy
+Juventus FC|distributed by|Google Play
+Juventus FC|founded by|Alfredo Armano
+Juventus FC|founded by|Carlo Vittorio Varetti
+Juventus FC|founded by|Domenico Donna
+Juventus FC|founded by|Enrico Canfari
+Juventus FC|founded by|Eugenio Canfari
+Juventus FC|founded by|Gioacchino Armano
+Juventus FC|founded by|Luigi Forlano
+Juventus FC|founded by|Luigi Gibezzi
+Juventus FC|founded by|Umberto Malvano
+Juventus FC|head coach|Igor Tudor
+Juventus FC|headquarters location|Turin
+Juventus FC|history of topic|history of Juventus F.C.
+Juventus FC|home venue|Juventus Stadium
+Juventus FC|instance of|association football club
+Juventus FC|instance of|business
+Juventus FC|instance of|men's association football team
+Juventus FC|instance of|public company
+Juventus FC|kit supplier|Adidas AG
+Juventus FC|legal form|societ\u00E0 per azioni
+Juventus FC|named after|Iuventas
+Juventus FC|official color|black
+Juventus FC|official color|pink
+Juventus FC|official color|white
+Juventus FC|owned by|Exor
+Juventus FC|owned by|Lindsell Train
+Juventus FC|owned by|financial market
+Juventus FC|owner of|Campo sportivo Gianpiero Combi
+Juventus FC|owner of|Continassa
+Juventus FC|owner of|Juventus Center
+Juventus FC|owner of|Juventus Stadium
+Juventus FC|owner of|Juventus TV
+Juventus FC|owner of|Juventus Training Center
+Juventus FC|owner of|Stadio delle Alpi
+Juventus FC|owner of|Stadio di Corso Marsiglia
+Juventus FC|parent organization|Exor
+Juventus FC|sponsor|Jeep
+Juventus FC|sponsor|New Holland
+Juventus FC|sponsor|Sky Sport
+Juventus FC|sponsor|Tamoil
+Juventus FC|sport|association football
+Juventus FC|statistical leader|Alessandro Del Piero
+Juventus FC|stock exchange|Italian Stock Exchange
+Juventus FC|topic has template|Template:Juventus F.C.
+Juventus FC|topic has template|Template:Juventus F.C. seasons
+Juventus FC|topic's main category|Category:Juventus FC
+Knight of the Legion of Honour|category for recipients of this award|Category:Knights of the Legion of Honour
+Knight of the Legion of Honour|country|France
+Knight of the Legion of Honour|instance of|grade of an order
+Knight of the Legion of Honour|next higher rank|Officer of the Legion of Honour
+Knight of the Legion of Honour|part of|Legion of Honour
+Knight of the Legion of Honour|subclass of|knight
+Kylian Hazard|country of citizenship|Belgium
+Kylian Hazard|family name|Hazard
+Kylian Hazard|father|Thierry Hazard
+Kylian Hazard|given name|Kylian
+Kylian Hazard|instance of|human
+Kylian Hazard|languages spoken, written or signed|French
+Kylian Hazard|member of sports team|R. White Star Bruxelles
+Kylian Hazard|member of sports team|S.V. Zulte Waregem
+Kylian Hazard|member of sports team|\u00DAjpest FC
+Kylian Hazard|native language|French
+Kylian Hazard|occupation|association football player
+Kylian Hazard|place of birth|La Louvi\u00E8re
+Kylian Hazard|position played on team / speciality|midfielder
+Kylian Hazard|sex or gender|male
+Kylian Hazard|sibling|Eden Hazard
+Kylian Hazard|sibling|Ethan Hazard
+Kylian Hazard|sibling|Thorgan Hazard
+Kylian Hazard|sport|association football
+La Liga|competition class|men's association football
+La Liga|country|Spain
+La Liga|different from|Primera Divisi\u00F3n
+La Liga|has part(s)|2025\u201326 La Liga
+La Liga|instance of|association football league
+La Liga|instance of|professional sports league
+La Liga|league level below|LaLiga 2
+La Liga|league system|Spanish football league system
+La Liga|organizer|Liga Nacional de F\u00FAtbol Profesional
+La Liga|part of|Liga Nacional de F\u00FAtbol Profesional
+La Liga|part of|Spanish football league system
+La Liga|season ends|May
+La Liga|season starts|August
+La Liga|significant event|current season
+La Liga|sport|association football
+La Liga|statistical leader|Real Madrid CF
+La Liga|subclass of|national championship
+La Liga|topic's main category|Category:La Liga
+La Louvi\u00E8re|capital|La Louvi\u00E8re
+La Louvi\u00E8re|category for people born here|Category:Births in La Louvi\u00E8re
+La Louvi\u00E8re|category for people who died here|Category:Deaths in La Louvi\u00E8re
+La Louvi\u00E8re|category of associated people|Category:People from La Louvi\u00E8re
+La Louvi\u00E8re|contains settlement|Besonrieux
+La Louvi\u00E8re|contains settlement|Giresun
+La Louvi\u00E8re|contains settlement|Haine-Saint-Paul
+La Louvi\u00E8re|contains settlement|Haine-Saint-Pierre
+La Louvi\u00E8re|contains settlement|Houdeng-Aimeries
+La Louvi\u00E8re|contains settlement|Houdeng-G\u0153gnies
+La Louvi\u00E8re|contains settlement|La Louvi\u00E8re
+La Louvi\u00E8re|contains settlement|Maurage
+La Louvi\u00E8re|contains settlement|Saint-Vaast
+La Louvi\u00E8re|contains settlement|Str\u00E9py-Bracquegnies
+La Louvi\u00E8re|contains settlement|Trivi\u00E8res
+La Louvi\u00E8re|country|Belgium
+La Louvi\u00E8re|flag|flag of La Louvi\u00E8re
+La Louvi\u00E8re|head of government|Jacques Gobert
+La Louvi\u00E8re|instance of|Belgian municipality with the title of city
+La Louvi\u00E8re|instance of|municipality of Belgium
+La Louvi\u00E8re|language used|French
+La Louvi\u00E8re|language used|Walloon
+La Louvi\u00E8re|legal form|Cities and municipalities
+La Louvi\u00E8re|list of monuments|list of protected heritage sites in La Louvi\u00E8re
+La Louvi\u00E8re|located in or next to body of water|Canal du Centre
+La Louvi\u00E8re|located in or next to body of water|Haine
+La Louvi\u00E8re|located in the administrative territorial entity|Arrondissement of La Louvi\u00E8re
+La Louvi\u00E8re|located in time zone|UTC+01:00
+La Louvi\u00E8re|office held by head of government|Mayor of La Louvi\u00E8re
+La Louvi\u00E8re|official language|French
+La Louvi\u00E8re|part of|Emergency zone Hainaut Center
+La Louvi\u00E8re|shares border with|Binche
+La Louvi\u00E8re|shares border with|Le R\u0153ulx
+La Louvi\u00E8re|shares border with|Manage
+La Louvi\u00E8re|shares border with|Mons
+La Louvi\u00E8re|shares border with|Morlanwelz
+La Louvi\u00E8re|shares border with|Seneffe
+La Louvi\u00E8re|topic has template|Template:Belgian municipality La Louvi\u00E8re
+La Louvi\u00E8re|topic's main category|Category:La Louvi\u00E8re
+La Louvi\u00E8re|twinned administrative body|Aragona
+La Louvi\u00E8re|twinned administrative body|Bojnice
+La Louvi\u00E8re|twinned administrative body|C\u00F3rdoba
+La Louvi\u00E8re|twinned administrative body|Foligno
+La Louvi\u00E8re|twinned administrative body|Kalisz
+La Louvi\u00E8re|twinned administrative body|Saint-Maur-des-Foss\u00E9s
+Les Ulis|archives at|archives municipales de Les Ulis
+Les Ulis|associated electoral district|canton of Ulis
+Les Ulis|capital of|canton of Ulis
+Les Ulis|category for maps or plans|Category:Maps of Les Ulis
+Les Ulis|category of associated people|Category:People from Les Ulis
+Les Ulis|country|France
+Les Ulis|head of government|Fran\u00E7oise Marhuenda
+Les Ulis|instance of|commune of France
+Les Ulis|located in the administrative territorial entity|Essonne
+Les Ulis|located in the administrative territorial entity|arrondissement of Palaiseau
+Les Ulis|located in the statistical territorial entity|Paris attraction area
+Les Ulis|located in the statistical territorial entity|Paris unit\u00E9 urbaine
+Les Ulis|located in time zone|UTC+01:00
+Les Ulis|located in time zone|UTC+02:00
+Les Ulis|member of|Concours des villes et villages fleuris
+Les Ulis|office held by head of government|Mayor of Les Ulis
+Les Ulis|replaces|Bures-sur-Yvette
+Les Ulis|replaces|Orsay
+Les Ulis|shares border with|Bures-sur-Yvette
+Les Ulis|shares border with|Gometz-le-Ch\u00E2tel
+Les Ulis|shares border with|Marcoussis
+Les Ulis|shares border with|Orsay
+Les Ulis|shares border with|Saint-Jean-de-Beauregard
+Les Ulis|shares border with|Villebon-sur-Yvette
+Les Ulis|shares border with|Villejust
+Les Ulis|topic's main category|Category:Les Ulis
+Les Ulis|twinned administrative body|Naumburg
+Ligue 1|competition class|men's association football
+Ligue 1|country|France
+Ligue 1|has part(s)|1933\u201334 French Division 1
+Ligue 1|instance of|association football competition
+Ligue 1|instance of|association football league
+Ligue 1|instance of|professional sports league
+Ligue 1|league level below|Ligue 2
+Ligue 1|league system|French football league system
+Ligue 1|organizer|LFP M\u00E9dia
+Ligue 1|part of|French football league system
+Ligue 1|season ends|May
+Ligue 1|season starts|August
+Ligue 1|sponsor|Uber Eats
+Ligue 1|sport|association football
+Ligue 1|subclass of|national championship
+Ligue 1|topic has template|Template:LFP Ligue 1
+Ligue 1|topic has template|Template:Ligue 1
+Ligue 1|topic has template|Template:Ligue 1 seasons
+Ligue 1|topic's main category|Category:Ligue 1
+Lille OSC II|country|France
+Lille OSC II|instance of|association football team
+Lille OSC II|instance of|reserve team
+Lille OSC II|league or competition|Championnat National 2
+Lille OSC II|parent organization|Lille OSC
+Lille OSC II|part of|Lille OSC
+Lille OSC II|sport|association football
+Lille OSC|category for members of a team|Category:Lille OSC players
+Lille OSC|chairperson|Olivier L\u00E9tang
+Lille OSC|country|France
+Lille OSC|head coach|Bruno G\u00E9n\u00E9sio
+Lille OSC|headquarters location|Camphin-en-P\u00E9v\u00E8le
+Lille OSC|home venue|Pierre Mauroy Stadium
+Lille OSC|industry|sports club activities
+Lille OSC|instance of|association football club
+Lille OSC|league or competition|Ligue 1
+Lille OSC|legal form|declared association
+Lille OSC|owned by|Gerard Lopez
+Lille OSC|participant in|2020\u201321 Ligue 1
+Lille OSC|replaces|Olympique Lillois
+Lille OSC|replaces|SC Fives
+Lille OSC|sport|association football
+Lille OSC|topic has template|Template:Fb team Lille
+Lille OSC|topic's main category|Category:Lille OSC
+Major League Soccer|affiliated worker organisation|MLS Players Association
+Major League Soccer|chief executive officer|Don Garber
+Major League Soccer|child organization/unit|Atlanta United FC
+Major League Soccer|child organization/unit|Austin FC
+Major League Soccer|child organization/unit|CF Montr\u00E9al
+Major League Soccer|child organization/unit|Charlotte FC
+Major League Soccer|child organization/unit|Chicago Fire FC
+Major League Soccer|child organization/unit|Chivas USA
+Major League Soccer|child organization/unit|Colorado Rapids
+Major League Soccer|child organization/unit|Columbus Crew
+Major League Soccer|child organization/unit|D.C. United
+Major League Soccer|child organization/unit|FC Cincinnati
+Major League Soccer|child organization/unit|FC Dallas
+Major League Soccer|child organization/unit|Houston Dynamo FC
+Major League Soccer|child organization/unit|Inter Miami CF
+Major League Soccer|child organization/unit|LA Galaxy
+Major League Soccer|child organization/unit|Los Angeles FC
+Major League Soccer|child organization/unit|Miami Fusion
+Major League Soccer|child organization/unit|Minnesota United FC
+Major League Soccer|child organization/unit|Nashville SC
+Major League Soccer|child organization/unit|New England Revolution
+Major League Soccer|child organization/unit|New York City FC
+Major League Soccer|child organization/unit|New York Red Bulls
+Major League Soccer|child organization/unit|Orlando City SC
+Major League Soccer|child organization/unit|Philadelphia Union
+Major League Soccer|child organization/unit|Portland Timbers
+Major League Soccer|child organization/unit|Real Salt Lake
+Major League Soccer|child organization/unit|San Diego FC
+Major League Soccer|child organization/unit|San Jose Earthquakes
+Major League Soccer|child organization/unit|Seattle Sounders FC
+Major League Soccer|child organization/unit|Sporting Kansas City
+Major League Soccer|child organization/unit|St. Louis City SC
+Major League Soccer|child organization/unit|Tampa Bay Mutiny
+Major League Soccer|child organization/unit|Toronto FC
+Major League Soccer|child organization/unit|Vancouver Whitecaps FC
+Major League Soccer|competition class|men's association football
+Major League Soccer|country|Canada
+Major League Soccer|country|United States
+Major League Soccer|has part(s)|1996 Major League Soccer season
+Major League Soccer|has part(s)|1997 Major League Soccer season
+Major League Soccer|has part(s)|1998 Major League Soccer season
+Major League Soccer|has part(s)|1999 Major League Soccer season
+Major League Soccer|has part(s)|2000 Major League Soccer season
+Major League Soccer|has part(s)|2001 Major League Soccer season
+Major League Soccer|has part(s)|2002 Major League Soccer season
+Major League Soccer|has part(s)|2003 Major League Soccer season
+Major League Soccer|has part(s)|2004 Major League Soccer season
+Major League Soccer|has part(s)|2005 Major League Soccer season
+Major League Soccer|has part(s)|2006 Major League Soccer season
+Major League Soccer|has part(s)|2007 Major League Soccer season
+Major League Soccer|has part(s)|2008 Major League Soccer season
+Major League Soccer|has part(s)|2009 Major League Soccer season
+Major League Soccer|has part(s)|2010 Major League Soccer season
+Major League Soccer|has part(s)|2011 Major League Soccer season
+Major League Soccer|has part(s)|2012 Major League Soccer season
+Major League Soccer|has part(s)|2013 Major League Soccer season
+Major League Soccer|has part(s)|2014 Major League Soccer season
+Major League Soccer|has part(s)|2015 Major League Soccer season
+Major League Soccer|has part(s)|2016 Major League Soccer season
+Major League Soccer|has part(s)|2017 Major League Soccer season
+Major League Soccer|has part(s)|2018 Major League Soccer season
+Major League Soccer|has part(s)|2019 Major League Soccer season
+Major League Soccer|has part(s)|2020 Major League Soccer season
+Major League Soccer|has part(s)|2021 Major League Soccer season
+Major League Soccer|has part(s)|2022 Major League Soccer season
+Major League Soccer|has part(s)|2023 Major League Soccer season
+Major League Soccer|has part(s)|2024 Major League Soccer season
+Major League Soccer|has part(s)|2025 Major League Soccer season
+Major League Soccer|has part(s)|2026 Major League Soccer season
+Major League Soccer|has part(s)|Eastern Conference
+Major League Soccer|has part(s)|MLSsoccer.com
+Major League Soccer|has part(s)|Western Conference
+Major League Soccer|headquarters location|New York City
+Major League Soccer|instance of|association football league
+Major League Soccer|instance of|business
+Major League Soccer|instance of|professional sports league
+Major League Soccer|league level below|USL Championship
+Major League Soccer|legal form|limited liability company
+Major League Soccer|season ends|November
+Major League Soccer|season starts|March
+Major League Soccer|significant event|San Jose Clash v D.C. United
+Major League Soccer|sport|association football
+Major League Soccer|topic has template|Template:MLS player
+Major League Soccer|topic has template|Template:Major League Soccer
+Major League Soccer|topic's main category|Category:Major League Soccer
+New York Red Bulls|award received|Emirates Cup
+New York Red Bulls|award received|La Manga Cup
+New York Red Bulls|award received|Supporters' Shield
+New York Red Bulls|category for members of a team|Category:New York Red Bulls players
+New York Red Bulls|country|United States
+New York Red Bulls|head coach|Sandro Schwarz
+New York Red Bulls|headquarters location|Harrison
+New York Red Bulls|home venue|Giants Stadium
+New York Red Bulls|home venue|Sports Illustrated Stadium
+New York Red Bulls|instance of|association football club
+New York Red Bulls|instance of|association football team
+New York Red Bulls|league or competition|Major League Soccer
+New York Red Bulls|named after|Red Bull
+New York Red Bulls|owned by|Red Bull GmbH
+New York Red Bulls|parent organization|Major League Soccer
+New York Red Bulls|sport|association football
+New York Red Bulls|topic has template|Template:New York Red Bulls
+New York Red Bulls|topic's main category|Category:New York Red Bulls
+Nicole Merry|country of citizenship|United Kingdom
+Nicole Merry|family name|Merry
+Nicole Merry|given name|Nicole
+Nicole Merry|instance of|human
+Nicole Merry|languages spoken, written or signed|English
+Nicole Merry|occupation|film actor
+Nicole Merry|occupation|model
+Nicole Merry|place of birth|Croydon
+Nicole Merry|sex or gender|female
+Nicole Merry|spouse|Thierry Henry
+PFA Players' Player of the Year|country|United Kingdom
+PFA Players' Player of the Year|instance of|award
+PFA Players' Player of the Year|sport|association football
+Premier League Golden Boot|country|United Kingdom
+Premier League Golden Boot|instance of|award
+Premier League Golden Boot|sponsor|Barclays
+Premier League Golden Boot|sport|association football
+Premier League Golden Boot|winner|Harry Kane
+Premier League Golden Boot|winner|Luis Su\u00E1rez
+Premier League Golden Boot|winner|Robin van Persie
+Premier League Golden Boot|winner|Sergio Ag\u00FCero
+Premier League Golden Boot|winner|Teddy Sheringham
+Premier League Hall of Fame|country|United Kingdom
+Premier League Hall of Fame|instance of|hall of fame
+Premier League Player of the Season|instance of|award
+Premier League Player of the Season|sport|association football
+Premier League|board member|Alison Brittain
+Premier League|board member|Dharmash Mistry
+Premier League|board member|Richard Masters
+Premier League|competition class|men's association football
+Premier League|country|United Kingdom
+Premier League|different from|Premier League Snooker
+Premier League|different from|Premiership Rugby
+Premier League|follows|Football League First Division
+Premier League|has part(s)|2025\u201326 Premier League
+Premier League|instance of|association football league
+Premier League|instance of|private company limited by shares
+Premier League|instance of|professional sports league
+Premier League|item operated|premierleague.com
+Premier League|league level below|EFL Championship
+Premier League|on focus list of Wikimedia project|Wikipedia:Vital articles/Level/4
+Premier League|operating area|England
+Premier League|operating area|Wales
+Premier League|organizer|Premier League
+Premier League|owner of|Football DataCo
+Premier League|part of|English football league system
+Premier League|season ends|May
+Premier League|season starts|August
+Premier League|significant event|foundation of the Premier League
+Premier League|sport|association football
+Premier League|topic has template|Template:Premier League
+Premier League|topic has template|Template:Premier League player
+Premier League|topic's main category|Category:Premier League
+Real Madrid CF|award received|FIFA Club of the Century
+Real Madrid CF|category for members of a team|Category:Real Madrid CF players
+Real Madrid CF|chairperson|Sif Eddine
+Real Madrid CF|competition won|1905 Copa del Rey
+Real Madrid CF|competition won|1906 Copa del Rey
+Real Madrid CF|competition won|1907 Copa del Rey
+Real Madrid CF|competition won|1908 Copa del Rey
+Real Madrid CF|competition won|1917 Copa del Rey
+Real Madrid CF|competition won|1931\u201332 La Liga
+Real Madrid CF|competition won|1932\u201333 La Liga
+Real Madrid CF|competition won|1934 Copa del Presidente de la Rep\u00FAblica
+Real Madrid CF|competition won|1936 Copa del Presidente de la Rep\u00FAblica
+Real Madrid CF|competition won|1946 Copa del General\u00EDsimo
+Real Madrid CF|competition won|1947 Copa del General\u00EDsimo
+Real Madrid CF|competition won|1953\u201354 La Liga
+Real Madrid CF|competition won|1954\u201355 La Liga
+Real Madrid CF|competition won|1955\u201356 European Cup
+Real Madrid CF|competition won|1956\u201357 European Cup
+Real Madrid CF|competition won|1956\u201357 La Liga
+Real Madrid CF|competition won|1957\u201358 European Cup
+Real Madrid CF|competition won|1957\u201358 La Liga
+Real Madrid CF|competition won|1958\u201359 European Cup
+Real Madrid CF|competition won|1959\u201360 European Cup
+Real Madrid CF|competition won|1960\u201361 La Liga
+Real Madrid CF|competition won|1961\u201362 Copa del General\u00EDsimo
+Real Madrid CF|competition won|1961\u201362 La Liga
+Real Madrid CF|competition won|1962\u201363 La Liga
+Real Madrid CF|competition won|1963\u201364 La Liga
+Real Madrid CF|competition won|1964\u201365 La Liga
+Real Madrid CF|competition won|1965\u201366 European Cup
+Real Madrid CF|competition won|1966\u201367 La Liga
+Real Madrid CF|competition won|1967\u201368 La Liga
+Real Madrid CF|competition won|1968\u201369 La Liga
+Real Madrid CF|competition won|1969\u201370 Copa del General\u00EDsimo
+Real Madrid CF|competition won|1971\u201372 La Liga
+Real Madrid CF|competition won|1973\u201374 Copa del General\u00EDsimo
+Real Madrid CF|competition won|1974\u201375 Copa del General\u00EDsimo
+Real Madrid CF|competition won|1974\u201375 La Liga
+Real Madrid CF|competition won|1975\u201376 La Liga
+Real Madrid CF|competition won|1977\u201378 La Liga
+Real Madrid CF|competition won|1978\u201379 La Liga
+Real Madrid CF|competition won|1979\u201380 Copa del Rey
+Real Madrid CF|competition won|1979\u201380 La Liga
+Real Madrid CF|competition won|1981\u201382 Copa del Rey
+Real Madrid CF|competition won|1984\u201385 UEFA Cup
+Real Madrid CF|competition won|1985\u201386 La Liga
+Real Madrid CF|competition won|1985\u201386 UEFA Cup
+Real Madrid CF|competition won|1986\u201387 La Liga
+Real Madrid CF|competition won|1987\u201388 La Liga
+Real Madrid CF|competition won|1988\u201389 Copa del Rey
+Real Madrid CF|competition won|1989\u201390 La Liga
+Real Madrid CF|competition won|1992\u201393 Copa del Rey
+Real Madrid CF|competition won|1994\u201395 La Liga
+Real Madrid CF|competition won|1996\u201397 La Liga
+Real Madrid CF|competition won|1997\u201398 UEFA Champions League
+Real Madrid CF|competition won|1999\u20132000 UEFA Champions League
+Real Madrid CF|competition won|2000\u201301 La Liga
+Real Madrid CF|competition won|2001\u201302 UEFA Champions League
+Real Madrid CF|competition won|2002 UEFA Super Cup
+Real Madrid CF|competition won|2002\u201303 La Liga
+Real Madrid CF|competition won|2006\u201307 La Liga
+Real Madrid CF|competition won|2007\u201308 La Liga
+Real Madrid CF|competition won|2010\u201311 Copa del Rey
+Real Madrid CF|competition won|2011\u201312 La Liga
+Real Madrid CF|competition won|2013\u201314 Copa del Rey
+Real Madrid CF|competition won|2013\u201314 UEFA Champions League
+Real Madrid CF|competition won|2014 UEFA Super Cup
+Real Madrid CF|competition won|2015\u201316 UEFA Champions League
+Real Madrid CF|competition won|2016 FIFA Club World Cup
+Real Madrid CF|competition won|2016 UEFA Super Cup
+Real Madrid CF|competition won|2016\u201317 La Liga
+Real Madrid CF|competition won|2016\u201317 UEFA Champions League
+Real Madrid CF|competition won|2017 FIFA Club World Cup
+Real Madrid CF|competition won|2017 UEFA Super Cup
+Real Madrid CF|competition won|2017\u201318 UEFA Champions League
+Real Madrid CF|competition won|2018 FIFA Club World Cup
+Real Madrid CF|competition won|2019\u201320 La Liga
+Real Madrid CF|competition won|2021\u201322 UEFA Champions League
+Real Madrid CF|country|Spain
+Real Madrid CF|described by source|Lentapedia
+Real Madrid CF|founded by|Carlos Padr\u00F3s
+Real Madrid CF|founded by|Juan Padr\u00F3s
+Real Madrid CF|founded by|Juli\u00E1n Palacios
+Real Madrid CF|head coach|Xabi Alonso
+Real Madrid CF|headquarters location|Madrid
+Real Madrid CF|home venue|Santiago Bernab\u00E9u Stadium
+Real Madrid CF|instance of|association football club
+Real Madrid CF|kit supplier|Adidas AG
+Real Madrid CF|league or competition|La Liga
+Real Madrid CF|nominated for|Laureus World Sports Award for Team of the Year
+Real Madrid CF|official color|purple
+Real Madrid CF|official color|white
+Real Madrid CF|owner of|Alfredo di St\u00E9fano Stadium
+Real Madrid CF|owner of|Campo de O'Donnell
+Real Madrid CF|owner of|Ciudad Deportiva del Real Madrid
+Real Madrid CF|owner of|Ciudad Real Madrid
+Real Madrid CF|owner of|Estadio Chamart\u00EDn
+Real Madrid CF|owner of|La Saeta
+Real Madrid CF|owner of|Raimundo Saporta Pavilion
+Real Madrid CF|owner of|Real Madrid TV
+Real Madrid CF|owner of|Santiago Bernab\u00E9u Stadium
+Real Madrid CF|participant in|2023\u201324 La Liga
+Real Madrid CF|participant in|Supercopa de Espa\u00F1a de f\u00FAtbol 2025
+Real Madrid CF|position held by head of the organization|president of Real Madrid CF
+Real Madrid CF|sponsor|Emirates
+Real Madrid CF|sport|association football
+Real Madrid CF|statistical leader|Cristiano Ronaldo
+Real Madrid CF|statistical leader|Ra\u00FAl
+Real Madrid CF|topic has template|Template:Real Madrid
+Real Madrid CF|topic has template|Template:Real Madrid C.F. squad
+Real Madrid CF|topic has template|Template:Real Madrid CF
+Real Madrid CF|topic has template|Template:Real Madrid CF managers
+Real Madrid CF|topic has template|Template:Real Madrid CF matches
+Real Madrid CF|topic has template|Template:Real Madrid CF seasons
+Real Madrid CF|topic's main category|Category:Real Madrid CF
+Real Madrid CF|wears|Real Madrid C.F. away kit
+Real Madrid CF|wears|Real Madrid C.F. home kit
+Real Madrid CF|wears|Real Madrid C.F. third kit
+Thierry Hazard|child|Eden Hazard
+Thierry Hazard|child|Ethan Hazard
+Thierry Hazard|child|Kylian Hazard
+Thierry Hazard|child|Thorgan Hazard
+Thierry Hazard|country for sport|Belgium
+Thierry Hazard|country of citizenship|Belgium
+Thierry Hazard|different from|Thierry Hazard
+Thierry Hazard|family name|Hazard
+Thierry Hazard|given name|Thierry
+Thierry Hazard|instance of|human
+Thierry Hazard|member of sports team|Royal Stade Brainois
+Thierry Hazard|occupation|association football player
+Thierry Hazard|place of birth|Braine-le-Comte
+Thierry Hazard|position played on team / speciality|defender
+Thierry Hazard|sex or gender|male
+Thierry Hazard|sport|association football
+Thierry Henry|award received|European Golden Shoe
+Thierry Henry|award received|FWA Footballer of the Year
+Thierry Henry|award received|Knight of the Legion of Honour
+Thierry Henry|award received|PFA Players' Player of the Year
+Thierry Henry|award received|Premier League Golden Boot
+Thierry Henry|award received|Premier League Hall of Fame
+Thierry Henry|award received|Premier League Player of the Season
+Thierry Henry|coach of sports team|AS Monaco FC
+Thierry Henry|coach of sports team|Belgium men's national football team
+Thierry Henry|coach of sports team|CF Montr\u00E9al
+Thierry Henry|coach of sports team|France national under-21 association football team
+Thierry Henry|coach of sports team|France national under-23 football team
+Thierry Henry|country for sport|France
+Thierry Henry|country of citizenship|France
+Thierry Henry|employer|UNICEF
+Thierry Henry|family name|Henry
+Thierry Henry|given name|Thierry
+Thierry Henry|instance of|human
+Thierry Henry|languages spoken, written or signed|English
+Thierry Henry|languages spoken, written or signed|French
+Thierry Henry|league or competition|La Liga
+Thierry Henry|league or competition|Ligue 1
+Thierry Henry|league or competition|Major League Soccer
+Thierry Henry|league or competition|Premier League
+Thierry Henry|member of sports team|AS Monaco FC
+Thierry Henry|member of sports team|Arsenal F.C.
+Thierry Henry|member of sports team|FC Barcelona
+Thierry Henry|member of sports team|France men's national association football team
+Thierry Henry|member of sports team|France national under-16 association football team
+Thierry Henry|member of sports team|France national under-17 association football team
+Thierry Henry|member of sports team|France national under-18 association football team
+Thierry Henry|member of sports team|France national under-19 association football team
+Thierry Henry|member of sports team|France national under-20 association football team
+Thierry Henry|member of sports team|France national under-21 association football team
+Thierry Henry|member of sports team|Juventus FC
+Thierry Henry|member of sports team|New York Red Bulls
+Thierry Henry|native language|French
+Thierry Henry|occupation|association football manager
+Thierry Henry|occupation|association football player
+Thierry Henry|occupation|sports commentator
+Thierry Henry|participant in|1998 FIFA World Cup
+Thierry Henry|participant in|2002 FIFA World Cup
+Thierry Henry|participant in|2006 FIFA World Cup
+Thierry Henry|participant in|2010 FIFA World Cup
+Thierry Henry|participant in|UEFA Euro 2000
+Thierry Henry|participant in|UEFA Euro 2004
+Thierry Henry|participant in|UEFA Euro 2008
+Thierry Henry|place of birth|Les Ulis
+Thierry Henry|position held|UNICEF Goodwill Ambassador
+Thierry Henry|position played on team / speciality|forward
+Thierry Henry|sex or gender|male
+Thierry Henry|sport|association football
+Thierry Henry|spouse|Nicole Merry
+Thierry Henry|topic's main category|Category:Thierry Henry
+Thierry|attested in|frequency of first names in the Netherlands, 2010
+Thierry|described by source|Wiktionary
+Thierry|family name identical to this given name|Thierry
+Thierry|instance of|male given name
+Thierry|language of work or name|Dutch
+Thierry|language of work or name|French
+Thierry|name day|July 1
+Thierry|said to be the same as|D\u011Bt\u0159ich
+Thierry|said to be the same as|Didier
+Thierry|said to be the same as|Didrik
+Thierry|said to be the same as|Dieter
+Thierry|said to be the same as|Dietrich
+Thierry|said to be the same as|Theodoric
+Thierry|said to be the same as|Thietmar
+Thierry|writing system|Latin script
+Thorgan Hazard|country for sport|Belgium
+Thorgan Hazard|country of citizenship|Belgium
+Thorgan Hazard|family name|Hazard
+Thorgan Hazard|father|Thierry Hazard
+Thorgan Hazard|given name|Thorgan
+Thorgan Hazard|instance of|human
+Thorgan Hazard|languages spoken, written or signed|French
+Thorgan Hazard|league or competition|Belgian Pro League
+Thorgan Hazard|member of sports team|R.S.C. Anderlecht
+Thorgan Hazard|native language|French
+Thorgan Hazard|occupation|association football player
+Thorgan Hazard|participant in|2018 FIFA World Cup
+Thorgan Hazard|place of birth|La Louvi\u00E8re
+Thorgan Hazard|position played on team / speciality|midfielder
+Thorgan Hazard|sex or gender|male
+Thorgan Hazard|sibling|Eden Hazard
+Thorgan Hazard|sibling|Ethan Hazard
+Thorgan Hazard|sibling|Kylian Hazard
+Thorgan Hazard|sport|association football
+UEFA Euro 2000|competition class|men's association football
+UEFA Euro 2000|country|Belgium
+UEFA Euro 2000|country|Netherlands
+UEFA Euro 2000|followed by|UEFA Euro 2004
+UEFA Euro 2000|follows|UEFA Euro 1996
+UEFA Euro 2000|home venue|De Kuip
+UEFA Euro 2000|home venue|GelreDome
+UEFA Euro 2000|home venue|Jan Breydel Stadium
+UEFA Euro 2000|home venue|Johan Cruyff Arena
+UEFA Euro 2000|home venue|King Baudouin Stadium
+UEFA Euro 2000|home venue|Philips Stadion
+UEFA Euro 2000|home venue|Stade Maurice Dufrasne
+UEFA Euro 2000|home venue|Stade du Pays de Charleroi
+UEFA Euro 2000|instance of|edition of the UEFA European Championship
+UEFA Euro 2000|location|Belgium
+UEFA Euro 2000|location|Netherlands
+UEFA Euro 2000|mascot|Benelucky
+UEFA Euro 2000|organizer|Union of European Football Associations
+UEFA Euro 2000|participating team|Belgium men's national football team
+UEFA Euro 2000|participating team|Czechia men's national football team
+UEFA Euro 2000|participating team|Denmark men's national football team
+UEFA Euro 2000|participating team|England men's national association football team
+UEFA Euro 2000|participating team|France men's national association football team
+UEFA Euro 2000|participating team|Germany men's national association football team
+UEFA Euro 2000|participating team|Italy men's national association football team
+UEFA Euro 2000|participating team|Netherlands national association football team
+UEFA Euro 2000|participating team|Norway men's national association football team
+UEFA Euro 2000|participating team|Portugal men's national football team
+UEFA Euro 2000|participating team|Romania men's national association football team
+UEFA Euro 2000|participating team|Serbia and Montenegro national football team
+UEFA Euro 2000|participating team|Slovenia men's national football team
+UEFA Euro 2000|participating team|Spain men's national football team
+UEFA Euro 2000|participating team|Sweden men's national football team
+UEFA Euro 2000|participating team|Turkey men's national football team
+UEFA Euro 2000|sports season of league or competition|UEFA European Championship
+UEFA Euro 2000|sport|association football
+UEFA Euro 2000|statistical leader|Patrick Kluivert
+UEFA Euro 2000|statistical leader|Savo Milo\u0161evi\u0107
+UEFA Euro 2000|statistical leader|Zinedine Zidane
+UEFA Euro 2000|top scorer|Patrick Kluivert
+UEFA Euro 2000|top scorer|Savo Milo\u0161evi\u0107
+UEFA Euro 2000|topic's main category|Category:UEFA Euro 2000
+UEFA Euro 2000|winner|France men's national association football team
+UEFA Euro 2004|competition class|men's association football
+UEFA Euro 2004|country|Portugal
+UEFA Euro 2004|final event|UEFA Euro 2004 finals
+UEFA Euro 2004|followed by|UEFA Euro 2008
+UEFA Euro 2004|follows|UEFA Euro 2000
+UEFA Euro 2004|home venue|Est\u00E1dio Algarve
+UEFA Euro 2004|home venue|Est\u00E1dio Cidade de Coimbra
+UEFA Euro 2004|home venue|Est\u00E1dio D. Afonso Henriques
+UEFA Euro 2004|home venue|Est\u00E1dio Dr. Magalh\u00E3es Pessoa
+UEFA Euro 2004|home venue|Est\u00E1dio Jos\u00E9 Alvalade
+UEFA Euro 2004|home venue|Est\u00E1dio Municipal de Aveiro
+UEFA Euro 2004|home venue|Est\u00E1dio Municipal de Braga
+UEFA Euro 2004|home venue|Est\u00E1dio da Luz
+UEFA Euro 2004|home venue|Est\u00E1dio do Bessa
+UEFA Euro 2004|home venue|Est\u00E1dio do Drag\u00E3o
+UEFA Euro 2004|instance of|edition of the UEFA European Championship
+UEFA Euro 2004|location|Portugal
+UEFA Euro 2004|mascot|Kinas
+UEFA Euro 2004|organizer|Union of European Football Associations
+UEFA Euro 2004|participating team|Bulgaria men's national football team
+UEFA Euro 2004|participating team|Croatia men's national football team
+UEFA Euro 2004|participating team|Czechia men's national football team
+UEFA Euro 2004|participating team|Denmark men's national football team
+UEFA Euro 2004|participating team|England men's national association football team
+UEFA Euro 2004|participating team|France men's national association football team
+UEFA Euro 2004|participating team|Germany men's national association football team
+UEFA Euro 2004|participating team|Greece men's national football team
+UEFA Euro 2004|participating team|Italy men's national association football team
+UEFA Euro 2004|participating team|Latvia men's national football team
+UEFA Euro 2004|participating team|Netherlands national association football team
+UEFA Euro 2004|participating team|Portugal men's national football team
+UEFA Euro 2004|participating team|Russia men's national football team
+UEFA Euro 2004|participating team|Spain men's national football team
+UEFA Euro 2004|participating team|Sweden men's national football team
+UEFA Euro 2004|participating team|Switzerland men's national football team
+UEFA Euro 2004|sports season of league or competition|UEFA European Championship
+UEFA Euro 2004|sport|association football
+UEFA Euro 2004|statistical leader|Milan Baro\u0161
+UEFA Euro 2004|statistical leader|Theodoros Zagorakis
+UEFA Euro 2004|topic's main category|Category:UEFA Euro 2004
+UEFA Euro 2004|winner|Greece men's national football team
+UEFA Euro 2004|winner|Portugal men's national football team
+UEFA Euro 2008|competition class|men's association football
+UEFA Euro 2008|country|Austria
+UEFA Euro 2008|country|Switzerland
+UEFA Euro 2008|different from|UEFA Euro 2008
+UEFA Euro 2008|final event|UEFA Euro 2008 finals
+UEFA Euro 2008|followed by|UEFA Euro 2012
+UEFA Euro 2008|follows|UEFA Euro 2004
+UEFA Euro 2008|home venue|Ernst-Happel-Stadion
+UEFA Euro 2008|home venue|Letzigrund
+UEFA Euro 2008|home venue|Red Bull Arena
+UEFA Euro 2008|home venue|St. Jakob-Park
+UEFA Euro 2008|home venue|Stade de Gen\u00E8ve
+UEFA Euro 2008|home venue|Stadion Wankdorf
+UEFA Euro 2008|home venue|Tivoli Stadion Tirol
+UEFA Euro 2008|home venue|W\u00F6rthersee Stadion
+UEFA Euro 2008|instance of|edition of the UEFA European Championship
+UEFA Euro 2008|mascot|Trix and Flix
+UEFA Euro 2008|organizer|Union of European Football Associations
+UEFA Euro 2008|participating team|Austria men's national football team
+UEFA Euro 2008|participating team|Croatia men's national football team
+UEFA Euro 2008|participating team|Czechia men's national football team
+UEFA Euro 2008|participating team|France men's national association football team
+UEFA Euro 2008|participating team|Germany men's national association football team
+UEFA Euro 2008|participating team|Greece men's national football team
+UEFA Euro 2008|participating team|Italy men's national association football team
+UEFA Euro 2008|participating team|Netherlands national association football team
+UEFA Euro 2008|participating team|Poland men's national football team
+UEFA Euro 2008|participating team|Portugal men's national football team
+UEFA Euro 2008|participating team|Romania men's national association football team
+UEFA Euro 2008|participating team|Russia men's national football team
+UEFA Euro 2008|participating team|Spain men's national football team
+UEFA Euro 2008|participating team|Sweden men's national football team
+UEFA Euro 2008|participating team|Switzerland men's national football team
+UEFA Euro 2008|participating team|Turkey men's national football team
+UEFA Euro 2008|sports season of league or competition|UEFA European Championship
+UEFA Euro 2008|sport|association football
+UEFA Euro 2008|statistical leader|David Villa
+UEFA Euro 2008|topic has template|Template:UEFA Euro 2008
+UEFA Euro 2008|topic's main category|Category:UEFA Euro 2008
+UEFA Euro 2008|winner|Spain men's national football team
+UEFA Euro 2016|competition class|men's association football
+UEFA Euro 2016|country|France
+UEFA Euro 2016|final event|UEFA Euro 2016 finals: Portugal v France
+UEFA Euro 2016|followed by|UEFA Euro 2020
+UEFA Euro 2016|follows|UEFA Euro 2012
+UEFA Euro 2016|home venue|Allianz Riviera
+UEFA Euro 2016|home venue|Parc Olympique Lyonnais
+UEFA Euro 2016|home venue|Parc des Princes
+UEFA Euro 2016|home venue|Pierre Mauroy Stadium
+UEFA Euro 2016|home venue|Stade Atlantique
+UEFA Euro 2016|home venue|Stade Bollaert-Delelis
+UEFA Euro 2016|home venue|Stade Geoffroy-Guichard
+UEFA Euro 2016|home venue|Stade V\u00E9lodrome
+UEFA Euro 2016|home venue|Stade de France
+UEFA Euro 2016|home venue|Stadium Municipal
+UEFA Euro 2016|instance of|edition of the UEFA European Championship
+UEFA Euro 2016|location|France
+UEFA Euro 2016|mascot|Super Victor
+UEFA Euro 2016|organizer|Union of European Football Associations
+UEFA Euro 2016|participating team|Albania men's national football team
+UEFA Euro 2016|participating team|Austria men's national football team
+UEFA Euro 2016|participating team|Belgium men's national football team
+UEFA Euro 2016|participating team|Croatia men's national football team
+UEFA Euro 2016|participating team|Czechia men's national football team
+UEFA Euro 2016|participating team|England men's national association football team
+UEFA Euro 2016|participating team|France men's national association football team
+UEFA Euro 2016|participating team|Germany men's national association football team
+UEFA Euro 2016|participating team|Hungary men's national football team
+UEFA Euro 2016|participating team|Iceland men's national football team
+UEFA Euro 2016|participating team|Italy men's national association football team
+UEFA Euro 2016|participating team|Northern Ireland men's national association football team
+UEFA Euro 2016|participating team|Poland men's national football team
+UEFA Euro 2016|participating team|Portugal men's national football team
+UEFA Euro 2016|participating team|Republic of Ireland men's national association football team
+UEFA Euro 2016|participating team|Romania men's national association football team
+UEFA Euro 2016|participating team|Russia men's national football team
+UEFA Euro 2016|participating team|Slovakia men's national football team
+UEFA Euro 2016|participating team|Spain men's national football team
+UEFA Euro 2016|participating team|Sweden men's national football team
+UEFA Euro 2016|participating team|Switzerland men's national football team
+UEFA Euro 2016|participating team|Turkey men's national football team
+UEFA Euro 2016|participating team|Ukraine men's national football team
+UEFA Euro 2016|participating team|Wales men's national association football team
+UEFA Euro 2016|sponsor|Adidas AG
+UEFA Euro 2016|sponsor|Carlsberg Group
+UEFA Euro 2016|sponsor|Coca-Cola
+UEFA Euro 2016|sponsor|Continental AG
+UEFA Euro 2016|sponsor|Credit Agricole Group
+UEFA Euro 2016|sponsor|Fran\u00E7aise des jeux
+UEFA Euro 2016|sponsor|Hisense
+UEFA Euro 2016|sponsor|HomeAway
+UEFA Euro 2016|sponsor|Hyundai
+UEFA Euro 2016|sponsor|Kia
+UEFA Euro 2016|sponsor|La Poste
+UEFA Euro 2016|sponsor|McDonald's
+UEFA Euro 2016|sponsor|Orange
+UEFA Euro 2016|sponsor|Proman
+UEFA Euro 2016|sponsor|Soci\u00E9t\u00E9 nationale des chemins de fer fran\u00E7ais
+UEFA Euro 2016|sponsor|State Oil Company of Azerbaijan Republic
+UEFA Euro 2016|sponsor|Tourtel
+UEFA Euro 2016|sponsor|Turkish Airlines
+UEFA Euro 2016|sports season of league or competition|UEFA European Championship
+UEFA Euro 2016|sport|association football
+UEFA Euro 2016|statistical leader|Antoine Griezmann
+UEFA Euro 2016|topic has template|Template:UEFA Euro 2016
+UEFA Euro 2016|topic's main category|Category:UEFA Euro 2016
+UEFA Euro 2016|winner|Portugal men's national football team
+UEFA Euro 2020|competition class|men's association football
+UEFA Euro 2020|final event|UEFA Euro 2020 finals
+UEFA Euro 2020|followed by|UEFA Euro 2024
+UEFA Euro 2020|follows|UEFA Euro 2016
+UEFA Euro 2020|home venue|Allianz Arena
+UEFA Euro 2020|home venue|Baku Olympic Stadium
+UEFA Euro 2020|home venue|Estadio de La Cartuja
+UEFA Euro 2020|home venue|Gazprom Arena
+UEFA Euro 2020|home venue|Hampden Park
+UEFA Euro 2020|home venue|Johan Cruyff Arena
+UEFA Euro 2020|home venue|Parken Stadium
+UEFA Euro 2020|home venue|Pusk\u00E1s Ar\u00E9na
+UEFA Euro 2020|home venue|Stadio Olimpico
+UEFA Euro 2020|home venue|Stadionul Steaua
+UEFA Euro 2020|home venue|Wembley Stadium
+UEFA Euro 2020|instance of|edition of the UEFA European Championship
+UEFA Euro 2020|location|Azerbaijan
+UEFA Euro 2020|location|Denmark
+UEFA Euro 2020|location|England
+UEFA Euro 2020|location|Germany
+UEFA Euro 2020|location|Hungary
+UEFA Euro 2020|location|Italy
+UEFA Euro 2020|location|Netherlands
+UEFA Euro 2020|location|Romania
+UEFA Euro 2020|location|Russia
+UEFA Euro 2020|location|Scotland
+UEFA Euro 2020|location|Spain
+UEFA Euro 2020|mascot|Skillzy
+UEFA Euro 2020|organizer|Union of European Football Associations
+UEFA Euro 2020|participating team|Austria men's national football team
+UEFA Euro 2020|participating team|Belgium men's national football team
+UEFA Euro 2020|participating team|Croatia men's national football team
+UEFA Euro 2020|participating team|Czechia men's national football team
+UEFA Euro 2020|participating team|Denmark men's national football team
+UEFA Euro 2020|participating team|England men's national association football team
+UEFA Euro 2020|participating team|Finland men's national football team
+UEFA Euro 2020|participating team|France men's national association football team
+UEFA Euro 2020|participating team|Germany men's national association football team
+UEFA Euro 2020|participating team|Hungary men's national football team
+UEFA Euro 2020|participating team|Italy men's national association football team
+UEFA Euro 2020|participating team|Netherlands national association football team
+UEFA Euro 2020|participating team|North Macedonia men's national football team
+UEFA Euro 2020|participating team|Poland men's national football team
+UEFA Euro 2020|participating team|Portugal men's national football team
+UEFA Euro 2020|participating team|Russia men's national football team
+UEFA Euro 2020|participating team|Scotland men's national football team
+UEFA Euro 2020|participating team|Slovakia men's national football team
+UEFA Euro 2020|participating team|Spain men's national football team
+UEFA Euro 2020|participating team|Sweden men's national football team
+UEFA Euro 2020|participating team|Switzerland men's national football team
+UEFA Euro 2020|participating team|Turkey men's national football team
+UEFA Euro 2020|participating team|Ukraine men's national football team
+UEFA Euro 2020|participating team|Wales men's national association football team
+UEFA Euro 2020|sports season of league or competition|UEFA European Championship
+UEFA Euro 2020|sport|association football
+UEFA Euro 2020|statistical leader|Cristiano Ronaldo
+UEFA Euro 2020|statistical leader|Gianluigi Donnarumma
+UEFA Euro 2020|statistical leader|Patrik Schick
+UEFA Euro 2020|topic has template|Template:UEFA Euro 2020
+UEFA Euro 2020|topic's main category|Category:UEFA Euro 2020
+UEFA Euro 2020|winner|Italy men's national association football team
+UNICEF Goodwill Ambassador|conferred by|UNICEF
+UNICEF Goodwill Ambassador|different from|UN Women Goodwill Ambassador
+UNICEF Goodwill Ambassador|different from|goodwill ambassador
+UNICEF Goodwill Ambassador|has list|list of UNICEF Goodwill Ambassadors
+UNICEF Goodwill Ambassador|instance of|position
+UNICEF Goodwill Ambassador|instance of|profession
+UNICEF Goodwill Ambassador|instance of|title of authority
+UNICEF Goodwill Ambassador|instance of|title of honor
+UNICEF Goodwill Ambassador|main subject|goodwill ambassador
+UNICEF Goodwill Ambassador|part of|United Nations
+UNICEF Goodwill Ambassador|subclass of|goodwill ambassador
+UNICEF Goodwill Ambassador|topic's main category|Category:UNICEF goodwill ambassadors
+UNICEF|award received|Children of the Earth
+UNICEF|award received|Indira Gandhi Peace Prize
+UNICEF|award received|Nobel Peace Prize
+UNICEF|award received|Princess of Asturias Award for Concord
+UNICEF|award received|Wateler Peace Prize
+UNICEF|chairperson|Catherine M. Russell
+UNICEF|child organization/unit|Polish National Committee for UNICEF
+UNICEF|child organization/unit|UNICEF Canada
+UNICEF|country|United States
+UNICEF|described by source|Medvik
+UNICEF|director / manager|Catherine M. Russell
+UNICEF|flag|flag of UNICEF
+UNICEF|founded by|Ludwik Rajchman
+UNICEF|founded by|United Nations General Assembly
+UNICEF|has part(s)|UNICEF Sweden
+UNICEF|has works in the collection|Museum of Modern Art
+UNICEF|has works in the collection|National Museum Paleis het Loo
+UNICEF|has works in the collection|National Museum of World Cultures
+UNICEF|headquarters location|New York City
+UNICEF|industry|international governmental or non-governmental organizations
+UNICEF|instance of|organization established by the United Nations
+UNICEF|member of|Digital Public Goods Alliance
+UNICEF|member of|United Nations Sustainable Development Group
+UNICEF|official observer status in organization|International Organization for Migration
+UNICEF|on focus list of Wikimedia project|Wikipedia:Vital articles/Level/4
+UNICEF|owner of|Collection Rau for UNICEF
+UNICEF|owner of|Judith with the head of Holofernes
+UNICEF|parent organization|United Nations Economic and Social Council
+UNICEF|parent organization|United Nations General Assembly
+UNICEF|part of|United Nations System
+UNICEF|partnership with|Curious Minds
+UNICEF|partnership with|Green Advocacy Ghana
+UNICEF|partnership with|International Civil Aviation Organization
+UNICEF|partnership with|United Cities and Local Governments
+UNICEF|position held by head of the organization|Executive Director of UNICEF
+UNICEF|topic's main category|Category:UNICEF
+association football manager|field of this occupation|association football
+association football manager|instance of|occupation
+association football manager|instance of|profession
+association football manager|sport|association football
+association football manager|subclass of|association football coach
+association football manager|topic has template|Template:Football squad manager
+association football manager|topic has template|Template:TFF coach
+association football manager|topic's main category|Category:Association football managers
+association football player|field of this occupation|CP football
+association football player|field of this occupation|association football
+association football player|field of this occupation|blind soccer
+association football player|field of this occupation|indoor soccer
+association football player|field of this occupation|men's association football
+association football player|field of this occupation|para association football
+association football player|field of this occupation|seven-a-side football
+association football player|field of this occupation|women's association football
+association football player|instance of|occupation
+association football player|instance of|profession
+association football player|part of|association football club
+association football player|part of|association football team
+association football player|sport|association football
+association football player|subclass of|competitive player
+association football player|subclass of|football player
+association football player|subclass of|person associated with football
+association football player|topic has template|Template:Infobox football biography
+association football player|topic's main category|Category:Association football players
+association football player|wears|association football kit
+association football|authority|FIFA
+association football|country of origin|United Kingdom of Great Britain and Ireland
+association football|described by source|Armenian Soviet Encyclopedia
+association football|described by source|Brockhaus and Efron Encyclopedic Dictionary
+association football|described by source|Small Brockhaus and Efron Encyclopedic Dictionary
+association football|different from|Football
+association football|history of topic|history of association football
+association football|industry|sport industry
+association football|instance of|Olympic sport
+association football|instance of|hobby
+association football|instance of|spectator sport
+association football|instance of|team sport
+association football|instance of|type of sport
+association football|main regulatory text|Laws of the Game
+association football|maintained by WikiProject|WikiProject Football
+association football|named after|foot
+association football|named after|kick
+association football|on focus list of Wikimedia project|Wikipedia:List of articles all languages should have
+association football|on focus list of Wikimedia project|Wikipedia:Vital articles/Level/4
+association football|on focus list of Wikimedia project|Wikipedia:WikiProjekt 1000 important articles about Denmark
+association football|practiced by|association football player
+association football|regulated by|FIFA
+association football|regulated by|International Football Association Board
+association football|subclass of|ball game
+association football|topic's main Wikimedia portal|Portal:Association football
+association football|topic's main category|Category:Association football
+association football|uses|association football ball
+association football|uses|association football boots
+association football|uses|association football goal
+association football|uses|association football kit
+association football|uses|association football pitch
+black hair|color|black
+black hair|described by source|Great Soviet Encyclopedia (1926\u20131947)
+black hair|instance of|human hair color
+black hair|opposite of|blond hair
+black hair|subclass of|hair
+forward|instance of|association football position
+forward|opposite of|defender
+forward|part of|offense
+forward|sport|association football
+forward|subclass of|attacker
+forward|topic's main category|Category:Association football forwards
+human|described by source|Bible Encyclopedia of Archimandrite Nicephorus
+human|described by source|Brockhaus and Efron Encyclopedic Dictionary
+human|described by source|Catholic Encyclopedia
+human|described by source|Collier's New Encyclopedia, 1921
+human|described by source|Encyclop\u00E6dia Britannica 11th edition
+human|described by source|Granat Encyclopedic Dictionary
+human|described by source|Jewish Encyclopedia of Brockhaus and Efron
+human|described by source|Meyers Konversations-Lexikon, 4th edition (1885\u20131890)
+human|described by source|Small Brockhaus and Efron Encyclopedic Dictionary
+human|described by source|The Domestic Encyclop\u00E6dia; Or, A Dictionary Of Facts, And Useful Knowledge
+human|different from|Human
+human|different from|character
+human|different from|human in the center of cosmos
+human|different from|people
+human|different from|person
+human|facet of|humanity
+human|has characteristic|age of a person
+human|has characteristic|bipedalism
+human|has characteristic|full name
+human|has characteristic|gender
+human|has characteristic|human behavior
+human|has characteristic|intelligence
+human|has characteristic|interpersonal relationship
+human|has characteristic|kinship
+human|has characteristic|mortality
+human|has characteristic|personality
+human|has characteristic|perspective-taking
+human|has characteristic|phase of human life
+human|has characteristic|self-awareness
+human|has characteristic|self-consciousness
+human|has characteristic|sociality
+human|has effect|artificial object
+human|has part(s)|human body
+human|history of topic|human history
+human|instance of|organisms known by a particular common name
+human|main food source|human food
+human|model item|Carl Linnaeus
+human|model item|Douglas Adams
+human|model item|Joan of Arc
+human|model item|Marie Curie
+human|model item|Sun Tzu
+human|on focus list of Wikimedia project|Wikipedia:List of articles all languages should have
+human|on focus list of Wikimedia project|Wikipedia:Vital articles/Level/4
+human|opposite of|non-human animal
+human|part of|biosphere
+human|part of|group of humans
+human|part of|humanity
+human|part of|society
+human|participant in|human activity
+human|physically interacts with|Earth
+human|physically interacts with|natural environment
+human|produced sound|human voice
+human|said to be the same as|Homo sapiens
+human|studied by|anthropology
+human|studied by|human ecology
+human|subclass of|individual animal
+human|subclass of|mammal
+human|subclass of|natural person
+human|subclass of|omnivore
+human|subclass of|person
+human|taxon known by this common name|Homo sapiens
+human|topic has template|Template:Infobox person
+human|topic's main category|Category:Humans
+human|union of|list of values as qualifiers
+human|uses|artificial physical object
+human|uses|language
+human|uses|physical tool
+male|depicted by|Funerary relief of a Palmyrene man
+male|depicted by|Gold-glass portrait of a man
+male|depicted by|Portrait Head of a Man
+male|depicted by|Portrait of a Man with a red cap
+male|depicted by|Portrait of a man
+male|depicted by|Portrait virile dal Palatino
+male|different from|Masculine
+male|different from|male
+male|different from|male human
+male|different from|man
+male|different from|masculine
+male|different from|masculinity
+male|has characteristic|male given name
+male|has characteristic|masculine
+male|has characteristic|masculine family name
+male|instance of|gender identity
+male|instance of|sex of humans
+male|opposite of|female
+male|part of|gender binary
+male|part of|male and female
+male|said to be the same as|male
+male|subclass of|gendered
+male|topic's main category|Category:Male
+sports commentator|instance of|profession
+sports commentator|subclass of|announcer
+sports commentator|subclass of|pundit
+sports commentator|subclass of|sports journalist
+sports commentator|subclass of|sportsperson
+sports commentator|subclass of|television presenter
+sports commentator|topic has template|Template:Infobox sports announcer
+sports commentator|topic's main category|Category:Sports commentators
+winger|instance of|association football position
+winger|sport|association football
+winger|subclass of|forward

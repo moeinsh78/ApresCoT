@@ -1,0 +1,46 @@
+#SEEDS: Edinson Cavani
+Edinson Cavani|member of sports team|Boca Juniors
+Edinson Cavani|member of sports team|Danubio F.C.
+Edinson Cavani|member of sports team|Manchester United F.C.
+Edinson Cavani|member of sports team|Palermo F.C.
+Edinson Cavani|member of sports team|Paris Saint-Germain FC
+Edinson Cavani|member of sports team|SSC Napoli
+Edinson Cavani|member of sports team|Uruguay Olympic football team
+Edinson Cavani|member of sports team|Uruguay men's national football team
+Edinson Cavani|member of sports team|Uruguay national under-20 football team
+Edinson Cavani|member of sports team|Valencia CF
+
+Boca Juniors|headquarters location|Buenos Aires
+Boca Juniors|country|Argentina
+Danubio F.C.|headquarters location|Montevideo
+Danubio F.C.|country|Uruguay
+Manchester United F.C.|headquarters location|Manchester
+Manchester United F.C.|country|United Kingdom
+Palermo F.C.|country|Italy
+Palermo F.C.|headquarters location|Palermo
+Paris Saint-Germain FC|headquarters location|Paris
+Paris Saint-Germain FC|country|France
+SSC Napoli|headquarters location|Naples
+SSC Napoli|country|Italy
+Valencia CF|country|Spain
+Valencia CF|headquarters location|Valencia
+
+Buenos Aires|continent|Americas
+Buenos Aires|country|Argentina
+Argentina|continent|South America
+Montevideo|country|Uruguay
+America/Montevideo|continent|Americas
+Uruguay|continent|South America
+Paris|continent|Europe
+Paris|country|France
+France|continent|Europe
+Naples|continent|Europe
+Naples|country|Italy
+Palermo|country|Italy
+Italy|continent|Europe
+Manchester|continent|Europe
+Manchester|country|United Kingdom
+United Kingdom|continent|Europe
+Valencia|country|Spain
+Valencia|continent|Europe
+Spain|continent|Europe

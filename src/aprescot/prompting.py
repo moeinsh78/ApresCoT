@@ -61,27 +61,21 @@ EXTENSION_FREE_FORM_INSTRUCTION = \
 
 For each question, follow these steps:
 
-1. Think step by step, showing your reasoning in natural language in the REASONING section.
+1. Think step by step in natural language and output your reasoning and every bit of information you might use. 
+    Prefer short, complete sentences, and avoid bullets or numbering.
 
-2. After reasoning, rewrite your reasoning steps by extracting all the atomic factual statement you used or implied.
-   - list the sentences in the PARSED ATOMIC REASONING STEPS section.
-   - Each atomic fact must express exactly one piece of information.
-   - Avoid combining facts with words like "and", "also", or "which", or separating them with commas.
+2. After you finish the reasoning, output a final section that begins exactly with:
+   ---FINAL ANSWERS---
+   Then list the final answers, one per line.
+   - Do not include bullets or numbering.
+   - Deduplicate answers and remove trailing punctuation.
 
-3. Then extract from your reasoning all the final answers you found by listing them in the FINAL ANSWERS section.
+Output Format:
 
-4. Use the following exact format:
-
----REASONING---
-<your detailed reasoning here>
-
----PARSED ATOMIC REASONING STEPS---
-<each piece of information on a new line>
+<your reasoning here with complete sentences>
 
 ---FINAL ANSWERS---
-<list of final answers each in a separate line>
-
-Do not include anything outside these three sections.
+<one answer per line>
 """
 
 
@@ -115,6 +109,70 @@ For each question, follow these steps:
 Do not include anything outside these three sections.
 """
 
+##############################################################################
+############################# BEING USED NOW #################################
+
+# EXTENSION_FREE_FORM_INSTRUCTION = \
+# """You are a reasoning assistant for question answering.
+
+# For each question, follow these steps:
+
+# 1. Think step by step, showing your reasoning in natural language in the REASONING section.
+
+# 2. After reasoning, rewrite your reasoning steps by extracting all the atomic factual statement you used or implied.
+#    - list the sentences in the PARSED ATOMIC REASONING STEPS section.
+#    - Each atomic fact must express exactly one piece of information.
+#    - Avoid combining facts with words like "and", "also", or "which", or separating them with commas.
+
+# 3. Then extract from your reasoning all the final answers you found by listing them in the FINAL ANSWERS section.
+
+# 4. Use the following exact format:
+
+# ---REASONING---
+# <your detailed reasoning here>
+
+# ---PARSED ATOMIC REASONING STEPS---
+# <each piece of information on a new line>
+
+# ---FINAL ANSWERS---
+# <list of final answers each in a separate line>
+
+# Do not include anything outside these three sections.
+# """
+
+
+# EXTENSION_RAG_FREE_FORM_INSTRUCTION = \
+# """You are a reasoning assistant for question answering.
+# You will be given a question and a block of context information retrieved from a knowledge base.
+
+# For each question, follow these steps:
+
+# 1. Read the Context carefully and write down your reasoning step by step in the REASONING section.
+
+# 2. Rewrite your reasoning steps by extracting all the atomic factual statements in the Context that you used or implied.
+#    - List these in the PARSED ATOMIC REASONING STEPS section.
+#    - Each atomic fact must express exactly one piece of information.
+#    - Avoid combining facts with words like "and", "also", or "which", or separating them with commas.
+
+# 3. Then extract from your reasoning all final answers you found and list them in the
+#    FINAL ANSWERS section (one per line). 
+
+# 4. Use the following exact format:
+
+# ---REASONING---
+# <your detailed reasoning here>
+
+# ---PARSED ATOMIC REASONING STEPS---
+# <each statement from the context on a new line>
+
+# ---FINAL ANSWERS---
+# <list of final answers each in a separate line>
+
+# Do not include anything outside these three sections.
+# """
+
+##############################################################################
+######################## JSON FORMATTING INSTRUCTIONS ########################
 
 EXTENSION_INSTRUCTIONS = \
 """You are a reasoning assistant for question answering.
@@ -123,7 +181,7 @@ You must always produce output in JSON format with the following structure:
 {
   "Answers": [ ... ],
   "Chain of Thought": [ ... ]
-}
+}   
 
 Rules:
 - "Answers" is a list of concise entities or short phrases that directly answer the question. Deduplicate items.
@@ -152,6 +210,8 @@ Rules:
 - Think step by step before writing the JSON. Your reasoning steps must appear in "Chain of Thought" as individual atomic facts.
 """
 
+##############################################################################
+############################### PROMPTS ######################################
 
 EXTENSION_RAG_PROMPT = \
 """<Context>
@@ -174,19 +234,8 @@ EXTENSION_VANILLA_PROMPT = \
 Let’s answer the Question by reasoning step by step, and then parse your reasoning steps into atomic facts.
 """
 
-
-EXTENSION_EXAMPLE_INSTRUCTION = \
-"""Example of correct atomic reasoning:
-Question: "Which cities border Lake Ontario?"
-Output:
-{
-  "Answers": ["Toronto", "Hamilton"],
-  "Chain of Thought": [
-    "Lake Ontario borders several cities in Ontario, Canada.",
-    "Toronto is located on the northwestern shore of Lake Ontario.",
-    "Hamilton is located on the western shore of Lake Ontario."
-  ]
-}"""
+##############################################################################
+################## PREVIOUS VERSIONS OF INSTRUCTIONS #########################
 
 
 WIKIDATA_REASONING_INSTRUCTION = \
@@ -284,6 +333,11 @@ For example, if you find Movie1, Movie2, and Movie3 as the answers to a query, t
 Failure to do so could result in incorrect information being provided to users, which could lead to a loss of trust in our service.
 
 """
+
+
+##############################################################################
+################### SEED ENTITY INSTRUCTION AND PROMPTS ######################
+
 
 
 UMLS_SEED_ENTITY_INSTRUCTION = \
