@@ -8,10 +8,12 @@ from sentence_transformers import SentenceTransformer
 
 
 class ExperimentSubgraphRetriever:
-    def __init__(self, kg_name: str, kg_directory: str, scorer_model: str):
+    def __init__(self, kg_name: str, kg_directory: str, scorer_model: str, model_cache_folder: str):
         self.kg_name = kg_name
         self.graph = self.load_graph_from_file(edge_list_file=kg_directory)
-        self.similarity_model = SentenceTransformer(scorer_model)
+        self.similarity_model = SentenceTransformer(
+            scorer_model, model_cache_folder
+        )
         self.ending_node_relations = ["release_year", "in_language", "has_tags", "has_genre", "has_imdb_rating", "has_imdb_votes"]
 
 
@@ -59,16 +61,8 @@ class ExperimentSubgraphRetriever:
                 visited.add(curr_node)
                 neighbors = list(nx.bfs_edges(self.graph, curr_node, depth_limit=1))
 
-                for pair in neighbors:
-                    src, dst = pair
-                    if dst in visited:
-                        continue
-
-                    # Expand only if allowed (based on relation type)
-                    if (expand_ending_nodes) or (self.graph.edges[src, dst, 0]["label"] not in self.ending_node_relations):
-                        to_be_expanded.append(dst)
-
-                    # Record all parallel edges
+                for src, dst in neighbors:
+                    # Always record all edges (even if dst already visited)
                     for i in range(self.graph.number_of_edges(src, dst)):
                         edge = {
                             "from": src,
@@ -78,6 +72,14 @@ class ExperimentSubgraphRetriever:
                         }
                         edge_dict_list.append(edge)
                         nodes.add(dst)
+
+                    # Only expand the node if it hasn't been expanded before
+                    if dst not in visited:
+                        if (expand_ending_nodes) or (
+                            self.graph.edges[src, dst, 0]["label"] not in self.ending_node_relations
+                        ):
+                            to_be_expanded.append(dst)
+
 
             curr_depth += 1
 
@@ -157,14 +159,8 @@ class ExperimentSubgraphRetriever:
         return triples, seen_nodes
 
     def extract_with_srtk_cumulative_context(
-        self, 
-        seed_entities: List[str],
-        question: str,
-        max_hops,
-        beam_size,
-        max_nodes,
-        compare_to_hypothetical_answer: bool = False,
-    ):
+        self, seed_entities: List[str], question, max_hops, beam_size, max_nodes, compare_to_hypothetical_answer: bool = False,
+):
         if compare_to_hypothetical_answer:
             hypothetical_answer = generate_hypothetical_answer(question)
             print("Hypothetical Answer:", hypothetical_answer)
@@ -177,7 +173,6 @@ class ExperimentSubgraphRetriever:
         seen_edges = set()
         seen_nodes = set(seeds)
 
-        # Frontier now holds (node, cumulative_description)
         frontier = {(seed, "") for seed in seeds}
 
         curr_beam_size = beam_size
@@ -238,8 +233,8 @@ class ExperimentSubgraphRetriever:
 
             frontier = new_frontier
             if len(triples) >= max_nodes or not frontier:
-                # print(f"Triples collected: {len(triples)}")
-                # print("[INFO] Reached node/edge limit or no frontier left.")
+                print(f"Triples collected: {len(triples)}")
+                print("[INFO] Reached node/edge limit or no frontier left.")
                 break
 
             # curr_beam_size = curr_beam_size * beam_size

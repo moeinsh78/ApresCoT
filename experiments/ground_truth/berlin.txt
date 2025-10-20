@@ -1,0 +1,8 @@
+#SEEDS: Germany
+Germany|capital|Berlin
+Berlin|significant event|1936 Summer Olympics
+Berlin|significant event|Battle of Berlin
+Berlin|significant event|Fall of Berlin
+Berlin|significant event|Landesbank Berlin scandal
+Berlin|significant event|Soviet air strikes on Berlin
+Berlin|significant event|fall of the Berlin Wall

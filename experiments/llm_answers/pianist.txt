@@ -1,0 +1,29 @@
+#ANSWERS: German|English|French|Spanish
+Movie The Pianist was directed by Roman Polanski.
+Movie The Pianist is in German language.
+Movie Chinatown was directed by Roman Polanski.
+Movie Death and the Maiden was directed by Roman Polanski.
+Movie Macbeth was directed by Roman Polanski.
+Movie Bitter Moon was directed by Roman Polanski.
+Movie Venus in Fur was directed by Roman Polanski.
+Movie The Ninth Gate was directed by Roman Polanski.
+Movie Tess was directed by Roman Polanski.
+Movie Pirates was directed by Roman Polanski.
+Movie What? was directed by Roman Polanski.
+Movie The Fearless Vampire Killers was directed by Roman Polanski.
+Movie Carnage was directed by Roman Polanski.
+Movie The Tenant was directed by Roman Polanski.
+Movie Oliver Twist was directed by Roman Polanski.
+Movie The Ghost Writer was directed by Roman Polanski.
+Movie Repulsion was directed by Roman Polanski.
+Movie Frantic was directed by Roman Polanski.
+Movie Rosemary's Baby was directed by Roman Polanski.
+Movie Chinatown is in English language.
+Movie Macbeth is in English language.
+Movie Bitter Moon is in French language.
+Movie Venus in Fur is in French language.
+Movie The Ninth Gate is in French language.
+Movie The Ninth Gate is in Spanish language.
+Movie The Tenant is in French language.
+Movie Repulsion is in English language.
+Movie Frantic is in French language.

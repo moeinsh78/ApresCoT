@@ -12,6 +12,8 @@ from src.aprescot.prompting import (
     # SEED_ENTITY_JSON_KEYS
 )
 
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
+HF_MODELS_DIR = os.path.join(PROJECT_ROOT, 'hf_models')
 
 CACHE_DIR = os.environ.get("SUBGRAPH_CACHE_DIR", ".subgraph_cache")
 os.makedirs(CACHE_DIR, exist_ok=True)
@@ -81,14 +83,15 @@ def get_seed_entities(question: str, kg: str):
 def retrieve_experiment_subgraph(question: str, seed_entities : str, kg_name: str, params: Dict[str, Any], use_srtk: bool, use_hyde: bool = False, use_pasr: bool = False, graph_file: str = None):
     ##########################################################
     ################## Retrieval Parameters ##################
-    scorer_model = "sentence-transformers/all-MiniLM-L6-v2"
-    depth = params.get("depth", 2)
-    beam_size = params.get("beam_size", 16)
-    max_nodes = params.get("max_nodes", 500)
+    # scorer_model = "sentence-transformers/all-MiniLM-L6-v2"
+    scorer_model = 'sentence-transformers/all-MiniLM-L6-v2'
+    depth = params.get("depth")
+    beam_size = params.get("beam_size")
+    max_nodes = params.get("max_nodes")
     compare_to_hypothetical_answer = use_hyde
-    ##########################################################
+    #########################################################
 
-    experiment_retriever = ExperimentSubgraphRetriever(kg_name=kg_name, kg_directory=graph_file, scorer_model=scorer_model)
+    experiment_retriever = ExperimentSubgraphRetriever(kg_name=kg_name, kg_directory=graph_file, scorer_model=scorer_model, model_cache_folder=HF_MODELS_DIR)
     
     start = time.perf_counter()
 
@@ -139,6 +142,8 @@ def retrieve_demo_subgraph(question: str, kg: str, use_srtk: bool, use_hyde: boo
     total_cap_per_node = 256
     max_nodes = 2000
     scorer_model = "sentence-transformers/all-MiniLM-L6-v2"
+    # scorer_model = os.path.join(HF_MODELS_DIR, 'sentence-transformers_all-MiniLM-L6-v2')
+
     compare_to_hypothetical_answer = use_hyde
     seed_entities = get_seed_entities(question, kg)
     

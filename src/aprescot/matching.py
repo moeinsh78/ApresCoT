@@ -5,6 +5,11 @@ from typing import List, Set
 from tqdm import tqdm
 import pandas as pd
 import numpy as np
+import os
+
+# Resolve the absolute path to the project root
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
+HF_MODELS_DIR = os.path.join(PROJECT_ROOT, 'hf_models')
 
 
 NODE_SIMILARITY_THRESHOLD = 0.9
@@ -81,7 +86,11 @@ def get_sentence_encodings(sentence_list):
     """
     Get sentence embeddings using Sentence Transformer (MiniLM)
     """
-    model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+    model = SentenceTransformer(
+        'sentence-transformers/all-MiniLM-L6-v2',
+        cache_folder=HF_MODELS_DIR
+    )
+    # model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
     embeddings = model.encode(sentence_list)
 
     return embeddings

@@ -1,0 +1,13 @@
+#SEEDS: Bolivia, Brazil, Chile
+Argentina shares border with Bolivia
+Argentina shares border with Brazil
+Argentina shares border with Chile
+Argentina shares border with Paraguay
+Argentina shares border with United Kingdom
+Argentina shares border with Uruguay
+Peru shares border with Bolivia
+Peru shares border with Brazil
+Peru shares border with Chile
+Peru shares border with Colombia
+Peru shares border with Ecuador
+Peru shares border with Gran Colombia

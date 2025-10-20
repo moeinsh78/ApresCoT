@@ -7,8 +7,11 @@ from queue import PriorityQueue
 from sklearn.metrics.pairwise import cosine_similarity
 from sentence_transformers import SentenceTransformer
 
-
 from torch import topk
+import os
+
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
+HF_MODELS_DIR = os.path.join(PROJECT_ROOT, 'hf_models')
 
 class UMLSKnowledgeGraph:
     def __init__(self, kg_directory: str = "kg/umls-kb.txt"):
@@ -192,8 +195,11 @@ class UMLSKnowledgeGraph:
 
 
     def extract_relevant_subgraph(self, seed_entities, question, depth = 2):
-        similarity_model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
-
+        # similarity_model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+        similarity_model = SentenceTransformer(
+            'sentence-transformers/all-MiniLM-L6-v2',
+            cache_folder=HF_MODELS_DIR
+        )
         edge_dict_list = self.get_similarity_based_subgraph(similarity_model, question, seed_entities, depth, 
                                                             not_to_expand_relation_labels = ["release_year", "in_language", "has_tags", "has_genre", "has_imdb_rating", "has_imdb_votes"])
         

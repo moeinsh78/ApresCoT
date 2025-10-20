@@ -20,10 +20,10 @@
     "ground_truth": "experiments/ground_truth/germany.txt",
     "llm_answers": "experiments/llm_answers/germany.txt",
     "seeds": ["Germany"],
-    "graph_file": "experiments/subgraphs/germany_subgraph_depth2.txt",
+    "graph_file": "experiments/subgraphs/germany_depth2.txt",
     "params": {
       "depth": 2,
-      "beam_size": 16,
+      "beam_size": 100,
       "max_nodes": 500
     }
   },
@@ -51,7 +51,7 @@
     "graph_file": "experiments/subgraphs/henry_hazard_depth2.txt",
     "params": {
       "depth": 2,
-      "beam_size": 64,
+      "beam_size": 128,
       "max_nodes": 500
     }
   },
@@ -67,6 +67,76 @@
       "depth": 3,
       "beam_size": 64,
       "max_nodes": 1000
+    }
+  },
+  {
+    "id": "Q6",
+    "question": "Which continents contain the countries of the clubs that Edinson Cavani has played for?",
+    "kg": "wikidata",
+    "ground_truth": "experiments/ground_truth/cavani.txt",
+    "llm_answers": "experiments/llm_answers/cavani.txt",
+    "seeds": ["Edinson Cavani"],
+    "graph_file": "experiments/subgraphs/cavani_depth3.txt",
+    "params": {
+      "depth": 3,
+      "beam_size": 64,
+      "max_nodes": 1000
+    }
+  },
+  {
+    "id": "Q7",
+    "question": "What were the significant events happened in the capital of Germany?",
+    "kg": "wikidata",
+    "ground_truth": "experiments/ground_truth/berlin.txt",
+    "llm_answers": "experiments/llm_answers/berlin.txt",
+    "seeds": ["Germany"],
+    "graph_file": "experiments/subgraphs/germany_depth2.txt",
+    "params": {
+      "depth": 2,
+      "beam_size": 48,
+      "max_nodes": 500
+    }
+  },
+  {
+    "id": "Q8",
+    "question": "Which languages has the director of The Pianist made movies in?",
+    "kg": "meta-qa",
+    "ground_truth": "experiments/ground_truth/pianist.txt",
+    "llm_answers": "experiments/llm_answers/pianist.txt",
+    "seeds": ["The Pianist"],
+    "graph_file": "kg/meta-qa-kb.txt",
+    "params": {
+      "depth": 3,
+      "beam_size": 64,
+      "max_nodes": 500
+    }
+  },
+  {
+    "id": "Q9",
+    "question": "Which countries are neighbors with both Argentina and Peru?",
+    "kg": "wikidata",
+    "ground_truth": "experiments/ground_truth/argentina_peru.txt",
+    "llm_answers": "experiments/llm_answers/argentina_peru.txt",
+    "seeds": ["Argentina", "Peru"],
+    "graph_file": "experiments/subgraphs/argentina_peru_depth1.txt",
+    "params": {
+      "depth": 1,
+      "beam_size": 32,
+      "max_nodes": 100
+    }
+  },
+  {
+    "id": "Q10",
+    "question": "What were the release years of the films starring both Jean Reno and Emily Mortimer?",
+    "kg": "meta-qa",
+    "ground_truth": "experiments/ground_truth/reno_mortimer.txt",
+    "llm_answers": "experiments/llm_answers/reno_mortimer.txt",
+    "seeds": ["Jean Reno", "Emily Mortimer"],
+    "graph_file": "kg/meta-qa-kb.txt",
+    "params": {
+      "depth": 2,
+      "beam_size": 32,
+      "max_nodes": 500
     }
   }
 ]

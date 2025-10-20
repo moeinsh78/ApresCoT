@@ -1,17 +1,19 @@
+import os
 from typing import Tuple, Dict, List
 import networkx as nx
 import pandas as pd
 import numpy as np
 from queue import PriorityQueue
 from openai import OpenAI
-
-
+import os
 from sklearn.metrics.pairwise import cosine_similarity
 from sentence_transformers import SentenceTransformer
 
-
 from torch import topk
-                    
+
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
+HF_MODELS_DIR = os.path.join(PROJECT_ROOT, 'hf_models')
+
 class MetaQAKnowledgeGraph:
 
     def __init__(self, kg_directory: str = "kg/meta-qa-kb.txt"):
@@ -297,7 +299,11 @@ class MetaQAKnowledgeGraph:
 
 
     def extract_relevant_subgraph_srtk(self, seed_entities, question, max_hops, beam_size, max_nodes, compare_to_hypothetical_answer = False):
-        similarity_model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+        # similarity_model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+        similarity_model = SentenceTransformer(
+            'sentence-transformers/all-MiniLM-L6-v2',
+            cache_folder=HF_MODELS_DIR
+        )
 
         edge_dict_list, nodes_set = self.get_srtk_style_subgraph(
             similarity_model,

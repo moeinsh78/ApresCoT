@@ -10,6 +10,9 @@ __pycache__/
 # Dataset (KG)
 kg/
 
+# Models
+hf_models/
+
 # PID file for webapp
 webapp_pid.txt
 

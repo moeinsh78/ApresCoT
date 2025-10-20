@@ -5,11 +5,14 @@ from src.aprescot.cytoVis import *
 from src.aprescot.parsing import *
 from experiments.subgraph_retriever import *
 
+from sentence_transformers import SentenceTransformer
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import SystemMessage, HumanMessage
 from openai import OpenAI
 import json
 import time
+
+SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2', cache_folder='./hf_models')
 
 RETRIEVAL_SETTINGS = [
     {"name": "BFS", "use_srtk": False, "use_hyde": False, "use_pasr": False},
@@ -99,7 +102,8 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
     llm_response, llm_final_answers, llm_cot = None, [], []
 
     if is_experiment:
-        questions = ["Q1", "Q2", "Q3", "Q4", "Q5"]
+        questions = ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q9", "Q10"]
+        # questions = ["Q4"]
         for q in questions:
             print(f"\n\n\n\n==========================")
             print(f"Running experiments for {q}")
@@ -137,6 +141,7 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
             
             
             llm_cot = extract_facts_as_triples(reasoning)
+            llm_cot_with_inference_call = parse_llm_response(llm_response, question, triples=True)
             print("WITH THE NEW METHOD: ")
             print("Final Answers:", llm_final_answers)
             print("Reasoning:\n", reasoning)

@@ -1,0 +1,29 @@
+#SEEDS: The Pianist
+The Pianist|directed_by|Roman Polanski
+The Pianist|in_language|German
+Chinatown|directed_by|Roman Polanski
+Death and the Maiden|directed_by|Roman Polanski
+Macbeth|directed_by|Roman Polanski
+Bitter Moon|directed_by|Roman Polanski
+Venus in Fur|directed_by|Roman Polanski
+The Ninth Gate|directed_by|Roman Polanski
+Tess|directed_by|Roman Polanski
+Pirates|directed_by|Roman Polanski
+What?|directed_by|Roman Polanski
+The Fearless Vampire Killers|directed_by|Roman Polanski
+Carnage|directed_by|Roman Polanski
+The Tenant|directed_by|Roman Polanski
+Oliver Twist|directed_by|Roman Polanski
+The Ghost Writer|directed_by|Roman Polanski
+Repulsion|directed_by|Roman Polanski
+Frantic|directed_by|Roman Polanski
+Rosemary's Baby|directed_by|Roman Polanski
+Chinatown|in_language|English
+Macbeth|in_language|English
+Bitter Moon|in_language|French
+Venus in Fur|in_language|French
+The Ninth Gate|in_language|French
+The Ninth Gate|in_language|Spanish
+The Tenant|in_language|French
+Repulsion|in_language|English
+Frantic|in_language|French
