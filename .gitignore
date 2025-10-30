@@ -10,6 +10,9 @@ __pycache__/
 # Dataset (KG)
 kg/
 
+# Subgraph Caches
+.subgraph_cache/
+
 # Models
 hf_models/
 
