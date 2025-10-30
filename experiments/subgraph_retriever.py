@@ -93,10 +93,10 @@ class ExperimentSubgraphRetriever:
         max_hops,
         beam_size,
         max_nodes,
+        hypothetical_answer: str,
         compare_to_hypothetical_answer: bool = False,
     ):
         if compare_to_hypothetical_answer:
-            hypothetical_answer = generate_hypothetical_answer(question)
             print("Hypothetical Answer:", hypothetical_answer)
             q_emb = self.similarity_model.encode(hypothetical_answer)
         else:
@@ -159,10 +159,9 @@ class ExperimentSubgraphRetriever:
         return triples, seen_nodes
 
     def extract_with_srtk_cumulative_context(
-        self, seed_entities: List[str], question, max_hops, beam_size, max_nodes, compare_to_hypothetical_answer: bool = False,
-):
+        self, seed_entities: List[str], question, max_hops, beam_size, max_nodes, hypothetical_answer: str, compare_to_hypothetical_answer: bool = False,
+    ):
         if compare_to_hypothetical_answer:
-            hypothetical_answer = generate_hypothetical_answer(question)
             print("Hypothetical Answer:", hypothetical_answer)
             q_emb = self.similarity_model.encode(hypothetical_answer)
         else:
@@ -247,22 +246,6 @@ class ExperimentSubgraphRetriever:
 def path_similarity(question_embedding, context, similarity_model):
     context_embedding = similarity_model.encode(context, show_progress_bar=False)
     return cosine_similarity(np.array([question_embedding], dtype=object), np.array([context_embedding], dtype=object))[0][0]
-
-def generate_hypothetical_answer(question: str, model_name="gpt-4o-mini", temperature=0, max_tokens=512, n=1) -> str:
-    client = OpenAI()
-    result = client.chat.completions.create(
-        messages=[{"role":"user", "content": HYPOTHETICAL_ANSWER_PROMPT.format(question)}],
-        model=model_name,
-        max_completion_tokens=max_tokens,
-        temperature=temperature,
-        n=n,
-    )
-    return result.choices[0].message.content
-
-
-HYPOTHETICAL_ANSWER_PROMPT = """Please write a passage to answer the question.
-Question: {}
-Passage:"""
 
 
 #########################################################################

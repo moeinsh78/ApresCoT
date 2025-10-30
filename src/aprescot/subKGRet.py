@@ -80,7 +80,7 @@ def get_seed_entities(question: str, kg: str):
     return response_json["seed entities"]
 
 
-def retrieve_experiment_subgraph(question: str, seed_entities : str, kg_name: str, params: Dict[str, Any], use_srtk: bool, use_hyde: bool = False, use_pasr: bool = False, graph_file: str = None):
+def retrieve_experiment_subgraph(question: str, seed_entities : str, hypothetical_answer: str, kg_name: str, params: Dict[str, Any], use_srtk: bool, use_hyde: bool = False, use_pasr: bool = False, graph_file: str = None):
     ##########################################################
     ################## Retrieval Parameters ##################
     # scorer_model = "sentence-transformers/all-MiniLM-L6-v2"
@@ -108,6 +108,7 @@ def retrieve_experiment_subgraph(question: str, seed_entities : str, kg_name: st
                 max_hops=depth, 
                 beam_size=beam_size, 
                 max_nodes=max_nodes,
+                hypothetical_answer=hypothetical_answer,
                 compare_to_hypothetical_answer=compare_to_hypothetical_answer,
             )
 
@@ -118,6 +119,7 @@ def retrieve_experiment_subgraph(question: str, seed_entities : str, kg_name: st
                 max_hops=depth, 
                 beam_size=beam_size, 
                 max_nodes=max_nodes,
+                hypothetical_answer=hypothetical_answer,
                 compare_to_hypothetical_answer=compare_to_hypothetical_answer,
             )
         end = time.perf_counter()

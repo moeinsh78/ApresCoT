@@ -1,9 +1,12 @@
 #SEEDS: The Shawshank Redemption
 The Shawshank Redemption|directed_by|Frank Darabont
 The Shawshank Redemption|release_year|1994
-The Mist|directed_by|Frank Darabont
+The Shawshank Redemption|starred_actors|Tim Robbins
+The Shawshank Redemption|starred_actors|Morgan Freeman
 The Green Mile|directed_by|Frank Darabont
-The Majestic|directed_by|Frank Darabont
-The Mist|release_year|2007
 The Green Mile|release_year|1999
-The Majestic|release_year|2001
+The Green Mile|has_genre|Fantasy
+The Green Mile|has_genre|Drama
+The Mist|directed_by|Frank Darabont
+The Mist|release_year|2007
+The Mist|written_by|Stephen King

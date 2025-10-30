@@ -102,7 +102,7 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
     llm_response, llm_final_answers, llm_cot = None, [], []
 
     if is_experiment:
-        questions = ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q9", "Q10"]
+        questions = ["Q11"]
         # questions = ["Q4"]
         for q in questions:
             print(f"\n\n\n\n==========================")
@@ -112,7 +112,8 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
                 run_experiments(
                 config_path="experiments/config.json",
                 results_csv="experiments/results/results_log.csv",
-                question_id=q
+                question_id=q,
+                get_ground_truth=True
             )
         return instruction_msg, prompt, llm_response, subgraph_edge_desc_list, node_to_answer_match, matched_cot_list, subgraph_elements_list, llm_final_answers, llm_cot
 
@@ -218,10 +219,15 @@ def run_experiments(config_path: str, results_csv: str, question_id: str, get_gr
                 "beam_size": q["params"].get("beam_size"),
                 "max_nodes": q["params"].get("max_nodes"),
             }
+            start = time.perf_counter()
+            hypothetical_answer = generate_hypothetical_answer(q["question"])
+            hyde_time = time.perf_counter() - start
+
             seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, subgraph_time = \
                 retrieve_experiment_subgraph(
                     q["question"],
                     seed_entities=q["seeds"],
+                    hypothetical_answer=hypothetical_answer,
                     kg_name=q["kg"],
                     params=params,
                     use_srtk=setting["use_srtk"],
@@ -229,14 +235,17 @@ def run_experiments(config_path: str, results_csv: str, question_id: str, get_gr
                     use_pasr=setting["use_pasr"],
                     graph_file=q["graph_file"]
                 )
+            
+            if setting["use_hyde"]:
+                subgraph_time += hyde_time
 
         # --- Load LLM answers ---
         llm_final_answers, llm_cot = get_experiment_llm_answers(q["llm_answers"])
 
         # --- Matching phase ---
         start_match = time.perf_counter()
-        node_to_answer_match, node_to_answer_id = match_nodes_using_embeddings(nodes_set, llm_final_answers[:1])
-        matched_cot_list, edge_to_cot_match = match_edges(subgraph_edge_desc_list, llm_cot[:1], cot_in_triples=True)
+        node_to_answer_match, node_to_answer_id = match_nodes_using_embeddings(nodes_set, [])
+        matched_cot_list, edge_to_cot_match = match_edges(subgraph_edge_desc_list, [], cot_in_triples=True)
         match_time = time.perf_counter() - start_match
 
         # --- Evaluate metrics ---
@@ -276,3 +285,22 @@ def run_experiments(config_path: str, results_csv: str, question_id: str, get_gr
 
     print(f"\nFinished all algorithms for {q['id']}. Results appended to {results_csv}.")
     return None, None, None, subgraph_edge_desc_list, node_to_answer_match, matched_cot_list, subgraph_elements_list, llm_final_answers, llm_cot
+
+
+# This function is only used to generate a hypothetical answer for experiments,
+# so that we can pass the same answer to all retrieval algorithms.
+def generate_hypothetical_answer(question: str, model_name="gpt-4o-mini", temperature=0, max_tokens=512, n=1) -> str:
+    client = OpenAI()
+    result = client.chat.completions.create(
+        messages=[{"role":"user", "content": HYPOTHETICAL_ANSWER_PROMPT.format(question)}],
+        model=model_name, 
+        max_completion_tokens=max_tokens,
+        temperature=temperature,
+        n=n,
+    )
+    return result.choices[0].message.content
+
+
+HYPOTHETICAL_ANSWER_PROMPT = """Please write a passage to answer the question.
+Question: {}
+Passage:"""

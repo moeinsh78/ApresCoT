@@ -15,7 +15,7 @@
   },
   {
     "id": "Q2",
-    "question": "Which countries have land borders with Germany's neighbours?",
+    "question": "Which countries have land borders with Germany's neighbors?",
     "kg": "wikidata",
     "ground_truth": "experiments/ground_truth/germany.txt",
     "llm_answers": "experiments/llm_answers/germany.txt",
@@ -99,7 +99,7 @@
   },
   {
     "id": "Q8",
-    "question": "Which languages has the director of The Pianist made movies in?",
+    "question": "In which languages has the director of The Pianist directed movies?",
     "kg": "meta-qa",
     "ground_truth": "experiments/ground_truth/pianist.txt",
     "llm_answers": "experiments/llm_answers/pianist.txt",
@@ -132,6 +132,20 @@
     "ground_truth": "experiments/ground_truth/reno_mortimer.txt",
     "llm_answers": "experiments/llm_answers/reno_mortimer.txt",
     "seeds": ["Jean Reno", "Emily Mortimer"],
+    "graph_file": "kg/meta-qa-kb.txt",
+    "params": {
+      "depth": 2,
+      "beam_size": 32,
+      "max_nodes": 500
+    }
+  },
+  {
+    "id": "Q11",
+    "question": "What were the release years of the films starring both Jean Reno and Emily Mortimer?",
+    "kg": "meta-qa",
+    "ground_truth": "experiments/ground_truth/shawshank.txt",
+    "llm_answers": "experiments/llm_answers/shawshank.txt",
+    "seeds": ["The Shawshank Redemption"],
     "graph_file": "kg/meta-qa-kb.txt",
     "params": {
       "depth": 2,
