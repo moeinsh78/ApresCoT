@@ -22,78 +22,31 @@ RETRIEVAL_SETTINGS = [
     {"name": "SSR+HyDE+PASR", "use_srtk": True, "use_hyde": True, "use_pasr": True},
 ]
 
-def ask_llm(llm: str, instruction_msg: str, prompt: str, new_reasoning: bool = True, extension: bool = False):
-    if extension:
-        json_formatting = False
-    elif new_reasoning:
-        json_formatting = True
+def ask_llm(llm: str, instruction_msg: str, prompt: str):
 
-    if json_formatting:
-        qa_llm = ChatOpenAI(
-            model=llm,
-            temperature=0,
-            model_kwargs={"response_format": {"type": "json_object"}}
-        )
+    client = OpenAI()
+    response = client.responses.create(
+        temperature=0,
+        model=llm,
+        instructions=instruction_msg,
+        input=prompt,
+    )
+    return response.output_text, [], []
 
-        messages = [
-            SystemMessage(content=instruction_msg),
-            HumanMessage(content=prompt),
-        ]
-
-        response = qa_llm.invoke(messages)
-
-        try:
-            response_json = json.loads(response.content)
-        except json.JSONDecodeError:
-            raise ValueError("Invalid JSON returned from LLM:\n" + response.content)
-
-        answer_list = [str(a) for a in response_json.get("Answers", [])]
-        cot_list = [str(c) for c in response_json.get("Chain of Thought", [])]
-
-        return response.content, answer_list, cot_list
-
-    else:
-        client = OpenAI()
-        if llm == "o3-mini":
-            response = client.responses.create(
-                model=llm,
-                input=[{
-                    "role": "user",
-                    "content": prompt,
-                }],
-                reasoning={"effort": "medium", "summary": "auto"},
-                store=False,
-            )
-            answer_text = response.output_text
-            reasoning_summary = response.reasoning.summary
-            reasoning_tok = response.usage.output_tokens_details.reasoning_tokens
-
-            output = "Reasoning Tokens: " + str(reasoning_tok) + "\n\n" + "Reasoning: \n" + reasoning_summary + "\n\n" + "Answer: \n" + answer_text + "\n\n"
-            return output, [], []
-
-        else:
-            response = client.responses.create(
-                temperature=0,
-                model=llm,
-                instructions=instruction_msg,
-                input=prompt,
-            )
-            return response.output_text, [], []
 
 def perform_qa(llm: str, kg: str, question: str, rag: bool):
-    new_reasoning = False           # New reasoning format is not bound to CoT and JSON formatting
     extension = True                # Whether to use the extended prompt with context from the retrieved subgraph
 
     parse_to_triples = False        # Indicates whether to parse reasoning to triples since it affects matching too
 
-    is_experiment = True            # Whether the code is running for the purpose of experimenting and benchmarking 
+    is_experiment = False            # Whether the code is running for the purpose of experimenting and benchmarking 
 
     
     # use_srtk, use_hyde, use_pasr = False, False, False          # BFS
     # use_srtk, use_hyde, use_pasr = True, False, False           # Plain Similarity
     # use_srtk, use_hyde, use_pasr = True, False, True            # Similarity + PASR
-    use_srtk, use_hyde, use_pasr = True, True, False            # Similarity + Hypothetical Answer
-    # use_srtk, use_hyde, use_pasr = True, True, True             # Similarity + Hypothetical Answer + PASR
+    # use_srtk, use_hyde, use_pasr = True, True, False            # Similarity + Hypothetical Answer
+    use_srtk, use_hyde, use_pasr = True, True, True             # Similarity + Hypothetical Answer + PASR
 
     use_subgraph_cache = False
 
@@ -133,8 +86,8 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
                 # graph_file="kg/meta-qa-kb.txt",
             )
         
-        instruction_msg, prompt = create_prompt(question, kg, rag, llm, subgraph_edge_desc_list, new_reasoning, extension=extension)
-        llm_response, llm_final_answers, llm_cot = ask_llm(llm, instruction_msg, prompt, new_reasoning, extension)
+        instruction_msg, prompt = create_prompt(question, rag, subgraph_edge_desc_list)
+        llm_response, llm_final_answers, llm_cot = ask_llm(llm, instruction_msg, prompt)
 
         if extension:
             # llm_final_answers, llm_cot = parse_reasoning_output(llm_response)
@@ -150,9 +103,6 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
 
             for fact in llm_cot:
                 print(f" - {fact}")
-
-        if new_reasoning:
-            llm_final_answers, llm_cot = parse_llm_response(llm_response, question, triples=parse_to_triples)
 
         if parse_to_triples:
             llm_cot = [concat_triple(cot_step) for cot_step in llm_cot]
