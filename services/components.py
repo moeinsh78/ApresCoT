@@ -9,7 +9,7 @@ import dash_cytoscape as cyto
 
 from services.config import (
     HIDDEN_STYLE, 
-    LLM_OPTIONS,
+    SYSTEM_NAMES,
     KG_OPTIONS,
 )
 
@@ -398,9 +398,9 @@ def build_examples_welcome_alert() -> dbc.Alert:
 
 
 def build_form_section(
-    question_input_id: str, hop_select_id: str, llm_select_id: str, kg_select_id: str,
+    question_input_id: str, llm_select_id: str, kg_select_id: str,
     generate_btn_id: str, is_demo_mode: bool = False, 
-    llms: List[Dict[str, str]] = LLM_OPTIONS,
+    llms: List[Dict[str, str]] = SYSTEM_NAMES,
     knowledge_graphs: List[Dict[str, str]] = KG_OPTIONS,
 
     use_case_1_btn_id: Optional[str] = None,
@@ -413,7 +413,7 @@ def build_form_section(
     (as needed), common form elements, and permutations / combinations forms
     (under their respective tabs).
     """
-    
+    print("##########################################\nLLMS:", llms)
     combined_form = html.Div(dbc.Card(dbc.Stack(
         [
             dbc.Row(
@@ -510,11 +510,11 @@ def build_form_section(
 
 
 def build_page_layout(
-    question_input_id: str, hop_select_id: str, llm_select_id: str, 
-    kg_select_id: str, description_table_id: str, subgraph_container_id: str, 
+    question_input_id: str, llm_select_id: str, 
+    kg_select_id: str, subgraph_container_id: str, 
     qa_info_table_container_id: str, llm_answers_table_container_id: str, 
     llm_cot_table_container_id: str, generate_btn_id: str, results_id: str,
-    llms: List[Dict[str, str]] = LLM_OPTIONS,
+    llms: List[Dict[str, str]] = SYSTEM_NAMES,
     kgs: List[Dict[str, str]] = KG_OPTIONS,
 
     use_case_1_btn_id: Optional[str] = None,
@@ -528,10 +528,11 @@ def build_page_layout(
 
 
     form_section = build_form_section(
-        question_input_id, hop_select_id, llm_select_id, 
-        kg_select_id, generate_btn_id, is_demo_mode, 
-        llms, kgs,
-        use_case_1_btn_id, use_case_2_btn_id, use_case_3_btn_id
+        question_input_id, llm_select_id, kg_select_id, 
+        generate_btn_id, is_demo_mode, 
+        llms=llms, 
+        knowledge_graphs=kgs,
+        use_case_1_btn_id=use_case_1_btn_id, use_case_2_btn_id=use_case_2_btn_id, use_case_3_btn_id=use_case_3_btn_id
     )
 
     qa_info_section = build_qa_info_section(qa_info_table_container_id)

@@ -38,10 +38,10 @@ RESULT_SECTION_ID = "DEMO_RESULT_SECTION_ID"
 
 
 layout = build_page_layout(
-    QUESTION_INPUT_ID, HOP_SELECT_ID, LLM_SELECT_ID, KG_SELECT_ID,
-    DESCRIPTION_TABLE_CONTAINER_ID, SUBGRAPH_CONTAINER_ID,
-    QA_INFO_TABLE_CONTAINER_ID, LLM_ANSWERS_TABLE_CONTAINER_ID, 
-    LLM_COT_TABLE_CONTAINER_ID, GENERATE_BUTTON_ID, RESULT_SECTION_ID
+    QUESTION_INPUT_ID, LLM_SELECT_ID, KG_SELECT_ID,
+    SUBGRAPH_CONTAINER_ID, QA_INFO_TABLE_CONTAINER_ID, 
+    LLM_ANSWERS_TABLE_CONTAINER_ID, LLM_COT_TABLE_CONTAINER_ID, 
+    GENERATE_BUTTON_ID, RESULT_SECTION_ID
 )
 
 
@@ -58,7 +58,7 @@ layout = build_page_layout(
     State(LLM_SELECT_ID, "value"),
     State(KG_SELECT_ID, "value"),
 )
-def on_generate(gen_btn_n_clicks: int, question: str, supported_qa_model: str, kg_name: str):
+def on_generate(gen_btn_n_clicks: int, question: str, qa_model: str, kg_name: str):
     input_is_invalid = (
         question is None
         or kg_name is None
@@ -72,8 +72,8 @@ def on_generate(gen_btn_n_clicks: int, question: str, supported_qa_model: str, k
     hops_count = 2
 
     if not input_is_invalid:
-        system = SYSTEM_NAMES[supported_qa_model]
-        llm = LLM_NAMES[supported_qa_model]
+        system = SYSTEM_NAMES[qa_model]
+        llm = LLM_NAMES[qa_model]
         print("REQUESTED LLM:", llm)
         print("REQUESTED system:", system)
         print("REQUESTED KG:", kg_name)

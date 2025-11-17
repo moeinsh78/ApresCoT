@@ -1,8 +1,12 @@
 dash
 dash-bootstrap-components
 dash_cytoscape
+
+spacy==3.8.7
 en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
+
 fastcoref
+
 gunicorn
 networkx
 nltk
@@ -11,7 +15,6 @@ pandas
 requests
 scikit-learn
 sentence-transformers
-spacy
 tqdm
 srtk
 openai

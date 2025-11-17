@@ -4,16 +4,16 @@ from typing import List, Dict
 # FORM SECTION
 ########################################################################################################################
 
-USE_CASE_1_QUERY = "What were the release years of the films starred by Jean Rochefort?"
-USE_CASE_1_LLM = "ChatGPT 3.5 + KG RAG"
-USE_CASE_1_KG = "meta-qa"
+USE_CASE_1_QUERY = "Which countries have land borders with both Germany and the Czech Republic?"
+USE_CASE_1_LLM = "vanilla-gpt-4o-mini"
+USE_CASE_1_KG = "wikidata"
 
 USE_CASE_2_QUERY = "What were the release years of the films starred by Jean Rochefort?"
-USE_CASE_2_LLM = "GPT-4o Mini"
+USE_CASE_2_LLM = "vanilla-gpt-4o-mini"
 USE_CASE_2_KG = "meta-qa"
 
 USE_CASE_3_QUERY = "What types of animals are affected by dysfunctions caused by Fungus?"
-USE_CASE_3_LLM = "ChatGPT 3.5 + KG RAG"
+USE_CASE_3_LLM = "kg-gpt-3.5"
 USE_CASE_3_KG = "umls"
 
 TOY_QUERIES = [USE_CASE_1_QUERY, USE_CASE_2_QUERY, USE_CASE_3_QUERY]
@@ -26,134 +26,112 @@ TOY_KGS = [USE_CASE_1_KG, USE_CASE_2_KG, USE_CASE_3_KG]
 ########################################################################################################################
 
 USE_CASE_1_COT_STEPS: List[Dict] = [
-    {"COT Step": "Actor \"Jean Rochefort\" starred in \"The Tall Blond Man with One Black Shoe\".", "Most Similar Context ID": 1},
-    {"COT Step": "Movie \"The Tall Blond Man with One Black Shoe\" was released in 1972.", "Most Similar Context ID": 8},
-    {"COT Step": "Actor \"Jean Rochefort\" starred in \"The Hairdresser\'s Husband\".", "Most Similar Context ID": 2},
-    {"COT Step": "Movie \"The Hairdresser's Husband\" was released in 1990.", "Most Similar Context ID": 18}
+    {"COT Step": "Germany shares border with Denmark.", "Most Similar Context ID": 1},
+    {"COT Step": "Germany shares border with Poland.", "Most Similar Context ID": 2},
+    {"COT Step": "Germany shares border with Czech Republic.", "Most Similar Context ID": 3},
+    {"COT Step": "Germany shares border with Austria.", "Most Similar Context ID": 4},
+    {"COT Step": "Germany shares border with Switzerland.", "Most Similar Context ID": 5},
+    {"COT Step": "Germany shares border with France.", "Most Similar Context ID": 6},
+    {"COT Step": "Germany shares border with Luxembourg.", "Most Similar Context ID": 7},
+    {"COT Step": "Germany shares border with Belgium.", "Most Similar Context ID": 8},
+    {"COT Step": "Germany shares border with Netherlands.", "Most Similar Context ID": 9},
+    {"COT Step": "Czech Republic shares border with Germany.", "Most Similar Context ID": 10},
+    {"COT Step": "Czech Republic shares border with Poland.", "Most Similar Context ID": 11},
+    {"COT Step": "Czech Republic shares border with Austria.", "Most Similar Context ID": 12},
+    {"COT Step": "Czech Republic shares border with Slovakia.", "Most Similar Context ID": 13},
 ]
 
+
 USE_CASE_1_ANSWERS: List[Dict] = [
-    {"Answer": "1972", "Index": 1},
-    {"Answer": "1990", "Index": 2},
+    {"Answer": "Poland", "Index": 1},
+    {"Answer": "Austria", "Index": 2},
 ]
 
 
 USE_CASE_1_EDGE_DESCS: List[str] = [
-    'Actor "Jean Rochefort" starred in "The Tall Blond Man with One Black Shoe".', 
-    'Actor "Jean Rochefort" starred in "The Hairdresser\'s Husband".', 
-    'Movie "The Tall Blond Man with One Black Shoe" was directed by "Yves Robert".', 
-    'Movie "The Tall Blond Man with One Black Shoe" was written by "Yves Robert".', 
-    'Movie "The Tall Blond Man with One Black Shoe" was written by "Francis Veber".', 
-    'Actor "Bernard Blier" starred in "The Tall Blond Man with One Black Shoe".', 
-    'Actor "Pierre Richard" starred in "The Tall Blond Man with One Black Shoe".', 
-    'Movie "The Tall Blond Man with One Black Shoe" was released in 1972.', 
-    'Movie "The Tall Blond Man with One Black Shoe" is in English language.', 
-    'Movie "The Tall Blond Man with One Black Shoe" is in French language.', 
-    'Movie "The Tall Blond Man with One Black Shoe" has genre Comedy.', 
-    'Movie "The Tall Blond Man with One Black Shoe" is described with "yves robert" tag.', 
-    'Movie "The Tall Blond Man with One Black Shoe" is described with "pierre richard" tag.', 
-    'Movie "The Hairdresser\'s Husband" was directed by "Patrice Leconte".', 
-    'Movie "The Hairdresser\'s Husband" was written by "Patrice Leconte".', 
-    'Movie "The Hairdresser\'s Husband" was written by "Claude Klotz".', 
-    'Actor "Anna Galiena" starred in "The Hairdresser\'s Husband".', 
-    'Movie "The Hairdresser\'s Husband" was released in 1990.', 
-    'Movie "The Hairdresser\'s Husband" is in French language.', 
-    'Movie "The Hairdresser\'s Husband" is described with "patrice leconte" tag.', 
-    'Movie "The Hairdresser\'s Husband" is described with "hairdresser" tag.'
+    "Germany shares border with Denmark.", 
+    "Germany shares border with Poland.",
+    "Germany shares border with Czech Republic.",
+    "Germany shares border with Austria.",
+    "Germany shares border with Switzerland.",
+    "Germany shares border with France.",
+    "Germany shares border with Luxembourg.",
+    "Germany shares border with Belgium.",
+    "Germany shares border with Netherlands.",
+    "Czech Republic shares border with Germany.", 
+    "Czech Republic shares border with Poland.", 
+    "Czech Republic shares border with Austria.", 
+    "Czech Republic shares border with Slovakia.",
+    "Germany member of eurozone.",
+    "Germany contains the administrative territorial entity Saarland.",
+    "Germany contains the administrative territorial entity Bavaria.",
+    "Germany contains the administrative territorial entity Saxony-Anhalt.",
+    "Germany located in/on physical feature Central Europe.",
+    "Germany member of European Economic Area.",
+    "Germany member of Schengen Area.",
+    "Czech Republic has boundary Austria-Czech Republic border.",
+    "Czech Republic has boundary Czech Republic-Germany border.",
+    "Czech Republic has boundary Czech Republic-Slovakia border.",
+    "Czech Republic has boundary Czech Republic-Poland border.",
+    "Czech Republic has part(s) Czech part of Lower Austria.",
+    "Czech Republic contains the administrative territorial entity Liberec Region."
 ]
 
 
 USE_CASE_1_GRAPH_ELEMENTS: List[Dict] = [
-    {'data': {'id': 'Jean Rochefort', 'label': 'Jean Rochefort'}, 'classes': 'source'}, 
-    {'data': {'id': 'Pierre Richard', 'label': 'Pierre Richard'}, 'classes': 'normal'}, 
-    {'data': {'id': 'French', 'label': 'French'}, 'classes': 'normal'}, 
-    {'data': {'id': 'Anna Galiena', 'label': 'Anna Galiena'}, 'classes': 'normal'}, 
-    {'data': {'id': 'patrice leconte', 'label': 'patrice leconte'}, 'classes': 'normal'}, 
-    {'data': {'id': 'pierre richard', 'label': 'pierre richard'}, 'classes': 'normal'}, 
-    {'data': {'id': '1990', 'label': '[A2] 1990'}, 'classes': 'response'}, 
-    {'data': {'id': 'yves robert', 'label': 'yves robert'}, 'classes': 'normal'}, 
-    {'data': {'id': 'Francis Veber', 'label': 'Francis Veber'}, 'classes': 'normal'}, 
-    {'data': {'id': 'Patrice Leconte', 'label': 'Patrice Leconte'}, 'classes': 'normal'}, 
-    {'data': {'id': 'Claude Klotz', 'label': 'Claude Klotz'}, 'classes': 'normal'}, 
-    {'data': {'id': 'hairdresser', 'label': 'hairdresser'}, 'classes': 'normal'}, 
-    {'data': {'id': 'Bernard Blier', 'label': 'Bernard Blier'}, 'classes': 'normal'}, 
-    {'data': {'id': 'English', 'label': 'English'}, 'classes': 'normal'}, 
-    {'data': {'id': '1972', 'label': '[A1] 1972'}, 'classes': 'response'}, 
-    {'data': {'id': 'Comedy', 'label': 'Comedy'}, 'classes': 'normal'}, 
-    {'data': {'id': 'The Tall Blond Man with One Black Shoe', 'label': 'The Tall Blond Man with One Black Shoe'}, 'classes': 'normal'}, 
-    {'data': {'id': 'Yves Robert', 'label': 'Yves Robert'}, 'classes': 'normal'}, 
-    {'data': {'id': "The Hairdresser's Husband", 'label': "The Hairdresser's Husband"}, 'classes': 'normal'}, 
-    {'data': {'source': 'Jean Rochefort', 'target': 'The Tall Blond Man with One Black Shoe', 'weight': '[S1] starred_actors', 'id': 'ed1ge1'}, 'classes': 'curved cot-edge'}, 
-    {'data': {'source': 'Jean Rochefort', 'target': "The Hairdresser's Husband", 'weight': '[S3] starred_actors', 'id': 'ed1ge2'}, 'classes': 'curved cot-edge'}, 
-    {'data': {'source': 'The Tall Blond Man with One Black Shoe', 'target': 'Yves Robert', 'weight': 'directed_by', 'id': 'ed1ge3'}, 'classes': 'curved'}, 
-    {'data': {'source': 'The Tall Blond Man with One Black Shoe', 'target': 'Yves Robert', 'weight': 'written_by', 'id': 'ed1ge4'}, 'classes': 'curved'}, 
-    {'data': {'source': 'The Tall Blond Man with One Black Shoe', 'target': 'Francis Veber', 'weight': 'written_by', 'id': 'ed1ge5'}, 'classes': 'curved'}, 
-    {'data': {'source': 'The Tall Blond Man with One Black Shoe', 'target': 'Bernard Blier', 'weight': 'starred_actors', 'id': 'ed1ge6'}, 'classes': 'curved'}, 
-    {'data': {'source': 'The Tall Blond Man with One Black Shoe', 'target': 'Pierre Richard', 'weight': 'starred_actors', 'id': 'ed1ge7'}, 'classes': 'curved'}, 
-    {'data': {'source': 'The Tall Blond Man with One Black Shoe', 'target': '1972', 'weight': '[S2] release_year', 'id': 'ed1ge8'}, 'classes': 'curved cot-edge'}, 
-    {'data': {'source': 'The Tall Blond Man with One Black Shoe', 'target': 'English', 'weight': 'in_language', 'id': 'ed1ge9'}, 'classes': 'curved'}, 
-    {'data': {'source': 'The Tall Blond Man with One Black Shoe', 'target': 'French', 'weight': 'in_language', 'id': 'ed1ge10'}, 'classes': 'curved'}, 
-    {'data': {'source': 'The Tall Blond Man with One Black Shoe', 'target': 'Comedy', 'weight': 'has_genre', 'id': 'ed1ge11'}, 'classes': 'curved'}, 
-    {'data': {'source': 'The Tall Blond Man with One Black Shoe', 'target': 'yves robert', 'weight': 'has_tags', 'id': 'ed1ge12'}, 'classes': 'curved'}, 
-    {'data': {'source': 'The Tall Blond Man with One Black Shoe', 'target': 'pierre richard', 'weight': 'has_tags', 'id': 'ed1ge13'}, 'classes': 'curved'}, 
-    {'data': {'source': "The Hairdresser's Husband", 'target': 'Patrice Leconte', 'weight': 'directed_by', 'id': 'ed1ge14'}, 'classes': 'curved'}, 
-    {'data': {'source': "The Hairdresser's Husband", 'target': 'Patrice Leconte', 'weight': 'written_by', 'id': 'ed1ge15'}, 'classes': 'curved'}, 
-    {'data': {'source': "The Hairdresser's Husband", 'target': 'Claude Klotz', 'weight': 'written_by', 'id': 'ed1ge16'}, 'classes': 'curved'}, 
-    {'data': {'source': "The Hairdresser's Husband", 'target': 'Anna Galiena', 'weight': 'starred_actors', 'id': 'ed1ge17'}, 'classes': 'curved'}, 
-    {'data': {'source': "The Hairdresser's Husband", 'target': '1990', 'weight': '[S4] release_year', 'id': 'ed1ge18'}, 'classes': 'curved cot-edge'}, 
-    {'data': {'source': "The Hairdresser's Husband", 'target': 'French', 'weight': 'in_language', 'id': 'ed1ge19'}, 'classes': 'curved'}, 
-    {'data': {'source': "The Hairdresser's Husband", 'target': 'patrice leconte', 'weight': 'has_tags', 'id': 'ed1ge20'}, 'classes': 'curved'}, 
-    {'data': {'source': "The Hairdresser's Husband", 'target': 'hairdresser', 'weight': 'has_tags', 'id': 'ed1ge21'}, 'classes': 'curved'}
+    {'data': {'id': 'Germany', 'label': 'Germany'}, 'classes': 'source'}, 
+    {'data': {'id': 'Czech Republic', 'label': 'Czech Republic'}, 'classes': 'source'}, 
+    {'data': {'id': 'Poland', 'label': '[A1] Poland'}, 'classes': 'response'}, 
+    {'data': {'id': 'Austria', 'label': '[A2] Austria'}, 'classes': 'response'}, 
+    {'data': {'id': 'Denmark', 'label': 'Denmark'}, 'classes': 'normal'}, 
+    {'data': {'id': 'Switzerland', 'label': 'Switzerland'}, 'classes': 'normal'}, 
+    {'data': {'id': 'France', 'label': 'France'}, 'classes': 'normal'}, 
+    {'data': {'id': 'Luxembourg', 'label': 'Luxembourg'}, 'classes': 'normal'}, 
+    {'data': {'id': 'Belgium', 'label': 'Belgium'}, 'classes': 'normal'}, 
+    {'data': {'id': 'Netherlands', 'label': 'Netherlands'}, 'classes': 'normal'},
+    {'data': {'id': 'Slovakia', 'label': 'Slovakia'}, 'classes': 'normal'},
+    {'data': {'id': 'eurozone', 'label': 'eurozone'}, 'classes': 'normal'}, 
+    {'data': {'id': 'Saarland', 'label': 'Saarland'}, 'classes': 'normal'}, 
+    {'data': {'id': 'Saxony-Anhalt', 'label': 'Saxony-Anhalt'}, 'classes': 'normal'}, 
+    {'data': {'id': 'Bavaria', 'label': 'Bavaria'}, 'classes': 'normal'}, 
+    {'data': {'id': 'Central Europe', 'label': 'Central Europe'}, 'classes': 'normal'}, 
+    {'data': {'id': 'European Economic Area', 'label': 'European Economic Area'}, 'classes': 'normal'}, 
+    {'data': {'id': 'Schengen Area', 'label': 'Schengen Area'}, 'classes': 'normal'}, 
+    {'data': {'id': 'Austria-Czech Republic border', 'label': 'Austria-Czech Republic border'}, 'classes': 'normal'}, 
+    {'data': {'id': 'Czech Republic-Germany border', 'label': 'Czech Republic-Germany border'}, 'classes': 'normal'}, 
+    {'data': {'id': 'Czech Republic-Slovakia border', 'label': 'Czech Republic-Slovakia border'}, 'classes': 'normal'}, 
+    {'data': {'id': 'Czech Republic-Poland border', 'label': 'Czech Republic-Poland border'}, 'classes': 'normal'}, 
+    {'data': {'id': 'Czech part of Lower Austria', 'label': 'Czech part of Lower Austria'}, 'classes': 'normal'}, 
+    {'data': {'id': 'Liberec Region', 'label': 'Liberec Region'}, 'classes': 'normal'},
+
+
+    {'data': {'source': 'Germany', 'target': 'Denmark', 'weight': '[S1] shares border with', 'id': 'ed1ge1'}, 'classes': 'curved cot-edge'}, 
+    {'data': {'source': 'Germany', 'target': 'Poland', 'weight': '[S2] shares border with', 'id': 'ed1ge2'}, 'classes': 'curved cot-edge'}, 
+    {'data': {'source': 'Germany', 'target': 'Czech Republic', 'weight': '[S3] shares border with', 'id': 'ed1ge3'}, 'classes': 'curved cot-edge'}, 
+    {'data': {'source': 'Germany', 'target': 'Austria', 'weight': '[S4] shares border with', 'id': 'ed1ge4'}, 'classes': 'curved cot-edge'}, 
+    {'data': {'source': 'Germany', 'target': 'Switzerland', 'weight': '[S5] shares border with', 'id': 'ed1ge5'}, 'classes': 'curved cot-edge'}, 
+    {'data': {'source': 'Germany', 'target': 'France', 'weight': '[S6] shares border with', 'id': 'ed1ge6'}, 'classes': 'curved cot-edge'}, 
+    {'data': {'source': 'Germany', 'target': 'Luxembourg', 'weight': '[S7] shares border with', 'id': 'ed1ge7'}, 'classes': 'curved cot-edge'}, 
+    {'data': {'source': 'Germany', 'target': 'Belgium', 'weight': '[S8] shares border with', 'id': 'ed1ge8'}, 'classes': 'curved cot-edge'}, 
+    {'data': {'source': 'Germany', 'target': 'Netherlands', 'weight': '[S9] shares border with', 'id': 'ed1ge9'}, 'classes': 'curved cot-edge'}, 
+    {'data': {'source': 'Czech Republic', 'target': 'Germany', 'weight': '[S10] shares border with', 'id': 'ed1ge10'}, 'classes': 'curved cot-edge'}, 
+    {'data': {'source': 'Czech Republic', 'target': 'Poland', 'weight': '[S11] shares border with', 'id': 'ed1ge11'}, 'classes': 'curved cot-edge'}, 
+    {'data': {'source': 'Czech Republic', 'target': 'Austria', 'weight': '[S12] shares border with', 'id': 'ed1ge12'}, 'classes': 'curved cot-edge'}, 
+    {'data': {'source': 'Czech Republic', 'target': 'Slovakia', 'weight': '[S13] shares border with', 'id': 'ed1ge13'}, 'classes': 'curved cot-edge'}, 
+    {'data': {'source': 'Germany', 'target': 'eurozone', 'weight': 'member of', 'id': 'ed1ge14'}, 'classes': 'curved'},
+    {'data': {'source': 'Germany', 'target': 'Saarland', 'weight': 'contains the administrative territorial entity', 'id': 'ed1ge15'}, 'classes': 'curved'},
+    {'data': {'source': 'Germany', 'target': 'Bavaria', 'weight': 'contains the administrative territorial entity', 'id': 'ed1ge16'}, 'classes': 'curved'},
+    {'data': {'source': 'Germany', 'target': 'Saxony-Anhalt', 'weight': 'contains the administrative territorial entity', 'id': 'ed1ge17'}, 'classes': 'curved'},
+    {'data': {'source': 'Germany', 'target': 'Central Europe', 'weight': 'located in/on physical feature', 'id': 'ed1ge18'}, 'classes': 'curved'},
+    {'data': {'source': 'Germany', 'target': 'European Economic Area', 'weight': 'member of', 'id': 'ed1ge19'}, 'classes': 'curved'},
+    {'data': {'source': 'Germany', 'target': 'Schengen Area', 'weight': 'member of', 'id': 'ed1ge20'}, 'classes': 'curved'},
+    {'data': {'source': 'Czech Republic', 'target': 'Austria-Czech Republic border', 'weight': 'has boundary', 'id': 'ed1ge21'}, 'classes': 'curved'},
+    {'data': {'source': 'Czech Republic', 'target': 'Czech Republic-Germany border', 'weight': 'has boundary', 'id': 'ed1ge22'}, 'classes': 'curved'},
+    {'data': {'source': 'Czech Republic', 'target': 'Czech Republic-Slovakia border', 'weight': 'has boundary', 'id': 'ed1ge23'}, 'classes': 'curved'},
+    {'data': {'source': 'Czech Republic', 'target': 'Czech Republic-Poland border', 'weight': 'has boundary', 'id': 'ed1ge24'}, 'classes': 'curved'},
+    {'data': {'source': 'Czech Republic', 'target': 'Czech part of Lower Austria', 'weight': 'has part(s)', 'id': 'ed1ge25'}, 'classes': 'curved'},
+    {'data': {'source': 'Czech Republic', 'target': 'Liberec Region', 'weight': 'contains the administrative territorial entity', 'id': 'ed1ge26'}, 'classes': 'curved'}
 ]
-
-
-
-
-####### TEMPORARY #######
-
-USE_CASE_1_ALTER_GRAPH_ELEMENTS: List[Dict] = [
-    {'data': {'id': 'Jean Rochefort', 'label': 'Jean Rochefort'}, 'classes': 'source'}, 
-    {'data': {'id': 'Pierre Richard', 'label': 'Pierre Richard'}, 'classes': 'normal'}, 
-    {'data': {'id': 'French', 'label': 'French'}, 'classes': 'normal'}, 
-    {'data': {'id': 'Anna Galiena', 'label': 'Anna Galiena'}, 'classes': 'normal'}, 
-    {'data': {'id': 'patrice leconte', 'label': 'patrice leconte'}, 'classes': 'normal'}, 
-    {'data': {'id': 'pierre richard', 'label': 'pierre richard'}, 'classes': 'normal'}, 
-    {'data': {'id': '1990', 'label': '[A2] 1990'}, 'classes': 'response'}, 
-    {'data': {'id': 'yves robert', 'label': 'yves robert'}, 'classes': 'normal'}, 
-    {'data': {'id': 'Francis Veber', 'label': 'Francis Veber'}, 'classes': 'normal'}, 
-    {'data': {'id': 'Patrice Leconte', 'label': 'Patrice Leconte'}, 'classes': 'normal'}, 
-    {'data': {'id': 'Claude Klotz', 'label': 'Claude Klotz'}, 'classes': 'normal'}, 
-    {'data': {'id': 'hairdresser', 'label': 'hairdresser'}, 'classes': 'normal'}, 
-    {'data': {'id': 'Bernard Blier', 'label': 'Bernard Blier'}, 'classes': 'normal'}, 
-    {'data': {'id': 'English', 'label': 'English'}, 'classes': 'normal'}, 
-    {'data': {'id': '1972', 'label': '[A1] 1972'}, 'classes': 'response'}, 
-    {'data': {'id': 'Comedy', 'label': 'Comedy'}, 'classes': 'normal'}, 
-    {'data': {'id': 'The Tall Blond Man with One Black Shoe', 'label': 'The Tall Blond Man with One Black Shoe'}, 'classes': 'normal'}, 
-    {'data': {'id': 'Yves Robert', 'label': 'Yves Robert'}, 'classes': 'normal'}, 
-    {'data': {'id': "The Hairdresser's Husband", 'label': "The Hairdresser's Husband"}, 'classes': 'normal'}, 
-    {'data': {'source': 'Jean Rochefort', 'target': 'The Tall Blond Man with One Black Shoe', 'weight': '[S1] starred_actors', 'id': 'ed12ge1'}, 'classes': 'curved cot-edge'}, 
-    {'data': {'source': 'Jean Rochefort', 'target': "The Hairdresser's Husband", 'weight': '[S3] starred_actors', 'id': 'ed12ge2'}, 'classes': 'curved cot-edge'}, 
-    {'data': {'source': 'The Tall Blond Man with One Black Shoe', 'target': 'Yves Robert', 'weight': 'directed_by', 'id': 'ed12ge3'}, 'classes': 'curved'}, 
-    {'data': {'source': 'The Tall Blond Man with One Black Shoe', 'target': 'Yves Robert', 'weight': 'written_by', 'id': 'ed12ge4'}, 'classes': 'curved'}, 
-    {'data': {'source': 'The Tall Blond Man with One Black Shoe', 'target': 'Francis Veber', 'weight': 'written_by', 'id': 'ed12ge5'}, 'classes': 'curved'}, 
-    {'data': {'source': 'The Tall Blond Man with One Black Shoe', 'target': 'Bernard Blier', 'weight': 'starred_actors', 'id': 'ed12ge6'}, 'classes': 'curved'}, 
-    {'data': {'source': 'The Tall Blond Man with One Black Shoe', 'target': 'Pierre Richard', 'weight': 'starred_actors', 'id': 'ed12ge7'}, 'classes': 'curved'}, 
-    {'data': {'source': 'The Tall Blond Man with One Black Shoe', 'target': '1972', 'weight': '[S2] release_year', 'id': 'ed12ge8'}, 'classes': 'curved cot-edge'}, 
-    {'data': {'source': 'The Tall Blond Man with One Black Shoe', 'target': 'English', 'weight': 'in_language', 'id': 'ed12ge9'}, 'classes': 'curved'}, 
-    {'data': {'source': 'The Tall Blond Man with One Black Shoe', 'target': 'French', 'weight': 'in_language', 'id': 'ed12ge10'}, 'classes': 'curved'}, 
-    {'data': {'source': 'The Tall Blond Man with One Black Shoe', 'target': 'Comedy', 'weight': 'has_genre', 'id': 'ed12ge11'}, 'classes': 'curved'}, 
-    {'data': {'source': 'The Tall Blond Man with One Black Shoe', 'target': 'yves robert', 'weight': 'has_tags', 'id': 'ed12ge12'}, 'classes': 'curved'}, 
-    {'data': {'source': 'The Tall Blond Man with One Black Shoe', 'target': 'pierre richard', 'weight': 'has_tags', 'id': 'ed12ge13'}, 'classes': 'curved'}, 
-    {'data': {'source': "The Hairdresser's Husband", 'target': 'Patrice Leconte', 'weight': 'directed_by', 'id': 'ed12ge14'}, 'classes': 'curved'}, 
-    {'data': {'source': "The Hairdresser's Husband", 'target': 'Patrice Leconte', 'weight': 'written_by', 'id': 'ed12ge15'}, 'classes': 'curved'}, 
-    {'data': {'source': "The Hairdresser's Husband", 'target': 'Claude Klotz', 'weight': 'written_by', 'id': 'ed12ge16'}, 'classes': 'curved'}, 
-    {'data': {'source': "The Hairdresser's Husband", 'target': 'Anna Galiena', 'weight': 'starred_actors', 'id': 'ed12ge17'}, 'classes': 'curved'}, 
-    {'data': {'source': "The Hairdresser's Husband", 'target': '1990', 'weight': '[S4] release_year', 'id': 'ed12ge18'}, 'classes': 'curved cot-edge'}, 
-    {'data': {'source': "The Hairdresser's Husband", 'target': 'French', 'weight': 'in_language', 'id': 'ed12ge19'}, 'classes': 'curved'}, 
-    {'data': {'source': "The Hairdresser's Husband", 'target': 'patrice leconte', 'weight': 'has_tags', 'id': 'ed12ge20'}, 'classes': 'curved'}, 
-    {'data': {'source': "The Hairdresser's Husband", 'target': 'hairdresser', 'weight': 'has_tags', 'id': 'ed12ge21'}, 'classes': 'curved'}
-]
-
 
 
 

@@ -21,24 +21,19 @@ class SupportedLLM(Enum):
 
 
 LLM_NAMES: Dict[str, str] = {
-    SupportedLLM.GPT_35_KGRAG.value: "gpt-3.5-turbo",
-    SupportedLLM.GPT_4O_MINI_KGRAG.value: "gpt-4o-mini",
-    SupportedLLM.GPT_35.value: "gpt-3.5-turbo",
-    SupportedLLM.GPT_4O_MINI.value: "gpt-4o-mini",
+    "GPT-3.5 + KG RAG": "gpt-3.5-turbo",
+    "GPT-4o mini + KG RAG": "gpt-4o-mini",
+    "GPT-3.5": "gpt-3.5-turbo",
+    "GPT-4o mini": "gpt-4o-mini",
 }
 
-
-SYSTEM_NAMES: Dict[str, str] = {
-    SupportedLLM.GPT_35_KGRAG.value: "kg-gpt-3.5",
-    SupportedLLM.GPT_4O_MINI_KGRAG.value: "kg-gpt-4o-mini",
-    SupportedLLM.GPT_35.value: "vanilla-gpt-3.5",
-    SupportedLLM.GPT_4O_MINI.value: "vanilla-gpt-4o-mini",
-}
-
-
-LLM_OPTIONS = [
-    dict(label=supported_llm.value, value=supported_llm.value)
-    for supported_llm in SupportedLLM
+SYSTEM_NAMES = [
+    dict(label="GPT-3.5 + KG RAG", value="kg-gpt-3.5"),
+    dict(label="GPT-4o mini + KG RAG", value="kg-gpt-4o-mini"),
+    dict(label="GPT-3.5", value="vanilla-gpt-3.5"),
+    dict(label="GPT-4o mini", value="vanilla-gpt-4o-mini"),
+    # dict(label=supported_llm.value, value=supported_llm.value)
+    # for supported_llm in SupportedLLM
 ]
 
 
