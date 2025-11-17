@@ -36,19 +36,10 @@ def ask_llm(llm: str, instruction_msg: str, prompt: str):
 
 def perform_qa(llm: str, kg: str, question: str, rag: bool):
     extension = True                # Whether to use the extended prompt with context from the retrieved subgraph
+    parse_to_triples = True        # Indicates whether to parse reasoning to triples since it affects matching too
+    is_experiment = False           # Whether the code is running for the purpose of experimenting and benchmarking 
 
-    parse_to_triples = False        # Indicates whether to parse reasoning to triples since it affects matching too
-
-    is_experiment = False            # Whether the code is running for the purpose of experimenting and benchmarking 
-
-    
-    # use_srtk, use_hyde, use_pasr = False, False, False          # BFS
-    # use_srtk, use_hyde, use_pasr = True, False, False           # Plain Similarity
-    # use_srtk, use_hyde, use_pasr = True, False, True            # Similarity + PASR
-    # use_srtk, use_hyde, use_pasr = True, True, False            # Similarity + Hypothetical Answer
     use_srtk, use_hyde, use_pasr = True, True, True             # Similarity + Hypothetical Answer + PASR
-
-    use_subgraph_cache = False
 
     seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list = None, None, None, None
     instruction_msg, prompt = None, None
@@ -71,31 +62,24 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
         return instruction_msg, prompt, llm_response, subgraph_edge_desc_list, node_to_answer_match, matched_cot_list, subgraph_elements_list, llm_final_answers, llm_cot
 
     else:
-        # seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, time_elapsed = \
-        #     retrieve_demo_subgraph(question, kg, use_srtk=use_srtk, use_hyde=use_hyde, use_cache=use_subgraph_cache)
-
-        seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, subgraph_retrieval_time_elapsed = \
-            retrieve_demo_subgraph(
+        seed_nodes, nodes_set, edge_dict_list, subgraph_edge_desc_list, time_elapsed = \
+            retrieve_demo_subgraph_cached(
                 question, 
-                kg=kg,
+                kg_name=kg,
                 use_srtk=use_srtk,
                 use_hyde=use_hyde,
-                # use_pasr=use_pasr,
-                use_cache=use_subgraph_cache,
-                # graph_file="experiments/germany_subgraph_depth3.txt",
-                # graph_file="kg/meta-qa-kb.txt",
+                use_pasr=use_pasr,
             )
         
+        print(f"Subgraph retrieval time: {time_elapsed:.3f}s")
         instruction_msg, prompt = create_prompt(question, rag, subgraph_edge_desc_list)
         llm_response, llm_final_answers, llm_cot = ask_llm(llm, instruction_msg, prompt)
 
         if extension:
-            # llm_final_answers, llm_cot = parse_reasoning_output(llm_response)
             llm_final_answers, reasoning = parse_reasoning_output(llm_response)
-            
-            
-            llm_cot = extract_facts_as_triples(reasoning)
-            llm_cot_with_inference_call = parse_llm_response(llm_response, question, triples=True)
+                        
+            # llm_cot = extract_facts_as_triples(reasoning) 
+            llm_cot = parse_llm_response(llm_response, question, triples=True)
             print("WITH THE NEW METHOD: ")
             print("Final Answers:", llm_final_answers)
             print("Reasoning:\n", reasoning)
@@ -113,11 +97,6 @@ def perform_qa(llm: str, kg: str, question: str, rag: bool):
         matched_cot_list, edge_to_cot_match = match_edges(subgraph_edge_desc_list, llm_cot, cot_in_triples=parse_to_triples)
 
         print("Done matching and subgraph")
-        print("Seed Nodes:", seed_nodes)
-        print("Nodes:", nodes_set)
-        print("Edges:")
-        for edge in edge_dict_list:
-            print(edge)
         
         print("Edge to CoT Match:")
         for match in edge_to_cot_match.items():

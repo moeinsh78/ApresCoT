@@ -21,17 +21,17 @@ class SupportedLLM(Enum):
 
 
 LLM_NAMES: Dict[str, str] = {
-    "GPT-3.5 + KG RAG": "gpt-3.5-turbo",
-    "GPT-4o mini + KG RAG": "gpt-4o-mini",
-    "GPT-3.5": "gpt-3.5-turbo",
-    "GPT-4o mini": "gpt-4o-mini",
+    "kg-gpt-3.5": "gpt-3.5-turbo",
+    "kg-gpt-4o-mini": "gpt-4o-mini",
+    "vanilla-gpt-3.5": "gpt-3.5-turbo",
+    "vanilla-gpt-4o-mini": "gpt-4o-mini",
 }
 
 SYSTEM_NAMES = [
-    dict(label="GPT-3.5 + KG RAG", value="kg-gpt-3.5"),
     dict(label="GPT-4o mini + KG RAG", value="kg-gpt-4o-mini"),
-    dict(label="GPT-3.5", value="vanilla-gpt-3.5"),
+    dict(label="GPT-3.5 + KG RAG", value="kg-gpt-3.5"),
     dict(label="GPT-4o mini", value="vanilla-gpt-4o-mini"),
+    dict(label="GPT-3.5", value="vanilla-gpt-3.5"),
     # dict(label=supported_llm.value, value=supported_llm.value)
     # for supported_llm in SupportedLLM
 ]

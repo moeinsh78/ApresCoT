@@ -14,6 +14,29 @@ from torch import topk
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
 HF_MODELS_DIR = os.path.join(PROJECT_ROOT, 'hf_models')
 
+def create_description(head, relation, tail):
+    if relation == "directed_by":
+        return "Movie \"{}\" was directed by \"{}\".".format(head, tail)
+    elif relation == "has_genre":
+        return "Movie \"{}\" has genre {}.".format(head, tail)
+    elif relation == "has_imdb_rating":
+        return "Movie \"{}\" is rated {} in imdb.".format(head, tail)
+    elif relation == "has_imdb_votes":
+        return "Movie \"{}\" is voted {} in imdb.".format(head, tail)
+    elif relation == "has_tags":
+        return "Movie \"{}\" is tagged with \"{}\".".format(head, tail)
+    elif relation == "in_language":
+        return "Movie \"{}\" is in {} language.".format(head, tail)
+    elif relation == "release_year":
+        return "Movie \"{}\" was released in {}.".format(head, tail)
+    elif relation == "starred_actors":
+        return "Actor \"{}\" starred in \"{}\".".format(tail, head)
+    elif relation == "written_by":
+        return "Movie \"{}\" was written by \"{}\".".format(head, tail)
+    else:
+        print("ERROR!: Relation type {} unknown!".format(relation))
+
+
 class MetaQAKnowledgeGraph:
 
     def __init__(self, kg_directory: str = "kg/meta-qa-kb.txt"):
@@ -24,35 +47,12 @@ class MetaQAKnowledgeGraph:
     
     def edge_count(self):
         return self.graph.number_of_edges()
-    
-
-    def create_description(self, head, relation, tail):
-        if relation == "directed_by":
-            return "Movie \"{}\" was directed by \"{}\".".format(head, tail)
-        elif relation == "has_genre":
-            return "Movie \"{}\" has genre {}.".format(head, tail)
-        elif relation == "has_imdb_rating":
-            return "Movie \"{}\" is rated {} in imdb.".format(head, tail)
-        elif relation == "has_imdb_votes":
-            return "Movie \"{}\" is voted {} in imdb.".format(head, tail)
-        elif relation == "has_tags":
-            return "Movie \"{}\" is tagged with \"{}\".".format(head, tail)
-        elif relation == "in_language":
-            return "Movie \"{}\" is in {} language.".format(head, tail)
-        elif relation == "release_year":
-            return "Movie \"{}\" was released in {}.".format(head, tail)
-        elif relation == "starred_actors":
-            return "Actor \"{}\" starred in \"{}\".".format(tail, head)
-        elif relation == "written_by":
-            return "Movie \"{}\" was written by \"{}\".".format(head, tail)
-        else:
-            print("ERROR!: Relation type {} unknown!".format(relation))
 
 
     def load_kg_edges_df(self, edge_list_file):
         kg_relations = pd.read_table(edge_list_file, delimiter = "|", header=None)
         kg_relations = kg_relations.rename(columns = {0:"head", 1:"relation", 2:"tail"})
-        kg_relations['description'] = kg_relations.apply(lambda d: self.create_description(d["head"], d["relation"], d["tail"]), axis = 1)
+        kg_relations['description'] = kg_relations.apply(lambda d: create_description(d["head"], d["relation"], d["tail"]), axis = 1)
         
         return kg_relations
     

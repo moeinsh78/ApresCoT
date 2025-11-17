@@ -44,9 +44,6 @@ def create_prompt(question: str, rag: bool, edge_descriptions: List[str]):
 
 
 
-
-
-
 EXTENSION_FREE_FORM_INSTRUCTION = \
 """You are a reasoning assistant for question answering.
 
@@ -76,28 +73,23 @@ You will be given a question and a block of context information retrieved from a
 
 For each question, follow these steps:
 
-1. Read the Context carefully and write down your reasoning step by step in the REASONING section.
+1. Think step by step in natural language using the provided Context as your primary evidence.
+   - When reasoning, explicitly include the pieces of information from the Context that you are using. 
+     These should appear naturally within the reasoning section as factual statements.
+   - Base all claims on the Context; do not rely on prior knowledge unless the Context supports it.
 
-2. Rewrite your reasoning steps by extracting all the atomic factual statements in the Context that you used or implied.
-   - List these in the PARSED ATOMIC REASONING STEPS section.
-   - Each atomic fact must express exactly one piece of information.
-   - Avoid combining facts with words like "and", "also", or "which", or separating them with commas.
+2. After you finish the reasoning, output a final section that begins exactly with:
+   ---FINAL ANSWERS---
+   Then list the final answers, one per line.
+   - Do not include bullets or numbering.
+   - Deduplicate answers and remove trailing punctuation.
 
-3. Then extract from your reasoning all final answers you found and list them in the
-   FINAL ANSWERS section (one per line). 
+Output Format:
 
-4. Use the following exact format:
-
----REASONING---
-<your detailed reasoning here>
-
----PARSED ATOMIC REASONING STEPS---
-<each statement from the context on a new line>
+<your reasoning here with complete sentences grounded in the Context>
 
 ---FINAL ANSWERS---
-<list of final answers each in a separate line>
-
-Do not include anything outside these three sections.
+<one answer per line>
 """
 
 ##############################################################################

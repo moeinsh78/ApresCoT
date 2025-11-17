@@ -413,7 +413,6 @@ def build_form_section(
     (as needed), common form elements, and permutations / combinations forms
     (under their respective tabs).
     """
-    print("##########################################\nLLMS:", llms)
     combined_form = html.Div(dbc.Card(dbc.Stack(
         [
             dbc.Row(

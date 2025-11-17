@@ -69,10 +69,9 @@ def on_generate(gen_btn_n_clicks: int, question: str, qa_model: str, kg_name: st
     doc_section, subgraph_section = None, None
     QA_section, llm_answers_section, llm_cot_section = None, None, None
     results_style = HIDDEN_STYLE
-    hops_count = 2
 
     if not input_is_invalid:
-        system = SYSTEM_NAMES[qa_model]
+        system = qa_model
         llm = LLM_NAMES[qa_model]
         print("REQUESTED LLM:", llm)
         print("REQUESTED system:", system)
@@ -86,18 +85,6 @@ def on_generate(gen_btn_n_clicks: int, question: str, qa_model: str, kg_name: st
             perform_qa(llm, kg_name, question, rag_enabled)
         
 
-        # print("Node to Answer Match:\n", node_to_answer_match)
-
-        # print("CoT to Edge Match:\n", cot_match_dicts)
-        # print("Subgraph Edge Description List:\n")
-        # for edge_desc in subgraph_edge_desc_list:
-        #     print(edge_desc)
-
-        # print("Subgraph Elements:\n")
-        # for element in subgraph_elements_list:
-        #     print(element)
-        
-        # doc_section = build_edge_description_table(subgraph_edge_desc_list)
         subgraph_section = draw_subgraph(subgraph_elements_list, SUBGRAPH_FIGURE_ID)
         
         QA_section = build_qa_info_table(prompt, llm_response, llm_final_answers, llm_cot)

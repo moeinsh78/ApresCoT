@@ -6,11 +6,14 @@ from src.aprescot.metaqa import MetaQAKnowledgeGraph
 from src.aprescot.umls import UMLSKnowledgeGraph
 from src.aprescot.wikidata import WikiDataKnowledgeGraph
 from experiments.subgraph_retriever import ExperimentSubgraphRetriever
+from src.aprescot.demoGraphs import DemoSubgraphRetriever
 from src.aprescot.prompting import (
     SEED_ENTITY_INSTRUCTIONS, 
     SEED_ENTITY_PROMPT, 
-    # SEED_ENTITY_JSON_KEYS
 )
+
+from openai import OpenAI
+
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
 HF_MODELS_DIR = os.path.join(PROJECT_ROOT, 'hf_models')
@@ -83,7 +86,6 @@ def get_seed_entities(question: str, kg: str):
 def retrieve_experiment_subgraph(question: str, seed_entities : str, hypothetical_answer: str, kg_name: str, params: Dict[str, Any], use_srtk: bool, use_hyde: bool = False, use_pasr: bool = False, graph_file: str = None):
     ##########################################################
     ################## Retrieval Parameters ##################
-    # scorer_model = "sentence-transformers/all-MiniLM-L6-v2"
     scorer_model = 'sentence-transformers/all-MiniLM-L6-v2'
     depth = params.get("depth")
     beam_size = params.get("beam_size")
@@ -135,6 +137,60 @@ def extract_subgraph_edge_descriptions(edge_dict_list):
         edge_desc_list.append(edge_dict["description"])
 
     return edge_desc_list
+
+
+def retrieve_demo_subgraph_cached(question: str, kg_name: str, use_srtk: bool, use_hyde: bool = True, use_pasr: bool = True):
+    seed_entities = get_seed_entities(question, kg_name)
+    
+    ##########################################################
+    ################## Retrieval Parameters ##################
+    scorer_model = 'sentence-transformers/all-MiniLM-L6-v2'
+    depth = 3
+    beam_size = 32
+    total_cap_per_node = 256
+    max_nodes = 2000
+    compare_to_hypothetical_answer = use_hyde
+    #########################################################
+
+    hypothetical_answer = ""
+    if use_hyde:
+        hypothetical_answer = generate_hypothetical_answer(question)
+
+    demo_retriever = DemoSubgraphRetriever(kg_name=kg_name, scorer_model=scorer_model, model_cache_folder=HF_MODELS_DIR)
+    
+    start = time.perf_counter()
+
+    if not use_srtk:
+        edge_dict_list, nodes_set = demo_retriever.get_bfs_subgraph(seed_entities, depth=depth, expand_ending_nodes=False)
+        end = time.perf_counter()
+
+        edge_descriptions = extract_subgraph_edge_descriptions(edge_dict_list)
+    else:
+        if use_pasr:
+            edge_dict_list, nodes_set = demo_retriever.extract_with_srtk_cumulative_context(
+                seed_entities, 
+                question, 
+                max_hops=depth, 
+                beam_size=beam_size, 
+                max_nodes=max_nodes,
+                hypothetical_answer=hypothetical_answer,
+                compare_to_hypothetical_answer=compare_to_hypothetical_answer,
+            )
+
+        else:
+            edge_dict_list, nodes_set = demo_retriever.extract_with_srtk(
+                seed_entities, 
+                question, 
+                max_hops=depth, 
+                beam_size=beam_size, 
+                max_nodes=max_nodes,
+                hypothetical_answer=hypothetical_answer,
+                compare_to_hypothetical_answer=compare_to_hypothetical_answer,
+            )
+        end = time.perf_counter()
+        edge_descriptions = extract_subgraph_edge_descriptions(edge_dict_list)
+        
+    return seed_entities, nodes_set, edge_dict_list, edge_descriptions, end - start
 
 
 def retrieve_demo_subgraph(question: str, kg: str, use_srtk: bool, use_hyde: bool = False, use_cache: bool = True):
@@ -256,50 +312,20 @@ def retrieve_demo_subgraph(question: str, kg: str, use_srtk: bool, use_hyde: boo
             return None, None, None, None, None
 
 
+# This function is only used to generate a hypothetical answer for experiments,
+# so that we can pass the same answer to all retrieval algorithms.
+def generate_hypothetical_answer(question: str, model_name="gpt-4o-mini", temperature=0, max_tokens=512, n=1) -> str:
+    client = OpenAI()
+    result = client.chat.completions.create(
+        messages=[{"role":"user", "content": HYPOTHETICAL_ANSWER_PROMPT.format(question)}],
+        model=model_name, 
+        max_completion_tokens=max_tokens,
+        temperature=temperature,
+        n=n,
+    )
+    return result.choices[0].message.content
 
 
-def retrieve_uc2_subgraph(question: str, kg: str):
-    seed_nodes = ["Fungus"]
-    nodes_set = set(["Fungus", "Mental or Behavioral Dysfunction", "Cell or Molecular Dysfunction", "Virus", "Eukaryote", "Enzyme", "Hormone", "Experimental Model of Disease",
-                     "Mammal", "Mental Process", "Neoplastic Process", "Reptile", "Bird", "Organism", "Pathologic Function", "Bacterium", "Family Group", "Injury or Poisoning",
-                     "Vitamin", "Occupation or Discipline", "Chemical", "Organism Function", "Cell Component", "Patient or Disabled Group", "Professional or Occupational Group",
-                     "Acquired Abnormality", "Anatomical Abnormality", "Congenital Abnormality"])
-
-    edge_dict_list = [
-        {"from": "Fungus", "to": "Mental or Behavioral Dysfunction", "label": "causes", "description": "Fungus causes Mental or Behavioral Dysfunction."},
-        {"from": "Fungus", "to": "Eukaryote", "label": "isa", "description": "Fungus is a Eukaryote."},
-        {"from": "Fungus", "to": "Experimental Model of Disease", "label": "causes", "description": "Fungus causes Experimental Model of Disease."},
-        {"from": "Mental or Behavioral Dysfunction", "to": "Mammal", "label": "affects", "description": "Mental or Behavioral Dysfunction affects Mammal."},
-        {"from": "Mental or Behavioral Dysfunction", "to": "Mental Process", "label": "affects", "description": "Mental or Behavioral Dysfunction affects Mental Process."},
-        {"from": "Experimental Model of Disease", "to": "Injury or Poisoning", "label": "occurs_in", "description": "Experimental Model of Disease occurs in Injury or Poisoning."},
-        {"from": "Fungus", "to": "Enzyme", "label": "location_of", "description": "Fungus is the location of Enzyme."},
-        {"from": "Fungus", "to": "Hormone", "label": "location_of", "description": "Fungus is the location of Hormone."},
-        {"from": "Experimental Model of Disease", "to": "Patient or Disabled Group", "label": "occurs_in", "description": "Experimental Model of Disease occurs in Patient or Disabled Group."},
-        {"from": "Mental or Behavioral Dysfunction", "to": "Neoplastic Process", "label": "affects", "description": "Mental or Behavioral Dysfunction affects Neoplastic Process."},
-        {"from": "Fungus", "to": "Cell or Molecular Dysfunction", "label": "causes", "description": "Fungus causes Cell or Molecular Dysfunction."},
-        {"from": "Enzyme", "to": "Chemical", "label": "isa", "description": "Enzyme is a Chemical."},
-        {"from": "Hormone", "to": "Cell Component", "label": "disrupts", "description": "Hormone disrupts Cell Component."},
-        {"from": "Cell or Molecular Dysfunction", "to": "Bird", "label": "affects", "description": "Cell or Molecular Dysfunction affects Bird."},
-        {"from": "Experimental Model of Disease", "to": "Family Group", "label": "occurs_in", "description": "Experimental Model of Disease occurs in Family Group."},
-        {"from": "Experimental Model of Disease", "to": "Professional or Occupational Group", "label": "occurs_in", "description": "Experimental Model of Disease occurs in Professional or Occupational Group."},
-        {"from": "Hormone", "to": "Pathologic Function", "label": "causes", "description": "Hormone causes Pathologic Function."},
-        {"from": "Mental or Behavioral Dysfunction", "to": "Acquired Abnormality", "label": "complicates", "description": "Mental or Behavioral Dysfunction complicates Acquired Abnormality."},
-        {"from": "Cell or Molecular Dysfunction", "to": "Organism", "label": "affects", "description": "Cell or Molecular Dysfunction affects Organism."},
-        {"from": "Mental or Behavioral Dysfunction", "to": "Congenital Abnormality", "label": "complicates", "description": "Mental or Behavioral Dysfunction complicates Congenital Abnormality."},
-        {"from": "Fungus", "to": "Virus", "label": "interacts_with", "description": "Fungus interacts with Virus."},
-        {"from": "Cell or Molecular Dysfunction", "to": "Pathologic Function", "label": "affects", "description": "Cell or Molecular Dysfunction affects Pathologic Function."},
-        {"from": "Virus", "to": "Bacterium", "label": "interacts_with", "description": "Virus interacts with Bacterium."},
-        {"from": "Mental or Behavioral Dysfunction", "to": "Reptile", "label": "affects", "description": "Mental or Behavioral Dysfunction affects Reptile."},
-        {"from": "Cell or Molecular Dysfunction", "to": "Mammal", "label": "affects", "description": "Cell or Molecular Dysfunction affects Mammal."},
-        {"from": "Virus", "to": "Occupation or Discipline", "label": "issue_in", "description": "Virus issue in Occupation or Discipline."},
-        {"from": "Eukaryote", "to": "Organism", "label": "isa", "description": "Eukaryote is a Organism."},
-        {"from": "Enzyme", "to": "Organism Function", "label": "complicates", "description": "Enzyme complicates Organism Function."},
-        {"from": "Cell or Molecular Dysfunction", "to": "Mental Process", "label": "affects", "description": "Cell or Molecular Dysfunction affects Mental Process."},
-        {"from": "Mental or Behavioral Dysfunction", "to": "Anatomical Abnormality", "label": "complicates", "description": "Mental or Behavioral Dysfunction complicates Anatomical Abnormality."},
-        {"from": "Mental or Behavioral Dysfunction", "to": "Cell or Molecular Dysfunction", "label": "complicates", "description": "Mental or Behavioral Dysfunction complicates Cell or Molecular Dysfunction."},
-        {"from": "Enzyme", "to": "Vitamin", "label": "interacts_with", "description": "Enzyme interacts with Vitamin."},
-    ]
-    
-    edge_descriptions = [edge_dict["description"] for edge_dict in edge_dict_list]
-
-    return seed_nodes, nodes_set, edge_dict_list, edge_descriptions
+HYPOTHETICAL_ANSWER_PROMPT = """Please write a passage to answer the question.
+Question: {}
+Passage:"""
